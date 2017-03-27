@@ -1,9 +1,10 @@
 html{
-  background: #444444;
+  background: #000;
 }
 body{
   width: 100vw;
   height: 100vw;
+  overflow: hidden;
 }
 object{
   position: absolute;

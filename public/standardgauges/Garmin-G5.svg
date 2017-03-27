@@ -262,7 +262,7 @@
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5+30});
+                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5});
               
                 break;
 
