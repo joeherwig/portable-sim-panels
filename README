@@ -1,0 +1,4 @@
+# Introduction
+This is just a simple Web client for svg gauges for (flight) simulations etc. wich are updated via socket connections.
+
+Inspired by: http://nodecode.de/chat-nodejs-websocket

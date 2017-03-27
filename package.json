@@ -1,0 +1,17 @@
+{
+  "name": "portable-sim-panels",
+  "description": "Socket-updated browser-based svg panels.",
+  "author": "joeherwig",
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joeherwig/portable-sim-panels"
+  },
+  "dependencies": {
+    "body-parser": "1.17.1",
+    "express": "3.x",
+    "socketio": "1.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+html{
+  background: #444444;
+}
+body{
+  width: 100vw;
+  height: 100vw;
+}
+object{
+  position: absolute;
+}
+#vsi{
+  left: 2.5%;
+  top: 2.5%;
+  width: 20%;
+  height: auto;
+}
+#alt{
+  left: 25%;
+  top: 35%;
+  width: 40%;
+  height: auto;
+}
+#Garmin-G5{
+  left: 25%;
+  top: 2.5%;
+  width: auto;
+  height: auto;
+}

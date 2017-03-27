@@ -1,0 +1,21 @@
+{
+  "ias": {
+    "whitebarstart": 56,
+    "whitebarend": 122,
+    "greenbarstart": 58,
+    "greenbarend": 220,
+    "yellowbarstart": 220,
+    "yellowbarend": 276,
+    "vne": 276,
+    "marker": {
+      "fe": 122,
+      "ge": 132,
+      "vne": 276,
+      "x": 100,
+      "y": 135
+    }
+  },
+  "alt": {
+    "lean-hint": 4000
+  }
+}
