@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "body-parser": "1.17.1",
-    "express": "3.x",
+    "express": "3.21.2",
     "socketio": "1.0.0"
   }
 }
