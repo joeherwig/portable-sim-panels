@@ -213,7 +213,7 @@
                 break;
 
               case 'Plane_Pitch_Degrees':
-                pitch = value*-10;
+                pitch = value*-1;
                 d3.select('#horizon-gradient').attr('gradientTransform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 //d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
                 d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
