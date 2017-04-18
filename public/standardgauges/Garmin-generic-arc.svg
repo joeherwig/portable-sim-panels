@@ -66,7 +66,6 @@
         path = path.join("/") + "/";
         $.getJSON(path+"/config.json", function(json){
           config = json[window.frameElement.id];
-          console.log(id + ' ' + JSON.stringify(config));
         });
         
 
@@ -134,7 +133,7 @@
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/10, "N2": y/4});
+                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/10, "N2": x/10});
               
                 break;
 
