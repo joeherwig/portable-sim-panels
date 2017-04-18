@@ -153,7 +153,10 @@
         let hdgtext = 0;
         let config = {};
 
-        $.getJSON(window.parent.location.pathname+"config.json", function(json){
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        $.getJSON(path+"/config.json", function(json){
           config = json;
         });
 

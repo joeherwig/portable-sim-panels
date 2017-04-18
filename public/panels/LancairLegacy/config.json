@@ -17,5 +17,113 @@
   },
   "alt": {
     "lean-hint": 4000
+  },
+  "RPM": {
+    "rangemin": 0,
+    "rangemax": 2500,
+    "label": "RPM",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 300,
+        "maxValue": 1600,
+        "width": 3
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "high",
+        "minValue": 1600,
+        "maxValue": 1800,
+        "width": 8,
+        "alertwidth": 60
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 1800,
+        "maxValue": 2500,
+        "width": 8,
+        "alertwidth": 60
+      }
+    ]
+  },
+  "N1": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "N1 %",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "high",
+        "minValue": 86,
+        "maxValue": 92,
+        "width": 8,
+        "alertwidth": 60
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 92,
+        "maxValue": 100,
+        "width": 8,
+        "alertwidth": 60
+      }
+    ]
+  },
+  "N2": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "N2 %",
+    "baseStyle": {
+      "arcMinAngle": -90,
+      "arcMaxAngle": 90,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "#00FFFF",
+        "alerttype": "caution",
+        "alerttext": "high",
+        "minValue": 42,
+        "maxValue": 75,
+        "width": 8,
+        "alertwidth": 60
+      },
+      {
+        "color": "#FF00FF",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 75,
+        "maxValue": 100,
+        "width": 25,
+        "alertwidth": 60
+      }
+    ]
   }
 }

@@ -27,3 +27,21 @@ object{
   width: auto;
   height: auto;
 }
+#RPM{
+  left: 2.5%;
+  top: 5px;
+  width: auto;
+  height: auto;
+}
+#N1{
+  left: 2.5%;
+  top: 170px;
+  width: auto;
+  height: auto;
+}
+#N2{
+  left: 2.5%;
+  top: 350px;
+  width: auto;
+  height: auto;
+}

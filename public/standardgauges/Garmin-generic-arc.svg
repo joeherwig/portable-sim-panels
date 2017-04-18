@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg17119"
+   viewBox="0 0 150 150"
+   height="150px"
+   width="150px"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Garmin-generic-arc.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2495"
+     inkscape:window-height="1416"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="3.1466667"
+     inkscape:cx="-34.943076"
+     inkscape:cy="35.475865"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="label-value-group" />
+  <defs
+     id="defs17121">
+    <script
+       xlink:href="../libs/d3.3.min.js"
+       id="script9" />
+    <script
+       xlink:href="../libs/socket.io.js"
+       id="script11" />
+    <script
+       xlink:href="../libs/jquery.min.js"
+       id="script13" />
+    <script
+       xlink:href="../libs/portable-sim-panels.js"
+       id="script15" />
+    <script
+       type="text/javascript"
+       id="businesslogic"><![CDATA[
+
+        let config = {};
+        let alerts = "";
+        let pi = Math.PI;
+        let stepangle;
+        let fullrange;
+        let valueangle;
+        let id = window.frameElement.id;
+
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        $.getJSON(path+"/config.json", function(json){
+          config = json[window.frameElement.id];
+          console.log(id + ' ' + JSON.stringify(config));
+        });
+        
+
+        window.onload = setTimeout(function(){
+          init();
+        }, 100);
+
+        function init(){
+          let fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
+          stepangle = fullrange / (config.rangemax-config.rangemin);
+
+          let svg = d3.select("svg")
+              .append("svg")
+              .attr("viewBox","0 0 150 150")
+              .attr("width", 150)
+              .attr("height", 150)
+              .append("g")
+              .attr("transform", "translate(75,75)");
+
+          let arc = d3.svg.arc()
+              .innerRadius(68)
+              .outerRadius(70)
+              .startAngle(config.baseStyle.arcMinAngle * (pi/180))
+              .endAngle(config.baseStyle.arcMaxAngle * (pi/180));
+          svg.append("path")
+              .attr("class", "arc")
+              .attr("fill", config.baseStyle.baseColor)
+              .attr("d", arc);
+
+          config.ranges.forEach(function(range, i) {
+            let arc2 = d3.svg.arc()
+              .innerRadius(config.baseStyle.innerRadius - range.width)
+              .outerRadius(config.baseStyle.innerRadius)
+              .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
+              .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
+            svg.append("path")
+              .attr("class", "arc-"+i)
+              .attr("fill",range.color)
+              .attr("d", arc2);
+          })
+          d3.select('#label').text(config.label);
+          Update({"RPM":0});
+        }
+
+        function Update(inputObject){
+          obj = inputObject;
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
+            let key = Object.keys(inputObject)[attr];
+            let value = Object.values(inputObject)[attr];
+            switch (key) {
+
+              case id:
+                alerts = "";
+                degrees = config.baseStyle.arcMinAngle + value * stepangle 
+                d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 75, 75)');
+                d3.select('#value').text(value);
+                config.ranges.forEach(function(range, i) {
+                  if(value >= range.minValue && value <= range.maxValue && range.alerttype) {
+                    alerts = range.alerttype + ' ' + config.label + ' ' + range.alerttext 
+                  } 
+                })
+                //if (alerts !== "") console.log(alerts);
+                break;
+
+              case 'test':
+                let x = value.x;
+                let y = value.y;
+                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/10, "N2": y/4});
+              
+                break;
+
+              default:
+                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+            };
+          }
+        }
+
+        ]]></script>
+  </defs>
+  <metadata
+     id="metadata17124">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 75,3 -3,72 c 0,1.656854 1.343146,3 3,3 1.656854,0 3,-1.343146 3,-3 l -0.0078,-0.212891 -0.002,-0.0098 z"
+     id="needle"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccscccc" />
+  <g
+     id="label-value-group"
+     transform="translate(8.5805085,-67.372882)">
+    <text
+       sodipodi:linespacing="0%"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="137.71974"
+       y="210.75435"
+       id="value"
+       inkscape:label="value"><tspan
+         id="tspan4144"
+         style="font-size:22.5px;fill:#ffffff">0000</tspan></text>
+    <text
+       sodipodi:linespacing="0%"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="137.71974"
+       y="185.67311"
+       id="label"
+       inkscape:label="label"><tspan
+         id="tspan4144-6"
+         style="font-size:17.5px;fill:#cccccc">label</tspan></text>
+  </g>
+</svg>
