@@ -1,5 +1,6 @@
 # Requires fsx.simconnect.ps1 in the same folder
 
+
 $scriptPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 if (!$global:fsxConnected) {
