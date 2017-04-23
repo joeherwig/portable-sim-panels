@@ -1,47 +1,44 @@
-html{
-  background: #000;
-}
-body{
+html {
+  background: #111111; }
+
+body {
   width: 100vw;
   height: 100vw;
+  overflow: hidden; }
+
+#GarminG3X {
+  position: relative;
+  width: calc(80vh / 0.625);
+  height: 80vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background: #000;
   overflow: hidden;
-}
-object{
+  border: 4px solid grey;
+  border-radius: 12px; }
+
+.leftbar {
   position: absolute;
-}
-#vsi{
-  left: 2.5%;
-  top: 2.5%;
-  width: 20%;
-  height: auto;
-}
-#alt{
-  left: 25%;
-  top: 35%;
-  width: 40%;
-  height: auto;
-}
-#Garmin-G5{
-  left: 25%;
-  top: 2.5%;
-  width: auto;
-  height: auto;
-}
-#RPM{
-  left: 2.5%;
-  top: 5px;
-  width: auto;
-  height: auto;
-}
-#N1{
-  left: 2.5%;
-  top: 170px;
-  width: auto;
-  height: auto;
-}
-#N2{
-  left: 2.5%;
-  top: 350px;
-  width: auto;
-  height: auto;
-}
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 10%; }
+  .leftbar object {
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 80%; }
+
+.mfd, .auxpages {
+  position: absolute;
+  left: 10%;
+  bottom: 0px;
+  height: 100%;
+  width: 45%; }
+
+.auxpages {
+  left: 55%; }
+
+#Garmin-G5 {
+  width: 100%; }
+
+/*# sourceMappingURL=panel.css.map */
