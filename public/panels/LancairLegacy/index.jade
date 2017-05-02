@@ -3,16 +3,15 @@ html
   head
     title Lancair Legacy V2
     link(rel='stylesheet', href='panel.css')
+    script(src="../../libs/socket.io.js")
     script(src="../../libs/jquery.min.js")
+    script(src="../../libs/portable-sim-panels.js")
   body
     #GarminG3X
       .leftbar
         object#RPM(data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
         object#N1(data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
         object#N2(data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object#N2(data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object#N1(data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
       .mfd
-        object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg', type='image/svg+xml')
+        object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg', type='image/svg+xml')        
       .auxpages
-

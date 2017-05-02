@@ -45,7 +45,7 @@
         "minValue": 1600,
         "maxValue": 1800,
         "width": 8,
-        "alertwidth": 60
+        "activewidth": 40
       },
       {
         "color": "red",
@@ -54,7 +54,7 @@
         "minValue": 1800,
         "maxValue": 2500,
         "width": 8,
-        "alertwidth": 60
+        "activewidth": 60
       }
     ]
   },
@@ -73,22 +73,92 @@
     },
     "ranges": [
       {
+        "color": "red",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": 0,
+        "maxValue": 12,
+        "width": 2,
+        "activewidth": 30
+      },
+      {
         "color": "orange",
         "alerttype": "caution",
-        "alerttext": "high",
-        "minValue": 86,
-        "maxValue": 92,
-        "width": 8,
-        "alertwidth": 60
+        "alerttext": "low",
+        "minValue": 12,
+        "maxValue": 16,
+        "width": 2,
+        "activewidth": 40
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": 71,
+        "maxValue": 83,
+        "width": 2,
+        "activewidth": 30
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 92,
+        "minValue": 83,
         "maxValue": 100,
-        "width": 8,
-        "alertwidth": 60
+        "width": 2,
+        "activewidth": 40
+      }
+    ]
+  },
+  "X3": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "X3",
+    "baseStyle": {
+      "arcMinAngle": 0,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "red",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": 0,
+        "maxValue": 12,
+        "width": 2,
+        "activewidth": 30
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": 12,
+        "maxValue": 16,
+        "width": 2,
+        "activewidth": 40
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": 71,
+        "maxValue": 83,
+        "width": 2,
+        "activewidth": 30
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 83,
+        "maxValue": 100,
+        "width": 2,
+        "activewidth": 40
       }
     ]
   },
@@ -113,7 +183,7 @@
         "minValue": 42,
         "maxValue": 75,
         "width": 8,
-        "alertwidth": 60
+        "activewidth": 60
       },
       {
         "color": "#FF00FF",
@@ -122,7 +192,7 @@
         "minValue": 75,
         "maxValue": 100,
         "width": 25,
-        "alertwidth": 60
+        "activewidth": 60
       }
     ]
   }

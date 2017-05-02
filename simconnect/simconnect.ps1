@@ -124,15 +124,10 @@ Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvQuit -Action { $g
 Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvSimobjectData -Action { 
     try { 
         $global:sim = $args.dwData[0] 
- 
 
         $JSON = ConvertTo-Json($args.dwData[0])
+        $response = Invoke-RestMethod 'http://localhost:8080/' -Method Post -Body $json -ContentType 'application/json'
 
-        $response = Invoke-WebRequest -Uri "http://sim:8080" -Method Post -Body $JSON -ContentType "application/json"
-        #write-host $response
-        
-
-        $global:sim
     } catch {} 
 } | out-null
 

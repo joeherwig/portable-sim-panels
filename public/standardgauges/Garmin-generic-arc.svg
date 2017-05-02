@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,12 +8,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="svg17119"
    viewBox="0 0 150 150"
    height="150px"
-   width="150px"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="Garmin-generic-arc.svg">
+   width="150px">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -41,20 +37,19 @@
        xlink:href="../libs/d3.3.min.js"
        id="script9" />
     <script
-       xlink:href="../libs/socket.io.js"
-       id="script11" />
-    <script
        xlink:href="../libs/jquery.min.js"
        id="script13" />
-    <script
-       xlink:href="../libs/portable-sim-panels.js"
-       id="script15" />
     <script
        type="text/javascript"
        id="businesslogic"><![CDATA[
 
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
+
         let config = {};
-        let alerts = "";
         let pi = Math.PI;
         let stepangle;
         let fullrange;
@@ -67,11 +62,10 @@
         $.getJSON(path+"/config.json", function(json){
           config = json[window.frameElement.id];
         });
-        
 
         window.onload = setTimeout(function(){
           init();
-        }, 100);
+        }, 10);
 
         function init(){
           let fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
@@ -107,7 +101,15 @@
               .attr("d", arc2);
           })
           d3.select('#label').text(config.label);
-          Update({"RPM":0});
+
+          svg.append("path")
+            .style("stroke-width", 1)
+            .style("stroke", "#000")
+            .style("fill", "white")
+            //.attr("d", "m 1,0 2,-50 -3,-19 -3,19 2,50 2,0")
+            .attr("d", "M 0,0 L 2,0 L 4,-50 L 0,-69 L -4,-50 L -2,0 L 0,0")
+            .attr("id","needle")
+            .attr('x', -75).attr('y', -75);
         }
 
         function Update(inputObject){
@@ -118,23 +120,38 @@
             switch (key) {
 
               case id:
-                alerts = "";
-                degrees = config.baseStyle.arcMinAngle + value * stepangle 
-                d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 75, 75)');
-                d3.select('#value').text(value);
+                degrees = config.baseStyle.arcMinAngle + value * stepangle
+                d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
+                d3.select('#value').text(Math.round(value));
+                let arccolor = config.baseStyle.baseColor;
                 config.ranges.forEach(function(range, i) {
-                  if(value >= range.minValue && value <= range.maxValue && range.alerttype) {
-                    alerts = range.alerttype + ' ' + config.label + ' ' + range.alerttext 
-                  } 
+                  let arc = d3.select(".arc-"+i);
+                  let arc2;
+                  if(value > range.minValue && value <= range.maxValue && range.alerttype) {
+                    // console.log(range.alerttype + ' ' + range.alerttext + ' ' + config.label );
+                    arc2 = d3.svg.arc()
+                      .innerRadius(config.baseStyle.innerRadius - range.activewidth)
+                      .outerRadius(config.baseStyle.innerRadius)
+                      .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
+                      .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
+                    arccolor = range.color;
+                  } else{
+                    arc2 = d3.svg.arc()
+                      .innerRadius(config.baseStyle.innerRadius - range.width)
+                      .outerRadius(config.baseStyle.innerRadius)
+                      .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
+                      .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
+                  }
+                arc.attr("d", arc2);
+                d3.select(".arc").attr("fill", arccolor)
                 })
-                //if (alerts !== "") console.log(alerts);
                 break;
 
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/10, "N2": x/10});
-              
+                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/4, "N2": x/2, "X3": y/1.5});
+
                 break;
 
               default:
@@ -157,12 +174,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <path
-     style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 75,3 -3,72 c 0,1.656854 1.343146,3 3,3 1.656854,0 3,-1.343146 3,-3 l -0.0078,-0.212891 -0.002,-0.0098 z"
-     id="needle"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccscccc" />
   <g
      id="label-value-group"
      transform="translate(8.5805085,-67.372882)">

@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -136,14 +133,8 @@
        xlink:href="../libs/d3.3.min.js"
        id="script9" />
     <script
-       xlink:href="../libs/socket.io.js"
-       id="script11" />
-    <script
        xlink:href="../libs/jquery.min.js"
        id="script13" />
-    <script
-       xlink:href="../libs/portable-sim-panels.js"
-       id="script15" />
     <script
        type="text/javascript"
        id="script4532"><![CDATA[
@@ -152,6 +143,12 @@
         let obj = {};
         let hdgtext = 0;
         let config = {};
+
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
 
         var path = window.parent.location.pathname.split('/');
         path.pop();
@@ -197,7 +194,7 @@
               .attr('y',373.5-(config.ias.greenbarend)*12.364)
             d3.select('#ias-ruler-flaps-full-bar')
               .attr('height',(config.ias.whitebarend - config.ias.whitebarstart) *12.364)
-              .attr('y',-373.5-(config.ias.whitebarend - config.ias.whitebarstart-config.ias.whitebarend)*12.364)            
+              .attr('y',-373.5-(config.ias.whitebarend - config.ias.whitebarstart-config.ias.whitebarend)*12.364)
           }
         }
 
@@ -226,7 +223,7 @@
               case 'Plane_Altitude':
                 if (value > 1000) {
                     d3.select('#alt-value-thousands').text('' + Math.floor(value/1000) + '');
-                    d3.select('#alt-value-hundreds').text(('00' + (Math.floor(value)%1000)).slice(-3) + '');
+                    d3.select('#alt-value-hundreds').text(('00' + (Math.floor(Math.round(value))%1000)).slice(-3) + '');
                 } else {
                     d3.select('#alt-value-thousands').text('');
                     d3.select('#alt-value-hundreds').text(('' + Math.floor(value)%1000) + '');
@@ -265,8 +262,8 @@
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5});
-              
+                Update({"Plane_Bank_Degrees":(x/-3),"Plane_Pitch_Degrees":(y/-10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*1, "Plane_Altitude":x*y*1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5});
+
                 break;
 
               default:
