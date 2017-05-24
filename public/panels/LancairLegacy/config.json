@@ -3,8 +3,8 @@
     "whitebarstart": 56,
     "whitebarend": 122,
     "greenbarstart": 58,
-    "greenbarend": 220,
-    "yellowbarstart": 220,
+    "greenbarend": 230,
+    "yellowbarstart": 230,
     "yellowbarend": 276,
     "vne": 276,
     "marker": {
@@ -18,9 +18,9 @@
   "alt": {
     "lean-hint": 4000
   },
-  "RPM": {
+  "GENERAL ENG RPM:1": {
     "rangemin": 0,
-    "rangemax": 2500,
+    "rangemax": 2720,
     "label": "RPM",
     "baseStyle": {
       "arcMinAngle": -140,

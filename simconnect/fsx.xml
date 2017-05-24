@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fsx>
     <var name="Title" type="string"/>
-    
+
     <!-- myOwn -->
     <var name="Plane Bank Degrees" type="double" unit="degrees"/>
     <var name="Plane Pitch Degrees" type="double" unit="degrees"/>
@@ -28,14 +28,14 @@
     <var name="Autopilot Master" type="int"/>
     <var name="Autopilot Approach Hold" type="int"/>
     <var name="BAROMETER PRESSURE" type="double" unit="Milibars"/>
-    
+
     <var name="Autopilot Heading Lock" type="int"/>
     <var name="Autopilot Heading Lock Dir" type="double" unit="degrees"/>
-    
+
     <var name="Autopilot Altitude Lock" type="int"/>
     <var name="Autopilot Altitude Lock Var" type="double" unit="feet"/>
     <var name="Autopilot Vertical Hold Var" type="double" unit="feet/minute"/>
-    
+
     <var name="Autopilot Throttle Arm" type="int"/>
     <var name="Autopilot Airspeed Hold" type="int"/>
     <var name="Autopilot Airspeed Hold Var" type="double" unit="knots"/>
@@ -43,7 +43,7 @@
     <var name="Autopilot Nav1 Lock" type="int"/>
     <var name="Gps Drives Nav1" type="int"/>
     <var name="GPS GROUND SPEED" type="double"/>
-    
+
 
     <!-- Engines -->
     <var name="Number Of Engines" type="int"/>
@@ -51,6 +51,9 @@
     <var name="General Eng Throttle Lever Position:2" type="double"/>
     <var name="General Eng Throttle Lever Position:3" type="double"/>
     <var name="General Eng Throttle Lever Position:4" type="double"/>
+    <var name="GENERAL ENG RPM:0" type="double"/>
+    <var name="GENERAL ENG RPM:1" type="double"/>
+
 
     <!-- Other controls -->
     <var name="Flaps Handle Percent" type="double"/>
@@ -116,5 +119,5 @@
     <eventid name="AP_NAV1_HOLD_ON"/>
     <eventid name="AP_NAV1_HOLD_OFF"/>
     <eventid name="TOGGLE_GPS_DRIVES_NAV1"/>
-    
+
 </fsx>
