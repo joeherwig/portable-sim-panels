@@ -22,8 +22,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/',function(req,res,next){
-	console.log(req.body);
+	// console.log(req.body);
 	io.sockets.emit('chat', req.body);
+	console.log(req.body);
 	res.end("published");
 } );
 

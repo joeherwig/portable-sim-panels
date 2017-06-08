@@ -42,17 +42,17 @@
 
     <var name="Autopilot Nav1 Lock" type="int"/>
     <var name="Gps Drives Nav1" type="int"/>
-    <var name="GPS GROUND SPEED" type="double"/>
+    <var name="GROUND VELOCITY" type="double"/>
 
 
     <!-- Engines -->
     <var name="Number Of Engines" type="int"/>
-    <var name="General Eng Throttle Lever Position:1" type="double"/>
+    <var name="General_Eng_Throttle_Lever_Position:1" type="double"/>
     <var name="General Eng Throttle Lever Position:2" type="double"/>
     <var name="General Eng Throttle Lever Position:3" type="double"/>
     <var name="General Eng Throttle Lever Position:4" type="double"/>
-    <var name="GENERAL ENG RPM:0" type="double"/>
-    <var name="GENERAL ENG RPM:1" type="double"/>
+    <var name="GENERAL_ENG_RPM:1" type="double"/>
+    <var name="GENERAL_ENG_RPM:s" type="double"/>
 
 
     <!-- Other controls -->
@@ -62,6 +62,9 @@
     <var name="Spoilers Handle Position" type="double"/>
     <var name="Brake Left Position" type="double"/>
     <var name="Brake Right Position" type="double"/>
+
+    <var name="VARIOMETER RATE"  type="double"/>
+    <var name="ATC ID"  type="string"/>
 
     <!-- Events. These are transmitted to FSX to control the aircraft -->
 

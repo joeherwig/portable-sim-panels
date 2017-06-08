@@ -245,7 +245,10 @@
                 d3.select('#ias-ruler').attr('transform','translate(0,'+value*12.364+')')
                 break;
 
-              case 'Plane_Heading_Degrees_True':
+              case 'Kohlsman_setting_hg':
+                d3.select('#baro-value').text('' + Math.round(value) + '');
+
+              case 'heading':
                 hdgtext = Math.abs(Math.floor(value % 360));
                 if (value < 0){
                   hdgtext = 360 - Math.abs(Math.floor(hdgtext));

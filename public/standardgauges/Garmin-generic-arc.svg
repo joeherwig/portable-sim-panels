@@ -65,7 +65,7 @@
 
         window.onload = setTimeout(function(){
           init();
-        }, 10);
+        }, 1000);
 
         function init(){
           let fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
@@ -122,7 +122,12 @@
               case id:
                 degrees = config.baseStyle.arcMinAngle + value * stepangle
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
-                d3.select('#value').text(Math.round(value));
+                if ((stepangle) > 2.5) {
+                  d3.select('#value').text(value.toFixed(2));
+                } else {
+                  d3.select('#value').text(Math.round(value));
+                }
+
                 let arccolor = config.baseStyle.baseColor;
                 config.ranges.forEach(function(range, i) {
                   let arc = d3.select(".arc-"+i);

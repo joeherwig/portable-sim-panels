@@ -1,16 +1,19 @@
 # Path where script is located
+
+[console]::TreatControlCAsInput = $true
+
 $scriptPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 # If running on 64 bit OS make sure that 32 bit version of PowerShell is being used
 if ((Get-WMIObject win32_OperatingSystem).OsArchitecture -match '64-bit') {
-    if ([System.Diagnostics.Process]::GetCurrentProcess().Path -notmatch '\\syswow64\\') {
-        throw 'Please run this script with 32-bit version of PowerShell'
-    }
+  if ([System.Diagnostics.Process]::GetCurrentProcess().Path -notmatch '\\syswow64\\') {
+      throw 'Please run this script with 32-bit version of PowerShell'
+  }
 }
 
 # Make sure that SP2 SIMCONNECT DLL is available
-$ref = @($env:windir + '\assembly\GAC_32\Microsoft.FlightSimulator.SimConnect\10.0.61259.0__31bf3856ad364e35\Microsoft.FlightSimulator.SimConnect.dll')
-# $ref = @('C:\Program Files (x86)\Lockheed Martin\Prepar3D v3 SDK 3.4.18.19475\Utilities\SimConnect SDK\lib\managed\LockheedMartin.Prepar3D.SimConnect.dll')
+# $ref = @($env:windir + '\assembly\GAC_32\Microsoft.FlightSimulator.SimConnect\10.0.61259.0__31bf3856ad364e35\Microsoft.FlightSimulator.SimConnect.dll')
+$ref = @($env:windir + '\assembly\GAC_32\Microsoft.FlightSimulator.SimConnect\10.0.61242.0__31bf3856ad364e35\Microsoft.FlightSimulator.SimConnect.dll')
 if (!(Test-Path $ref)) {
     throw "Cannot find $ref. Make sure FSX SP2 is installed"
 }
@@ -45,7 +48,7 @@ if (-not ('Struct1' -as [type])) {
     $type = 'using System.Runtime.InteropServices;'
     $type += '[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]'
     $type += 'public struct Struct1 {'
- 
+
     foreach ($var in $config.fsx.var) {
         $var.type = $var.type.ToLower()
         if ($var.type -eq 'string') { $type += "[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]" }
@@ -74,11 +77,11 @@ Add-Type -TypeDefinition @"
    }
 "@
 }
- 
+
 function transmit([EventId]$eventId, [int32]$param=0) {
     [uint32]$newParam = 0
     if ($param -lt 0) { $newParam = convert-IntToUint $param } else { $newParam = $param }
-    $global:fsx.TransmitClientEvent(0, $eventId, $newParam, [Groups]::group1, 
+    $global:fsx.TransmitClientEvent(0, $eventId, $newParam, [Groups]::group1,
         [Microsoft.FlightSimulator.SimConnect.SIMCONNECT_EVENT_FLAG]::GROUPID_IS_PRIORITY)
 }
 
@@ -90,7 +93,7 @@ function convert-IntToUint([int32]$number) {
 try { $global:fsx = New-Object Microsoft.FlightSimulator.SimConnect.SimConnect('PowerShell', 0, 1026, $null, 0) }
 catch { throw 'Unable to connect to Simulator. Please make sure your simulator is started' }
 
-[EventId].GetEnumValues() | % { 
+[EventId].GetEnumValues() | % {
     $global:fsx.MapClientEventToSimEvent($_, $_.ToString())
 }
 
@@ -121,14 +124,16 @@ $global:fsxError = $false
 Unregister-Event *
 Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvException -Action { $global:fsxError = $true } | out-null
 Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvQuit -Action { $global:fsxConnected = $false } | out-null
-Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvSimobjectData -Action { 
-    try { 
-        $global:sim = $args.dwData[0] 
+Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvSimobjectData -Action {
+    try {
+        $global:sim = $args.dwData[0]
 
         $JSON = ConvertTo-Json($args.dwData[0])
+        write-host "received Data";
+        # $JSON
         $response = Invoke-RestMethod 'http://localhost:8080/' -Method Post -Body $json -ContentType 'application/json'
 
-    } catch {} 
+    } catch {}
 } | out-null
 
 
@@ -136,7 +141,7 @@ Register-ObjectEvent -InputObject $global:fsx -EventName OnRecvSimobjectData -Ac
 $global:fsx.RequestDataOnSimObject([DataRequests]::Request1, [Definitions]::Struct1, [Microsoft.FlightSimulator.SimConnect.SimConnect]::SIMCONNECT_OBJECT_ID_USER, [Microsoft.FlightSimulator.SimConnect.SIMCONNECT_PERIOD]::VISUAL_FRAME, 0, 0, 0, 0);
 
 $timer = New-Object System.Timers.Timer
-$timer.Interval = 30
+$timer.Interval = 300
 $timer.AutoReset = $true
 Register-ObjectEvent -InputObject $timer -EventName Elapsed -Action { $global:fsx.ReceiveMessage() } | out-null
 $timer.Start()

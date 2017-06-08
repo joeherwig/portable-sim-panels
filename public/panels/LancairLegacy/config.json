@@ -18,9 +18,9 @@
   "alt": {
     "lean-hint": 4000
   },
-  "GENERAL ENG RPM:1": {
-    "rangemin": 0,
-    "rangemax": 2720,
+  "GENERAL_ENG_RPM_1": {
+    "rangemin": 30,
+    "rangemax": 350,
     "label": "RPM",
     "baseStyle": {
       "arcMinAngle": -140,
@@ -34,37 +34,28 @@
     "ranges": [
       {
         "color": "green",
-        "minValue": 300,
-        "maxValue": 1600,
+        "minValue": 200,
+        "maxValue": 280,
         "width": 3
       },
       {
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "high",
-        "minValue": 1600,
-        "maxValue": 1800,
-        "width": 8,
-        "activewidth": 40
-      },
-      {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1800,
-        "maxValue": 2500,
+        "minValue": 280,
+        "maxValue": 350,
         "width": 8,
         "activewidth": 60
       }
     ]
   },
-  "N1": {
-    "rangemin": 0,
-    "rangemax": 100,
-    "label": "N1 %",
+  "ELEVATOR_TRIM_POSITION": {
+    "rangemin": -16,
+    "rangemax": 16,
+    "label": "Elev Trim",
     "baseStyle": {
-      "arcMinAngle": -140,
-      "arcMaxAngle": 110,
+      "arcMinAngle": 60,
+      "arcMaxAngle": 120,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
@@ -73,50 +64,32 @@
     },
     "ranges": [
       {
-        "color": "red",
+        "color": "yellow",
         "alerttype": "caution",
         "alerttext": "low",
-        "minValue": 0,
-        "maxValue": 12,
-        "width": 2,
+        "minValue": -16,
+        "maxValue": -3,
+        "width": 0,
         "activewidth": 30
       },
       {
-        "color": "orange",
+        "color": "yellow",
         "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": 12,
-        "maxValue": 16,
-        "width": 2,
-        "activewidth": 40
-      },
-      {
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": 71,
-        "maxValue": 83,
-        "width": 2,
-        "activewidth": 30
-      },
-      {
-        "color": "red",
-        "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 83,
-        "maxValue": 100,
-        "width": 2,
-        "activewidth": 40
+        "minValue": 3,
+        "maxValue": 16,
+        "width": 0,
+        "activewidth": 30
       }
     ]
   },
-  "X3": {
+  "FLAPS_HANDLE_PERCENT": {
     "rangemin": 0,
     "rangemax": 100,
-    "label": "X3",
+    "label": "Flaps %",
     "baseStyle": {
       "arcMinAngle": 0,
-      "arcMaxAngle": 110,
+      "arcMaxAngle": 140,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
@@ -124,51 +97,15 @@
       "normalColor": "white"
     },
     "ranges": [
-      {
-        "color": "red",
-        "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": 0,
-        "maxValue": 12,
-        "width": 2,
-        "activewidth": 30
-      },
-      {
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": 12,
-        "maxValue": 16,
-        "width": 2,
-        "activewidth": 40
-      },
-      {
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": 71,
-        "maxValue": 83,
-        "width": 2,
-        "activewidth": 30
-      },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 83,
-        "maxValue": 100,
-        "width": 2,
-        "activewidth": 40
-      }
     ]
   },
-  "N2": {
+  "Gear_Position": {
     "rangemin": 0,
     "rangemax": 100,
-    "label": "N2 %",
+    "label": "Gear %",
     "baseStyle": {
-      "arcMinAngle": -90,
-      "arcMaxAngle": 90,
+      "arcMinAngle": 90,
+      "arcMaxAngle": 180,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
@@ -176,24 +113,6 @@
       "normalColor": "white"
     },
     "ranges": [
-      {
-        "color": "#00FFFF",
-        "alerttype": "caution",
-        "alerttext": "high",
-        "minValue": 42,
-        "maxValue": 75,
-        "width": 8,
-        "activewidth": 60
-      },
-      {
-        "color": "#FF00FF",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 75,
-        "maxValue": 100,
-        "width": 25,
-        "activewidth": 60
-      }
     ]
   }
 }
