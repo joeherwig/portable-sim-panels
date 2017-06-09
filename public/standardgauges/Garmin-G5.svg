@@ -220,41 +220,39 @@
                 d3.select('#pitch-ruler').attr('transform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 break;
 
-              case 'Plane_Altitude':
+              case 'Indicated_Altitude':
                 if (value > 1000) {
-                    d3.select('#alt-value-thousands').text('' + Math.floor(value/1000) + '');
-                    d3.select('#alt-value-hundreds').text(('00' + (Math.floor(Math.round(value))%1000)).slice(-3) + '');
+                    d3.select('#alt-value-thousands').text(Math.floor(value/1000));
+                    d3.select('#alt-value-hundreds').text(('00' + (Math.floor(Math.round(value))%1000)).slice(-3));
                 } else {
                     d3.select('#alt-value-thousands').text('');
-                    d3.select('#alt-value-hundreds').text(('' + Math.floor(value)%1000) + '');
+                    d3.select('#alt-value-hundreds').text((Math.floor(value)%1000));
                 }
-                //d3.select('#alt-ruler-complete').attr('transform','translate(0,'+value*1.8545+')')
                 d3.select('#alt-ruler-complete').attr('transform','translate(0,'+value*1.8545+')')
                 break;
 
               case 'Autopilot_Altitude_Lock_Var':
-                d3.select('#ap-alt-value').text('' + Math.round(value) + '');
+                d3.select('#ap-alt-value').text(Math.round(value));
                 break;
 
-              case 'GPS_GROUND_SPEED':
-                d3.select('#gs-value').text('' + Math.round(value * 1.94384) + '');
+              case 'GPS_Ground_Speed':
+                d3.select('#gs-value').text(Math.round(value));
                 break;
 
               case 'Airspeed_Indicated':
-                d3.select('#ias-value').text('' + Math.round(value) + '');
+                d3.select('#ias-value').text(Math.round(value));
                 d3.select('#ias-ruler').attr('transform','translate(0,'+value*12.364+')')
                 break;
 
-              case 'Kohlsman_setting_hg':
-                d3.select('#baro-value').text('' + Math.round(value) + '');
+              case 'KOHLSMAN_SETTING_HG':
+                d3.select('#baro-value').text(value.toFixed(2));
 
-              case 'heading':
+              case 'Plane_Heading_Degrees_Magnetic':
                 hdgtext = Math.abs(Math.floor(value % 360));
                 if (value < 0){
                   hdgtext = 360 - Math.abs(Math.floor(hdgtext));
                 }
-                //value = value*10
-                d3.select('#hdg-value').text('' + hdgtext + '');
+                d3.select('#hdg-value').text(hdgtext);
                 d3.select('#hdg-ruler').attr('transform', 'translate('+Math.round(value = 154-value * 15.4)+ ', 300)');
                 break;
 

@@ -65,7 +65,7 @@
 
         window.onload = setTimeout(function(){
           init();
-        }, 1000);
+        }, 300);
 
         function init(){
           let fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
@@ -93,8 +93,8 @@
             let arc2 = d3.svg.arc()
               .innerRadius(config.baseStyle.innerRadius - range.width)
               .outerRadius(config.baseStyle.innerRadius)
-              .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
-              .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
+              .startAngle((range.minValue * stepangle * (pi/180)) + (config.baseStyle.arcMinAngle * (pi/180)))
+              .endAngle((range.maxValue * stepangle * (pi/180)) + (config.baseStyle.arcMinAngle * (pi/180)));
             svg.append("path")
               .attr("class", "arc-"+i)
               .attr("fill",range.color)
@@ -117,10 +117,13 @@
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
+
             switch (key) {
 
               case id:
-                degrees = config.baseStyle.arcMinAngle + value * stepangle
+                //console.log(config.baseStyle.arcMinAngle);
+
+                degrees = config.baseStyle.arcMinAngle + (value * stepangle);
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
                 if ((stepangle) > 2.5) {
                   d3.select('#value').text(value.toFixed(2));

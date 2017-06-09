@@ -49,6 +49,68 @@
       }
     ]
   },
+  "ENG_MANIFOLD_PRESSURE_1": {
+    "rangemin": 0,
+    "rangemax": 35,
+    "label": "MAP 1",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 3
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 29,
+        "maxValue": 31,
+        "width": 8,
+        "activewidth": 60
+      }
+    ]
+  },
+  "ENG_MANIFOLD_PRESSURE_2": {
+    "rangemin": 0,
+    "rangemax": 35,
+    "label": "MAP 2",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "silver",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+            "color": "green",
+            "minValue": 20,
+            "maxValue": 29,
+            "width": 3
+          },
+          {
+            "color": "red",
+            "alerttype": "warning",
+            "alerttext": "high",
+            "minValue": 29,
+            "maxValue": 31,
+            "width": 8,
+            "activewidth": 60
+          }
+    ]
+  },
   "ELEVATOR_TRIM_POSITION": {
     "rangemin": -16,
     "rangemax": 16,
@@ -113,6 +175,15 @@
       "normalColor": "white"
     },
     "ranges": [
+      {
+        "color": "green",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 99.8,
+        "maxValue": 100,
+        "width": 2,
+        "activewidth": 60
+      }
     ]
   }
 }
