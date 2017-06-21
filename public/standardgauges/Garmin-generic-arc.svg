@@ -53,7 +53,7 @@
         let pi = Math.PI;
         let stepangle;
         let fullrange;
-        let valueangle;
+        let zeroangle;
         let id = window.frameElement.id;
 
         var path = window.parent.location.pathname.split('/');
@@ -68,8 +68,17 @@
         }, 300);
 
         function init(){
-          let fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
+
+
+          fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
           stepangle = fullrange / (config.rangemax-config.rangemin);
+// zeroangle noch fehlerhaft!
+          zeroangle = config.rangemin * stepangle * -1 + config.baseStyle.arcMinAngle;
+          //zeroangle =( stepangle * (config.rangemax-config.rangemin)/2 ) + config.baseStyle.arcMinAngle;
+
+
+          console.log(config.label + ' stepsize: ' + stepangle);
+          console.log(zeroangle);
 
           let svg = d3.select("svg")
               .append("svg")
@@ -79,22 +88,28 @@
               .append("g")
               .attr("transform", "translate(75,75)");
 
+          console.log('base-Arc: ' + config.baseStyle.arcMinAngle + ' - ' + config.baseStyle.arcMaxAngle);
+
           let arc = d3.svg.arc()
               .innerRadius(68)
               .outerRadius(70)
               .startAngle(config.baseStyle.arcMinAngle * (pi/180))
               .endAngle(config.baseStyle.arcMaxAngle * (pi/180));
+
           svg.append("path")
               .attr("class", "arc")
               .attr("fill", config.baseStyle.baseColor)
               .attr("d", arc);
 
           config.ranges.forEach(function(range, i) {
+          let rangemin = zeroangle + range.minValue * stepangle;
+          let rangemax =  zeroangle + range.maxValue * stepangle;
+          console.log(range.alerttext+ ': ' + rangemin + ' - ' + rangemax);
             let arc2 = d3.svg.arc()
               .innerRadius(config.baseStyle.innerRadius - range.width)
               .outerRadius(config.baseStyle.innerRadius)
-              .startAngle((range.minValue * stepangle * (pi/180)) + (config.baseStyle.arcMinAngle * (pi/180)))
-              .endAngle((range.maxValue * stepangle * (pi/180)) + (config.baseStyle.arcMinAngle * (pi/180)));
+              .startAngle(rangemin * (pi/180))
+              .endAngle(rangemax * (pi/180));
             svg.append("path")
               .attr("class", "arc-"+i)
               .attr("fill",range.color)
@@ -110,6 +125,8 @@
             .attr("d", "M 0,0 L 2,0 L 4,-50 L 0,-69 L -4,-50 L -2,0 L 0,0")
             .attr("id","needle")
             .attr('x', -75).attr('y', -75);
+
+            console.log('\n');
         }
 
         function Update(inputObject){
@@ -121,9 +138,7 @@
             switch (key) {
 
               case id:
-                //console.log(config.baseStyle.arcMinAngle);
-
-                degrees = config.baseStyle.arcMinAngle + (value * stepangle);
+                degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
                 if ((stepangle) > 2.5) {
                   d3.select('#value').text(value.toFixed(2));
@@ -133,6 +148,8 @@
 
                 let arccolor = config.baseStyle.baseColor;
                 config.ranges.forEach(function(range, i) {
+                  let rangemin = zeroangle + range.minValue * stepangle;
+                  let rangemax =  zeroangle + range.maxValue * stepangle;
                   let arc = d3.select(".arc-"+i);
                   let arc2;
                   if(value > range.minValue && value <= range.maxValue && range.alerttype) {
@@ -140,16 +157,15 @@
                     arc2 = d3.svg.arc()
                       .innerRadius(config.baseStyle.innerRadius - range.activewidth)
                       .outerRadius(config.baseStyle.innerRadius)
-                      .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
-                      .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
+                      .startAngle(rangemin * (pi/180))
+                      .endAngle(rangemax * (pi/180));
                     arccolor = range.color;
                   } else{
                     arc2 = d3.svg.arc()
                       .innerRadius(config.baseStyle.innerRadius - range.width)
                       .outerRadius(config.baseStyle.innerRadius)
-                      .startAngle(range.minValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180))
-                      .endAngle(range.maxValue * stepangle * (pi/180) + config.baseStyle.arcMinAngle * (pi/180));
-                  }
+                      .startAngle(rangemin * (pi/180))
+                      .endAngle(rangemax * (pi/180));                  }
                 arc.attr("d", arc2);
                 d3.select(".arc").attr("fill", arccolor)
                 })
@@ -158,8 +174,21 @@
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/3),"Plane_Pitch_Degrees":(y/10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*-1, "Plane_Altitude":x*y*-1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5, "RPM": x*5, "N1": x/4, "N2": x/2, "X3": y/1.5});
-
+                Update({
+                  "ELEVATOR_TRIM_POSITION":(x/3),
+                  "ELEVATOR_TRIM_POSITION2":(x/3),
+                  "Plane_Bank_Degrees":(x/3),
+                  "Plane_Pitch_Degrees":(y/10),
+                  "Autopilot_Altitude_Lock_Var":Math.abs(y*x*2),
+                  "Plane_Heading_Degrees_True":x,
+                  "Airspeed_Indicated": y*-1,
+                  "Plane_Altitude":x*y*-1,
+                  "GPS_GROUND_SPEED":y*-1.04/1.94384,
+                  "INCIDENCE_BETA":y/1.5,
+                  "GENERAL_ENG_RPM_1": x,
+                  "ENG_MANIFOLD_PRESSURE_1": x/2.2,
+                  "ENG_MANIFOLD_PRESSURE_2": x/2
+                });
                 break;
 
               default:
