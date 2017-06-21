@@ -6,16 +6,13 @@
     <script src="../../libs/socket.io.js"></script>
     <script src="../../libs/jquery.min.js"></script>
     <script src="../../libs/portable-sim-panels.js"></script>
-    <script
-       type="text/javascript">
-        let json;
-
-        window.parent.addEventListener("update", eventHandler, true);
-
-        function eventHandler(update) {
-          json = update.detail;
-        }
-        </script>
+    <script type="text/javascript">
+      let json;
+      window.parent.addEventListener("update", eventHandler, true);
+      function eventHandler(update) {
+      json = update.detail;
+      }
+    </script>
   </head>
   <body>
     <div id="GarminG3X">
@@ -28,7 +25,7 @@
         <object id="Gear_Position" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
       </div>
       <div class="mfd">
-        <object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml">       </object>
+        <object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object>
       </div>
       <div class="auxpages"></div>
     </div>

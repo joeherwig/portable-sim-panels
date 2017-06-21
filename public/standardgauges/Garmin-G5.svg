@@ -220,7 +220,7 @@
                 d3.select('#pitch-ruler').attr('transform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 break;
 
-              case 'Indicated_Altitude':
+              case 'PLANE_ALTITUDE':
                 if (value > 1000) {
                     d3.select('#alt-value-thousands').text(Math.floor(value/1000));
                     d3.select('#alt-value-hundreds').text(('00' + (Math.floor(Math.round(value))%1000)).slice(-3));
@@ -247,7 +247,7 @@
               case 'KOHLSMAN_SETTING_HG':
                 d3.select('#baro-value').text(value.toFixed(2));
 
-              case 'Plane_Heading_Degrees_Magnetic':
+              case 'PLANE_HEADING_DEGREES_TRUE':
                 hdgtext = Math.abs(Math.floor(value % 360));
                 if (value < 0){
                   hdgtext = 360 - Math.abs(Math.floor(hdgtext));
@@ -263,7 +263,7 @@
               case 'test':
                 let x = value.x;
                 let y = value.y;
-                Update({"Plane_Bank_Degrees":(x/-3),"Plane_Pitch_Degrees":(y/-10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "Plane_Heading_Degrees_True":x, "Airspeed_Indicated": y*1, "Plane_Altitude":x*y*1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5});
+                Update({"Plane_Bank_Degrees":(x/-3),"Plane_Pitch_Degrees":(y/-10),"Autopilot_Altitude_Lock_Var":Math.abs(y*x*2), "PLANE_HEADING_DEGREES_TRUE":x, "Airspeed_Indicated": y*1, "PLANE_ALTITUDE":x*y*1, "GPS_GROUND_SPEED":y*-1.04/1.94384, "INCIDENCE_BETA":y/1.5});
 
                 break;
 
