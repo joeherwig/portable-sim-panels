@@ -61,24 +61,17 @@
         path = path.join("/") + "/";
         $.getJSON(path+"/config.json", function(json){
           config = json[window.frameElement.id];
+          init();
         });
 
         window.onload = setTimeout(function(){
-          init();
-        }, 300);
+          //init();
+        }, 500);
 
         function init(){
-
-
           fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
           stepangle = fullrange / (config.rangemax-config.rangemin);
-// zeroangle noch fehlerhaft!
           zeroangle = config.rangemin * stepangle * -1 + config.baseStyle.arcMinAngle;
-          //zeroangle =( stepangle * (config.rangemax-config.rangemin)/2 ) + config.baseStyle.arcMinAngle;
-
-
-          console.log(config.label + ' stepsize: ' + stepangle);
-          console.log(zeroangle);
 
           let svg = d3.select("svg")
               .append("svg")
@@ -87,8 +80,6 @@
               .attr("height", 150)
               .append("g")
               .attr("transform", "translate(75,75)");
-
-          console.log('base-Arc: ' + config.baseStyle.arcMinAngle + ' - ' + config.baseStyle.arcMaxAngle);
 
           let arc = d3.svg.arc()
               .innerRadius(68)
@@ -104,7 +95,6 @@
           config.ranges.forEach(function(range, i) {
           let rangemin = zeroangle + range.minValue * stepangle;
           let rangemax =  zeroangle + range.maxValue * stepangle;
-          console.log(range.alerttext+ ': ' + rangemin + ' - ' + rangemax);
             let arc2 = d3.svg.arc()
               .innerRadius(config.baseStyle.innerRadius - range.width)
               .outerRadius(config.baseStyle.innerRadius)
@@ -121,12 +111,11 @@
             .style("stroke-width", 1)
             .style("stroke", "#000")
             .style("fill", "white")
-            //.attr("d", "m 1,0 2,-50 -3,-19 -3,19 2,50 2,0")
             .attr("d", "M 0,0 L 2,0 L 4,-50 L 0,-69 L -4,-50 L -2,0 L 0,0")
             .attr("id","needle")
             .attr('x', -75).attr('y', -75);
 
-            console.log('\n');
+            // console.log('\n');
         }
 
         function Update(inputObject){
@@ -145,30 +134,32 @@
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }
-
-                let arccolor = config.baseStyle.baseColor;
-                config.ranges.forEach(function(range, i) {
-                  let rangemin = zeroangle + range.minValue * stepangle;
-                  let rangemax =  zeroangle + range.maxValue * stepangle;
-                  let arc = d3.select(".arc-"+i);
-                  let arc2;
-                  if(value > range.minValue && value <= range.maxValue && range.alerttype) {
-                    // console.log(range.alerttype + ' ' + range.alerttext + ' ' + config.label );
-                    arc2 = d3.svg.arc()
-                      .innerRadius(config.baseStyle.innerRadius - range.activewidth)
-                      .outerRadius(config.baseStyle.innerRadius)
-                      .startAngle(rangemin * (pi/180))
-                      .endAngle(rangemax * (pi/180));
-                    arccolor = range.color;
-                  } else{
-                    arc2 = d3.svg.arc()
-                      .innerRadius(config.baseStyle.innerRadius - range.width)
-                      .outerRadius(config.baseStyle.innerRadius)
-                      .startAngle(rangemin * (pi/180))
-                      .endAngle(rangemax * (pi/180));                  }
-                arc.attr("d", arc2);
-                d3.select(".arc").attr("fill", arccolor)
-                })
+                //
+                if (config.ranges) {
+                  let arccolor = config.baseStyle.baseColor;
+                  config.ranges.forEach(function(range, i) {
+                    let rangemin = zeroangle + range.minValue * stepangle;
+                    let rangemax =  zeroangle + range.maxValue * stepangle;
+                    let arc = d3.select(".arc-"+i);
+                    let arc2;
+                    if(value > range.minValue && value <= range.maxValue && range.alerttype) {
+                      // console.log(range.alerttype + ' ' + range.alerttext + ' ' + config.label );
+                      arc2 = d3.svg.arc()
+                        .innerRadius(config.baseStyle.innerRadius - range.activewidth)
+                        .outerRadius(config.baseStyle.innerRadius)
+                        .startAngle(rangemin * (pi/180))
+                        .endAngle(rangemax * (pi/180));
+                      arccolor = range.color;
+                    } else{
+                      arc2 = d3.svg.arc()
+                        .innerRadius(config.baseStyle.innerRadius - range.width)
+                        .outerRadius(config.baseStyle.innerRadius)
+                        .startAngle(rangemin * (pi/180))
+                        .endAngle(rangemax * (pi/180));                  }
+                  arc.attr("d", arc2);
+                  d3.select(".arc").attr("fill", arccolor)
+                  })
+                }
                 break;
 
               case 'test':

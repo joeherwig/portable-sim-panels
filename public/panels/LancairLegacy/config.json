@@ -52,6 +52,40 @@
       }
     ]
   },
+  "GENERAL_ENG_RPM_2": {
+    "rangemin": -100,
+    "rangemax": 350,
+    "label": "RPM",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 28,
+        "width": 3,
+        "activewidth": 60,
+        "alerttype": "warning",
+        "alerttext": "high"
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 280,
+        "maxValue": 350,
+        "width": 8,
+        "activewidth": 60
+      }
+    ]
+  },
   "ENG_MANIFOLD_PRESSURE_1": {
     "rangemin": 0,
     "rangemax": 35,
@@ -148,44 +182,11 @@
         "activewidth": 30
       }
     ]
-  },  "ELEVATOR_TRIM_POSITION2": {
-      "rangemin": -60,
-      "rangemax": 60,
-      "label": "Elev Trim",
-      "baseStyle": {
-        "arcMinAngle": -180,
-        "arcMaxAngle": 0,
-        "pointerwidth": 2,
-        "innerRadius": 68,
-        "outerRadius": 70,
-        "baseColor": "grey",
-        "normalColor": "white"
-      },
-      "ranges": [
-        {
-          "color": "orange",
-          "alerttype": "caution",
-          "alerttext": "low",
-          "minValue": -60,
-          "maxValue": -45,
-          "width": 3,
-          "activewidth": 30
-        },
-        {
-          "color": "yellow",
-          "alerttype": "caution",
-          "alerttext": "high",
-          "minValue": -60,
-          "maxValue": 0,
-          "width": 3,
-          "activewidth": 10
-        }
-      ]
-    },
+  },
   "FLAPS_HANDLE_PERCENT": {
     "rangemin": 0,
     "rangemax": 100,
-    "label": "Flaps %",
+    "label": "Flaps handle %",
     "baseStyle": {
       "arcMinAngle": 90,
       "arcMaxAngle": 135,
@@ -198,6 +199,127 @@
     "ranges": [
     ]
   },
+"TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+  "rangemin": 0,
+  "rangemax": 100,
+  "label": "Flaps L °",
+  "baseStyle": {
+    "arcMinAngle": 90,
+    "arcMaxAngle": 135,
+    "pointerwidth": 2,
+    "innerRadius": 68,
+    "outerRadius": 70,
+    "baseColor": "grey",
+    "normalColor": "white"
+  },
+  "ranges": [
+  ]
+},
+"TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+"rangemin": 0,
+"rangemax": 100,
+"label": "Flaps R °",
+"baseStyle": {
+  "arcMinAngle": 90,
+  "arcMaxAngle": 135,
+  "pointerwidth": 2,
+  "innerRadius": 68,
+  "outerRadius": 70,
+  "baseColor": "grey",
+  "normalColor": "white"
+},
+"ranges": [
+]
+},
+"Vertical_Speed": {
+"rangemin": -4000,
+"rangemax": 4000,
+"label": "VSI",
+"baseStyle": {
+  "arcMinAngle": -240,
+  "arcMaxAngle": 60,
+  "pointerwidth": 2,
+  "innerRadius": 68,
+  "outerRadius": 70,
+  "baseColor": "grey",
+  "normalColor": "white"
+},
+"ranges": [
+  {
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": -8,
+    "maxValue": 8,
+    "width": 20,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": -1003,
+    "maxValue": -997,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": -2003,
+    "maxValue": -1997,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": -3003,
+    "maxValue": -2997,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": -4003,
+    "maxValue": -3997,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": 997,
+    "maxValue": 1003,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": 1997,
+    "maxValue": 2003,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": 2997,
+    "maxValue": 3003,
+    "width": 10,
+    "activewidth": 30
+  },{
+    "color": "grey",
+    "alerttype": "info",
+    "alerttext": "low",
+    "minValue": 3997,
+    "maxValue": 4003,
+    "width": 10,
+    "activewidth": 30
+  }
+]
+},
   "Gear_Position": {
     "rangemin": 0,
     "rangemax": 100,
@@ -218,8 +340,17 @@
         "alerttext": "down",
         "minValue": 99,
         "maxValue": 100,
-        "width": 2,
+        "width": 0,
         "activewidth": 60
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "moving",
+        "minValue": 2,
+        "maxValue": 98,
+        "width": 0,
+        "activewidth": 5
       }
     ]
   }

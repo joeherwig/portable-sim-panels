@@ -220,7 +220,7 @@
                 d3.select('#pitch-ruler').attr('transform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 break;
 
-              case 'PLANE_ALTITUDE':
+              case 'Plane_Altitude':
                 if (value > 1000) {
                     d3.select('#alt-value-thousands').text(Math.floor(value/1000));
                     d3.select('#alt-value-hundreds').text(('00' + (Math.floor(Math.round(value))%1000)).slice(-3));
@@ -246,8 +246,9 @@
 
               case 'KOHLSMAN_SETTING_HG':
                 d3.select('#baro-value').text(value.toFixed(2));
+                break;
 
-              case 'PLANE_HEADING_DEGREES_TRUE':
+              case 'Plane_Heading_Degrees_True':
                 hdgtext = Math.abs(Math.floor(value % 360));
                 if (value < 0){
                   hdgtext = 360 - Math.abs(Math.floor(hdgtext));
