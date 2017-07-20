@@ -180,7 +180,8 @@
                   "ENG_MANIFOLD_PRESSURE_1": x/2.2,
                   "ENG_MANIFOLD_PRESSURE_2": x/2,
                   "Gear_Position": y/4,
-                  "FLAPS_HANDLE_PERCENT": x/4
+                  "FLAPS_HANDLE_PERCENT": x/4,
+                  "Vertical_Speed": x*6
                 });
                 break;
 

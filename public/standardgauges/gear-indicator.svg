@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 150 150"
+   height="150px"
+   width="150px"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="gear-indicator.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2479"
+     inkscape:window-height="1410"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="3.1466667"
+     inkscape:cx="78.425072"
+     inkscape:cy="-2.6592745"
+     inkscape:window-x="81"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="label-value-group" />
+  <defs
+     id="defs17121">
+    <script
+       xlink:href="../libs/d3.3.min.js"
+       id="script9" />
+    <script
+       xlink:href="../libs/jquery.min.js"
+       id="script13" />
+    <script
+       type="text/javascript"
+       id="businesslogic"><![CDATA[
+
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
+
+        let config = {};
+        let id = window.frameElement.id;
+
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        $.getJSON(path+"/config.json", function(json){
+          config = json[window.frameElement.id];
+        });
+
+        window.onload = setTimeout(function(){
+          init();
+        }, 300);
+
+        function init(){
+
+        }
+
+        function Update(inputObject){
+          obj = inputObject;
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
+            let key = Object.keys(inputObject)[attr];
+            let value = Object.values(inputObject)[attr];
+
+            switch (key) {
+
+              case id:
+                d3.select("#left-main-gear").attr("fill", #green)
+                d3.select("#right-main-gear").attr("fill", #green)
+                d3.select("#nose-gear").attr("fill", #green)
+                })
+                break;
+
+              case 'test':
+                let x = value.x;
+                let y = value.y;
+                Update({
+                  "ELEVATOR_TRIM_POSITION":(x/3),
+                  "ELEVATOR_TRIM_POSITION2":(x/3),
+                  "Plane_Bank_Degrees":(x/3),
+                  "Plane_Pitch_Degrees":(y/10),
+                  "Autopilot_Altitude_Lock_Var":Math.abs(y*x*2),
+                  "Plane_Heading_Degrees_True":x,
+                  "Airspeed_Indicated": y*-1,
+                  "Plane_Altitude":x*y*-1,
+                  "GPS_GROUND_SPEED":y*-1.04/1.94384,
+                  "INCIDENCE_BETA":y/1.5,
+                  "GENERAL_ENG_RPM_1": x,
+                  "ENG_MANIFOLD_PRESSURE_1": x/2.2,
+                  "ENG_MANIFOLD_PRESSURE_2": x/2,
+                  "Gear_Position": y/4,
+                  "FLAPS_HANDLE_PERCENT": x/4
+                });
+                break;
+
+              default:
+                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+            };
+          }
+        }
+
+        ]]></script>
+  </defs>
+  <metadata
+     id="metadata17124">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="label-value-group"
+     transform="translate(8.5805085,-67.372882)">
+    <g
+       id="g4226"
+       style="fill:none">
+      <circle
+         r="29.713984"
+         cy="180.99152"
+         cx="21.834747"
+         id="path4141-3"
+         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+      <circle
+         r="29.713984"
+         cy="180.99152"
+         cx="110.91102"
+         id="path4141-3-7"
+         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+      <circle
+         r="29.713984"
+         cy="104.83475"
+         cx="66.372879"
+         id="path4141-3-7-5"
+         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

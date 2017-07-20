@@ -31,8 +31,7 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
-      {
+    "ranges": [{
         "color": "green",
         "minValue": 20,
         "maxValue": 28,
@@ -65,8 +64,7 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
-      {
+    "ranges": [{
         "color": "green",
         "minValue": 20,
         "maxValue": 28,
@@ -99,23 +97,22 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
+    "ranges": [{
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 3,
+        "activewidth": 20
+      },
       {
-            "color": "green",
-            "minValue": 20,
-            "maxValue": 29,
-            "width": 3,
-            "activewidth": 20
-          },
-          {
-            "color": "red",
-            "alerttype": "warning",
-            "alerttext": "high",
-            "minValue": 29,
-            "maxValue": 31,
-            "width": 8,
-            "activewidth": 60
-          }
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 29,
+        "maxValue": 31,
+        "width": 8,
+        "activewidth": 60
+      }
     ]
   },
   "ENG_MANIFOLD_PRESSURE_2": {
@@ -131,22 +128,21 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
+    "ranges": [{
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 3
+      },
       {
-            "color": "green",
-            "minValue": 20,
-            "maxValue": 29,
-            "width": 3
-          },
-          {
-            "color": "red",
-            "alerttype": "warning",
-            "alerttext": "high",
-            "minValue": 29,
-            "maxValue": 31,
-            "width": 8,
-            "activewidth": 60
-          }
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 29,
+        "maxValue": 31,
+        "width": 8,
+        "activewidth": 60
+      }
     ]
   },
   "ELEVATOR_TRIM_POSITION": {
@@ -162,8 +158,7 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
-      {
+    "ranges": [{
         "color": "orange",
         "alerttype": "caution",
         "alerttext": "low",
@@ -196,130 +191,125 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
-    ]
+    "ranges": []
   },
-"TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
-  "rangemin": 0,
-  "rangemax": 100,
-  "label": "Flaps L °",
-  "baseStyle": {
-    "arcMinAngle": 90,
-    "arcMaxAngle": 135,
-    "pointerwidth": 2,
-    "innerRadius": 68,
-    "outerRadius": 70,
-    "baseColor": "grey",
-    "normalColor": "white"
+  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "Flaps L °",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 135,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": []
   },
-  "ranges": [
-  ]
-},
-"TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
-"rangemin": 0,
-"rangemax": 100,
-"label": "Flaps R °",
-"baseStyle": {
-  "arcMinAngle": 90,
-  "arcMaxAngle": 135,
-  "pointerwidth": 2,
-  "innerRadius": 68,
-  "outerRadius": 70,
-  "baseColor": "grey",
-  "normalColor": "white"
-},
-"ranges": [
-]
-},
-"Vertical_Speed": {
-"rangemin": -4000,
-"rangemax": 4000,
-"label": "VSI",
-"baseStyle": {
-  "arcMinAngle": -240,
-  "arcMaxAngle": 60,
-  "pointerwidth": 2,
-  "innerRadius": 68,
-  "outerRadius": 70,
-  "baseColor": "grey",
-  "normalColor": "white"
-},
-"ranges": [
-  {
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": -8,
-    "maxValue": 8,
-    "width": 20,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": -1003,
-    "maxValue": -997,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": -2003,
-    "maxValue": -1997,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": -3003,
-    "maxValue": -2997,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": -4003,
-    "maxValue": -3997,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": 997,
-    "maxValue": 1003,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": 1997,
-    "maxValue": 2003,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": 2997,
-    "maxValue": 3003,
-    "width": 10,
-    "activewidth": 30
-  },{
-    "color": "grey",
-    "alerttype": "info",
-    "alerttext": "low",
-    "minValue": 3997,
-    "maxValue": 4003,
-    "width": 10,
-    "activewidth": 30
-  }
-]
-},
+  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "Flaps R °",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 135,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": []
+  },
+  "Vertical_Speed": {
+    "rangemin": -4000,
+    "rangemax": 4000,
+    "label": "VSI",
+    "baseStyle": {
+      "arcMinAngle": -240,
+      "arcMaxAngle": 60,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": [{
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": -15,
+      "maxValue": 15,
+      "width": 30,
+      "activewidth": 40
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": -1010,
+      "maxValue": -990,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": -2010,
+      "maxValue": -1990,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": -3010,
+      "maxValue": -2990,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": -4010,
+      "maxValue": -3990,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": 990,
+      "maxValue": 1010,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": 1990,
+      "maxValue": 2010,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": 2990,
+      "maxValue": 3010,
+      "width": 10,
+      "activewidth": 30
+    }, {
+      "color": "grey",
+      "alerttype": "info",
+      "alerttext": "low",
+      "minValue": 3990,
+      "maxValue": 4010,
+      "width": 10,
+      "activewidth": 30
+    }]
+  },
   "Gear_Position": {
     "rangemin": 0,
     "rangemax": 100,
@@ -333,8 +323,7 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [
-      {
+    "ranges": [{
         "color": "green",
         "alerttype": "info",
         "alerttext": "down",
