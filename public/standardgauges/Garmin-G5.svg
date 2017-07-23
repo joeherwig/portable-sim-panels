@@ -239,15 +239,16 @@
               case 'Autopilot_Altitude_Lock_Var':
                 apaltlock = value*-1;
                 d3.select('#ap-alt-value').text(Math.round(value));
-                d3.select('#ap-set-alt').attr('transform','translate(0,'+apaltlock*1.8545+')')
                 break;
 
               case 'Autopilot_Altitude_Lock':
               console.log (value);
                 if (value) {
                   d3.select('#ap-set-alt').style("display","block");
+                  d3.select('#ap-alt-active-sign').style("display","block");
                 } else {
                   d3.select('#ap-set-alt').style("display","none");
+                  d3.select('#ap-alt-active-sign').style("display","none");
                 }
                 break;
 
@@ -272,6 +273,13 @@
                 d3.select('#hdg-value').text(hdgtext);
                 d3.select('#hdg-ruler').attr('transform', 'translate('+Math.round(value = 154-value * 15.4)+ ', 300)');
                 break;
+
+                case 'Autopilot_Heading_Lock_Dir':
+                break;
+
+                case 'Autopilot_Heading_Lock_Dir':
+                break;
+
 
               case 'INCIDENCE_BETA':
                 d3.select('#slip-indicator-ball').attr('transform', 'translate('+Math.round(value)+ ', 0)');
