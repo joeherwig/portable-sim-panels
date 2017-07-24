@@ -285,9 +285,9 @@
                 break;
 
               case 'Plane_Heading_Degrees_Magnetic':
-                hdgtext = Math.abs(Math.floor(value % 360));
+                hdgtext = Math.abs(Math.round(value % 360));
                 if (value < 0){
-                  hdgtext = 360 - Math.abs(Math.floor(hdgtext));
+                  hdgtext = 360 - Math.abs(Math.round(hdgtext));
                 }
                 d3.select('#hdg-value').text(hdgtext);
                 d3.select('#hdg-ruler').attr('transform', 'translate(' + Math.round(154-value * 15.4)+ ', 300)');
