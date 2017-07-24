@@ -125,7 +125,7 @@
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
-      "baseColor": "grey",
+      "baseColor": "#333333",
       "normalColor": "white"
     },
     "ranges": [{
@@ -340,6 +340,102 @@
         "maxValue": 98,
         "width": 0,
         "activewidth": 5
+      }
+    ]
+  },
+  "GPH": {
+    "rangemin": 0,
+    "rangemax": 65,
+    "label": "Gal / h",
+    "baseStyle": {
+      "rulerwidth": 2,
+      "baseColor": "#333333",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 10,
+        "maxValue": 40,
+        "width": 1
+      },{
+        "color": "orange",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 40,
+        "maxValue": 50,
+        "width": 1,
+        "activewidth": 4
+      },{
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 50,
+        "maxValue": 65,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GPH2": {
+    "rangemin": 0,
+    "rangemax": 65,
+    "label": "Gal / h",
+    "baseStyle": {
+      "rulerwidth": 2,
+      "baseColor": "#333333",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "silver",
+        "minValue": 0,
+        "maxValue": 10,
+        "width": 1
+      },{
+        "color": "orange",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 40,
+        "maxValue": 50,
+        "width": 1,
+        "activewidth": 4
+      },{
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 50,
+        "maxValue": 65,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GPH3": {
+    "rangemin": 0,
+    "rangemax": 65,
+    "label": "Gal / h",
+    "baseStyle": {
+      "rulerwidth": 2,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 10,
+        "maxValue": 40,
+        "width": 10
+      },{
+        "color": "orange",
+        "minValue": 40,
+        "maxValue": 50,
+        "width": 10
+      },{
+        "color": "red",
+        "minValue": 50,
+        "maxValue": 65,
+        "width": 10
       }
     ]
   }
