@@ -343,9 +343,9 @@
       }
     ]
   },
-  "GPH": {
+  "ENG_FUEL_FLOW_GPH_1": {
     "rangemin": 0,
-    "rangemax": 65,
+    "rangemax": 20,
     "label": "Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
@@ -355,31 +355,31 @@
     "ranges": [
       {
         "color": "green",
-        "minValue": 10,
-        "maxValue": 40,
+        "minValue": 3,
+        "maxValue": 16,
         "width": 1
       },{
         "color": "orange",
         "alerttype": "info",
         "alerttext": "low",
-        "minValue": 40,
-        "maxValue": 50,
+        "minValue": 16,
+        "maxValue": 19,
         "width": 1,
         "activewidth": 4
       },{
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 50,
-        "maxValue": 65,
+        "minValue": 19,
+        "maxValue": 20,
         "width": 1,
         "activewidth": 15
       }
     ]
   },
-  "GPH2": {
+  "ENG_FUEL_FLOW_GPH_3": {
     "rangemin": 0,
-    "rangemax": 65,
+    "rangemax": 20,
     "label": "Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
@@ -389,31 +389,31 @@
     "ranges": [
       {
         "color": "silver",
-        "minValue": 0,
-        "maxValue": 10,
+        "minValue": 3,
+        "maxValue": 16,
         "width": 1
       },{
         "color": "orange",
         "alerttype": "info",
         "alerttext": "low",
-        "minValue": 40,
-        "maxValue": 50,
+        "minValue": 16,
+        "maxValue": 19,
         "width": 1,
         "activewidth": 4
       },{
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 50,
-        "maxValue": 65,
+        "minValue": 19,
+        "maxValue": 20,
         "width": 1,
         "activewidth": 15
       }
     ]
   },
-  "GPH3": {
+  "ENG_FUEL_FLOW_GPH_2": {
     "rangemin": 0,
-    "rangemax": 65,
+    "rangemax": 20,
     "label": "Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
@@ -423,18 +423,18 @@
     "ranges": [
       {
         "color": "green",
-        "minValue": 10,
-        "maxValue": 40,
+        "minValue": 3,
+        "maxValue": 16,
         "width": 10
       },{
         "color": "orange",
-        "minValue": 40,
-        "maxValue": 50,
+        "minValue": 16,
+        "maxValue": 19,
         "width": 10
       },{
         "color": "red",
-        "minValue": 50,
-        "maxValue": 65,
+        "minValue": 19,
+        "maxValue": 20,
         "width": 10
       }
     ]
