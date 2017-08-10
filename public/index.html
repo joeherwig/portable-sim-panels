@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>portable-sim-panels Tester</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css" />
-		<script src="socket.io/socket.io.js"></script>
-		<script src="libs/jquery.min.js"></script>
-		<script src="libs/gaugeclient.js"></script>
-		<script>
-			function Update(data){
-			};
-		</script>
-	</head>
-	<body>
-		<div id="content"></div>
-		<footer>
-			<input id="text" type="text" placeholder="test-json" value='{"Plane_Pitch_Degrees":70,"Plane_Bank_Degrees":-15, "Autopilot_Altitude_Lock_Var":36000.765}'/>
-			<input id="senden" type="submit" class="btn" value="send" />
-			<a href="standardgauges/Garmin-G5.svg" target="demo-gauge">Garmin-G5 Demo</a>
-		</footer>
-	</body>
+  <head>
+    <title>Lancair Legacy V2</title>
+    <link rel="stylesheet" href="panel.css">
+    <script src="../../libs/socket.io.js"></script>
+    <script src="../../libs/jquery.min.js"></script>
+    <script src="../../libs/portable-sim-panels.js"></script>
+    <script type="text/javascript">
+      let json;
+      window.parent.addEventListener("update", eventHandler, true);
+      function eventHandler(update) {
+        //console.log(update.detail);
+        json = update.detail;
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="GarminG3X_">
+      <div class="leftbar_">
+
+        <object id="GENERAL ENG RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="GENERAL ENG RPM:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="ENG MANIFOLD PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="ENG MANIFOLD PRESSURE:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="GEAR TOTAL PCT EXTENDED" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <object id="VERTICAL SPEED" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+        <br/>
+        <object id="ENG FUEL FLOW GPH:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
+        <br/>
+        <object id="ENG FUEL FLOW GPH:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
+        <br/>
+        <object id="GPH3" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
+        <br/>
+
+      </div>
+      <div class="mfd_">
+        <object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object>
+      </div>
+      <div class="auxpages"></div>
+    </div>
+  </body>
 </html>

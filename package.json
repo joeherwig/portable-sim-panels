@@ -9,9 +9,11 @@
     "type": "git",
     "url": "https://github.com/joeherwig/portable-sim-panels"
   },
+  "gypfile": true,
   "dependencies": {
-    "body-parser": "1.17.1",
-    "express": "3.21.2",
+    "body-parser": "1.17.2",
+    "express": "4.15.4",
+    "nan": "2.6.2",
     "socketio": "1.0.0"
   }
 }

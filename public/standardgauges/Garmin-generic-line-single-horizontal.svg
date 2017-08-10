@@ -76,7 +76,6 @@
           config.ranges.forEach(function(range, i) {
             let rangemin = (range.minValue * stepwidth) + zeroposition;
             let rangemax =  (range.maxValue * stepwidth) + zeroposition;
-            console.log(rangemin + ' bis '+ rangemax);
             svg.append("rect")
               .attr("class", 'range-' + i)
               .attr("fill", range.color)

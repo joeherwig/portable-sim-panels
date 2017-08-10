@@ -18,9 +18,9 @@
   "alt": {
     "lean-hint": 4000
   },
-  "GENERAL_ENG_RPM_1": {
+  "GENERAL ENG RPM:1": {
     "rangemin": -100,
-    "rangemax": 350,
+    "rangemax": 3000,
     "label": "RPM",
     "baseStyle": {
       "arcMinAngle": -140,
@@ -33,27 +33,54 @@
     },
     "ranges": [{
         "color": "green",
-        "minValue": 20,
-        "maxValue": 28,
-        "width": 3,
-        "activewidth": 60,
-        "alerttype": "warning",
-        "alerttext": "high"
+        "minValue": 2000,
+        "maxValue": 2700,
+        "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 280,
-        "maxValue": 350,
+        "minValue": 2700,
+        "maxValue": 3000,
         "width": 8,
         "activewidth": 60
       }
     ]
   },
-  "GENERAL_ENG_RPM_2": {
+  "GENERAL ENG RPM:1": {
+      "rangemin": -100,
+      "rangemax": 3000,
+      "label": "RPM",
+      "baseStyle": {
+        "arcMinAngle": -140,
+        "arcMaxAngle": 110,
+        "pointerwidth": 2,
+        "innerRadius": 68,
+        "outerRadius": 70,
+        "baseColor": "grey",
+        "normalColor": "white"
+      },
+      "ranges": [{
+          "color": "green",
+          "minValue": 2000,
+          "maxValue": 2700,
+          "width": 2
+        },
+        {
+          "color": "red",
+          "alerttype": "warning",
+          "alerttext": "high",
+          "minValue": 2700,
+          "maxValue": 3000,
+          "width": 2,
+          "activewidth": 60
+        }
+      ]
+    },
+  "GENERAL ENG RPM:2": {
     "rangemin": -100,
-    "rangemax": 350,
+    "rangemax": 2900,
     "label": "RPM",
     "baseStyle": {
       "arcMinAngle": -140,
@@ -66,25 +93,22 @@
     },
     "ranges": [{
         "color": "green",
-        "minValue": 20,
-        "maxValue": 28,
-        "width": 3,
-        "activewidth": 60,
-        "alerttype": "warning",
-        "alerttext": "high"
+        "minValue": 2000,
+        "maxValue": 2700,
+        "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 280,
-        "maxValue": 350,
-        "width": 8,
+        "minValue": 2700,
+        "maxValue": 3000,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
-  "ENG_MANIFOLD_PRESSURE_1": {
+  "ENG MANIFOLD PRESSURE:1": {
     "rangemin": 0,
     "rangemax": 35,
     "label": "MAP 1",
@@ -101,7 +125,7 @@
         "color": "green",
         "minValue": 20,
         "maxValue": 29,
-        "width": 3,
+        "width": 2,
         "activewidth": 20
       },
       {
@@ -110,12 +134,12 @@
         "alerttext": "high",
         "minValue": 29,
         "maxValue": 31,
-        "width": 8,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
-  "ENG_MANIFOLD_PRESSURE_2": {
+  "ENG MANIFOLD PRESSURE:2": {
     "rangemin": 0,
     "rangemax": 35,
     "label": "MAP 2",
@@ -132,7 +156,7 @@
         "color": "green",
         "minValue": 20,
         "maxValue": 29,
-        "width": 3
+        "width": 2
       },
       {
         "color": "red",
@@ -140,12 +164,12 @@
         "alerttext": "high",
         "minValue": 29,
         "maxValue": 31,
-        "width": 8,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
-  "ELEVATOR_TRIM_POSITION": {
+  "ELEVATOR TRIM POSITION": {
     "rangemin": -16,
     "rangemax": 16,
     "label": "Elev Trim",
@@ -178,7 +202,7 @@
       }
     ]
   },
-  "FLAPS_HANDLE_PERCENT": {
+  "FLAPS HANDLE PERCENT": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps handle %",
@@ -193,7 +217,7 @@
     },
     "ranges": []
   },
-  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+  "TRAILING EDGE FLAPS LEFT ANGLE": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps L °",
@@ -208,7 +232,7 @@
     },
     "ranges": []
   },
-  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+  "TRAILING EDGE FLAPS RIGHT ANGLE": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps R °",
@@ -223,7 +247,7 @@
     },
     "ranges": []
   },
-  "Vertical_Speed": {
+  "VERTICAL SPEED": {
     "rangemin": -4000,
     "rangemax": 4000,
     "label": "VSI",
@@ -310,9 +334,9 @@
       "activewidth": 30
     }]
   },
-  "Gear_Position": {
+    "GEAR TOTAL PCT EXTENDED": {
     "rangemin": 0,
-    "rangemax": 100,
+    "rangemax": 1,
     "label": "Gear %",
     "baseStyle": {
       "arcMinAngle": 90,
@@ -327,8 +351,8 @@
         "color": "green",
         "alerttype": "info",
         "alerttext": "down",
-        "minValue": 99,
-        "maxValue": 100,
+        "minValue": 0.99,
+        "maxValue": 1,
         "width": 0,
         "activewidth": 60
       },
@@ -343,9 +367,9 @@
       }
     ]
   },
-  "ENG_FUEL_FLOW_GPH_1": {
+  "ENG FUEL FLOW PPH:1": {
     "rangemin": 0,
-    "rangemax": 20,
+    "rangemax": 15,
     "label": "Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
@@ -355,31 +379,31 @@
     "ranges": [
       {
         "color": "green",
-        "minValue": 3,
-        "maxValue": 16,
+        "minValue": 6,
+        "maxValue": 10,
         "width": 1
       },{
         "color": "orange",
         "alerttype": "info",
         "alerttext": "low",
-        "minValue": 16,
-        "maxValue": 19,
+        "minValue": 10,
+        "maxValue": 13,
         "width": 1,
         "activewidth": 4
       },{
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 19,
-        "maxValue": 20,
+        "minValue": 13,
+        "maxValue": 15,
         "width": 1,
         "activewidth": 15
       }
     ]
   },
-  "ENG_FUEL_FLOW_GPH_3": {
+  "ENG FUEL FLOW PPH:2": {
     "rangemin": 0,
-    "rangemax": 20,
+    "rangemax": 15,
     "label": "Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
@@ -389,53 +413,25 @@
     "ranges": [
       {
         "color": "silver",
-        "minValue": 3,
-        "maxValue": 16,
+        "minValue": 6,
+        "maxValue": 10,
         "width": 1
       },{
         "color": "orange",
         "alerttype": "info",
         "alerttext": "low",
-        "minValue": 16,
-        "maxValue": 19,
+        "minValue": 10,
+        "maxValue": 13,
         "width": 1,
         "activewidth": 4
       },{
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 19,
-        "maxValue": 20,
+        "minValue": 13,
+        "maxValue": 15,
         "width": 1,
         "activewidth": 15
-      }
-    ]
-  },
-  "ENG_FUEL_FLOW_GPH_2": {
-    "rangemin": 0,
-    "rangemax": 20,
-    "label": "Gal / h",
-    "baseStyle": {
-      "rulerwidth": 2,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
-    "ranges": [
-      {
-        "color": "green",
-        "minValue": 3,
-        "maxValue": 16,
-        "width": 10
-      },{
-        "color": "orange",
-        "minValue": 16,
-        "maxValue": 19,
-        "width": 10
-      },{
-        "color": "red",
-        "minValue": 19,
-        "maxValue": 20,
-        "width": 10
       }
     ]
   }

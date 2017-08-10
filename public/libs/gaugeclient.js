@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	let socket = io.connect();
 	let jsonstring = '{}';
-	socket.on('chat', function (data) {
+	socket.on('simPanel', function (data) {
 		Update(data);
+		console.log(data);
 	});
 
 	// Nachricht senden
@@ -16,16 +17,16 @@ $(document).ready(function(){
 			}
 		}
 		jsonstring = JSON.parse(jsonstring);
-		socket.emit('chat', jsonstring);
+		socket.emit('simPanel', jsonstring);
 	}
 
 	function publish(object){
-		socket.emit('chat', object);
+		socket.emit('simPanel', object);
 	}
 
 	$('#senden').click(senden);
 	$('#content').mousemove(senden);
-	
+
 	$('#text').keypress(function (e) {
 		if (e.which == 13) {
 			senden();

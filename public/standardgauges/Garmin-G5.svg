@@ -56,19 +56,19 @@
          id="stop4698" />
       <stop
          id="stop4710"
-         offset="0.4995"
+         offset="0.4999999"
          style="stop-color:#784c16;stop-opacity:1" />
       <stop
          id="stop4706"
-         offset="0.4995"
+         offset="0.4999999"
          style="stop-color:#ffffff;stop-opacity:1" />
       <stop
          id="stop4704"
-         offset="0.5005"
+         offset="0.5000001"
          style="stop-color:#ffffff;stop-opacity:1" />
       <stop
          style="stop-color:#4d62ae;stop-opacity:1"
-         offset="0.5005"
+         offset="0.5000001"
          id="stop4708" />
       <stop
          style="stop-color:#334897;stop-opacity:1"
@@ -141,7 +141,6 @@
        id="script4532"><![CDATA[
         let bank = 0;
         let pitch = 0;
-        let obj = {};
         let hdgtext = 0;
         let config = {};
         let currentalt = 0;
@@ -206,24 +205,23 @@
         }
 
         function Update(inputObject){
-          obj = inputObject;
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
             switch (key) {
 
-              case 'Autopilot_Master':
-                ap = value;
+              case 'AUTOPILOT MASTER':
+                apmaster = value;
                 break;
 
-              case 'Plane_Bank_Degrees':
+              case 'PLANE BANK DEGREES':
                 bank = value;
                 d3.select('#bank-indicator').attr('transform', 'rotate('+bank+', 500, 373.5)');
                 //d3.select('#horizon-gradient').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
                 //d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
                 break;
 
-              case 'Plane_Pitch_Degrees':
+              case 'PLANE PITCH DEGREES':
                 pitch = value*-1;
                 d3.select('#horizon-gradient').attr('gradientTransform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 //d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
@@ -231,7 +229,7 @@
                 d3.select('#pitch-ruler').attr('transform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 break;
 
-              case 'Plane_Altitude':
+              case 'INDICATED ALTITUDE':
                 currentalt = value;
                 if (value > 1000) {
                     d3.select('#alt-value-thousands').text(Math.floor(value/1000));
@@ -252,7 +250,7 @@
                 }
                 break;
 
-              case 'Autopilot_Altitude_Lock_Var':
+              case 'AUTOPILOT ALTITUDE LOCK VAR':
                 if (apaltlock !== value *-1) {
                   selectedaltitudereached = false;
                   d3.select('#ap-alt-value').style('fill','#0bbbbb')
@@ -261,8 +259,8 @@
                 d3.select('#ap-alt-value').text(Math.round(value));
                 break;
 
-              case 'Autopilot_Altitude_Lock':
-                if (value && ap) {
+              case 'AUTOPILOT ALTITUDE LOCK':
+                if (value && apaltlock && apmaster) {
                   d3.select('#ap-selected-alt').style("display","block");
                   d3.select('#ap-alt-active-sign').style("display","block");
                 } else {
@@ -271,23 +269,23 @@
                 }
                 break;
 
-              case 'GPS_Ground_Speed':
+              case 'GPS GROUND SPEED':
                 d3.select('#gs-value').text(Math.round(value));
                 break;
 
-              case 'Airspeed_Indicated':
+              case 'AIRSPEED INDICATED':
                 d3.select('#ias-value tspan').text(Math.round(value));
                 d3.select('#ias-ruler').attr('transform','translate(0,'+value*12.364+')')
                 break;
 
-              case 'KOHLSMAN_SETTING_HG':
+              case 'KOHLSMAN SETTING MB':
                 d3.select('#baro-value').text(value.toFixed(0));
                 break;
 
-              case 'Plane_Heading_Degrees_Magnetic':
-                hdgtext = Math.abs(Math.round(value % 360));
+              case 'PLANE HEADING DEGREES MAGNETIC':
+                hdgtext = Math.abs(Math.floor(value % 360));
                 if (value < 0){
-                  hdgtext = 360 - Math.abs(Math.round(hdgtext));
+                  hdgtext = 360 - Math.abs(Math.floor(hdgtext));
                 }
                 d3.select('#hdg-value').text(hdgtext);
                 d3.select('#hdg-ruler').attr('transform', 'translate(' + Math.round(154-value * 15.4)+ ', 300)');
@@ -295,12 +293,12 @@
 
                 break;
 
-              case 'Autopilot_Heading_Lock_Dir':
+                case 'AUTOPILOT HEADING LOCK DIR':
                 aphdglockdir = value;
                 break;
 
-              case 'Autopilot_Heading_Lock':
-                if (value && ap) {
+              case 'AUTOPILOT HEADING LOCK':
+                if (value && aphdglockdir && apmaster) {
                   d3.select('#ap-selected-hdg-bug').style('display','block')
                 } else {
                   d3.select('#ap-selected-hdg-bug').style('display','none')
@@ -308,7 +306,7 @@
                 break;
 
 
-              case 'INCIDENCE_BETA':
+              case 'INCIDENCE BETA':
                 d3.select('#slip-indicator-ball').attr('transform', 'translate('+Math.round(value)+ ', 0)');
                 break;
 

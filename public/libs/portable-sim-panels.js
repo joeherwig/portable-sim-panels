@@ -1,8 +1,7 @@
 window.onload = setTimeout(function(){
   var socket = io.connect();
-  socket.on('chat', function (data) {
+  socket.on('simPanel', function (data) {
     //Update(data);
-
   var update = new CustomEvent(
     "update",
     {
