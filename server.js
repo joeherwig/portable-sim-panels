@@ -2,8 +2,10 @@
 const simConnect = require('./build/Release/node-simconnect')
 ,   express = require('express')
 ,   app = express()
+,   aircraftVars = require('./public/libs/getAircraftVars')
 ,   server = require('http').createServer(app)
 ,   io = require('socket.io').listen(server)
+,   jsonfile = require('jsonfile')
 ,   bodyParser = require("body-parser");
 
 // From SimConnect.h:
@@ -16,8 +18,9 @@ const SIMCONNECT_DATA_REQUEST_FLAG_CHANGED = 1;
 const SIMCONNECT_DATA_REQUEST_FLAG_TAGGED = 2;
 
 var desiredVars = require('./desiredVars.json');
-let myVars = [];
-let json ={};
+let myVars = []
+,   json ={}
+,   aircraft;
 
 connectToSim();
 
@@ -45,10 +48,8 @@ function connectToSim() {
         }, 5000);
     }
 }
-
 server.listen(8080);
 console.log('Der Server läuft nun unter http://127.0.0.1:8080' + '/');
-
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
@@ -73,7 +74,7 @@ io.sockets.on('connection', function (socket) {
 	// wenn ein Benutzer einen Text senden
 	socket.on('simPanel', function (data) {
 		// so wird dieser Text an alle anderen Benutzer gesendet
-    console.log("\n-- received by socket: "+data+"\n");
+    //console.log("\n-- received by socket: "+data+"\n");
 		socket.emit('simPanel', data);
 	});
 });
@@ -92,12 +93,13 @@ function setupDataRequests(name) {
     // Get the .air file name of the loaded aircraft. Then get the aircraft title.
     simConnect.requestSystemState("AircraftLoaded", function(obj) {
         var airFile = obj.string;
-
         simConnect.requestDataOnSimObject([["TITLE", null, 11, "Title"]], function(data) {
-            console.log("Aircraft loaded: " + data[0] + " (" + airFile + ")");
-          }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+          aircraft = data[0];
+          aircraftVars(aircraft)
+            .then(currentAircraftVars => subscribeAircraftData(currentAircraftVars))
+            .catch(() => {});
+        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
     });
-
 
     // Subscribe to paused/unpaused event
     simConnect.subscribeToSystemEvent("Pause", (paused) => {
@@ -107,36 +109,38 @@ function setupDataRequests(name) {
             console.log("Sim un-paused");
     });
 
+    simConnect.subscribeToSystemEvent("AircraftLoaded", (aircraft) => {
+      simConnect.requestDataOnSimObject([["ATC ID", null, 11, "ATC ID"]], function(data) {
+          io.emit('simPanel', {"ATC ID": data[0]});
+        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+
+      simConnect.requestDataOnSimObject([["TITLE", null, 11, "Title"]], function(data) {
+        aircraft = data[0];
+        aircraftVars(aircraft)
+          .then(currentAircraftVars => subscribeAircraftData(currentAircraftVars))
+          .catch(() => {});
+        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+    });
+
+
     desiredVars.forEach(function(variable, i) {
       let minDelta = variable.epsilon ? variable.epsilon : 0.0;
       myVars.push([variable.name, variable.unitsname]);
-      /*
-      simConnect.requestDataOnSimObject([[variable.name, variable.unitsname, variable.type, minDelta]], function(data) {
-        let myvariable = (variable.name).replace(/ /g, '_').replace(/:/, '_');
-        io.emit('simPanel', '{ "' + myvariable + '": ' + data + ' }');
-      }, 0, SIMCONNECT_PERIOD_VISUAL_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED );
-      */
     })
+    subscribeAircraftData(myVars);
 
-    simConnect.requestDataOnSimObject(myVars, function(data) {
-      let json = '{'
-      data.forEach(function(data, i) {
-        json += '"' + desiredVars[i].name + '": ' + data + ',';
-      })
-      json = json.substr(0,json.length-1);
-      json += '}'
-      console.log(JSON.parse(json));
-      io.emit('simPanel', JSON.parse(json));
-    }, 0, SIMCONNECT_PERIOD_VISUAL_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
-
-    /*
-    simConnect.requestDataOnSimObject([
-            ["GENERAL ENG THROTTLE LEVER POSITION:1","Percent over 100",1,1],
-            ["GENERAL ENG THROTTLE LEVER POSITION:2","Percent over 100",5,1],
-            ["TRAILING EDGE FLAPS LEFT ANGLE","degrees", 1, 1]
-        ], function(data) {
-            console.log("Engine state:  " + data[0] + "," + data[1] + ","  + data[2] + ","  + data[3]);
-        }, 0, SIMCONNECT_PERIOD_SIM_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
-        */
-
+    function subscribeAircraftData(myVars) {
+      console.log(myVars);
+      simConnect.requestDataOnSimObject(myVars, function(data) {
+        let json = '{'
+        data.forEach(function(data, i) {
+          json += '"' + desiredVars[i].name + '": ' + data + ',';
+        })
+        json = json.substr(0,json.length-1);
+        json += '}'
+        //console.log(JSON.parse(json));
+        console.log();
+        io.emit('simPanel', JSON.parse(json));
+      }, 0, SIMCONNECT_PERIOD_VISUAL_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+    }
 }
