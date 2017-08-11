@@ -5,6 +5,7 @@ Currently only supported for 32 Bit Simconnect (FSX and Prepar3D < v4)
 ## Build
 ### Requirements
 * Node.js (32-bit version for compiling and running Simconnect32 bit.)
+* node-gyp (globally installed) https://github.com/nodejs/node-gyp
 * Visual Studio
 * FSX or P3D SimConnect SDK files (.lib and .h).
 
@@ -20,4 +21,7 @@ To build the native node module you must provide your own SDK files. For FSX:SE,
 * If everything went well you should be able to run the simple example program: by running `npm start`.
 
 ### Use
-Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/LancairLegacy/](http://localhost:8080/panels/LancairLegacy/)
+Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/1EP/](http://localhost:8080/panels/1EP/)
+
+### Pending
+[ ]  Test with 64Bit Simconnect from Prepar3D V4.
