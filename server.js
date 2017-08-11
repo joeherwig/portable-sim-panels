@@ -64,8 +64,6 @@ app.post('/',function(req,res,next){
 	res.end("published");
 } );
 
-// Websocket
-
 io.sockets.on('connection', function (socket) {
 	// der Client ist verbunden
 	socket.emit('simPanel', { zeit: new Date(), text: 'Du bist nun mit dem Server verbunden!' });
@@ -86,7 +84,7 @@ function setupDataRequests(name) {
     var gnd = 1;
 
     // Set the aircraft's parking brake on
-    simConnect.setDataOnSimObject("BRAKE PARKING POSITION:1", "Position", 1);
+    //simConnect.setDataOnSimObject("BRAKE PARKING POSITION:1", "Position", 0);
 
     // Get the .air file name of the loaded aircraft. Then get the aircraft title.
     simConnect.requestSystemState("AircraftLoaded", function(obj) {
@@ -122,6 +120,8 @@ function setupDataRequests(name) {
     };
 
     function subscribeAircraftVars(myVars) {
+      console.log('\n subscribing to: \n');
+      console.log(myVars);
       simConnect.requestDataOnSimObject(myVars, function(data) {
         let json = '{'
         data.forEach(function(data, i) {
