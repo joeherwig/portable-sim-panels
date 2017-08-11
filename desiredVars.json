@@ -19,11 +19,10 @@
   {"name":"ENG MANIFOLD PRESSURE:2","unitsname":"inHg", "type": 8, "epsilon": 0.1},
   {"name":"ENG FUEL FLOW GPH:1","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
   {"name":"ENG FUEL FLOW GPH:2","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
-  {"name":"ENG FUEL FLOW PPH:1","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
-  {"name":"ENG FUEL FLOW PPH:2","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
+  {"name":"ENG FUEL FLOW PPH:1","unitsname":"Pounds per hour", "type": 8, "epsilon": 0.1},
+  {"name":"ENG FUEL FLOW PPH:2","unitsname":"Pounds per hour", "type": 8, "epsilon": 0.1},
   {"name":"GENERAL ENG RPM:1","unitsname":"RPM", "type": 8, "epsilon": 0.1},
   {"name":"GENERAL ENG RPM:2","unitsname":"RPM", "type": 8, "epsilon": 0.1},
-
   {"name":"AUTOPILOT AVAILABLE","unitsname":"bool", "type": 8},
   {"name":"AUTOPILOT MASTER","unitsname":"bool", "type": 8},
   {"name":"AUTOPILOT NAV SELECTED","unitsname":"bool", "type": 8},

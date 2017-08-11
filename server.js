@@ -5,7 +5,6 @@ const simConnect = require('./build/Release/node-simconnect')
 ,   aircraftVars = require('./public/libs/getAircraftVars')
 ,   server = require('http').createServer(app)
 ,   io = require('socket.io').listen(server)
-,   jsonfile = require('jsonfile')
 ,   bodyParser = require("body-parser");
 
 // From SimConnect.h:
@@ -19,8 +18,7 @@ const SIMCONNECT_DATA_REQUEST_FLAG_TAGGED = 2;
 
 var desiredVars = require('./desiredVars.json');
 let myVars = []
-,   json ={}
-,   aircraft;
+,   json ={};
 
 connectToSim();
 
@@ -92,13 +90,7 @@ function setupDataRequests(name) {
 
     // Get the .air file name of the loaded aircraft. Then get the aircraft title.
     simConnect.requestSystemState("AircraftLoaded", function(obj) {
-        var airFile = obj.string;
-        simConnect.requestDataOnSimObject([["TITLE", null, 11, "Title"]], function(data) {
-          aircraft = data[0];
-          aircraftVars(aircraft)
-            .then(currentAircraftVars => subscribeAircraftData(currentAircraftVars))
-            .catch(() => {});
-        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+      fetchAircraftConst();
     });
 
     // Subscribe to paused/unpaused event
@@ -110,27 +102,26 @@ function setupDataRequests(name) {
     });
 
     simConnect.subscribeToSystemEvent("AircraftLoaded", (aircraft) => {
-      simConnect.requestDataOnSimObject([["ATC ID", null, 11, "ATC ID"]], function(data) {
-          io.emit('simPanel', {"ATC ID": data[0]});
-        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
-
-      simConnect.requestDataOnSimObject([["TITLE", null, 11, "Title"]], function(data) {
-        aircraft = data[0];
-        aircraftVars(aircraft)
-          .then(currentAircraftVars => subscribeAircraftData(currentAircraftVars))
-          .catch(() => {});
-        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+      fetchAircraftConst();
     });
-
 
     desiredVars.forEach(function(variable, i) {
       let minDelta = variable.epsilon ? variable.epsilon : 0.0;
       myVars.push([variable.name, variable.unitsname]);
     })
-    subscribeAircraftData(myVars);
 
-    function subscribeAircraftData(myVars) {
-      console.log(myVars);
+    subscribeAircraftVars(myVars);
+
+    function fetchAircraftConst(){
+      simConnect.requestDataOnSimObject([["TITLE", null, 11],["ATC ID", null, 11],["ATC TYPE", null, 11],["NUMBER OF ENGINES", "Number"],["ENGINE TYPE","ENUM"]], function(data) {
+        aircraft = JSON.parse('{"aircraft": "'+(data[0]+'').replace(/"/g, '-')+'", "ATC ID": "'+data[1]+'", "atc type": "'+data[2]+'", "number of engines": '+data[3]+', "engine type": '+data[4]+'}');
+        aircraftVars(aircraft)
+          .then(currentAircraftVars => subscribeAircraftVars(currentAircraftVars))
+          .catch(() => {});
+        }, 0, SIMCONNECT_PERIOD_ONCE, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+    };
+
+    function subscribeAircraftVars(myVars) {
       simConnect.requestDataOnSimObject(myVars, function(data) {
         let json = '{'
         data.forEach(function(data, i) {
