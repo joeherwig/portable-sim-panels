@@ -1,3 +1,5 @@
 node_modules/
 npm-debug.log
 build/
+SimConnect/inc/SimConnect.h
+SimConnect/lib/SimConnect.lib
