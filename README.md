@@ -1,12 +1,15 @@
+![](https://media.giphy.com/media/XpGDLCg8eeQw0/giphy.gif)
 # Introduction
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via socket connections.
-Currently only supported for 32 Bit Simconnect (FSX and Prepar3D < v4)
+Works with 32 Bit and 64 Bit simconnect 
+Works with FSX and all Prepar3D including <img src="http://joachim.herwigs.info/img/P3Dv4-tag.png" height="24px">
+
 
 ## Build
 ### Requirements
 * Node.js (32-bit version for compiling and running Simconnect32 bit.)
 * node-gyp (globally installed) https://github.com/nodejs/node-gyp
-* Visual Studio
+* Visual Studio (tested with VS 2015)
 * FSX or P3D SimConnect SDK files (.lib and .h).
 
 NOTE: If your app needs to work with both FSX and P3D you must use the FSX SDK.
@@ -23,5 +26,5 @@ To build the native node module you must provide your own SDK files. For FSX:SE,
 ### Use
 Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/1EP/](http://localhost:8080/panels/1EP/)
 
-### Pending
-[ ]  Test with 64Bit Simconnect from Prepar3D V4.
+<img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck//images/J3D-Icon.svg" width="100px">
+
