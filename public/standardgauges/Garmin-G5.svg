@@ -305,25 +305,25 @@
                 }
                 break;
 
-
-              case 'INCIDENCE BETA':
-                d3.select('#slip-indicator-ball').attr('transform', 'translate('+Math.round(value)+ ', 0)');
+              case 'TURN COORDINATOR BALL':
+                d3.select('#slip-indicator-ball').attr('transform', 'translate('+Math.round(value*1.2)+ ', 0)');
                 break;
 
               case 'test':
+                console.log(value.x + ' ---')
                 let x = value.x;
                 let y = value.y;
                 Update({
-                  "Plane_Bank_Degrees":(x/-3),
-                  "Plane_Pitch_Degrees":(y/-10),
-                  "Autopilot_Altitude_Lock_Var": Math.floor(x*y*0.253),
-                  "Plane_Heading_Degrees_True":x,
-                  "Airspeed_Indicated": Math.abs(y*1)-50,
-                  "Plane_Altitude": Math.floor(x*y*0.25),
-                  "GPS_Ground_Speed":y*-1.04/1.94384,
-                  "INCIDENCE_BETA":y/1.5,
-                  "Vertical_Speed": x/3,
-                  "KOHLSMAN_SETTING_HG": Math.round(Math.abs(x/10),0) + 980
+                  "PLANE BANK DEGREES": (x/-3),
+                  "PLANE PITCH DEGREES": (y/-10),
+                  "AUTOPILOT ALTITUDE LOCK VAR": Math.floor(x*y*0.253),
+                  "PLANE HEADING DEGREES TRUE": x,
+                  "AIRSPEED INDICATED": Math.abs(y*1)-50,
+                  "PLANE ALTITUDE": Math.floor(x*y*0.25),
+                  "GPS GROUND SPEED": y*-1.04/1.94384,
+                  "INCIDENCE BETA": y/1.5,
+                  "VERTICAL SPEED": x/3,
+                  "KOHLSMAN SETTING HG": Math.round(Math.abs(x/10),0) + 980
                 });
 
                 break;

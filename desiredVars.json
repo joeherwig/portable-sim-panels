@@ -36,5 +36,6 @@
   {"name":"AUTOPILOT PITCH HOLD REF","unitsname":"bool", "type": 8},
   {"name":"AUTOPILOT APPROACH HOLD","unitsname":"bool", "type": 8},
   {"name":"AUTOPILOT FLIGHT DIRECTOR ACTIVE","unitsname":"bool", "type": 8},
-  {"name":"GEAR TOTAL PCT EXTENDED","unitsname":"percent", "type": 8, "epsilon": 1}
+  {"name":"GEAR TOTAL PCT EXTENDED","unitsname":"percent", "type": 8, "epsilon": 1},
+  {"name":"TURN COORDINATOR BALL","unitsname":"percent", "type": 8, "epsilon": 1}
 ]
