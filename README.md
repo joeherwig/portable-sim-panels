@@ -1,4 +1,5 @@
 ![](https://media.giphy.com/media/XpGDLCg8eeQw0/giphy.gif)
+
 # Introduction
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via socket connections.
 Works with 32 Bit and 64 Bit simconnect 
@@ -28,3 +29,4 @@ Start your Simulator and you will reach the example panel at [http://localhost:8
 
 <img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck//images/J3D-Icon.svg" width="100px">
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">portable-sim-panels</span> by Joe Herwig ist licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons attribution - non-commercial share-alike.</a>.
