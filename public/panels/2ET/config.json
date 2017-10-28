@@ -6,6 +6,7 @@
     "greenbarend": 230,
     "yellowbarstart": 230,
     "yellowbarend": 276,
+    "vne": 276,
     "marker": {
       "fe": 122,
       "ge": 132,
@@ -14,9 +15,7 @@
       "y": 135
     }
   },
-  "INDICATED ALTITUDE": {
-    "lean-hint": 4000
-  },
+  "INDICATED ALTITUDE": {},
   "GENERAL ENG RPM:1": {
     "rangemin": -100,
     "rangemax": 3000,
@@ -47,6 +46,36 @@
       }
     ]
   },
+  "GENERAL ENG RPM:1": {
+      "rangemin": -100,
+      "rangemax": 3000,
+      "label": "RPM",
+      "baseStyle": {
+        "arcMinAngle": -140,
+        "arcMaxAngle": 110,
+        "pointerwidth": 2,
+        "innerRadius": 68,
+        "outerRadius": 70,
+        "baseColor": "grey",
+        "normalColor": "white"
+      },
+      "ranges": [{
+          "color": "green",
+          "minValue": 2000,
+          "maxValue": 2700,
+          "width": 2
+        },
+        {
+          "color": "red",
+          "alerttype": "warning",
+          "alerttext": "high",
+          "minValue": 2700,
+          "maxValue": 3000,
+          "width": 2,
+          "activewidth": 60
+        }
+      ]
+    },
   "GENERAL ENG RPM:2": {
     "rangemin": -100,
     "rangemax": 2900,
@@ -77,10 +106,10 @@
       }
     ]
   },
-  "ENG MANIFOLD PRESSURE:1": {
+  "ENG TORQUE:1": {
     "rangemin": 0,
-    "rangemax": 35,
-    "label": "MAP 1",
+    "rangemax": 1500,
+    "label": "TR 1",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 90,
@@ -101,8 +130,38 @@
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 29,
-        "maxValue": 31,
+        "minValue": 1250,
+        "maxValue": 1500,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "ENG TORQUE:2": {
+    "rangemin": 0,
+    "rangemax": 1500,
+    "label": "TRQ 2",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 110,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "#333333",
+      "normalColor": "white"
+    },
+    "ranges": [{
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 2
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 1250,
+        "maxValue": 1500,
         "width": 2,
         "activewidth": 60
       }
@@ -306,10 +365,10 @@
       }
     ]
   },
-  "ENG FUEL FLOW PPH:1": {
+  "ENG FUEL FLOW GPH:1": {
     "rangemin": 0,
-    "rangemax": 150,
-    "label": "Pounds / h",
+    "rangemax": 60,
+    "label": "1 Gal / h",
     "baseStyle": {
       "rulerwidth": 2,
       "baseColor": "#333333",
@@ -340,30 +399,64 @@
       }
     ]
   },
-"PLANE HEADING DEGREES MAGNETIC":{},
-"PLANE PITCH DEGREES":{},
-"PLANE BANK DEGREES":{},
-"GPS GROUND SPEED":{},
-"KOHLSMAN SETTING HG":{},
-"KOHLSMAN SETTING MB":{},
-"SIM ON GROUND":{},
-"GENERAL ENG THROTTLE LEVER POSITION:1":{},
-"AUTOPILOT AVAILABLE":{},
-"AUTOPILOT MASTER":{},
-"AUTOPILOT NAV SELECTED":{},
-"AUTOPILOT NAV1 LOCK":{},
-"AUTOPILOT HEADING LOCK":{},
-"AUTOPILOT HEADING LOCK DIR":{},
-"AUTOPILOT ALTITUDE LOCK":{},
-"AUTOPILOT ALTITUDE LOCK VAR":{},
-"AUTOPILOT ATTITUDE HOLD":{},
-"AUTOPILOT GLIDESLOPE HOLD":{},
-"AUTOPILOT PITCH HOLD REF":{},
-"AUTOPILOT APPROACH HOLD":{},
-"AUTOPILOT FLIGHT DIRECTOR ACTIVE":{},
-"TURN COORDINATOR BALL":{},
-"NAV CDI:1":{},
-"NAV GSI:1":{},
-"NAV CDI:2":{},
-"NAV GSI:2":{}
+  "ENG FUEL FLOW GPH:2": {
+    "rangemin": 0,
+    "rangemax": 60,
+    "label": "2 Gal / h",
+    "baseStyle": {
+      "rulerwidth": 2,
+      "baseColor": "#333333",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "silver",
+        "minValue": 6,
+        "maxValue": 10,
+        "width": 1
+      },{
+        "color": "orange",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 10,
+        "maxValue": 13,
+        "width": 1,
+        "activewidth": 4
+      },{
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 13,
+        "maxValue": 15,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "PLANE HEADING DEGREES MAGNETIC":{},
+  "PLANE PITCH DEGREES":{},
+  "PLANE BANK DEGREES":{},
+  "GPS GROUND SPEED":{},
+  "KOHLSMAN SETTING HG":{},
+  "KOHLSMAN SETTING MB":{},
+  "SIM ON GROUND":{},
+  "GENERAL ENG THROTTLE LEVER POSITION:1":{},
+  "AUTOPILOT AVAILABLE":{},
+  "AUTOPILOT MASTER":{},
+  "AUTOPILOT NAV SELECTED":{},
+  "AUTOPILOT NAV1 LOCK":{},
+  "AUTOPILOT HEADING LOCK":{},
+  "AUTOPILOT HEADING LOCK DIR":{},
+  "AUTOPILOT ALTITUDE LOCK":{},
+  "AUTOPILOT ALTITUDE LOCK VAR":{},
+  "AUTOPILOT ATTITUDE HOLD":{},
+  "AUTOPILOT GLIDESLOPE HOLD":{},
+  "AUTOPILOT PITCH HOLD REF":{},
+  "AUTOPILOT APPROACH HOLD":{},
+  "AUTOPILOT FLIGHT DIRECTOR ACTIVE":{},
+  "TURN COORDINATOR BALL":{},
+  "NAV CDI:1":{},
+  "NAV GSI:1":{},
+  "NAV CDI:2":{},
+  "NAV GSI:2":{}
 }

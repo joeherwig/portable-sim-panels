@@ -1,6 +1,7 @@
 [
   {"name":"TRAILING EDGE FLAPS LEFT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
   {"name":"TRAILING EDGE FLAPS RIGHT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
+  {"name":"FLAPS HANDLE PERCENT", "unitsname":"Percent over 100", "type": 8},
   {"name":"PLANE ALTITUDE","unitsname":"feet", "type": 8, "epsilon": 10},
   {"name":"INDICATED ALTITUDE","unitsname":"feet", "type": 8, "epsilon": 10},
   {"name":"ELEVATOR TRIM POSITION","unitsname":"degrees", "type": 8, "epsilon": 0.1},
@@ -17,6 +18,8 @@
   {"name":"GENERAL ENG THROTTLE LEVER POSITION:2", "unitsname":"Percent over 100", "type": 8},
   {"name":"ENG MANIFOLD PRESSURE:1","unitsname":"inHg", "type": 8, "epsilon": 0.1},
   {"name":"ENG MANIFOLD PRESSURE:2","unitsname":"inHg", "type": 8, "epsilon": 0.1},
+  {"name":"ENG TORQUE:1","unitsname":"Foot pounds", "type": 8, "epsilon": 100},
+  {"name":"ENG TORQUE:2","unitsname":"Foot pounds", "type": 8, "epsilon": 100},
   {"name":"ENG FUEL FLOW GPH:1","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
   {"name":"ENG FUEL FLOW GPH:2","unitsname":"Gallons per hour", "type": 8, "epsilon": 0.1},
   {"name":"ENG FUEL FLOW PPH:1","unitsname":"Pounds per hour", "type": 8, "epsilon": 0.1},
@@ -41,5 +44,5 @@
   {"name":"NAV CDI:1","unitsname":"number", "type": 8, "epsilon": 1},
   {"name":"NAV GSI:1","unitsname":"number", "type": 8, "epsilon": 1},
   {"name":"NAV CDI:2","unitsname":"number", "type": 8, "epsilon": 1},
-  {"name":"NAV CDI:2","unitsname":"number", "type": 8, "epsilon": 1}
+  {"name":"NAV GSI:2","unitsname":"number", "type": 8, "epsilon": 1}
 ]
