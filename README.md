@@ -1,6 +1,5 @@
-![](https://media.giphy.com/media/XpGDLCg8eeQw0/giphy.gif)
+<img src="https://i.makeagif.com/media/11-01-2017/j8000c.gif" alt="alt text" width="75%">
 
-# Introduction
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via socket connections.
 Works with 32 Bit and 64 Bit simconnect 
 Works with FSX and all Prepar3D including <img src="http://joachim.herwigs.info/img/P3Dv4-tag.png" height="24px">
