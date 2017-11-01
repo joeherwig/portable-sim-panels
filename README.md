@@ -7,7 +7,7 @@ Works with FSX and all Prepar3D including <img src="http://joachim.herwigs.info/
 
 ## Build
 ### Requirements
-* Node.js (32-bit version for compiling and running Simconnect32 bit.)
+* Node.js (32-bit version for compiling and running Simconnect32 bit or 64-bit version for running Prepar3d V4 Simconnec64)
 * node-gyp (globally installed) https://github.com/nodejs/node-gyp
 * Visual Studio (tested with VS 2015)
 * FSX or P3D SimConnect SDK files (.lib and .h).
@@ -22,6 +22,11 @@ To build the native node module you must provide your own SDK files. For FSX:SE,
 * Inside the new `node-simconnect` directory (or `node-modules/node-simconnect`), create a folder named `SimConnect` and copy the two folders `inc` and `lib` from the SimConnect SDK installation over to the new directory. These should include `SimConnect.h` and `SimConnect.lib`, respectively.
 * From the `node-simconnect` directory, run `npm install`
 * If everything went well you should be able to run the simple example program: by running `npm start`.
+
+### Config
+Underneath the `public/panels/` folder there are several panels available for your needs.
+The portable-sim-panels tool is able to load the appropriate settings regarding the monitored variables based on the loaded vehicle.
+If you didn't define a vehicle specific panel, it tries to load a suitable fallback-panel eg. for "single engine piston" or "multi engine turbine" etc. 
 
 ### Use
 Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/1EP/](http://localhost:8080/panels/1EP/)
