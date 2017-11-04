@@ -6,7 +6,7 @@ body {
   height: 100vw;
   overflow: hidden; }
 
-#GarminG3X {
+#GarminG3Xi {
   position: relative;
   width: calc(95vw * 0.9);
   height: calc(95vw * 0.55);
@@ -39,7 +39,7 @@ body {
   height: 100%;
   width: 45%; }
 
-.auxpages {
+.auxpages- {
   left: 55%; }
 
 #Garmin-G5 {

@@ -47,36 +47,6 @@
       }
     ]
   },
-  "GENERAL ENG RPM:2": {
-    "rangemin": -100,
-    "rangemax": 2900,
-    "label": "RPM",
-    "baseStyle": {
-      "arcMinAngle": -140,
-      "arcMaxAngle": 110,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
-    "ranges": [{
-        "color": "green",
-        "minValue": 2000,
-        "maxValue": 2700,
-        "width": 2
-      },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 2700,
-        "maxValue": 3000,
-        "width": 2,
-        "activewidth": 60
-      }
-    ]
-  },
   "ENG MANIFOLD PRESSURE:1": {
     "rangemin": 0,
     "rangemax": 35,
