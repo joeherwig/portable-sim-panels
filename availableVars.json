@@ -24,282 +24,1112 @@
     "type": 8
   },
   {
-    "name": "GENERAL ENG COMBUSTION:index",
+    "name": "GENERAL ENG COMBUSTION:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG MASTER ALTERNATOR:index",
+    "name": "GENERAL ENG COMBUSTION:2",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG FUEL PUMP SWITCH:index",
+    "name": "GENERAL ENG COMBUSTION:3",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG FUEL PUMP ON:index",
+    "name": "GENERAL ENG COMBUSTION:4",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG RPM:index",
+    "name": "GENERAL ENG MASTER ALTERNATOR:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MASTER ALTERNATOR:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MASTER ALTERNATOR:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MASTER ALTERNATOR:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP SWITCH:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP SWITCH:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP SWITCH:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP SWITCH:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP ON:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP ON:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP ON:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PUMP ON:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG RPM:1",
     "unitsname": "Rpm",
     "type": 8
   },
   {
-    "name": "GENERAL ENG PCT MAX RPM:index",
+    "name": "GENERAL ENG RPM:2",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG RPM:3",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG RPM:4",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PCT MAX RPM:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "GENERAL ENG MAX REACHED RPM:index",
+    "name": "GENERAL ENG PCT MAX RPM:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PCT MAX RPM:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PCT MAX RPM:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MAX REACHED RPM:1",
     "unitsname": "Rpm",
     "type": 8
   },
   {
-    "name": "GENERAL ENG THROTTLE LEVER POSITION:index",
+    "name": "GENERAL ENG MAX REACHED RPM:2",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MAX REACHED RPM:3",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MAX REACHED RPM:4",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG THROTTLE LEVER POSITION:1",
     "unitsname": "Percent over 100",
     "type": 8
   },
   {
-    "name": "GENERAL ENG MIXTURE LEVER POSITION:index",
+    "name": "GENERAL ENG THROTTLE LEVER POSITION:2",
     "unitsname": "Percent over 100",
     "type": 8
   },
   {
-    "name": "GENERAL ENG PROPELLER LEVER POSITION:index",
+    "name": "GENERAL ENG THROTTLE LEVER POSITION:3",
     "unitsname": "Percent over 100",
     "type": 8
   },
   {
-    "name": "GENERAL ENG STARTER:index",
+    "name": "GENERAL ENG THROTTLE LEVER POSITION:4",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MIXTURE LEVER POSITION:1",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MIXTURE LEVER POSITION:2",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MIXTURE LEVER POSITION:3",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG MIXTURE LEVER POSITION:4",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PROPELLER LEVER POSITION:1",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PROPELLER LEVER POSITION:2",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PROPELLER LEVER POSITION:3",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG PROPELLER LEVER POSITION:4",
+    "unitsname": "Percent over 100",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG STARTER:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG EXHAUST GAS TEMPERATURE:index",
+    "name": "GENERAL ENG STARTER:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG STARTER:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG STARTER:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG EXHAUST GAS TEMPERATURE:1",
     "unitsname": "Rankine",
     "type": 8
   },
   {
-    "name": "GENERAL ENG OIL PRESSURE:index",
+    "name": "GENERAL ENG EXHAUST GAS TEMPERATURE:2",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG EXHAUST GAS TEMPERATURE:3",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG EXHAUST GAS TEMPERATURE:4",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL PRESSURE:1",
     "unitsname": "Psf",
     "type": 8
   },
   {
-    "name": "GENERAL ENG OIL LEAKED PERCENT:index",
+    "name": "GENERAL ENG OIL PRESSURE:2",
+    "unitsname": "Psf",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL PRESSURE:3",
+    "unitsname": "Psf",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL PRESSURE:4",
+    "unitsname": "Psf",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL LEAKED PERCENT:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "GENERAL ENG COMBUSTION SOUND PERCENT:index",
+    "name": "GENERAL ENG OIL LEAKED PERCENT:2",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "GENERAL ENG DAMAGE PERCENT:index",
+    "name": "GENERAL ENG OIL LEAKED PERCENT:3",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "GENERAL ENG OIL TEMPERATURE:index",
+    "name": "GENERAL ENG OIL LEAKED PERCENT:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG COMBUSTION SOUND PERCENT:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG COMBUSTION SOUND PERCENT:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG COMBUSTION SOUND PERCENT:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG COMBUSTION SOUND PERCENT:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG DAMAGE PERCENT:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG DAMAGE PERCENT:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG DAMAGE PERCENT:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG DAMAGE PERCENT:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL TEMPERATURE:1",
     "unitsname": "Rankine",
     "type": 8
   },
   {
-    "name": "GENERAL ENG FAILED:index",
+    "name": "GENERAL ENG OIL TEMPERATURE:2",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL TEMPERATURE:3",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG OIL TEMPERATURE:4",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FAILED:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG GENERATOR SWITCH:index",
+    "name": "GENERAL ENG FAILED:2",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG GENERATOR ACTIVE:index",
+    "name": "GENERAL ENG FAILED:3",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG ANTI ICE POSITION:index",
+    "name": "GENERAL ENG FAILED:4",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG FUEL VALVE:index",
+    "name": "GENERAL ENG GENERATOR SWITCH:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "GENERAL ENG FUEL PRESSURE:index",
+    "name": "GENERAL ENG GENERATOR SWITCH:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR SWITCH:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR SWITCH:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR ACTIVE:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR ACTIVE:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR ACTIVE:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG GENERATOR ACTIVE:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ANTI ICE POSITION:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ANTI ICE POSITION:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ANTI ICE POSITION:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ANTI ICE POSITION:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL VALVE:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL VALVE:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL VALVE:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL VALVE:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PRESSURE:1",
     "unitsname": "Psi",
     "type": 8
   },
   {
-    "name": "GENERAL ENG ELAPSED TIME:index",
+    "name": "GENERAL ENG FUEL PRESSURE:2",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PRESSURE:3",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG FUEL PRESSURE:4",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ELAPSED TIME:1",
     "unitsname": "Hours",
     "type": 8
   },
   {
-    "name": "RECIP ENG COWL FLAP POSITION:index",
+    "name": "GENERAL ENG ELAPSED TIME:2",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ELAPSED TIME:3",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "GENERAL ENG ELAPSED TIME:4",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COWL FLAP POSITION:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "RECIP ENG PRIMER:index",
+    "name": "RECIP ENG COWL FLAP POSITION:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COWL FLAP POSITION:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COWL FLAP POSITION:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG PRIMER:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG MANIFOLD PRESSURE:index",
+    "name": "RECIP ENG PRIMER:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG PRIMER:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG PRIMER:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG MANIFOLD PRESSURE:1",
     "unitsname": "Psi",
     "type": 8
   },
   {
-    "name": "RECIP ENG ALTERNATE AIR POSITION:index",
+    "name": "RECIP ENG MANIFOLD PRESSURE:2",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG MANIFOLD PRESSURE:3",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG MANIFOLD PRESSURE:4",
+    "unitsname": "Psi",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG ALTERNATE AIR POSITION:1",
     "unitsname": "Position",
     "type": 8
   },
   {
-    "name": "RECIP ENG COOLANT RESERVOIR PERCENT:index",
+    "name": "RECIP ENG ALTERNATE AIR POSITION:2",
+    "unitsname": "Position",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG ALTERNATE AIR POSITION:3",
+    "unitsname": "Position",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG ALTERNATE AIR POSITION:4",
+    "unitsname": "Position",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COOLANT RESERVOIR PERCENT:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "RECIP ENG LEFT MAGNETO:index",
+    "name": "RECIP ENG COOLANT RESERVOIR PERCENT:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COOLANT RESERVOIR PERCENT:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG COOLANT RESERVOIR PERCENT:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG LEFT MAGNETO:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG RIGHT MAGNETO:index",
+    "name": "RECIP ENG LEFT MAGNETO:2",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG BRAKE POWER:index",
+    "name": "RECIP ENG LEFT MAGNETO:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG LEFT MAGNETO:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RIGHT MAGNETO:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RIGHT MAGNETO:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RIGHT MAGNETO:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RIGHT MAGNETO:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG BRAKE POWER:1",
     "unitsname": "Foot pounds per second",
     "type": 8
   },
   {
-    "name": "RECIP ENG STARTER TORQUE:index",
+    "name": "RECIP ENG BRAKE POWER:2",
+    "unitsname": "Foot pounds per second",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG BRAKE POWER:3",
+    "unitsname": "Foot pounds per second",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG BRAKE POWER:4",
+    "unitsname": "Foot pounds per second",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG STARTER TORQUE:1",
     "unitsname": "Foot pound",
     "type": 8
   },
   {
-    "name": "RECIP ENG TURBOCHARGER FAILED:index",
+    "name": "RECIP ENG STARTER TORQUE:2",
+    "unitsname": "Foot pound",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG STARTER TORQUE:3",
+    "unitsname": "Foot pound",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG STARTER TORQUE:4",
+    "unitsname": "Foot pound",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG TURBOCHARGER FAILED:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG EMERGENCY BOOST ACTIVE:index",
+    "name": "RECIP ENG TURBOCHARGER FAILED:2",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG EMERGENCY BOOST ELAPSED TIME:index",
+    "name": "RECIP ENG TURBOCHARGER FAILED:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG TURBOCHARGER FAILED:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ACTIVE:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ACTIVE:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ACTIVE:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ACTIVE:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ELAPSED TIME:1",
     "unitsname": "Hours",
     "type": 8
   },
   {
-    "name": "RECIP ENG WASTEGATE POSITION:index",
+    "name": "RECIP ENG EMERGENCY BOOST ELAPSED TIME:2",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ELAPSED TIME:3",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG EMERGENCY BOOST ELAPSED TIME:4",
+    "unitsname": "Hours",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG WASTEGATE POSITION:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "RECIP ENG TURBINE INLET TEMPERATURE:index",
+    "name": "RECIP ENG WASTEGATE POSITION:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG WASTEGATE POSITION:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG WASTEGATE POSITION:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG TURBINE INLET TEMPERATURE:1",
     "unitsname": "Celsius",
     "type": 8
   },
   {
-    "name": "RECIP ENG CYLINDER HEAD TEMPERATURE:index",
+    "name": "RECIP ENG TURBINE INLET TEMPERATURE:2",
     "unitsname": "Celsius",
     "type": 8
   },
   {
-    "name": "RECIP ENG RADIATOR TEMPERATURE:index",
+    "name": "RECIP ENG TURBINE INLET TEMPERATURE:3",
     "unitsname": "Celsius",
     "type": 8
   },
   {
-    "name": "RECIP ENG FUEL AVAILABLE:index",
+    "name": "RECIP ENG TURBINE INLET TEMPERATURE:4",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG CYLINDER HEAD TEMPERATURE:1",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG CYLINDER HEAD TEMPERATURE:2",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG CYLINDER HEAD TEMPERATURE:3",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG CYLINDER HEAD TEMPERATURE:4",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RADIATOR TEMPERATURE:1",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RADIATOR TEMPERATURE:2",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RADIATOR TEMPERATURE:3",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG RADIATOR TEMPERATURE:4",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL AVAILABLE:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "RECIP ENG FUEL FLOW:index",
+    "name": "RECIP ENG FUEL AVAILABLE:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL AVAILABLE:3",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL AVAILABLE:4",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL FLOW:1",
     "unitsname": "Pounds per hour",
     "type": 8
   },
   {
-    "name": "RECIP ENG FUEL TANK SELECTOR:index",
+    "name": "RECIP ENG FUEL FLOW:2",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL FLOW:3",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL FLOW:4",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANK SELECTOR:1",
     "unitsname": "Enum",
     "type": 8
   },
   {
-    "name": "RECIP ENG FUEL TANKS USED:index",
+    "name": "RECIP ENG FUEL TANK SELECTOR:2",
+    "unitsname": "Enum",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANK SELECTOR:3",
+    "unitsname": "Enum",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANK SELECTOR:4",
+    "unitsname": "Enum",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANKS USED:1",
     "unitsname": "Mask",
     "type": 8
   },
   {
-    "name": "RECIP ENG FUEL NUMBER TANKS USED:index",
+    "name": "RECIP ENG FUEL TANKS USED:2",
+    "unitsname": "Mask",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANKS USED:3",
+    "unitsname": "Mask",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL TANKS USED:4",
+    "unitsname": "Mask",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL NUMBER TANKS USED:1",
     "unitsname": "Number",
     "type": 8
   },
   {
-    "name": "RECIP CARBURETOR TEMPERATURE:index",
+    "name": "RECIP ENG FUEL NUMBER TANKS USED:2",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL NUMBER TANKS USED:3",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "RECIP ENG FUEL NUMBER TANKS USED:4",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "RECIP CARBURETOR TEMPERATURE:1",
     "unitsname": "Celsius",
     "type": 8
   },
   {
-    "name": "RECIP MIXTURE RATIO:index",
+    "name": "RECIP CARBURETOR TEMPERATURE:2",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP CARBURETOR TEMPERATURE:3",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP CARBURETOR TEMPERATURE:4",
+    "unitsname": "Celsius",
+    "type": 8
+  },
+  {
+    "name": "RECIP MIXTURE RATIO:1",
     "unitsname": "Ratio",
     "type": 8
   },
   {
-    "name": "TURB ENG N1:index",
+    "name": "RECIP MIXTURE RATIO:2",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "RECIP MIXTURE RATIO:3",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "RECIP MIXTURE RATIO:4",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG N1:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "TURB ENG N2:index",
+    "name": "TURB ENG N1:2",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "TURB ENG CORRECTED N1:index",
+    "name": "TURB ENG N1:3",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "TURB ENG CORRECTED N2:index",
+    "name": "TURB ENG N1:4",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "TURB ENG CORRECTED FF:index",
+    "name": "TURB ENG N2:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG N2:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG N2:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG N2:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N1:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N1:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N1:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N1:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N2:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N2:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N2:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED N2:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED FF:1",
     "unitsname": "Pounds per hour",
     "type": 8
   },
   {
-    "name": "TURB ENG MAX TORQUE PERCENT:index",
+    "name": "TURB ENG CORRECTED FF:2",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED FF:3",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG CORRECTED FF:4",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG MAX TORQUE PERCENT:1",
     "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "TURB ENG PRESSURE RATIO:index",
+    "name": "TURB ENG MAX TORQUE PERCENT:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG MAX TORQUE PERCENT:3",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG MAX TORQUE PERCENT:4",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG PRESSURE RATIO:1",
     "unitsname": "Ratio",
     "type": 8
   },
   {
-    "name": "TURB ENG ITT:index",
+    "name": "TURB ENG PRESSURE RATIO:2",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG PRESSURE RATIO:3",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG PRESSURE RATIO:4",
+    "unitsname": "Ratio",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG ITT:1",
     "unitsname": "Rankine",
     "type": 8
   },
   {
-    "name": "TURB ENG AFTERBURNER:index",
+    "name": "TURB ENG ITT:2",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG ITT:3",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG ITT:4",
+    "unitsname": "Rankine",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG AFTERBURNER:1",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG AFTERBURNER:2",
     "unitsname": "Bool",
     "type": 8
   },
@@ -329,7 +1159,22 @@
     "type": 8
   },
   {
-    "name": "TURB ENG FUEL FLOW PPH:index",
+    "name": "TURB ENG FUEL FLOW PPH:1",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG FUEL FLOW PPH:2",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG FUEL FLOW PPH:3",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "TURB ENG FUEL FLOW PPH:4",
     "unitsname": "Pounds per hour",
     "type": 8
   },
@@ -369,7 +1214,22 @@
     "type": 8
   },
   {
-    "name": "ENG FUEL FLOW BUG POSITION:index",
+    "name": "ENG FUEL FLOW BUG POSITION:1",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW BUG POSITION:2",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW BUG POSITION:3",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW BUG POSITION:4",
     "unitsname": "Pounds per hour",
     "type": 8
   },
@@ -449,12 +1309,42 @@
     "type": 8
   },
   {
-    "name": "ENG FUEL FLOW GPH:index",
+    "name": "ENG FUEL FLOW GPH:1",
     "unitsname": "Gallons per hour",
     "type": 8
   },
   {
-    "name": "ENG FUEL FLOW PPH:index",
+    "name": "ENG FUEL FLOW GPH:2",
+    "unitsname": "Gallons per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW GPH:3",
+    "unitsname": "Gallons per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW GPH:4",
+    "unitsname": "Gallons per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW PPH:1",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW PPH:2",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW PPH:3",
+    "unitsname": "Pounds per hour",
+    "type": 8
+  },
+  {
+    "name": "ENG FUEL FLOW PPH:4",
     "unitsname": "Pounds per hour",
     "type": 8
   },
@@ -514,7 +1404,22 @@
     "type": 8
   },
   {
-    "name": "ENG MANIFOLD PRESSURE:index",
+    "name": "ENG MANIFOLD PRESSURE:1",
+    "unitsname": "inHG",
+    "type": 8
+  },
+  {
+    "name": "ENG MANIFOLD PRESSURE:2",
+    "unitsname": "inHG",
+    "type": 8
+  },
+  {
+    "name": "ENG MANIFOLD PRESSURE:3",
+    "unitsname": "inHG",
+    "type": 8
+  },
+  {
+    "name": "ENG MANIFOLD PRESSURE:4",
     "unitsname": "inHG",
     "type": 8
   },
@@ -1060,17 +1965,17 @@
   },
   {
     "name": "PLANE PITCH DEGREES",
-    "unitsname": "Radians",
+    "unitsname": "Degrees",
     "type": 8
   },
   {
     "name": "PLANE BANK DEGREES",
-    "unitsname": "Radians",
+    "unitsname": "Degrees",
     "type": 8
   },
   {
     "name": "PLANE HEADING DEGREES TRUE",
-    "unitsname": "Radians",
+    "unitsname": "Degrees",
     "type": 8
   },
   {
@@ -1200,7 +2105,7 @@
   },
   {
     "name": "VERTICAL SPEED",
-    "unitsname": "Feet per second",
+    "unitsname": "Feet per minute",
     "type": 8
   },
   {
@@ -1284,9 +2189,10 @@
     "type": 8
   },
   {
-    "name": "TURN COORDINATOR BALL",
-    "unitsname": "Position 128",
-    "type": 8
+    "name":"TURN COORDINATOR BALL",
+    "unitsname":"Percent",
+    "type": 8,
+    "epsilon": 1
   },
   {
     "name": "ANGLE OF ATTACK INDICATOR",
@@ -1534,57 +2440,112 @@
     "type": 8
   },
   {
-    "name": "NAV CDI:index",
+    "name": "NAV CDI:1",
     "unitsname": "Number",
     "type": 8
   },
   {
-    "name": "NAV GSI:index",
+    "name": "NAV CDI:2",
     "unitsname": "Number",
     "type": 8
   },
   {
-    "name": "NAV TOFROM:index",
+    "name": "NAV GSI:1",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "NAV GSI:2",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "NAV TOFROM:1",
     "unitsname": "Enum",
     "type": 8
   },
   {
-    "name": "NAV GS FLAG:index",
+    "name": "NAV TOFROM:2",
+    "unitsname": "Enum",
+    "type": 8
+  },
+  {
+    "name": "NAV GS FLAG:1",
     "unitsname": "Bool",
     "type": 8
   },
   {
-    "name": "NAV OBS:index",
+    "name": "NAV GS FLAG:2",
+    "unitsname": "Bool",
+    "type": 8
+  },
+  {
+    "name": "NAV OBS:1",
     "unitsname": "Degrees",
     "type": 8
   },
   {
-    "name": "NAV DME:index",
+    "name": "NAV OBS:2",
+    "unitsname": "Degrees",
+    "type": 8
+  },
+  {
+    "name": "NAV DME:1",
     "unitsname": "Nautical miles",
     "type": 8
   },
   {
-    "name": "NAV DMESPEED:index",
+    "name": "NAV DME:2",
+    "unitsname": "Nautical miles",
+    "type": 8
+  },
+  {
+    "name": "NAV DMESPEED:1",
     "unitsname": "Knots",
     "type": 8
   },
   {
-    "name": "ADF ACTIVE FREQUENCY:index",
+    "name": "NAV DMESPEED:2",
+    "unitsname": "Knots",
+    "type": 8
+  },
+  {
+    "name": "ADF ACTIVE FREQUENCY:1",
     "unitsname": "Frequency ADF BCD32",
     "type": 8
   },
   {
-    "name": "ADF STANDBY FREQUENCY:index",
+    "name": "ADF ACTIVE FREQUENCY:2",
+    "unitsname": "Frequency ADF BCD32",
+    "type": 8
+  },
+  {
+    "name": "ADF STANDBY FREQUENCY:1",
     "unitsname": "Hz",
     "type": 8
   },
   {
-    "name": "ADF RADIAL:index",
+    "name": "ADF STANDBY FREQUENCY:2",
+    "unitsname": "Hz",
+    "type": 8
+  },
+  {
+    "name": "ADF RADIAL:1",
     "unitsname": "Degrees",
     "type": 8
   },
   {
-    "name": "ADF SIGNAL:index",
+    "name": "ADF RADIAL:2",
+    "unitsname": "Degrees",
+    "type": 8
+  },
+  {
+    "name": "ADF SIGNAL:1",
+    "unitsname": "Number",
+    "type": 8
+  },
+  {
+    "name": "ADF SIGNAL:2",
     "unitsname": "Number",
     "type": 8
   },
@@ -2238,16 +3199,8 @@
     "unitsname": "Percent over 100",
     "type": 8
   },
-  {
-    "name": "TRAILING EDGE FLAPS LEFT ANGLE",
-    "unitsname": "Radians",
-    "type": 8
-  },
-  {
-    "name": "TRAILING EDGE FLAPS RIGHT ANGLE",
-    "unitsname": "Radians",
-    "type": 8
-  },
+  {"name":"TRAILING EDGE FLAPS LEFT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
+  {"name":"TRAILING EDGE FLAPS RIGHT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
   {
     "name": "LEADING EDGE FLAPS LEFT PERCENT",
     "unitsname": "Percent over 100",

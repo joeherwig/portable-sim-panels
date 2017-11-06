@@ -145,30 +145,14 @@
     "label": "MIX 1",
     "baseStyle": {
       "arcMinAngle": -140,
-      "arcMaxAngle": 90,
+      "arcMaxAngle": 110,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
-      "baseColor": "grey",
+      "baseColor": "#333333",
       "normalColor": "white"
     },
-    "ranges": [{
-        "color": "green",
-        "minValue": 20,
-        "maxValue": 29,
-        "width": 2,
-        "activewidth": 20
-      },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 29,
-        "maxValue": 31,
-        "width": 2,
-        "activewidth": 60
-      }
-    ]
+    "ranges": []
   },
   "RECIP MIXTURE RATIO:2": {
     "rangemin": 0,
@@ -183,22 +167,7 @@
       "baseColor": "#333333",
       "normalColor": "white"
     },
-    "ranges": [{
-        "color": "green",
-        "minValue": 20,
-        "maxValue": 29,
-        "width": 2
-      },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 29,
-        "maxValue": 31,
-        "width": 2,
-        "activewidth": 60
-      }
-    ]
+    "ranges": []
   },
   "ELEVATOR TRIM POSITION": {
     "rangemin": -16,
@@ -213,40 +182,8 @@
       "baseColor": "grey",
       "normalColor": "white"
     },
-    "ranges": [{
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "low",
-        "minValue": -16,
-        "maxValue": -3,
-        "width": 0,
-        "activewidth": 30
-      },
-      {
-        "color": "orange",
-        "alerttype": "caution",
-        "alerttext": "high",
-        "minValue": 3,
-        "maxValue": 16,
-        "width": 0,
-        "activewidth": 30
-      }
+    "ranges": [
     ]
-  },
-  "FLAPS HANDLE PERCENT": {
-    "rangemin": 0,
-    "rangemax": 100,
-    "label": "Flaps handle %",
-    "baseStyle": {
-      "arcMinAngle": 90,
-      "arcMaxAngle": 135,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
-    "ranges": []
   },
   "TRAILING EDGE FLAPS LEFT ANGLE": {
     "rangemin": 0,
@@ -563,32 +500,6 @@
     "rangemin": 0,
     "rangemax": 250,
     "label": "1 CHT °C",
-    "baseStyle": {
-      "rulerwidth": 2,
-      "baseColor": "#333333",
-      "normalColor": "white"
-    },
-    "ranges": [
-      {
-        "color": "green",
-        "minValue": 125,
-        "maxValue": 225,
-        "width": 1
-      },{
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 240,
-        "maxValue": 250,
-        "width": 1,
-        "activewidth": 15
-      }
-    ]
-  },
-  "RECIP ENG CYLINDER HEAD TEMPERATURE:2": {
-    "rangemin": 0,
-    "rangemax": 250,
-    "label": "2 CHT °C",
     "baseStyle": {
       "rulerwidth": 2,
       "baseColor": "#333333",
