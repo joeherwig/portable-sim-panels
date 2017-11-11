@@ -20,87 +20,87 @@
   },
   {
     "name": "MASTER IGNITION SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG COMBUSTION:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG COMBUSTION:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG COMBUSTION:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG COMBUSTION:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG MASTER ALTERNATOR:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG MASTER ALTERNATOR:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG MASTER ALTERNATOR:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG MASTER ALTERNATOR:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP SWITCH:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP SWITCH:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP SWITCH:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP SWITCH:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP ON:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP ON:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP ON:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL PUMP ON:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -225,22 +225,22 @@
   },
   {
     "name": "GENERAL ENG STARTER:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG STARTER:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG STARTER:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG STARTER:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -365,102 +365,102 @@
   },
   {
     "name": "GENERAL ENG FAILED:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FAILED:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FAILED:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FAILED:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR SWITCH:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR SWITCH:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR SWITCH:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR SWITCH:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR ACTIVE:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR ACTIVE:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR ACTIVE:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG GENERATOR ACTIVE:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG ANTI ICE POSITION:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG ANTI ICE POSITION:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG ANTI ICE POSITION:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG ANTI ICE POSITION:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL VALVE:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL VALVE:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL VALVE:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GENERAL ENG FUEL VALVE:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -525,22 +525,22 @@
   },
   {
     "name": "RECIP ENG PRIMER:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG PRIMER:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG PRIMER:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG PRIMER:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -605,42 +605,42 @@
   },
   {
     "name": "RECIP ENG LEFT MAGNETO:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG LEFT MAGNETO:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG LEFT MAGNETO:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG LEFT MAGNETO:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG RIGHT MAGNETO:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG RIGHT MAGNETO:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG RIGHT MAGNETO:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG RIGHT MAGNETO:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -685,42 +685,42 @@
   },
   {
     "name": "RECIP ENG TURBOCHARGER FAILED:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG TURBOCHARGER FAILED:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG TURBOCHARGER FAILED:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG TURBOCHARGER FAILED:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG EMERGENCY BOOST ACTIVE:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG EMERGENCY BOOST ACTIVE:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG EMERGENCY BOOST ACTIVE:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG EMERGENCY BOOST ACTIVE:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -825,22 +825,22 @@
   },
   {
     "name": "RECIP ENG FUEL AVAILABLE:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG FUEL AVAILABLE:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG FUEL AVAILABLE:3",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RECIP ENG FUEL AVAILABLE:4",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -945,22 +945,22 @@
   },
   {
     "name": "RECIP MIXTURE RATIO:1",
-    "unitsname": "Ratio",
+    "unitsname": "percent",
     "type": 8
   },
   {
     "name": "RECIP MIXTURE RATIO:2",
-    "unitsname": "Ratio",
+    "unitsname": "percent",
     "type": 8
   },
   {
     "name": "RECIP MIXTURE RATIO:3",
-    "unitsname": "Ratio",
+    "unitsname": "percent",
     "type": 8
   },
   {
     "name": "RECIP MIXTURE RATIO:4",
-    "unitsname": "Ratio",
+    "unitsname": "percent",
     "type": 8
   },
   {
@@ -1125,12 +1125,12 @@
   },
   {
     "name": "TURB ENG AFTERBURNER:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TURB ENG AFTERBURNER:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1180,7 +1180,7 @@
   },
   {
     "name": "TURB ENG FUEL AVAILABLE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1205,12 +1205,12 @@
   },
   {
     "name": "ENG ON FIRE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ENG ON FIRE INDICATED:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1255,12 +1255,12 @@
   },
   {
     "name": "PROP FEATHERING INHIBIT:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PROP FEATHERED:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1270,32 +1270,32 @@
   },
   {
     "name": "PROP AUTO FEATHER ARMED:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PROP FEATHER SWITCH:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PANEL AUTO FEATHER SWITCH:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PROP SYNC ACTIVE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PROP DEICE SWITCH:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ENG COMBUSTION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1355,7 +1355,7 @@
   },
   {
     "name": "ENG ANTI ICE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1440,7 +1440,7 @@
   },
   {
     "name": "GENERAL ENG STARTER ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1460,12 +1460,12 @@
   },
   {
     "name": "TURB ENG IGNITION ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TURB ENG MASTER STARTER SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1710,7 +1710,7 @@
   },
   {
     "name": "UNLIMITED FUEL",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1720,52 +1720,52 @@
   },
   {
     "name": "LIGHT STROBE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT PANEL",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT LANDING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT TAXI",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT BEACON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT NAV",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT LOGO",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT WING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT RECOGNITION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT CABIN",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1785,62 +1785,62 @@
   },
   {
     "name": "LIGHT TAXI ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT STROBE ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT PANEL ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT RECOGNITION ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT WING ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT LOGO ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT CABIN ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT HEAD ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT BRAKE ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT NAV ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT BEACON ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LIGHT LANDING ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -1980,7 +1980,7 @@
   },
   {
     "name": "PLANE HEADING DEGREES MAGNETIC",
-    "unitsname": "Radians",
+    "unitsname": "degrees",
     "type": 8
   },
   {
@@ -2000,7 +2000,7 @@
   },
   {
     "name": "SIM ON GROUND",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2115,12 +2115,12 @@
   },
   {
     "name": "STALL WARNING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "OVERSPEED WARNING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2160,7 +2160,7 @@
   },
   {
     "name": "ATTITUDE CAGE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2311,47 +2311,47 @@
   },
   {
     "name": "AVIONICS MASTER SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NAV SOUND:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "DME SOUND",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TACAN DME SOUND",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ADF SOUND:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TACAN SOUND:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "MARKER SOUND",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "COM TRANSMIT:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "COM RECIEVE ALL",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2371,7 +2371,7 @@
   },
   {
     "name": "NAV AVAILABLE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2391,22 +2391,22 @@
   },
   {
     "name": "NAV HAS NAV:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NAV HAS LOCALIZER:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NAV HAS DME:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NAV HAS GLIDE SLOPE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2471,12 +2471,12 @@
   },
   {
     "name": "NAV GS FLAG:1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NAV GS FLAG:2",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2576,12 +2576,12 @@
   },
   {
     "name": "TACAN AVAILABLE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TACAN HAS NAV:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2611,17 +2611,17 @@
   },
   {
     "name": "INNER MARKER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "MIDDLE MARKER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "OUTER MARKER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2646,12 +2646,12 @@
   },
   {
     "name": "HSI CDI NEEDLE VALID",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "HSI GSI NEEDLE VALID",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2661,7 +2661,7 @@
   },
   {
     "name": "HSI BEARING VALID",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2671,7 +2671,7 @@
   },
   {
     "name": "HSI HAS LOCALIZER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2706,22 +2706,22 @@
   },
   {
     "name": "GPS IS ACTIVE FLIGHT PLAN",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS IS ACTIVE WAY POINT",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS IS ARRIVED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS IS DIRECTTO FLIGHTPLAN",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2811,7 +2811,7 @@
   },
   {
     "name": "GPS WP PREV VALID",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2856,17 +2856,17 @@
   },
   {
     "name": "GPS IS ACTIVE WP LOCKED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS IS APPROACH LOADED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS IS APPROACH ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2881,7 +2881,7 @@
   },
   {
     "name": "GPS APPROACH IS WP RUNWAY",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2906,12 +2906,12 @@
   },
   {
     "name": "GPS APPROACH IS FINAL",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPS APPROACH IS MISSED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -2931,32 +2931,32 @@
   },
   {
     "name": "GPS DRIVES NAV1",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "COM RECEIVE ALL",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "COM AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "COM TEST:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TRANSPONDER AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ADF AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3116,7 +3116,7 @@
   },
   {
     "name": "ELEVATOR TRIM POSITION",
-    "unitsname": "Radians",
+    "unitsname": "degrees",
     "type": 8
   },
   {
@@ -3146,17 +3146,17 @@
   },
   {
     "name": "BRAKE PARKING POSITION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "BRAKE PARKING INDICATOR",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "SPOILERS ARMED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3278,17 +3278,17 @@
   },
   {
     "name": "FLAPS AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLAP DAMAGE BY SPEED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLAP SPEED EXCEEDED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3303,7 +3303,7 @@
   },
   {
     "name": "ALTERNATE STATIC SOURCE OPEN",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3318,22 +3318,22 @@
   },
   {
     "name": "FOLDING WING HANDLE POSITION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FUEL DUMP SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT MASTER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3343,17 +3343,17 @@
   },
   {
     "name": "AUTOPILOT WING LEVELER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT NAV1 LOCK",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT HEADING LOCK",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3363,22 +3363,22 @@
   },
   {
     "name": "AUTOPILOT ALTITUDE LOCK",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT ALTITUDE LOCK VAR",
-    "unitsname": "Feet",
+    "unitsname": "feet",
     "type": 8
   },
   {
     "name": "AUTOPILOT ATTITUDE HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT GLIDESLOPE HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3388,12 +3388,12 @@
   },
   {
     "name": "AUTOPILOT APPROACH HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT BACKCOURSE HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3403,12 +3403,12 @@
   },
   {
     "name": "AUTOPILOT PITCH HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT FLIGHT DIRECTOR ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3423,7 +3423,7 @@
   },
   {
     "name": "AUTOPILOT AIRSPEED HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3433,7 +3433,7 @@
   },
   {
     "name": "AUTOPILOT MACH HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3443,7 +3443,7 @@
   },
   {
     "name": "AUTOPILOT YAW DAMPER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3453,32 +3453,32 @@
   },
   {
     "name": "AUTOPILOT THROTTLE ARM",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT TAKEOFF POWER ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOTHROTTLE ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT NAV1 LOCK",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT VERTICAL HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTOPILOT RPM HOLD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3488,62 +3488,62 @@
   },
   {
     "name": "FLY BY WIRE ELAC SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLY BY WIRE FAC SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLY BY WIRE SEC SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLY BY WIRE ELAC FAILED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLY BY WIRE FAC FAILED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FLY BY WIRE SEC FAILED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS GEAR RETRACTABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS GEAR SKIS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS GEAR FLOATS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS GEAR SKIDS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS GEAR WHEELS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GEAR HANDLE POSITION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3553,7 +3553,7 @@
   },
   {
     "name": "TAILWHEEL LOCK ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3738,7 +3738,7 @@
   },
   {
     "name": "GEAR EMERGENCY HANDLE POSITION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3748,12 +3748,12 @@
   },
   {
     "name": "ANTISKID BRAKES ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "RETRACT FLOAT SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3773,17 +3773,17 @@
   },
   {
     "name": "GEAR DAMAGE BY SPEED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GEAR SPEED EXCEEDED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "NOSEWHEEL LOCK ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3868,12 +3868,12 @@
   },
   {
     "name": "WINDSHIELD RAIN EFFECT AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AMBIENT IN CLOUD",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3893,17 +3893,17 @@
   },
   {
     "name": "ROTOR BRAKE ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ROTOR CLUTCH SWITCH POS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ROTOR CLUTCH ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3913,17 +3913,17 @@
   },
   {
     "name": "ROTOR CHIP DETECTED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ROTOR GOV SWITCH POS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ROTOR GOV ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -3998,12 +3998,12 @@
   },
   {
     "name": "SLING OBJECT ATTACHED:index",
-    "unitsname": "Bool/String",
+    "unitsname": "bool/String",
     "type": 8
   },
   {
     "name": "SLING CABLE BROKEN:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4023,12 +4023,12 @@
   },
   {
     "name": "SLING HOOK IN PICKUP MODE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS ATTACHED TO SLING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4063,17 +4063,17 @@
   },
   {
     "name": "SMOKE ENABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "SMOKESYSTEM AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "PITOT HEAT",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4103,37 +4103,37 @@
   },
   {
     "name": "STALL HORN AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ENGINE MIXURE AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CARB HEAT AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "SPOILER AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS TAIL DRAGGER",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "STROBES AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "TOE BRAKES AVAILABLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4143,7 +4143,7 @@
   },
   {
     "name": "ELECTRICAL MASTER BATTERY",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4163,7 +4163,7 @@
   },
   {
     "name": "ELECTRICAL BATTERY IS CHARGING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4223,92 +4223,92 @@
   },
   {
     "name": "ELECTRICAL GENALT SWITCH:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ELECTRICAL GENALT BUS CONTACT SWITCH:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ELECTRICAL GENALT ACTIVE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ELECTRIC GPU ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "ELECTRIC GPU SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT GENERAL PANEL ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT FLAP MOTOR ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT GEAR MOTOR ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT AUTOPILOT ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT AVIONICS ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT PITOT HEAT ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT PROP SYNC ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT AUTO FEATHER ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT AUTO BRAKES ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT STANDY VACUUM ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT MARKER BEACON ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT GEAR WARNING ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CIRCUIT HYDRAULIC PUMP ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4328,12 +4328,12 @@
   },
   {
     "name": "STRUCTURAL DEICE SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "APPLY HEAT TO SYSTEMS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4363,17 +4363,17 @@
   },
   {
     "name": "IS USER SIM",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LABEL SUPPORTED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "SIM DISABLED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4383,12 +4383,12 @@
   },
   {
     "name": "ATC HEAVY",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "AUTO COORDINATION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4398,7 +4398,7 @@
   },
   {
     "name": "TRUE AIRSPEED SELECTED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4438,12 +4438,12 @@
   },
   {
     "name": "IS SLEW ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS SLEW ALLOWED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4468,7 +4468,7 @@
   },
   {
     "name": "USER INPUT ENABLED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4513,7 +4513,7 @@
   },
   {
     "name": "VARIOMETER SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4533,7 +4533,7 @@
   },
   {
     "name": "TURN INDICATOR SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4558,7 +4558,7 @@
   },
   {
     "name": "PANEL ANTI ICE SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4693,7 +4693,7 @@
   },
   {
     "name": "WATER BALLAST VALVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4708,7 +4708,7 @@
   },
   {
     "name": "PROP AUTO CRUISE ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4758,7 +4758,7 @@
   },
   {
     "name": "HYDRAULIC SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4778,17 +4778,17 @@
   },
   {
     "name": "REALISM CRASH WITH OTHERS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "REALISM CRASH DETECTION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "MANUAL INSTRUMENT LIGHTS",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4798,7 +4798,7 @@
   },
   {
     "name": "RAD INS SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4818,7 +4818,7 @@
   },
   {
     "name": "SURFACE INFO VALID",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4848,7 +4848,7 @@
   },
   {
     "name": "PUSHBACK WAIT",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4913,7 +4913,7 @@
   },
   {
     "name": "TOW CONNECTION",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4933,17 +4933,17 @@
   },
   {
     "name": "APU GENERATOR SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "APU GENERATOR ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "APU ON FIRE DETECTED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -4968,52 +4968,52 @@
   },
   {
     "name": "PRESSURIZATION DUMP SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FIRE BOTTLE SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "FIRE BOTTLE DISCHARGED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CABIN NO SMOKING ALERT SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "CABIN SEATBELTS ALERT SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPWS WARNING",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "GPWS SYSTEM ACTIVE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS LATITUDE LONGITUDE FREEZE ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS ALTITUDE FREEZE ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "IS ATTITUDE FREEZE ON",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5123,7 +5123,7 @@
   },
   {
     "name": "AI TRAFFIC ISIFR",
-    "unitsname": "Boolean",
+    "unitsname": "boolean",
     "type": 8
   },
   {
@@ -5173,12 +5173,12 @@
   },
   {
     "name": "LAUNCHBAR SWITCH",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
     "name": "LAUNCHBAR HELD EXTENDED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5193,7 +5193,7 @@
   },
   {
     "name": "HOLDBACK BAR INSTALLED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5208,7 +5208,7 @@
   },
   {
     "name": "TAILHOOK HANDLE",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5248,7 +5248,7 @@
   },
   {
     "name": "RECIP ENG DETONATING:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5268,7 +5268,7 @@
   },
   {
     "name": "RECIP ENG ANTIDETONATION TANK VALVE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5283,7 +5283,7 @@
   },
   {
     "name": "RECIP ENG NITROUS TANK VALVE:index",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   },
   {
@@ -5298,7 +5298,7 @@
   },
   {
     "name": "AVATAR MODE IS ATTACHED",
-    "unitsname": "Bool",
+    "unitsname": "bool",
     "type": 8
   }
 ]

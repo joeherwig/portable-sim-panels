@@ -6,6 +6,7 @@ function findVarByVarName(findVar) {
   let foundVar
   availableVars.forEach(function(elem, i) {
     if(elem.name === findVar) {
+      console.log(findVar + ' => ' + JSON.stringify(elem) );
       foundVar = [elem.name, elem.unitsname];
     }
   });
@@ -15,8 +16,9 @@ function findVarByVarName(findVar) {
 function getvars(panelConfigJson) {
   varList = Object.keys(JSON.parse(data.toString()));
   varList.forEach(function(elem, i) {
-    if (findVarByVarName(elem) !== undefined) {
-      currentAircraftVars.push(findVarByVarName(elem));
+    let foundVar = findVarByVarName(elem);
+    if (foundVar !== undefined) {
+      currentAircraftVars.push(foundVar);
     } else {
       console.log(elem + ' not assignable. Please check availableVars.json if configured properly!');
     }
@@ -41,12 +43,15 @@ module.exports = async function (aircraft) {
             console.log("Generic config for '"+engineNumbers + engineType + heliTag+"' loaded!");
             varList = Object.keys(JSON.parse(panelConfigJson.toString()));
             varList.forEach(function(elem, i) {
-              if (findVarByVarName(elem) !== undefined) {
-                currentAircraftVars.push(findVarByVarName(elem));
+              let foundVar = findVarByVarName(elem);
+              if (foundVar !== undefined) {
+                currentAircraftVars.push(foundVar);
               } else {
                 console.log(elem + ' not assignable. Please check availableVars.json if configured properly!');
               }
             });
+            console.log('\n\n\n\n-----------------------------'+JSON.stringify(currentAircraftVars));
+
             resolve(currentAircraftVars);
           }
         })
@@ -54,10 +59,12 @@ module.exports = async function (aircraft) {
         console.log('Aircraft specific config loaded for ' + aircraft.aircraft + '...');
         varList = Object.keys(JSON.parse(panelConfigJson.toString()));
         varList.forEach(function(elem, i) {
-          if (findVarByVarName(elem) !== undefined) {
-            currentAircraftVars.push(findVarByVarName(elem));
+          let foundVar = findVarByVarName(elem);
+          if (foundVar !== undefined) {
+            currentAircraftVars.push(foundVar);
           }
         });
+        console.log('\n\n\n\n-----------------------------'+JSON.stringify(currentAircraftVars));
         resolve(currentAircraftVars);
       }
     });
