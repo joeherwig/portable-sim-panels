@@ -126,7 +126,7 @@ function setupDataRequests(name) {
         })
         json = json.substr(0,json.length-1);
         json += '}'
-        //console.log(JSON.parse(json));
+        // console.log(JSON.parse(json));
         console.log();
         io.emit('simPanel', JSON.parse(json));
       }, 0, SIMCONNECT_PERIOD_VISUAL_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);

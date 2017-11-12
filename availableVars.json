@@ -2726,7 +2726,7 @@
   },
   {
     "name": "GPS GROUND SPEED",
-    "unitsname": "Meters per second",
+    "unitsname": "Knots",
     "type": 8
   },
   {
