@@ -13,6 +13,7 @@ function findVarByVarName(findVar) {
   return foundVar;
 };
 
+/*
 function getvars(panelConfigJson) {
   varList = Object.keys(JSON.parse(data.toString()));
   varList.forEach(function(elem, i) {
@@ -24,6 +25,7 @@ function getvars(panelConfigJson) {
     }
   });
 };
+*/
 module.exports = async function (aircraft) {
   return new Promise(function (resolve, reject) {
     let currentAircraftVars = [];

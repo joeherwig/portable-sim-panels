@@ -302,6 +302,9 @@
       "activewidth": 30
     }]
   },
+  "GEAR CENTER POSITION":{},
+  "GEAR LEFT POSITION":{},
+  "GEAR RIGHT POSITION":{},
   "GEAR TOTAL PCT EXTENDED": {
     "rangemin": 0,
     "rangemax": 1,

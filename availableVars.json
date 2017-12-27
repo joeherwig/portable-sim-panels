@@ -2140,7 +2140,7 @@
   },
   {
     "name": "KOHLSMAN SETTING HG",
-    "unitsname": "Inches of Mercury, inHg",
+    "unitsname": "inHg",
     "type": 8
   },
   {
@@ -2306,7 +2306,7 @@
   },
   {
     "name": "SUCTION PRESSURE",
-    "unitsname": "Inches of Mercury, inHg",
+    "unitsname": "inHg",
     "type": 8
   },
   {
@@ -3798,7 +3798,7 @@
   },
   {
     "name": "AMBIENT PRESSURE",
-    "unitsname": "Inches of mercury, inHg",
+    "unitsname": "inHg",
     "type": 8
   },
   {

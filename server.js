@@ -117,7 +117,7 @@ function setupDataRequests(name) {
 
 
     function subscribeAircraftVars(myVars) {
-      console.log('\n subscribing to: \n');
+      console.log('\n +++++++ subscribing to: +++++++++++++++\n');
       console.log(myVars);
       simConnect.requestDataOnSimObject(myVars, function(data) {
         let json = '{'

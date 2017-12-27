@@ -156,10 +156,11 @@
          style="stop-color:#1c1c04;stop-opacity:1" />
     </linearGradient>
     <script
-       xlink:href="../libs/d3.3.min.js"
+       xlink:href="../../libs/d3.3.min.js"
        id="script9" />
+
     <script
-       xlink:href="../libs/jquery.min.js"
+       xlink:href="../../libs/jquery.min.js"
        id="script13" />
     <script
        id="script4532"

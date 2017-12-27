@@ -10,10 +10,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    viewBox="0 0 150 150"
-   height="150px"
-   width="150px"
+   height="160"
+   width="160"
    id="svg2"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="gear-indicator.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -24,17 +24,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2479"
-     inkscape:window-height="1410"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
      id="namedview10"
      showgrid="false"
-     inkscape:zoom="3.1466667"
-     inkscape:cx="78.425072"
-     inkscape:cy="-2.6592745"
-     inkscape:window-x="81"
-     inkscape:window-y="30"
+     inkscape:zoom="7.3012501"
+     inkscape:cx="83.111184"
+     inkscape:cy="90.287624"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="label-value-group" />
+     inkscape:current-layer="g4226" />
   <defs
      id="defs17121">
     <script
@@ -49,19 +49,13 @@
 
         window.parent.addEventListener("update", eventHandler, true);
 
+        let gearCenterPosition = 0,
+          gearLeftPosition = 0,
+          gearRightPosition = 0;
+
         function eventHandler(update) {
           Update(update.detail);
         }
-
-        let config = {};
-        let id = window.frameElement.id;
-
-        var path = window.parent.location.pathname.split('/');
-        path.pop();
-        path = path.join("/") + "/";
-        $.getJSON(path+"/config.json", function(json){
-          config = json[window.frameElement.id];
-        });
 
         window.onload = setTimeout(function(){
           init();
@@ -79,12 +73,44 @@
 
             switch (key) {
 
-              case id:
-                d3.select("#left-main-gear").attr("fill", #green)
-                d3.select("#right-main-gear").attr("fill", #green)
-                d3.select("#nose-gear").attr("fill", #green)
-                })
+              case 'GEAR CENTER POSITION':
+                if (gearCenterPosition !== value) {
+                  gearCenterPosition = value;
+                  if (gearCenterPosition === 0) {
+                    d3.select("#nose-gear").style("fill", 'black');
+                  } else if (gearCenterPosition === 1) {
+                    d3.select("#nose-gear").style("fill", 'green');
+                  } else {
+                    d3.select("#nose-gear").style("fill", 'orange');
+                  }
+                }
                 break;
+
+                case 'GEAR LEFT POSITION':
+                  if (gearLeftPosition !== value) {
+                    gearLeftPosition = value;
+                    if (gearLeftPosition === 0) {
+                      d3.select("#left-main-gear").style("fill", 'black');
+                    } else if (gearLeftPosition === 1) {
+                      d3.select("#left-main-gear").style("fill", 'green');
+                    } else {
+                      d3.select("#left-main-gear").style("fill", 'orange');
+                    }
+                  }
+                  break;
+
+                  case 'GEAR RIGHT POSITION':
+                    if (gearRightPosition !== value) {
+                      gearRightPosition = value;
+                      if (gearRightPosition === 0) {
+                        d3.select("#right-main-gear").style("fill", 'black');
+                      } else if (gearRightPosition === 1) {
+                        d3.select("#right-main-gear").style("fill", 'green');
+                      } else {
+                        d3.select("#right-main-gear").style("fill", 'orange');
+                      }
+                    }
+                    break;
 
               case 'test':
                 let x = value.x;
@@ -110,6 +136,7 @@
 
               default:
                 //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+                break;
             };
           }
         }
@@ -138,20 +165,20 @@
          r="29.713984"
          cy="180.99152"
          cx="21.834747"
-         id="path4141-3"
-         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+         id="left-main-gear"
+         style="fill:black;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
       <circle
          r="29.713984"
          cy="180.99152"
          cx="110.91102"
-         id="path4141-3-7"
-         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+         id="right-main-gear"
+         style="fill:black;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
       <circle
          r="29.713984"
          cy="104.83475"
          cx="66.372879"
-         id="path4141-3-7-5"
-         style="fill:none;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
+         id="nose-gear"
+         style="fill:black;fill-opacity:1;stroke:#f3f3f3;stroke-opacity:1" />
     </g>
   </g>
 </svg>
