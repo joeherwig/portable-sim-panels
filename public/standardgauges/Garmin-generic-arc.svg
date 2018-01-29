@@ -53,7 +53,8 @@
         let pi = Math.PI;
         let stepangle;
         let fullrange;
-        let zeroangle;
+        let zeroangle,
+          calculatedValue;
         let id = window.frameElement.id;
 
         var path = window.parent.location.pathname.split('/');
@@ -72,6 +73,7 @@
           fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
           stepangle = fullrange / (config.rangemax-config.rangemin);
           zeroangle = config.rangemin * stepangle * -1 + config.baseStyle.arcMinAngle;
+          calculatedValue = (config.calculatedValue ? config.calculatedValue : void 0);
 
           let svg = d3.select("svg")
               .append("svg")
@@ -122,7 +124,8 @@
           obj = inputObject;
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
-            let value = Object.values(inputObject)[attr];
+            let value = Object.values(inputObject)[attr] ;
+            value = (calculatedValue ? eval(calculatedValue.replace("x",value)) : value);
 
             switch (key) {
 
@@ -143,7 +146,6 @@
                     let arc = d3.select(".arc-"+i);
                     let arc2;
                     if(value > range.minValue && value <= range.maxValue && range.alerttype) {
-                      // console.log(range.alerttype + ' ' + range.alerttext + ' ' + config.label );
                       arc2 = d3.svg.arc()
                         .innerRadius(config.baseStyle.innerRadius - range.activewidth)
                         .outerRadius(config.baseStyle.innerRadius)

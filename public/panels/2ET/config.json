@@ -108,8 +108,9 @@
   },
   "ENG TORQUE:1": {
     "rangemin": 0,
-    "rangemax": 1500,
-    "label": "TR 1",
+    "rangemax": 2000,
+    "label": "TRQ 1",
+    "calculatedValue": "x / 1.167",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 90,
@@ -121,8 +122,8 @@
     },
     "ranges": [{
         "color": "green",
-        "minValue": 20,
-        "maxValue": 29,
+        "minValue": 0,
+        "maxValue": 1200,
         "width": 2,
         "activewidth": 20
       },
@@ -130,8 +131,8 @@
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1250,
-        "maxValue": 1500,
+        "minValue": 1280,
+        "maxValue": 2000,
         "width": 2,
         "activewidth": 60
       }
@@ -139,8 +140,9 @@
   },
   "ENG TORQUE:2": {
     "rangemin": 0,
-    "rangemax": 1500,
+    "rangemax": 2000,
     "label": "TRQ 2",
+    "calculatedValue": "x / 1.167",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 110,
@@ -152,16 +154,93 @@
     },
     "ranges": [{
         "color": "green",
-        "minValue": 20,
-        "maxValue": 29,
-        "width": 2
+        "minValue": 0,
+        "maxValue": 1200,
+        "width": 2,
+        "activewidth": 20
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1250,
-        "maxValue": 1500,
+        "minValue": 1280,
+        "maxValue": 2000,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "TURB ENG ITT:1": {
+    "rangemin": 0,
+    "rangemax": 1100,
+    "label": "ITT 2",
+    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 90,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": [{
+        "color": "green",
+        "minValue": 400,
+        "maxValue": 780,
+        "width": 1,
+        "activewidth": 20
+      },{
+          "color": "orange",
+          "minValue": 780,
+          "maxValue": 810,
+          "width": 1,
+          "activewidth": 20
+        },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 810,
+        "maxValue": 1050,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "TURB ENG ITT:2": {
+    "rangemin": 0,
+    "rangemax": 1100,
+    "label": "ITT 2",
+    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "baseStyle": {
+      "arcMinAngle": -140,
+      "arcMaxAngle": 90,
+      "pointerwidth": 2,
+      "innerRadius": 68,
+      "outerRadius": 70,
+      "baseColor": "grey",
+      "normalColor": "white"
+    },
+    "ranges": [{
+        "color": "green",
+        "minValue": 400,
+        "maxValue": 780,
+        "width": 1,
+        "activewidth": 20
+      },{
+          "color": "orange",
+          "minValue": 780,
+          "maxValue": 810,
+          "width": 1,
+          "activewidth": 20
+        },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 810,
+        "maxValue": 1050,
         "width": 2,
         "activewidth": 60
       }
@@ -332,6 +411,9 @@
       "activewidth": 30
     }]
   },
+  "GEAR CENTER POSITION":{},
+  "GEAR LEFT POSITION":{},
+  "GEAR RIGHT POSITION":{},
     "GEAR TOTAL PCT EXTENDED": {
     "rangemin": 0,
     "rangemax": 1,

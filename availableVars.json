@@ -1349,7 +1349,22 @@
     "type": 8
   },
   {
-    "name": "ENG TORQUE:index",
+    "name": "ENG TORQUE:1",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:2",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:3",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:4",
     "unitsname": "Foot pounds",
     "type": 8
   },
