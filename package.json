@@ -15,7 +15,7 @@
     "cheerio": "1.0.0-rc.2",
     "express": "4.16.2",
     "jsonfile": "4.0.0",
-    "nan": "2.7.0",
+    "nan": "2.8.0",
     "socketio": "1.0.0"
   }
 }
