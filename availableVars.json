@@ -1234,7 +1234,22 @@
     "type": 8
   },
   {
-    "name": "PROP RPM:index",
+    "name": "PROP RPM:1",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "PROP RPM:2",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+ {
+    "name": "PROP RPM:3",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "PROP RPM:4",
     "unitsname": "Rpm",
     "type": 8
   },

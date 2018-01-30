@@ -8,7 +8,7 @@
     "yellowbarend": 276,
     "vne": 276,
     "marker": {
-      "fe": 122,
+      "fe": 140,
       "ge": 132,
       "vne": 276,
       "x": 100,
@@ -16,10 +16,11 @@
     }
   },
   "INDICATED ALTITUDE": {},
-  "GENERAL ENG RPM:1": {
-    "rangemin": -100,
-    "rangemax": 3000,
-    "label": "RPM",
+  "PROP RPM:1": {
+    "rangemin": 0,
+    "rangemax": 2400,
+    "label": "RPM 1",
+    "calculatedValue": "x /1.0227",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 110,
@@ -30,26 +31,53 @@
       "normalColor": "white"
     },
     "ranges": [{
+        "color": "yellow",
+       "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 400,
+        "maxValue": 1200,
+        "width": 1,
+        "activewidth": 30
+      },
+      {
         "color": "green",
-        "minValue": 2000,
-        "maxValue": 2700,
-        "width": 2
+        "minValue": 1200,
+        "maxValue": 1600,
+        "width": 1,
+        "activewidth": 1
+      },
+      {
+        "color": "yellow",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 1600,
+        "maxValue": 1800,
+        "width": 1,
+        "activewidth": 30
+      },
+      {
+        "color": "green",
+        "minValue": 1800,
+        "maxValue": 2200,
+        "width": 1,
+        "activewidth": 1
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 2700,
-        "maxValue": 3000,
-        "width": 8,
+        "minValue": 2200,
+        "maxValue": 2400,
+        "width": 1,
         "activewidth": 60
       }
     ]
   },
-  "GENERAL ENG RPM:1": {
-      "rangemin": -100,
-      "rangemax": 3000,
-      "label": "RPM",
+  "PROP RPM:2": {
+      "rangemin": 0,
+      "rangemax": 2400,
+      "label": "RPM 2",
+      "calculatedValue": "x /1.0227",
       "baseStyle": {
         "arcMinAngle": -140,
         "arcMaxAngle": 110,
@@ -60,18 +88,44 @@
         "normalColor": "white"
       },
       "ranges": [{
+          "color": "yellow",
+         "alerttype": "warning",
+          "alerttext": "high",
+          "minValue": 400,
+          "maxValue": 1200,
+          "width": 1,
+          "activewidth": 30
+        },
+        {
           "color": "green",
-          "minValue": 2000,
-          "maxValue": 2700,
-          "width": 2
+          "minValue": 1200,
+          "maxValue": 1600,
+          "width": 1,
+          "activewidth": 1
+        },
+        {
+          "color": "yellow",
+          "alerttype": "warning",
+          "alerttext": "high",
+          "minValue": 1600,
+          "maxValue": 1800,
+          "width": 1,
+          "activewidth": 30
+        },
+        {
+          "color": "green",
+          "minValue": 1800,
+          "maxValue": 2200,
+          "width": 1,
+          "activewidth": 1
         },
         {
           "color": "red",
           "alerttype": "warning",
           "alerttext": "high",
-          "minValue": 2700,
-          "maxValue": 3000,
-          "width": 2,
+          "minValue": 2200,
+          "maxValue": 2400,
+          "width": 1,
           "activewidth": 60
         }
       ]
@@ -93,7 +147,7 @@
         "color": "green",
         "minValue": 2000,
         "maxValue": 2700,
-        "width": 2
+        "width":1
       },
       {
         "color": "red",
@@ -101,7 +155,7 @@
         "alerttext": "high",
         "minValue": 2700,
         "maxValue": 3000,
-        "width": 2,
+        "width": 1,
         "activewidth": 60
       }
     ]
@@ -124,7 +178,7 @@
         "color": "green",
         "minValue": 0,
         "maxValue": 1200,
-        "width": 2,
+        "width": 1,
         "activewidth": 20
       },
       {
@@ -133,7 +187,7 @@
         "alerttext": "high",
         "minValue": 1280,
         "maxValue": 2000,
-        "width": 2,
+        "width": 1,
         "activewidth": 60
       }
     ]
@@ -141,22 +195,22 @@
   "ENG TORQUE:2": {
     "rangemin": 0,
     "rangemax": 2000,
-    "label": "TRQ 2",
+    "label": "TRQ 1",
     "calculatedValue": "x / 1.167",
     "baseStyle": {
       "arcMinAngle": -140,
-      "arcMaxAngle": 110,
+      "arcMaxAngle": 90,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
-      "baseColor": "#333333",
+      "baseColor": "grey",
       "normalColor": "white"
     },
     "ranges": [{
         "color": "green",
         "minValue": 0,
         "maxValue": 1200,
-        "width": 2,
+        "width": 1,
         "activewidth": 20
       },
       {
@@ -165,7 +219,7 @@
         "alerttext": "high",
         "minValue": 1280,
         "maxValue": 2000,
-        "width": 2,
+        "width": 1,
         "activewidth": 60
       }
     ]
@@ -173,7 +227,7 @@
   "TURB ENG ITT:1": {
     "rangemin": 0,
     "rangemax": 1100,
-    "label": "ITT 2",
+    "label": "ITT 1",
     "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
     "baseStyle": {
       "arcMinAngle": -140,
@@ -203,7 +257,7 @@
         "alerttext": "high",
         "minValue": 810,
         "maxValue": 1050,
-        "width": 2,
+        "width": 1,
         "activewidth": 60
       }
     ]
@@ -241,7 +295,7 @@
         "alerttext": "high",
         "minValue": 810,
         "maxValue": 1050,
-        "width": 2,
+        "width": 1,
         "activewidth": 60
       }
     ]
@@ -457,28 +511,6 @@
       "normalColor": "white"
     },
     "ranges": [
-      {
-        "color": "green",
-        "minValue": 20,
-        "maxValue": 80,
-        "width": 1
-      },{
-        "color": "orange",
-        "alerttype": "info",
-        "alerttext": "low",
-        "minValue": 80,
-        "maxValue": 95,
-        "width": 1,
-        "activewidth": 4
-      },{
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 95,
-        "maxValue": 200,
-        "width": 1,
-        "activewidth": 15
-      }
     ]
   },
   "ENG FUEL FLOW GPH:2": {
@@ -491,28 +523,6 @@
       "normalColor": "white"
     },
     "ranges": [
-      {
-        "color": "silver",
-        "minValue": 6,
-        "maxValue": 10,
-        "width": 1
-      },{
-        "color": "orange",
-        "alerttype": "info",
-        "alerttext": "low",
-        "minValue": 10,
-        "maxValue": 13,
-        "width": 1,
-        "activewidth": 4
-      },{
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 13,
-        "maxValue": 15,
-        "width": 1,
-        "activewidth": 15
-      }
     ]
   },
   "PLANE HEADING DEGREES MAGNETIC":{},
