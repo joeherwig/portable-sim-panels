@@ -5,11 +5,9 @@
 #include <winternl.h>
 #include <ntstatus.h>
 
-//HANDLE ghMutex;
 uv_loop_t *loop;
 uv_async_t async;
 
-//std::vector<HANDLE> simConnections;
 std::map<int, DataRequest> dataRequests;
 std::map<int, Nan::Callback*> systemEventCallbacks;
 std::map<int, Nan::Callback*> systemStateCallbacks;
@@ -25,11 +23,8 @@ int defineIdCounter;
 int eventIdCounter;
 int requestIdCounter;
 
-uv_cond_t cv;
-uv_mutex_t mutex;
-
+uv_sem_t sem;					// semaphore
 HANDLE ghSimConnect = NULL;
-
 
 class DispatchWorker : public Nan::AsyncWorker {
 public:
@@ -39,12 +34,13 @@ public:
 	~DispatchWorker() {}
 
 	void Execute() {
-		bool run = true;
 		uv_async_init(loop, &async, messageReceiver); // Must be called from worker thread
 
-		while (run) {
+		while (true) {
 
 			if (ghSimConnect) {
+				uv_sem_wait(&sem);	// Wait for mainthread to process the previous dispatch
+
 				SIMCONNECT_RECV* pData;
 				DWORD cbData;
 
@@ -57,21 +53,19 @@ public:
 					data.cbData = cbData;
 					data.ntstatus = STATUS_SUCCESS;
 					async.data = &data;
-					uv_mutex_lock(&mutex);
 					uv_async_send(&async);
-					
-					// Wait for mainthread to process the dispatch 
-					uv_cond_wait(&cv, &mutex);
 				}
 				else if (NT_ERROR(hr)) {
-					run = false;
 					CallbackData data;
 					data.ntstatus = (NTSTATUS)hr;
 					async.data = &data;
-					uv_mutex_lock(&mutex);
 					uv_async_send(&async);
-					uv_cond_wait(&cv, &mutex);
 				}
+				else {
+					uv_sem_post(&sem);	// Continue
+					Sleep(1);
+				}
+
 			}
 			else {
 				Sleep(10);
@@ -105,7 +99,7 @@ void messageReceiver(uv_async_t* handle) {
 	Nan::HandleScope scope;
 	v8::Isolate* isolate = v8::Isolate::GetCurrent();
 
-	CallbackData* data = (CallbackData*)handle->data; //receivedDataQueue.front();
+	CallbackData* data = (CallbackData*)handle->data;
 
 	if (NT_SUCCESS(data->ntstatus)) {
 		switch (data->pData->dwID)
@@ -131,9 +125,8 @@ void messageReceiver(uv_async_t* handle) {
 		case SIMCONNECT_RECV_ID_SYSTEM_STATE:
 			handleReceived_SystemState(isolate, data->pData, data->cbData);
 			break;
-
 		default:
-			printf("Unexpected message received!!!!!!!!!!!!!!!!!-> %i\n", data->pData->dwID);
+			printf("Unexpected message received (dwId: %i)\n", data->pData->dwID);
 			break;
 		}
 	}
@@ -141,43 +134,43 @@ void messageReceiver(uv_async_t* handle) {
 		handle_Error(isolate, data->ntstatus);
 	}
 
-	// The dispatch-worker can now continue
-	uv_mutex_unlock(&mutex);
-	uv_cond_signal(&cv);
+	uv_sem_post(&sem);	// The dispatch-worker can now continue
 }
 
 void handleReceived_Data(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD cbData) {
+
 	SIMCONNECT_RECV_SIMOBJECT_DATA *pObjData = (SIMCONNECT_RECV_SIMOBJECT_DATA*)pData;
 	int numVars = dataRequests[pObjData->dwRequestID].num_values;
-	std::vector<SIMCONNECT_DATATYPE> valTypes = dataRequests[pObjData->dwRequestID].value_types;
+	std::vector<SIMCONNECT_DATATYPE> valTypes = dataRequests[pObjData->dwRequestID].datum_types;
+	std::vector<std::string> valIds = dataRequests[pObjData->dwRequestID].datum_names;
 
 	Local<Array> result_list = Array::New(isolate);
-	int offset = 0;
+	int dataValueOffset = 0;
 
 	for (int i = 0; i < numVars; i++) {
 		int varSize = 0;
 
 		if (valTypes[i] == SIMCONNECT_DATATYPE_STRINGV) {
-			offset += 8;		// just a quick and ugly fix to this problem: "F-22 RapF-22 Raptor - 525th Fighter Squadron" (for example)
+			dataValueOffset += 8;		// Not really sure why this is needed, but it fixes problems like this: "F-22 RapF-22 Raptor - 525th Fighter Squadron"
 			char *pOutString;
 			DWORD cbString;
-			char * pStringv = ((char*)(&pObjData->dwData) + offset);
+			char * pStringv = ((char*)(&pObjData->dwData) + dataValueOffset);
 			HRESULT hr = SimConnect_RetrieveString(pData, cbData, pStringv, &pOutString, &cbString);
 			if (NT_ERROR(hr)) {
 				handle_Error(isolate, hr);
 				return;
 			}
-
-			result_list->Set(i, String::NewFromOneByte(isolate, (const uint8_t*)pOutString));
+			result_list->Set(String::NewFromUtf8(isolate, valIds.at(i).c_str()), String::NewFromOneByte(isolate, (const uint8_t*)pOutString));
 			varSize = cbString;
 		}
 		else {
+			//printf("------ %s -----\n", valIds.at(i).c_str());
 			varSize = sizeMap[valTypes[i]];
-			char* p = ((char*)(&pObjData->dwData) + offset);
+			char* p = ((char*)(&pObjData->dwData) + dataValueOffset);
 			double *var = (double*)p;
-			result_list->Set(i, Number::New(isolate, *var));
+			result_list->Set(String::NewFromUtf8(isolate, valIds.at(i).c_str()), Number::New(isolate, *var));
 		}
-		offset += varSize;
+		dataValueOffset += varSize;
 	}
 
 	const int argc = 1;
@@ -190,12 +183,13 @@ void handleReceived_Data(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD cbData)
 
 void handle_Error(Isolate* isolate, NTSTATUS code) {
 	// Codes found so far: 0xC000014B, 0xC000020D, 0xC000013C
-	char simconnVersion[32];
-	sprintf(simconnVersion, "0x%08X", code);
+	ghSimConnect = NULL;
+	char errorCode[32];
+	sprintf(errorCode, "0x%08X", code);
 
 	const int argc = 1;
 	Local<Value> argv[argc] = {
-		String::NewFromUtf8(isolate, simconnVersion)
+		String::NewFromUtf8(isolate, errorCode)
 	};
 
 	errorCallback->Call(isolate->GetCurrentContext()->Global(), argc, argv);
@@ -214,7 +208,6 @@ void handleReceived_Event(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD cbData
 
 void handleReceived_Exception(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD cbData) {
 	SIMCONNECT_RECV_EXCEPTION *except = (SIMCONNECT_RECV_EXCEPTION*)pData;
-	// printf("\n\n***** EXCEPTION=%d  SendID=%d  uOffset=%d  cbData=%d\n", except->dwException, except->dwSendID, except->dwIndex, cbData);
 
 	Local<Object> obj = Object::New(isolate);
 	obj->Set(String::NewFromUtf8(isolate, "dwException"), Number::New(isolate, except->dwException));
@@ -269,18 +262,17 @@ void handleReceived_SystemState(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD 
 }
 
 void handleReceived_Quit(Isolate* isolate) {
+	ghSimConnect = NULL;
 	systemEventCallbacks[quitEventId]->Call(isolate->GetCurrentContext()->Global(), 0, NULL);
 }
 
 void handleSimDisconnect(Isolate* isolate) {
 
 }
+
 // Wrapped SimConnect-functions //////////////////////////////////////////////////////
-
 void Open(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	uv_mutex_init(&mutex);
-	uv_cond_init(&cv);
-
+	uv_sem_init(&sem, 1);
 
 	defineIdCounter = 0;
 	eventIdCounter = 0;
@@ -301,6 +293,7 @@ void Open(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 	// Create dispatch looper thread
 	loop = uv_default_loop();
+
 	Nan::AsyncQueueWorker(new DispatchWorker(NULL));
 
 	// Open connection
@@ -311,6 +304,7 @@ void Open(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 	args.GetReturnValue().Set(retval);
 }
+
 
 void Close(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	if (ghSimConnect) {
@@ -426,6 +420,7 @@ void SetDataOnSimObject(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 		v8::String::Utf8Value name(args[0]->ToString());
 		v8::String::Utf8Value unit(args[1]->ToString());
+
 		double value = args[2]->NumberValue();
 
 		int	objectId = args.Length() > 3 ? args[3]->Int32Value() : SIMCONNECT_OBJECT_ID_USER;
@@ -439,7 +434,7 @@ void SetDataOnSimObject(const v8::FunctionCallbackInfo<v8::Value>& args) {
 			return;
 		}
 
-		hr = SimConnect_SetDataOnSimObject(ghSimConnect, defId, SIMCONNECT_OBJECT_ID_USER, NULL, 0, sizeof(value), &value);
+		hr = SimConnect_SetDataOnSimObject(ghSimConnect, defId, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(value), &value);
 		if (NT_ERROR(hr)) {
 			handle_Error(isolate, hr);
 			return;
@@ -458,7 +453,9 @@ DataRequest generateDataRequest(Isolate* isolate, HANDLE hSimConnect, Local<Arra
 	bool success = true;
 	int numValues = requestedValues->Length();
 
-	std::vector<SIMCONNECT_DATATYPE> dataTypes;
+	std::vector<std::string> datumNames;
+	std::vector<SIMCONNECT_DATATYPE> datumTypes;
+
 
 	for (int i = 0; i < requestedValues->Length(); i++) {
 		Local<Array> value = v8::Local<v8::Array>::Cast(requestedValues->Get(i));
@@ -471,6 +468,8 @@ DataRequest generateDataRequest(Isolate* isolate, HANDLE hSimConnect, Local<Arra
 				v8::String::Utf8Value unitsName(value->Get(1)->ToString());
 				const char* sDatumName = *datumName;
 				const char* sUnitsName = value->Get(1)->IsNull() ? NULL : *unitsName;
+
+
 
 				SIMCONNECT_DATATYPE datumType = SIMCONNECT_DATATYPE_FLOAT64;	// Default type (double)
 				double epsilon;
@@ -509,12 +508,14 @@ DataRequest generateDataRequest(Isolate* isolate, HANDLE hSimConnect, Local<Arra
 					}
 				}
 
-				dataTypes.push_back(datumType);
+				std::string datumNameStr(sDatumName);
+				datumNames.push_back(datumNameStr);
+				datumTypes.push_back(datumType);
 			}
 		}
 	}
 
-	return{ definitionId, numValues, callback, dataTypes };
+	return{ definitionId, numValues, callback, datumNames, datumTypes };
 }
 
 
@@ -524,14 +525,26 @@ void SetAircraftInitialPosition(const v8::FunctionCallbackInfo<v8::Value>& args)
 		Isolate* isolate = args.GetIsolate();
 
 		SIMCONNECT_DATA_INITPOSITION init;
-		init.Altitude = args[0]->NumberValue();
-		init.Latitude = args[1]->NumberValue();
-		init.Longitude = args[2]->NumberValue();
-		init.Pitch = args[3]->NumberValue();
-		init.Bank = args[4]->NumberValue();
-		init.Heading = args[5]->NumberValue();
-		init.OnGround = args[6]->IntegerValue();
-		init.Airspeed = args[7]->IntegerValue();
+		Local<Object> json = args[0]->ToObject(isolate);
+
+		v8::Local<v8::String> altProp = Nan::New("altitude").ToLocalChecked();
+		v8::Local<v8::String> latProp = Nan::New("latitude").ToLocalChecked();
+		v8::Local<v8::String> lngProp = Nan::New("longitude").ToLocalChecked();
+		v8::Local<v8::String> pitchProp = Nan::New("pitch").ToLocalChecked();
+		v8::Local<v8::String> bankProp = Nan::New("bank").ToLocalChecked();
+		v8::Local<v8::String> hdgProp = Nan::New("heading").ToLocalChecked();
+		v8::Local<v8::String> gndProp = Nan::New("onGround").ToLocalChecked();
+		v8::Local<v8::String> iasProp = Nan::New("airspeed").ToLocalChecked();
+
+
+		init.Altitude = json->HasOwnProperty(altProp)	? json->Get(altProp)->NumberValue()		: 0;
+		init.Latitude = json->HasOwnProperty(latProp)	? json->Get(latProp)->NumberValue()		: 0;
+		init.Longitude = json->HasOwnProperty(lngProp)	? json->Get(lngProp)->NumberValue()		: 0;
+		init.Pitch = json->HasOwnProperty(pitchProp)	? json->Get(pitchProp)->NumberValue()	: 0;
+		init.Bank = json->HasOwnProperty(bankProp)		? json->Get(bankProp)->NumberValue()	: 0;
+		init.Heading = json->HasOwnProperty(hdgProp)	? json->Get(hdgProp)->NumberValue()		: 0;
+		init.OnGround = json->HasOwnProperty(gndProp)	? json->Get(gndProp)->IntegerValue()	: 0;
+		init.Airspeed = json->HasOwnProperty(iasProp)	? json->Get(iasProp)->IntegerValue()	: 0;
 
 		int id = getUniqueDefineId();
 		HRESULT hr = SimConnect_AddToDataDefinition(ghSimConnect, id, "Initial Position", NULL, SIMCONNECT_DATATYPE_INITPOSITION);

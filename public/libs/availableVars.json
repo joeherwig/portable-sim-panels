@@ -1234,7 +1234,22 @@
     "type": 8
   },
   {
-    "name": "PROP RPM:index",
+    "name": "PROP RPM:1",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "PROP RPM:2",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "PROP RPM:3",
+    "unitsname": "Rpm",
+    "type": 8
+  },
+  {
+    "name": "PROP RPM:4",
     "unitsname": "Rpm",
     "type": 8
   },
@@ -1349,7 +1364,22 @@
     "type": 8
   },
   {
-    "name": "ENG TORQUE:index",
+    "name": "ENG TORQUE:1",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:2",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:3",
+    "unitsname": "Foot pounds",
+    "type": 8
+  },
+  {
+    "name": "ENG TORQUE:4",
     "unitsname": "Foot pounds",
     "type": 8
   },

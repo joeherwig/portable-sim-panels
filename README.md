@@ -21,6 +21,7 @@ To build the native node module you must provide your own SDK files. For FSX:SE,
 
 * Clone this repository
 * Inside the new `node-simconnect` directory (or `node-modules/node-simconnect`), create a folder named `SimConnect` and copy the two folders `inc` and `lib` from the SimConnect SDK installation over to the new directory. These should include `SimConnect.h` and `SimConnect.lib`, respectively.
+* set the environment variable VCTargetsPath to the correct path eg. via `SET VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140` for VS2015
 * From the `node-simconnect` directory, run `npm install`
 * If everything went well you should be able to run the simple example program: by running `npm start`.
 

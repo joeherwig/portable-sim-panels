@@ -6,26 +6,12 @@ function findVarByVarName(findVar) {
   let foundVar
   availableVars.forEach(function(elem, i) {
     if(elem.name === findVar) {
-      console.log(findVar + ' => ' + JSON.stringify(elem) );
       foundVar = [elem.name, elem.unitsname];
     }
   });
   return foundVar;
 };
 
-/*
-function getvars(panelConfigJson) {
-  varList = Object.keys(JSON.parse(data.toString()));
-  varList.forEach(function(elem, i) {
-    let foundVar = findVarByVarName(elem);
-    if (foundVar !== undefined) {
-      currentAircraftVars.push(foundVar);
-    } else {
-      console.log(elem + ' not assignable. Please check availableVars.json if configured properly!');
-    }
-  });
-};
-*/
 module.exports = async function (aircraft) {
   return new Promise(function (resolve, reject) {
     let currentAircraftVars = [];
@@ -40,7 +26,7 @@ module.exports = async function (aircraft) {
         fs.readFile(defaultFile, function(err, panelConfigJson) {
           if (err) {
             console.log("unable to load generic config for '"+engineNumbers + engineType + heliTag+"'.\nContinuing with fallback on standard-six.");
-            // resolve(['GENERAL ENG RPM:1','ENG MANIFOLD PRESSURE:1','ELEVATOR TRIM POSITION','TRAILING EDGE FLAPS LEFT ANGLE','TRAILING EDGE FLAPS RIGHT ANGLE','GEAR TOTAL PCT EXTENDED','VERTICAL SPEED','ENG FUEL FLOW PPH:1']);
+            resolve(['GENERAL ENG RPM:1','ENG MANIFOLD PRESSURE:1','ELEVATOR TRIM POSITION','TRAILING EDGE FLAPS LEFT ANGLE','TRAILING EDGE FLAPS RIGHT ANGLE','GEAR TOTAL PCT EXTENDED','VERTICAL SPEED','ENG FUEL FLOW PPH:1']);
           } else {
             console.log("Generic config for '"+engineNumbers + engineType + heliTag+"' loaded!");
             varList = Object.keys(JSON.parse(panelConfigJson.toString()));
@@ -52,7 +38,7 @@ module.exports = async function (aircraft) {
                 console.log(elem + ' not assignable. Please check availableVars.json if configured properly!');
               }
             });
-            console.log('\n\n\n\n-----------------------------'+JSON.stringify(currentAircraftVars));
+            //console.log('\n\n\n\n-----------------------------'+JSON.stringify(currentAircraftVars));
 
             resolve(currentAircraftVars);
           }
@@ -66,7 +52,6 @@ module.exports = async function (aircraft) {
             currentAircraftVars.push(foundVar);
           }
         });
-        console.log('\n\n\n\n-----------------------------'+JSON.stringify(currentAircraftVars));
         resolve(currentAircraftVars);
       }
     });
