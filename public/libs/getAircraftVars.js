@@ -1,5 +1,5 @@
 const fs = require('fs')
-,   availableVars = require('.\\..\\availableVars.json');
+,   availableVars = require('./availableVars.json');
 
 
 function findVarByVarName(findVar) {

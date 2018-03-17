@@ -27,11 +27,11 @@ To build the native node module you must provide your own SDK files. For FSX:SE,
 ### Config
 Underneath the `public/panels/` folder there are several panels available for your needs.
 The portable-sim-panels tool is able to load the appropriate settings regarding the monitored variables based on the loaded vehicle.
-If you didn't define a vehicle specific panel, it tries to load a suitable fallback-panel eg. for "single engine piston" or "multi engine turbine" etc. 
+If you didn't define a vehicle specific panel, it tries to load a suitable fallback-panel eg. for "single engine piston" or "multi engine turbine" etc.
 
 ### Use
 Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/1EP/](http://localhost:8080/panels/1EP/)
 
-<img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck//images/J3D-Icon.svg" width="100px">
+<img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck/images/JOE-Simtech-Logo.svg" width="100px">
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
