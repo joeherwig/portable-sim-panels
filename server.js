@@ -96,13 +96,7 @@ function setupDataRequests(name) {
 
     function subscribeAircraftVars(myVars) {
       simConnect.requestDataOnSimObject(myVars, function(data) {
-        let json = '{'
-        for(var key in data) {
-          json += '"' + key + '" : ' + data[key] + ','
-        }
-        json = json.substr(0,json.length-1);
-        json += '}'
-        io.emit('simPanel', JSON.parse(json));
+        io.emit('simPanel', data);
       }, 0, SIMCONNECT_PERIOD_VISUAL_FRAME, SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
     }
 }

@@ -144,7 +144,7 @@ void handleReceived_Data(Isolate* isolate, SIMCONNECT_RECV* pData, DWORD cbData)
 	std::vector<SIMCONNECT_DATATYPE> valTypes = dataRequests[pObjData->dwRequestID].datum_types;
 	std::vector<std::string> valIds = dataRequests[pObjData->dwRequestID].datum_names;
 
-	Local<Array> result_list = Array::New(isolate);
+	Local<Object> result_list = Object::New(isolate);
 	int dataValueOffset = 0;
 
 	for (int i = 0; i < numVars; i++) {
