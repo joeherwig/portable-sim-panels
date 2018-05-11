@@ -9,8 +9,8 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    viewBox="0 0 150 150"
-   height="150px"
-   width="150px">
+   max-height="100%"
+   max-width="100%">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"

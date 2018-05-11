@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Lancair Legacy V2
+    link(rel='stylesheet', href='panel.css')
+    script(src='../../libs/socket.io.js')
+    script(src='../../libs/jquery.min.js')
+    script(src='../../libs/portable-sim-panels.js')
+    script(type='text/javascript').
+      let json;
+      window.parent.addEventListener("update", eventHandler, true);
+      function eventHandler(update) {
+      json = update.detail;
+      }
+  body
+    #GarminG3X
+      .mfd
+        object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg', type='image/svg+xml')
+      .engine
+        object(id='GENERAL ENG RPM:1' data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        object(id='ENG MANIFOLD PRESSURE:1' data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        object(id='GENERAL ENG OIL PRESSURE:1', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        object(id='GENERAL ENG OIL TEMPERATURE:1', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+      .gearTrim
+        object#Gear-indicator(data='../../standardgauges/gear-indicator.svg', type='image/svg+xml')
+        <!--object(id='GEAR TOTAL PCT EXTENDED' data='../../standardgauges/Garmin-generic-arc.svg' type='image/svg+xml')-->
+        object(id='ELEVATOR TRIM POSITION' data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        div
+        object(id='TRAILING EDGE FLAPS LEFT ANGLE' data='../../standardgauges/Garmin-generic-arc.svg' type='image/svg+xml')
+        object(id='TRAILING EDGE FLAPS RIGHT ANGLE' data='../../standardgauges/Garmin-generic-arc.svg' type='image/svg+xml')
