@@ -10,8 +10,8 @@
       let json;
       window.parent.addEventListener("update", eventHandler, true);
       function eventHandler(update) {
-        //console.log(update.detail);
         json = update.detail;
+        vars = update;
       }
 
     </script>

@@ -8,7 +8,7 @@
     "yellowbarend": 276,
     "vne": 276,
     "marker": {
-      "fe": 140,
+      "fe": 122,
       "ge": 132,
       "vne": 276,
       "x": 100,
@@ -16,11 +16,10 @@
     }
   },
   "INDICATED ALTITUDE": {},
-  "PROP RPM:1": {
-    "rangemin": 0,
-    "rangemax": 2400,
-    "label": "RPM 1",
-    "calculatedValue": "x /1.0227",
+  "GENERAL ENG RPM:1": {
+    "rangemin": -100,
+    "rangemax": 3000,
+    "label": "RPM",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 110,
@@ -31,53 +30,26 @@
       "normalColor": "white"
     },
     "ranges": [{
-        "color": "yellow",
-       "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 400,
-        "maxValue": 1200,
-        "width": 1,
-        "activewidth": 30
-      },
-      {
         "color": "green",
-        "minValue": 1200,
-        "maxValue": 1600,
-        "width": 1,
-        "activewidth": 1
-      },
-      {
-        "color": "yellow",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 1600,
-        "maxValue": 1800,
-        "width": 1,
-        "activewidth": 30
-      },
-      {
-        "color": "green",
-        "minValue": 1800,
-        "maxValue": 2200,
-        "width": 1,
-        "activewidth": 1
+        "minValue": 2000,
+        "maxValue": 2700,
+        "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 2200,
-        "maxValue": 2400,
-        "width": 1,
+        "minValue": 2700,
+        "maxValue": 3000,
+        "width": 8,
         "activewidth": 60
       }
     ]
   },
-  "PROP RPM:2": {
-      "rangemin": 0,
-      "rangemax": 2400,
-      "label": "RPM 2",
-      "calculatedValue": "x /1.0227",
+  "GENERAL ENG RPM:1": {
+      "rangemin": -100,
+      "rangemax": 3000,
+      "label": "RPM",
       "baseStyle": {
         "arcMinAngle": -140,
         "arcMaxAngle": 110,
@@ -88,44 +60,18 @@
         "normalColor": "white"
       },
       "ranges": [{
-          "color": "yellow",
-         "alerttype": "warning",
-          "alerttext": "high",
-          "minValue": 400,
-          "maxValue": 1200,
-          "width": 1,
-          "activewidth": 30
-        },
-        {
           "color": "green",
-          "minValue": 1200,
-          "maxValue": 1600,
-          "width": 1,
-          "activewidth": 1
-        },
-        {
-          "color": "yellow",
-          "alerttype": "warning",
-          "alerttext": "high",
-          "minValue": 1600,
-          "maxValue": 1800,
-          "width": 1,
-          "activewidth": 30
-        },
-        {
-          "color": "green",
-          "minValue": 1800,
-          "maxValue": 2200,
-          "width": 1,
-          "activewidth": 1
+          "minValue": 2000,
+          "maxValue": 2700,
+          "width": 2
         },
         {
           "color": "red",
           "alerttype": "warning",
           "alerttext": "high",
-          "minValue": 2200,
-          "maxValue": 2400,
-          "width": 1,
+          "minValue": 2700,
+          "maxValue": 3000,
+          "width": 2,
           "activewidth": 60
         }
       ]
@@ -147,7 +93,7 @@
         "color": "green",
         "minValue": 2000,
         "maxValue": 2700,
-        "width":1
+        "width": 2
       },
       {
         "color": "red",
@@ -155,16 +101,15 @@
         "alerttext": "high",
         "minValue": 2700,
         "maxValue": 3000,
-        "width": 1,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
   "ENG TORQUE:1": {
     "rangemin": 0,
-    "rangemax": 2000,
-    "label": "TRQ 1",
-    "calculatedValue": "x / 1.167",
+    "rangemax": 1500,
+    "label": "TR 1",
     "baseStyle": {
       "arcMinAngle": -140,
       "arcMaxAngle": 90,
@@ -176,126 +121,48 @@
     },
     "ranges": [{
         "color": "green",
-        "minValue": 0,
-        "maxValue": 1200,
-        "width": 1,
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 2,
         "activewidth": 20
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1280,
-        "maxValue": 2000,
-        "width": 1,
+        "minValue": 1250,
+        "maxValue": 1500,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
   "ENG TORQUE:2": {
     "rangemin": 0,
-    "rangemax": 2000,
-    "label": "TRQ 1",
-    "calculatedValue": "x / 1.167",
+    "rangemax": 1500,
+    "label": "TRQ 2",
     "baseStyle": {
       "arcMinAngle": -140,
-      "arcMaxAngle": 90,
+      "arcMaxAngle": 110,
       "pointerwidth": 2,
       "innerRadius": 68,
       "outerRadius": 70,
-      "baseColor": "grey",
+      "baseColor": "#333333",
       "normalColor": "white"
     },
     "ranges": [{
         "color": "green",
-        "minValue": 0,
-        "maxValue": 1200,
-        "width": 1,
-        "activewidth": 20
+        "minValue": 20,
+        "maxValue": 29,
+        "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1280,
-        "maxValue": 2000,
-        "width": 1,
-        "activewidth": 60
-      }
-    ]
-  },
-  "TURB ENG ITT:1": {
-    "rangemin": 0,
-    "rangemax": 1100,
-    "label": "ITT 1",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
-    "baseStyle": {
-      "arcMinAngle": -140,
-      "arcMaxAngle": 90,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
-    "ranges": [{
-        "color": "green",
-        "minValue": 400,
-        "maxValue": 780,
-        "width": 1,
-        "activewidth": 20
-      },{
-          "color": "orange",
-          "minValue": 780,
-          "maxValue": 810,
-          "width": 1,
-          "activewidth": 20
-        },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 810,
-        "maxValue": 1050,
-        "width": 1,
-        "activewidth": 60
-      }
-    ]
-  },
-  "TURB ENG ITT:2": {
-    "rangemin": 0,
-    "rangemax": 1100,
-    "label": "ITT 2",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
-    "baseStyle": {
-      "arcMinAngle": -140,
-      "arcMaxAngle": 90,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
-    "ranges": [{
-        "color": "green",
-        "minValue": 400,
-        "maxValue": 780,
-        "width": 1,
-        "activewidth": 20
-      },{
-          "color": "orange",
-          "minValue": 780,
-          "maxValue": 810,
-          "width": 1,
-          "activewidth": 20
-        },
-      {
-        "color": "red",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 810,
-        "maxValue": 1050,
-        "width": 1,
+        "minValue": 1250,
+        "maxValue": 1500,
+        "width": 2,
         "activewidth": 60
       }
     ]
@@ -465,9 +332,6 @@
       "activewidth": 30
     }]
   },
-  "GEAR CENTER POSITION":{},
-  "GEAR LEFT POSITION":{},
-  "GEAR RIGHT POSITION":{},
     "GEAR TOTAL PCT EXTENDED": {
     "rangemin": 0,
     "rangemax": 1,
@@ -511,6 +375,28 @@
       "normalColor": "white"
     },
     "ranges": [
+      {
+        "color": "green",
+        "minValue": 20,
+        "maxValue": 80,
+        "width": 1
+      },{
+        "color": "orange",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 80,
+        "maxValue": 95,
+        "width": 1,
+        "activewidth": 4
+      },{
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 95,
+        "maxValue": 200,
+        "width": 1,
+        "activewidth": 15
+      }
     ]
   },
   "ENG FUEL FLOW GPH:2": {
@@ -523,6 +409,28 @@
       "normalColor": "white"
     },
     "ranges": [
+      {
+        "color": "silver",
+        "minValue": 6,
+        "maxValue": 10,
+        "width": 1
+      },{
+        "color": "orange",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 10,
+        "maxValue": 13,
+        "width": 1,
+        "activewidth": 4
+      },{
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 13,
+        "maxValue": 15,
+        "width": 1,
+        "activewidth": 15
+      }
     ]
   },
   "PLANE HEADING DEGREES MAGNETIC":{},
@@ -547,7 +455,6 @@
   "AUTOPILOT APPROACH HOLD":{},
   "AUTOPILOT FLIGHT DIRECTOR ACTIVE":{},
   "TURN COORDINATOR BALL":{},
-  "NAV NAME":{},
   "NAV CDI:1":{},
   "NAV GSI:1":{},
   "NAV CDI:2":{},

@@ -5,6 +5,7 @@
 #include <node.h>
 #include <windows.h>
 #include <queue>
+#include <ntstatus.h>
 #include "SimConnect.h"
 
 using namespace v8;
@@ -23,7 +24,9 @@ struct DataRequest {
 	int definition_id;
 	int num_values;
 	Nan::Callback* jsCallback;
-	std::vector<SIMCONNECT_DATATYPE> value_types;
+
+	std::vector<std::string> datum_names;
+	std::vector<SIMCONNECT_DATATYPE> datum_types;
 };
 
 
