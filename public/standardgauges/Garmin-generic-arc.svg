@@ -49,13 +49,13 @@
           Update(update.detail);
         }
 
-        let config = {};
-        let pi = Math.PI;
-        let stepangle;
-        let fullrange;
-        let zeroangle,
-          calculatedValue;
-        let id = window.frameElement.id;
+        let config = {},
+          pi = Math.PI,
+          stepangle,
+          fullrange,
+          zeroangle,
+          calculatedValue,
+          id = window.frameElement.id;
 
         var path = window.parent.location.pathname.split('/');
         path.pop();
@@ -70,10 +70,16 @@
         }, 500);
 
         function init(){
-          fullrange = config.baseStyle.arcMaxAngle - config.baseStyle.arcMinAngle;
+          minAngle = (config.baseStyle.arcMinAngle ? config.baseStyle.arcMinAngle : -140)
+          maxAngle = (config.baseStyle.arcMaxAngle ? config.baseStyle.arcMaxAngle : 110)
+          innerRadius = (config.baseStyle.innerRadius ? config.baseStyle.innerRadius : 68)
+          baseColor = (config.baseStyle.baseColor ? config.baseStyle.baseColor : "grey")
+          fullrange =  maxAngle - minAngle
           stepangle = fullrange / (config.rangemax-config.rangemin);
-          zeroangle = config.rangemin * stepangle * -1 + config.baseStyle.arcMinAngle;
-          calculatedValue = (config.calculatedValue ? config.calculatedValue : void 0);
+          zeroangle = config.rangemin * stepangle * -1 + minAngle;
+          calculatedValue = (config.calculatedValue ? config.calculatedValue : 0);
+
+console.log(id + ' ' + config.rangemax-config.rangemin)
 
           let svg = d3.select("svg")
               .append("svg")
@@ -86,20 +92,20 @@
           let arc = d3.svg.arc()
               .innerRadius(68)
               .outerRadius(70)
-              .startAngle(config.baseStyle.arcMinAngle * (pi/180))
-              .endAngle(config.baseStyle.arcMaxAngle * (pi/180));
+              .startAngle(minAngle * (pi/180))
+              .endAngle(maxAngle * (pi/180));
 
           svg.append("path")
               .attr("class", "arc")
-              .attr("fill", config.baseStyle.baseColor)
+              .attr("fill", baseColor)
               .attr("d", arc);
 
           config.ranges.forEach(function(range, i) {
-          let rangemin = zeroangle + range.minValue * stepangle;
-          let rangemax =  zeroangle + range.maxValue * stepangle;
+            let rangemin = zeroangle + range.minValue * stepangle;
+            let rangemax =  zeroangle + range.maxValue * stepangle;
             let arc2 = d3.svg.arc()
-              .innerRadius(config.baseStyle.innerRadius - range.width)
-              .outerRadius(config.baseStyle.innerRadius)
+              .innerRadius(innerRadius - range.width)
+              .outerRadius(innerRadius)
               .startAngle(rangemin * (pi/180))
               .endAngle(rangemax * (pi/180));
             svg.append("path")
@@ -132,14 +138,14 @@
               case id:
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
-                if ((stepangle) > 2.5) {
+                if (config.rangemax-config.rangemin <= 30) {
                   d3.select('#value').text(value.toFixed(2));
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }
-                //
+
                 if (config.ranges) {
-                  let arccolor = config.baseStyle.baseColor;
+                  let arccolor = baseColor
                   config.ranges.forEach(function(range, i) {
                     let rangemin = zeroangle + range.minValue * stepangle;
                     let rangemax =  zeroangle + range.maxValue * stepangle;
@@ -147,15 +153,15 @@
                     let arc2;
                     if(value > range.minValue && value <= range.maxValue && range.alerttype) {
                       arc2 = d3.svg.arc()
-                        .innerRadius(config.baseStyle.innerRadius - range.activewidth)
-                        .outerRadius(config.baseStyle.innerRadius)
+                        .innerRadius(innerRadius - range.activewidth)
+                        .outerRadius(innerRadius)
                         .startAngle(rangemin * (pi/180))
                         .endAngle(rangemax * (pi/180));
                       arccolor = range.color;
                     } else{
                       arc2 = d3.svg.arc()
-                        .innerRadius(config.baseStyle.innerRadius - range.width)
-                        .outerRadius(config.baseStyle.innerRadius)
+                        .innerRadius(innerRadius - range.width)
+                        .outerRadius(innerRadius)
                         .startAngle(rangemin * (pi/180))
                         .endAngle(rangemax * (pi/180));                  }
                   arc.attr("d", arc2);
