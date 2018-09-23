@@ -78,7 +78,7 @@
                   gearCenterPosition = value;
                   if (gearCenterPosition === 0) {
                     d3.select("#nose-gear").style("fill", 'black');
-                  } else if (gearCenterPosition === 1) {
+                  } else if (gearCenterPosition === 100) {
                     d3.select("#nose-gear").style("fill", 'green');
                   } else {
                     d3.select("#nose-gear").style("fill", 'orange');
@@ -91,7 +91,7 @@
                     gearLeftPosition = value;
                     if (gearLeftPosition === 0) {
                       d3.select("#left-main-gear").style("fill", 'black');
-                    } else if (gearLeftPosition === 1) {
+                    } else if (gearLeftPosition === 100) {
                       d3.select("#left-main-gear").style("fill", 'green');
                     } else {
                       d3.select("#left-main-gear").style("fill", 'orange');
@@ -104,7 +104,7 @@
                       gearRightPosition = value;
                       if (gearRightPosition === 0) {
                         d3.select("#right-main-gear").style("fill", 'black');
-                      } else if (gearRightPosition === 1) {
+                      } else if (gearRightPosition === 100) {
                         d3.select("#right-main-gear").style("fill", 'green');
                       } else {
                         d3.select("#right-main-gear").style("fill", 'orange');
