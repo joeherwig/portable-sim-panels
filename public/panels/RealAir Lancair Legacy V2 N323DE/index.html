@@ -39,7 +39,6 @@
     websocket.onmessage = function (message) {
       if (message.data.substring(0, 18) == 'ExecuteJavaScript:') {
           var strFunction = message.data.substring(18)
-          //console.log(strFunction)
           eval(strFunction)
       }
     }
