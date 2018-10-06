@@ -1,6 +1,7 @@
 window.onload = setTimeout(function(){
-  var socket = io.connect();
-  socket.on('simPanel', function (data) {
+  var socket = new io.Socket();
+  socket.connect('ws://sim:8088');
+    socket.on('onUpdate', function (data) {
     //Update(data);
     var update = new CustomEvent(
       "update",
