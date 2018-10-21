@@ -4,14 +4,44 @@
     <title>Lancair Legacy V2</title>
     <link rel="stylesheet" href="panel.css">
     <script src="../../libs/socket.io.js"></script>
-    <script src="../../libs/jquery.min.js"></script>
-    <script src="../../libs/portable-sim-panels.js"></script>
+    <!--<script src="../../libs/jquery.min.js"></script>
+    <script src="../../libs/portable-sim-panels.js"></script>-->
     <script type="text/javascript">
       let json;
-      window.parent.addEventListener("update", eventHandler, true);
+      window.addEventListener("update", eventHandler, true);
       function eventHandler(update) {
       json = update.detail;
       }
+
+    function Update(data) {
+      //console.log(data)
+      var update = new CustomEvent(
+        "update",
+        {
+          detail: data,
+          bubbles: true,
+          cancelable: false
+        }
+      );
+      this.dispatchEvent(update);
+  }
+
+    console.log('opening websocket on ' + location.hostname + ':8088')
+    // websocket initialisation
+    var websocket = new WebSocket('ws://' + location.hostname + ':8088/onUpdate', 'websimsocket');
+
+    websocket.onopen = function (message) {
+        // turn sound on/off in the sim once socket is open
+        //websocket.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
+    }
+
+    // websocket receiving
+    websocket.onmessage = function (message) {
+      if (message.data.substring(0, 18) == 'ExecuteJavaScript:') {
+          var strFunction = message.data.substring(18)
+          eval(strFunction)
+      }
+    }
     </script>
   </head>
   <body>

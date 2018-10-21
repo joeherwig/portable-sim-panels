@@ -138,8 +138,8 @@ console.log(id + ' ' + config.rangemax-config.rangemin)
               case id:
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
-                if (config.rangemax-config.rangemin <= 30) {
-                  d3.select('#value').text(value.toFixed(2));
+                if (config.rangemax-config.rangemin <= 99) {
+                  d3.select('#value').text(value.toFixed(1));
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }

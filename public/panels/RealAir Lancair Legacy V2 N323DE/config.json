@@ -51,8 +51,9 @@
   },
   "ENG MANIFOLD PRESSURE:1": {
     "rangemin": 0,
-    "rangemax": 35,
+    "rangemax": 40,
     "label": "MAP 1",
+    "calculatedValue": "x * 1.04221",
     "baseStyle": {
       "pointerwidth": 2,
       "innerRadius": 68,
