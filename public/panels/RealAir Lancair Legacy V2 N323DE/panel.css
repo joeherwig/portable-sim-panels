@@ -38,6 +38,10 @@ body {
   grid-column:3/6;
   grid-row:2/4;
 }
+.dme {
+    grid-column: 3/6;
+    grid-row: 1/2;
+}
 
 .engine {
   display: grid;

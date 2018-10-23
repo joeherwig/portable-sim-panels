@@ -10,10 +10,12 @@ html
       let json;
       window.parent.addEventListener("update", eventHandler, true);
       function eventHandler(update) {
-      json = update.detail;
+        json = update.detail;
       }
   body
     #GarminG3X
+      .dme
+        object#DME(data='../../standardgauges/Bendix-King_DME_KDI-573.svg', type='image/svg+xml')
       .mfd
         object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg', type='image/svg+xml')
       .engine

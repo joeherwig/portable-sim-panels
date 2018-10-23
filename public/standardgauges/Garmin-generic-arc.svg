@@ -79,8 +79,6 @@
           zeroangle = config.rangemin * stepangle * -1 + minAngle;
           calculatedValue = (config.calculatedValue ? config.calculatedValue : 0);
 
-console.log(id + ' ' + config.rangemax-config.rangemin)
-
           let svg = d3.select("svg")
               .append("svg")
               .attr("viewBox","0 0 150 150")
