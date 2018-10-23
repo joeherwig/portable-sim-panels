@@ -68,14 +68,51 @@
 
             case 'SELECTED DME':
               selectedDme = value
-              break;
+              switch(selectedDme) {
+                case 1:
+                  d3.select('#posOff').transition().duration(250).style('fill','#656b71')
+                  d3.select('#posN1').transition().duration(250).style('fill','#00ff00')
+                  d3.select('#posN2').transition().duration(250).style('fill','#656b71')
+                  d3.select('#g4513-5').transition().duration(250).style('opacity','1')
+                  d3.select('#g4513').transition().duration(250).style('opacity','1')
+                  d3.select('#posHld').transition().duration(250).style('fill','#656b71')
+                  d3.select('#knob').attr('transform', 'rotate(-31,-135.76351,148.50663)');
+                  break
+                case 2:
+                  d3.select('#posOff').transition().duration(250).style('fill','#656b71')
+                  d3.select('#posN1').transition().duration(250).style('fill','#656b71')
+                  d3.select('#posN2').transition().duration(250).style('fill','#eeff00')
+                  d3.select('#g4513-5').transition().duration(250).style('opacity','1')
+                  d3.select('#g4513').transition().duration(250).style('opacity','1')
+                  d3.select('#posHld').transition().duration(250).style('fill','#656b71')
+                  d3.select('#knob').attr('transform', 'rotate(-95,-135.76351,148.50663)');
+                  break
+                default:
+                  d3.select('#posOff').transition().duration(250).style('fill','#ff0000')
+                  d3.select('#posN1').transition().duration(250).style('fill','#656b71')
+                  d3.select('#posN2').transition().duration(250).style('fill','#656b71')
+                  d3.select('#posHld').transition().duration(250).style('fill','#656b71')
+                  d3.select('#g4513-5').transition().duration(250).style('opacity','0')
+                  d3.select('#g4513').transition().duration(250).style('opacity','0')
+                  d3.select('#knob').attr('transform', 'rotate(-65,-135.76351,148.50663)');
+                  break
+              }
+              break
 
             case 'NAV DME:1':
-              if selectedDme = 1 then d3.select('#distance').text(value);
+              if (selectedDme === 1) d3.select('#distance').text(value.toFixed(1))
               break
 
             case 'NAV DME:2':
-              if selectedDme = 2 then d3.select('#distance').text(value);
+              if (selectedDme === 2) d3.select('#distance').text(value.toFixed(1))
+              break
+
+            case 'NAV DMESPEED:1':
+              if (selectedDme === 1) d3.select('#speed').text(value.toFixed(0))
+              break
+
+            case 'NAV DMESPEED:2':
+              if (selectedDme === 2) d3.select('#speed').text(value.toFixed(0))
               break
 
             default:
@@ -747,7 +784,7 @@
            sodipodi:cx="-167.911"
            sodipodi:type="arc"
            id="path5731"
-           style="opacity:0.86400003;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
+           style="opacity:0.86400003;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
         <path
            d="m -164.99382,78.043923 a 1.5902425,1.5902425 0 0 1 1.57295,1.592785 1.5902425,1.5902425 0 0 1 -1.57822,1.58756 1.5902425,1.5902425 0 0 1 -1.60204,-1.563525 1.5902425,1.5902425 0 0 1 1.5487,-1.616377"
            sodipodi:open="true"
@@ -759,7 +796,7 @@
            sodipodi:cx="-165.01111"
            sodipodi:type="arc"
            id="path5731-1"
-           style="opacity:0.86400003;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
+           style="opacity:0.86400003;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
         <path
            d="m -134.78178,79.32145 a 1.5902425,1.5902425 0 0 1 1.57295,1.592785 1.5902425,1.5902425 0 0 1 -1.57822,1.58756 1.5902425,1.5902425 0 0 1 -1.60204,-1.563525 1.5902425,1.5902425 0 0 1 1.5487,-1.616377"
            sodipodi:open="true"
@@ -771,7 +808,7 @@
            sodipodi:cx="-134.79907"
            sodipodi:type="arc"
            id="path5731-9"
-           style="opacity:0.86400003;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
+           style="opacity:0.86400003;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:1.61903632;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95686275" />
       </g>
       <path
          sodipodi:nodetypes="ccccccc"
@@ -790,8 +827,8 @@
            id="tspan6519"
            x="-304.44797"
            y="76.169991"
-           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';fill:#8d959f;fill-opacity:1;stroke-width:0.22796021">BENDI<tspan
-   style="letter-spacing:1.08964992px;fill:#8d959f;fill-opacity:1;stroke-width:0.22796021"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';fill:#656b71;fill-opacity:1;stroke-width:0.22796021">BENDI<tspan
+   style="letter-spacing:1.08964992px;fill:#656b71;fill-opacity:1;stroke-width:0.22796021"
    id="tspan6523">X/</tspan>KING</tspan></text>
       <g
          id="g5712"
@@ -800,9 +837,9 @@
            id="text5644"
            y="285.99643"
            x="-203.81654"
-           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:0.26458332"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#8d959f;fill-opacity:1;stroke-width:0.26458332"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#656b71;fill-opacity:1;stroke-width:0.26458332"
              y="285.99643"
              x="-203.81654"
              id="posOff"
@@ -811,9 +848,9 @@
            id="text5644-6"
            y="271.68185"
            x="-195.33116"
-           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:0.26458332"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#8d959f;fill-opacity:1;stroke-width:0.26458332"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#656b71;fill-opacity:1;stroke-width:0.26458332"
              y="271.68185"
              x="-195.33116"
              id="posN1"
@@ -822,9 +859,9 @@
            id="text5644-6-0"
            y="265.35959"
            x="-174.99249"
-           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:0.26458332"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#8d959f;fill-opacity:1;stroke-width:0.26458332"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#656b71;fill-opacity:1;stroke-width:0.26458332"
              y="265.35959"
              x="-174.99249"
              id="posHld"
@@ -833,10 +870,10 @@
            id="text5644-6-2"
            y="275.43259"
            x="-144.33836"
-           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#8d959f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#656b71;fill-opacity:1;stroke:none;stroke-width:0.26458332"
            xml:space="preserve"><tspan
              id="posN2"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#8d959f;fill-opacity:1;stroke-width:0.26458332"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#656b71;fill-opacity:1;stroke-width:0.26458332"
              y="275.43259"
              x="-144.33836"
              sodipodi:role="line">N 2</tspan></text>
@@ -921,7 +958,7 @@
            id="path6399"
            style="opacity:0.5;fill:url(#radialGradient6517);fill-opacity:1;stroke:none;stroke-width:1.22097647;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
         <g
-           id="g6484"
+           id="knob"
            transform="rotate(-31.823776,-135.76351,148.50663)">
           <rect
              rx="0.69020933"
@@ -1223,14 +1260,14 @@
            y="54.472836"
            x="-209.5166"
            id="timeTo"
-           sodipodi:role="line">28</tspan></text>
+           sodipodi:role="line"></tspan></text>
       <text
          id="text4544-2-6-0"
          y="61.092461"
          x="-207.06212"
          style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fe8705;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'DSEG14 Classic';-inkscape-font-specification:'DSEG14 Classic';letter-spacing:-0.5291667px;fill:#fe8705;fill-opacity:1;stroke-width:0.26458332"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'DSEG14 Classic';-inkscape-font-specification:'DSEG14 Classic';letter-spacing:-0.5291667px;fill:#fe8705;fill-opacity:0;stroke-width:0.26458332"
            y="61.092461"
            x="-207.06212"
            id="tspan4542-4-7-5"
