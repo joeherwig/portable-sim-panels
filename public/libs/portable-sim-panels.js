@@ -1,11 +1,11 @@
 window.onload = setTimeout(function(){
-
-  /*var socket = io.connect('ws://localhost:8088');
-  //var socket = new io.Socket();
+  /*
+  let socket = io.connect('ws://localhost:8088');
+  //let socket = new io.Socket();
     socket.connect('ws://sim:8088');
     socket.on('onUpdate', function (data) {
     //Update(data);
-    var update = new CustomEvent(
+    let update = new CustomEvent(
       "update",
       {
         detail: data,
@@ -16,7 +16,6 @@ window.onload = setTimeout(function(){
     window.dispatchEvent(update);
   });
   */
-
   function connectToEchoServer() {
     update = new WebSocket('ws://'+window.location.hostname+':1234');
     update.onopen = function(evt) { onOpenEcho(evt) };
@@ -37,7 +36,7 @@ window.onload = setTimeout(function(){
   }
 
   function onMessageEcho(evt) {
-    var update = new CustomEvent(
+    let update = new CustomEvent(
       "update",
       {
         detail: JSON.parse(evt.data),
@@ -49,8 +48,11 @@ window.onload = setTimeout(function(){
   }
   connectToEchoServer();
 
+
+  const SimconnectPort = 8080
+  let = jsonData = {}
   function connectToSimconnectServer() {
-    Simconnect = new WebSocket('ws://'+window.location.hostname+':8088');
+    Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/onUpdate');
     Simconnect.onopen = function(evt) { onOpen(evt) };
     Simconnect.onclose = function(evt) { onClose(evt) };
     Simconnect.onmessage = function(evt) { onMessage(evt) };
@@ -58,8 +60,8 @@ window.onload = setTimeout(function(){
   }
 
   function onOpen(evt) {
-    console.log("CONNECTED to Simconnect :8088");
-    //Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
+    console.log('CONNECTED to Simconnect @ :'+SimconnectPort);
+    Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
   }
 
   function onClose(evt) {
@@ -67,19 +69,23 @@ window.onload = setTimeout(function(){
   }
 
   function onMessage(evt) {
-    console.log(evt.data)
-    var update = new CustomEvent(
+    if (evt.data.substring(0, 18) == 'ExecuteJavaScript:') {
+        jsonData = evt.data.substring(evt.data.indexOf('(')+1,evt.data.indexOf(')'))
+    }
+    if (jsonData.indexOf('DME:') > 0) {
+    //    console.log(JSON.parse(jsonData));
+    }
+    let update = new CustomEvent(
       "update",
       {
-        detail: JSON.parse(evt.data),
+        detail: JSON.parse(jsonData),
         bubbles: true,
         cancelable: false
       }
     );
-
-    function onError(evt){}
-
     window.dispatchEvent(update);
   }
+  function onError(evt){}
+
   connectToSimconnectServer();
 }, 10);
