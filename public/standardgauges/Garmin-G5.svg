@@ -206,20 +206,20 @@
               d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.vne)*-12.364+')')
               d3.select('#ias-marker-vne').attr('style','display:block;')
             }
-            d3.select('#ias-marker-x').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.x)*-12.364+')')
+            d3.select('#ias-marker-x').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.x)*-12.364+')')
             if (config['AIRSPEED INDICATED'].marker.x) {
               d3.select('#ias-marker-x').attr('style','display:block;')
             }
             if (config['AIRSPEED INDICATED'].marker.y) {
-              d3.select('#ias-marker-y').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.y)*-12.364+')')
+              d3.select('#ias-marker-y').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.y)*-12.364+')')
               d3.select('#ias-marker-y').attr('style','display:block;')
             }
             if (config['AIRSPEED INDICATED'].marker.ge) {
-              d3.select('#ias-marker-ge').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.ge)*-12.364+')')
+              d3.select('#ias-marker-ge').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.ge)*-12.364+')')
               d3.select('#ias-marker-ge').attr('style','display:block;')
             }
             if (config['AIRSPEED INDICATED'].marker.fe) {
-              d3.select('#ias-marker-fe').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.fe)*-12.364+')')
+              d3.select('#ias-marker-fe').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.fe)*-12.364+')')
               d3.select('#ias-marker-fe').attr('style','display:block;')
             }
             d3.select('#ias-ruler-yellow-bar')
