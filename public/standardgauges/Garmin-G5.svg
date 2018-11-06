@@ -14,7 +14,8 @@
    max-width="100%"
    inkscape:version="0.92.1 r15371"
    version="1.1"
-   id="svg2">
+   id="svg2"
+   onload="init();">
   <sodipodi:namedview
      showguides="false"
      inkscape:current-layer="svg2"
@@ -200,7 +201,7 @@
           if (config['AIRSPEED INDICATED']){
             d3.select('#ias-ruler-red_vne-bar')
               .attr('height',1 *12.364)
-              .attr('y',373.5-3*1.2364-(config['AIRSPEED INDICATED'].vne)*12.364)
+              .attr('y',373.5-3*1.2364-(config['AIRSPEED INDICATED'].marker.vne)*12.364)
             if (config['AIRSPEED INDICATED'].marker.vne) {
               d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.vne)*-12.364+')')
               d3.select('#ias-marker-vne').attr('style','display:block;')
