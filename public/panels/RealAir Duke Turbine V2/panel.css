@@ -1,0 +1,69 @@
+html {
+  background: #222222; }
+
+body {
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden; }
+
+#GarminG3X {
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: auto;
+  height: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(10, 10vw);
+    grid-auto-flow: row;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+
+.gearTrim {
+  border: 3px solid grey;
+  border-radius: 2em;
+  display: grid;
+  grid-column:8/10;
+  grid-row:5/6;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, auto);
+  grid-auto-flow: row;
+  padding: 10px;
+}
+
+.mfd {
+  grid-column:3/6;
+  grid-row:2/4;
+}
+.dme {
+    grid-column: 3/6;
+    grid-row: 1/2;
+}
+
+.engine {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  border: 3px solid silver;
+  border-radius: 2rem;
+  grid-column:8/10;
+  grid-row:2/3;
+  padding: 20px;
+  background: black;
+}
+
+object{
+  display: block;
+  width: 100%;
+}
+
+#Garmin-G5 {
+  width: 100%;
+
+}
+
+/*# sourceMappingURL=panel.css.map */
