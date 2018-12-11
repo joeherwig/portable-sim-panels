@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "NUMBER OF ENGINES",
     "unitsname": "Number",
     "type": 8
@@ -1243,7 +1244,7 @@
     "unitsname": "Rpm",
     "type": 8
   },
- {
+  {
     "name": "PROP RPM:3",
     "unitsname": "Rpm",
     "type": 8
@@ -1314,13 +1315,23 @@
     "type": 8
   },
   {
-    "name": "ENG N1 RPM:index",
-    "unitsname": "Rpm",
+    "name": "ENG N1 RPM:1",
+    "unitsname": "Percent",
     "type": 8
   },
   {
-    "name": "ENG N2 RPM:index",
-    "unitsname": "Rpm",
+    "name": "ENG N2 RPM:1",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "ENG N1 RPM:2",
+    "unitsname": "Percent",
+    "type": 8
+  },
+  {
+    "name": "ENG N2 RPM:2",
+    "unitsname": "Percent",
     "type": 8
   },
   {
@@ -2219,8 +2230,8 @@
     "type": 8
   },
   {
-    "name":"TURN COORDINATOR BALL",
-    "unitsname":"Percent",
+    "name": "TURN COORDINATOR BALL",
+    "unitsname": "Percent",
     "type": 8,
     "epsilon": 1
   },
@@ -3229,8 +3240,20 @@
     "unitsname": "Percent over 100",
     "type": 8
   },
-  {"name":"TRAILING EDGE FLAPS LEFT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
-  {"name":"TRAILING EDGE FLAPS RIGHT ANGLE", "unitsname": "degrees", "type": 8, "epsilon": 1, "refresh": 2},
+  {
+    "name": "TRAILING EDGE FLAPS LEFT ANGLE",
+    "unitsname": "degrees",
+    "type": 8,
+    "epsilon": 1,
+    "refresh": 2
+  },
+  {
+    "name": "TRAILING EDGE FLAPS RIGHT ANGLE",
+    "unitsname": "degrees",
+    "type": 8,
+    "epsilon": 1,
+    "refresh": 2
+  },
   {
     "name": "LEADING EDGE FLAPS LEFT PERCENT",
     "unitsname": "Percent over 100",

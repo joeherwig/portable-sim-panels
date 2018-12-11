@@ -14,14 +14,15 @@ let myVars = []
 ,   CLIENTS=[];
 
 
-const webserverPort = 81
+const webserverPort = 80
 server.listen(webserverPort);
 console.log('Der Server läuft nun unter http://127.0.0.1:' +webserverPort+ '/');
 app.use(express.static(__dirname + '/public'));
+//app.use(express.directory(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-	res.sendfile(__dirname + '/public/index.html');
+	//res.sendfile(__dirname + '/public/index.html');
 });
 
 wss.on('connection', function connection(ws) {

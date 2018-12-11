@@ -16,6 +16,8 @@ window.onload = setTimeout(function(){
     window.dispatchEvent(update);
   });
   */
+
+
   function connectToEchoServer() {
     update = new WebSocket('ws://'+window.location.hostname+':1234');
     update.onopen = function(evt) { onOpenEcho(evt) };
