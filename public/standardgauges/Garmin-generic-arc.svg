@@ -70,10 +70,13 @@
         }, 500);
 
         function init(){
-          minAngle = (config.baseStyle.arcMinAngle ? config.baseStyle.arcMinAngle : -140)
-          maxAngle = (config.baseStyle.arcMaxAngle ? config.baseStyle.arcMaxAngle : 110)
-          innerRadius = (config.baseStyle.innerRadius ? config.baseStyle.innerRadius : 68)
-          baseColor = (config.baseStyle.baseColor ? config.baseStyle.baseColor : "grey")
+          minAngle = (config.hasOwnProperty('baseStyle?.arcMinAngle') ? config.baseStyle.arcMinAngle : -140)
+          maxAngle = (config.hasOwnProperty('baseStyle?.arcMaxAngle') ? config.baseStyle.arcMaxAngle : 110)
+          pointerwidth = (config.hasOwnProperty('baseStyle?.pointerwidth') ? config.baseStyle.pointerwidth : 2)
+          innerRadius = (config.hasOwnProperty('baseStyle?.innerRadius') ? config.baseStyle.innerRadius : 68)
+          outerRadius = (config.hasOwnProperty('baseStyle?.outerRadius') ? config.baseStyle.outerRadius : 70)
+          baseColor = (config.hasOwnProperty('baseStyle?.baseColor') ? config.baseStyle.baseColor : "grey")
+          normalColor = (config.hasOwnProperty('baseStyle?.normalColor') ? config.baseStyle.normalColor : "white")
           fullrange =  maxAngle - minAngle
           stepangle = fullrange / (config.rangemax-config.rangemin);
           zeroangle = config.rangemin * stepangle * -1 + minAngle;
