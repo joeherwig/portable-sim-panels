@@ -43,6 +43,43 @@
        type="text/javascript"
        id="businesslogic"><![CDATA[
 
+//----------------
+Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
+var obj = this;
+var needles = needle.split( "." );
+var needles_full=[];
+var needles_square;
+for( var i = 0; i<needles.length; i++ ) {
+    needles_square = needles[i].split( "[" );
+    if(needles_square.length>1){
+        for( var j = 0; j<needles_square.length; j++ ) {
+            if(needles_square[j].length){
+                needles_full.push(needles_square[j]);
+            }
+        }
+    }else{
+        needles_full.push(needles[i]);
+    }
+}
+for( var i = 0; i<needles_full.length; i++ ) {
+    var res = needles_full[i].match(/^((\d+)|"(.+)"|'(.+)')\]$/);
+    if (res != null) {
+        for (var j = 0; j < res.length; j++) {
+            if (res[j] != undefined) {
+                needles_full[i] = res[j];
+            }
+        }
+    }
+
+    if( typeof obj[needles_full[i]]=='undefined') {
+        return false;
+    }
+    obj = obj[needles_full[i]];
+}
+return true;
+}});
+//----------------
+
         window.parent.addEventListener("update", eventHandler, true);
 
         function eventHandler(update) {
@@ -70,17 +107,17 @@
         }, 500);
 
         function init(){
-          minAngle = (config.hasOwnProperty('baseStyle?.arcMinAngle') ? config.baseStyle.arcMinAngle : -140)
-          maxAngle = (config.hasOwnProperty('baseStyle?.arcMaxAngle') ? config.baseStyle.arcMaxAngle : 110)
-          pointerwidth = (config.hasOwnProperty('baseStyle?.pointerwidth') ? config.baseStyle.pointerwidth : 2)
-          innerRadius = (config.hasOwnProperty('baseStyle?.innerRadius') ? config.baseStyle.innerRadius : 68)
-          outerRadius = (config.hasOwnProperty('baseStyle?.outerRadius') ? config.baseStyle.outerRadius : 70)
-          baseColor = (config.hasOwnProperty('baseStyle?.baseColor') ? config.baseStyle.baseColor : "grey")
-          normalColor = (config.hasOwnProperty('baseStyle?.normalColor') ? config.baseStyle.normalColor : "white")
+          minAngle = (config._has("baseStyle.arcMinAngle")) ? config.baseStyle.arcMinAngle : -140
+          maxAngle = (config._has("baseStyle.arcMaxAngle")) ? config.baseStyle.arcMaxAngle : 110
+          pointerwidth = (config._has("baseStyle.pointerwidth")) ? config.baseStyle.pointerwidth : 2
+          innerRadius = (config._has("baseStyle.innerRadius")) ? config.baseStyle.innerRadius : 68
+          outerRadius = (config._has("baseStyle.outerRadius")) ? config.baseStyle.outerRadius : 70
+          baseColor = (config._has("baseStyle.baseColor")) ? config.baseStyle.baseColor : "grey"
+          normalColor = (config._has("baseStyle.normalColor")) ? config.baseStyle.normalColor : "white"
+          calculatedValue = (config._has("calculatedValue")) ? config.calculatedValue : 0
           fullrange =  maxAngle - minAngle
           stepangle = fullrange / (config.rangemax-config.rangemin);
           zeroangle = config.rangemin * stepangle * -1 + minAngle;
-          calculatedValue = (config.calculatedValue ? config.calculatedValue : 0);
 
           let svg = d3.select("svg")
               .append("svg")
