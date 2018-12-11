@@ -22,16 +22,9 @@
     "lean-hint": 4000
   },
   "ENG TORQUE:1": {
+    "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 2000,
-    "label": "LB/Ft",
-    "baseStyle": {
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
     "ranges": [
       {
         "color": "green",
@@ -53,14 +46,7 @@
   "ENG TORQUE:2": {
     "rangemin": 0,
     "rangemax": 2000,
-    "label": "LB/Ft",
-    "baseStyle": {
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
+    "label": "TRQ LB/ft",
     "ranges": [
       {
         "color": "green",
@@ -83,14 +69,6 @@
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
-    "calculatedValue": "x",
-    "baseStyle": {
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
     "ranges": [
       {
         "color": "green",
@@ -109,8 +87,8 @@
         "alerttype": "warning",
         "alerttext": "high",
         "minValue": 810,
-        "maxValue": 815,
-        "width": 15,
+        "maxValue": 1050,
+        "width": 2,
         "activewidth": 60
       }
     ]
@@ -120,13 +98,6 @@
     "rangemax": 1100,
     "label": "ITT °C",
     "calculatedValue": "x",
-    "baseStyle": {
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
-    },
     "ranges": [
       {
         "color": "green",
@@ -145,11 +116,24 @@
         "alerttype": "warning",
         "alerttext": "high",
         "minValue": 810,
-        "maxValue": 1100,
+        "maxValue": 1050,
         "width": 2,
         "activewidth": 60
       }
     ]
+  },
+  "ENG N1 RPM:1": {
+    "rangemin": 0,
+    "rangemax": 110,
+    "label": "NG %RPM",
+    "calculatedValue": "x",
+    "ranges": []
+  },
+  "ENG N1 RPM:2": {
+    "rangemin": 0,
+    "rangemax": 110,
+    "label": "NG %RPM",
+    "ranges": []
   },
   "ELEVATOR TRIM POSITION": {
     "rangemin": -15,
@@ -158,12 +142,7 @@
     "calculatedValue-": "x * 0.93",
     "baseStyle": {
       "arcMinAngle": 60,
-      "arcMaxAngle": 120,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 120
     },
     "ranges": [
       {
@@ -192,12 +171,7 @@
     "label": "Flaps handle %",
     "baseStyle": {
       "arcMinAngle": 90,
-      "arcMaxAngle": 135,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 135
     },
     "ranges": []
   },
@@ -207,12 +181,7 @@
     "label": "Flaps L °",
     "baseStyle": {
       "arcMinAngle": 90,
-      "arcMaxAngle": 135,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 135
     },
     "ranges": []
   },
@@ -222,12 +191,7 @@
     "label": "Flaps R °",
     "baseStyle": {
       "arcMinAngle": 90,
-      "arcMaxAngle": 135,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 135
     },
     "ranges": []
   },
@@ -237,12 +201,7 @@
     "label": "VSI",
     "baseStyle": {
       "arcMinAngle": -240,
-      "arcMaxAngle": 60,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 60
     },
     "ranges": [
       {
@@ -337,12 +296,7 @@
     "label": "Gear %",
     "baseStyle": {
       "arcMinAngle": 90,
-      "arcMaxAngle": 180,
-      "pointerwidth": 2,
-      "innerRadius": 68,
-      "outerRadius": 70,
-      "baseColor": "grey",
-      "normalColor": "white"
+      "arcMaxAngle": 180
     },
     "ranges": [
       {
