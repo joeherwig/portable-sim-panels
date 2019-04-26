@@ -25,42 +25,44 @@
     "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 2000,
+    "calculatedValue": "x * 0.85",
     "ranges": [
       {
         "color": "green",
         "minValue": 0,
-        "maxValue": 1200,
+        "maxValue": 1400,
         "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1270,
-        "maxValue": 1290,
-        "width": 15,
+        "minValue": 1450,
+        "maxValue": 2000,
+        "width": 2,
         "activewidth": 60
       }
     ]
   },
   "ENG TORQUE:2": {
+    "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 2000,
-    "label": "TRQ LB/ft",
+    "calculatedValue": "x * 0.85",
     "ranges": [
       {
         "color": "green",
         "minValue": 0,
-        "maxValue": 1200,
+        "maxValue": 1400,
         "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1270,
-        "maxValue": 1290,
-        "width": 15,
+        "minValue": 1450,
+        "maxValue": 2000,
+        "width": 2,
         "activewidth": 60
       }
     ]
@@ -69,6 +71,7 @@
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
+    "calculatedValue": "x * 1.2",
     "ranges": [
       {
         "color": "green",
@@ -97,7 +100,7 @@
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
-    "calculatedValue": "x",
+    "calculatedValue": "x * 1.2",
     "ranges": [
       {
         "color": "green",
@@ -125,14 +128,15 @@
   "ENG N1 RPM:1": {
     "rangemin": 0,
     "rangemax": 110,
-    "label": "NG %RPM",
-    "calculatedValue": "x",
+    "label": "N1 % RPM",
+    "calculatedValue": "x * 1.1",
     "ranges": []
   },
   "ENG N1 RPM:2": {
     "rangemin": 0,
     "rangemax": 110,
-    "label": "NG %RPM",
+    "label": "N1 % RPM",
+    "calculatedValue": "x * 1.1",
     "ranges": []
   },
   "ELEVATOR TRIM POSITION": {
@@ -382,6 +386,86 @@
     ]
   },
   "GENERAL ENG OIL TEMPERATURE:1": {
+    "rangemin": 0,
+    "rangemax": 130,
+    "label": "Oil Temp °C",
+    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "calculatedValueFahrenheit": "x - 459,67",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 37,
+        "maxValue": 75,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 76,
+        "maxValue": 93,
+        "width": 1
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 94,
+        "maxValue": 114,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 115,
+        "maxValue": 130,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL ENG OIL PRESSURE:2": {
+    "rangemin": 0,
+    "rangemax": 120,
+    "label": "Oil psi",
+    "calculatedValue": "x /144",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 0,
+        "maxValue": 9,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 30,
+        "maxValue": 60,
+        "width": 1
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 101,
+        "maxValue": 120,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL ENG OIL TEMPERATURE:2": {
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
