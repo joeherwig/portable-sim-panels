@@ -238,7 +238,8 @@
           for(let attr = 0; attr &lt; Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
-            switch (key) {
+
+            switch (key.replace(/_/gi,' ')) {
 
               case 'AUTOPILOT MASTER':
                 apmaster = value;
@@ -252,9 +253,9 @@
                 break;
 
               case 'PLANE PITCH DEGREES':
-                pitch = value*-1;
+                pitch = (value*1>180) ? (value-360)*-1 : value * - 1;
                 d3.select('#horizon-gradient').attr('gradientTransform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch * 22.825+')');
-                //d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
+                d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
                 d3.select('#pitch-ruler-fade-out-top').attr('gradientTransform','translate(0 '+pitch+'), rotate('+bank+' 500, 373.5)')
                 d3.select('#pitch-ruler').attr('transform', 'rotate('+bank+', 500, 373.5) translate(0, '+pitch*22.825+')');
                 break;
@@ -314,7 +315,7 @@
 
 
               case 'PLANE HEADING DEGREES MAGNETIC':
-                value ===0 ? 360 : value;
+                value === 0 ? 360 : value;
                 hdgtext = Math.abs(Math.floor(value % 360));
                 if (value &lt; 0) {
                   hdgtext = 360 - Math.abs(Math.floor(hdgtext));

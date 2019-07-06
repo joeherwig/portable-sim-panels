@@ -1,8 +1,8 @@
 window.onload = setTimeout(function(){
-  /*
-  let socket = io.connect('ws://localhost:8088');
+/*
+  let socket = io.connect('ws://localhost:8080/onUpdate');
   //let socket = new io.Socket();
-    socket.connect('ws://sim:8088');
+    socket.connect('ws://sim:8080/onUpdate');
     socket.on('onUpdate', function (data) {
     //Update(data);
     let update = new CustomEvent(
@@ -15,7 +15,7 @@ window.onload = setTimeout(function(){
     );
     window.dispatchEvent(update);
   });
-  */
+
 
 
   function connectToEchoServer() {
@@ -49,12 +49,13 @@ window.onload = setTimeout(function(){
     window.dispatchEvent(update);
   }
   connectToEchoServer();
-
+*/
 
   const SimconnectPort = 8080
   let = jsonData = {}
   function connectToSimconnectServer() {
-    Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/onUpdate');
+    //Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/onUpdate');
+    Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/fsuipc');
     Simconnect.onopen = function(evt) { onOpen(evt) };
     Simconnect.onclose = function(evt) { onClose(evt) };
     Simconnect.onmessage = function(evt) { onMessage(evt) };
@@ -74,13 +75,10 @@ window.onload = setTimeout(function(){
     if (evt.data.substring(0, 18) == 'ExecuteJavaScript:') {
         jsonData = evt.data.substring(evt.data.indexOf('(')+1,evt.data.indexOf(')'))
     }
-    if (jsonData.indexOf('DME:') > 0) {
-    //    console.log(JSON.parse(jsonData));
-    }
     let update = new CustomEvent(
       "update",
       {
-        detail: JSON.parse(jsonData),
+        detail: JSON.parse(evt.data),
         bubbles: true,
         cancelable: false
       }
