@@ -3,21 +3,18 @@
   <head>
     <title>Duke Turbine V2</title>
     <link rel="stylesheet" type="text/css" href="./panel.css">
-    <script src="../../libs/socket.io.js"></script><script src="../../libs/jquery.min.js"></script><script src="../../libs/d3.3.min.js"></script><script src="../../libs/portable-sim-panels.js"></script>
     <script type="text/javascript">
       let config = {}
       let path = window.parent.location.pathname//.split('/');
       //path.pop();
-      console.log(path)
-      configFile = path+"/config.json"
+      //configFile = path+"/config.json"
       $.getJSON(configFile, function(json){
         config = json;
-        //console.log(config)
       });
       window.parent.addEventListener("update", eventHandler, true);
       function eventHandler(update) {
         json = update.detail;
-        //console.log(json["ENG N1 RPM:2"]+' | '+json["ENG N1 RPM:2"])
+        console.log(json["NAV 1 CDI"]+' | '+json["NAV 1 GSI"])
       }
       /*
         var event = new CustomEvent("update",{"detail": {"AIRSPEED_INDICATED":"79.67","PLANE_PITCH_DEGREES":"351.57","INDICATED_ALTITUDE":"2312","PLANE_HEADING_DEGREES_MAGNETIC":"310.89","PLANE_BANK_DEGREES":"-347.89"}});

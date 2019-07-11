@@ -238,6 +238,7 @@
           for(let attr = 0; attr &lt; Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
+            console.log(key.replace)
 
             switch (key.replace(/_/gi,' ')) {
 
@@ -339,7 +340,7 @@
 
               case 'AUTOPILOT HEADING LOCK':
                 aphdglock = value;
-                if (value &amp;&amp; aphdglockdir &amp;&amp; apmaster) {
+                if (value && aphdglockdir && apmaster) {
                   d3.select('#ap-selected-hdg-bug').style('display','block');
                   d3.select('#ap-hdg-active-sign').style('display','block');
                   d3.select('#hdg-lock-indicator').style('display','block');
@@ -354,12 +355,13 @@
                 d3.select('#slip-indicator-ball').attr('transform', 'translate('+Math.round(value*1.2)+ ', 0)');
                 break;
 
-              case 'NAV CDI:1':
-                d3.select('#cdi').attr('transform', 'translate('+value*1.44+', 0)');
+              case 'NAV 1 CDI':
+                console.log(value)
+                d3.select('#cdi').attr('transform', 'translate('+value+', 0)');
                 break;
 
-              case 'NAV GSI:1':
-                d3.select('#gsi').attr('transform', 'translate(0, '+value*1.24+')');
+              case 'NAV 1 GSI':
+                d3.select('#gsi').attr('transform', 'translate(0, '+value+')');
                 break;
 
               case 'VERTICAL SPEED':
