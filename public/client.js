@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var socket = io.connect();
 	// neue Nachricht
 	socket.on('chat', function (data) {
-		console.log(data);
+		//console.log(data);
 		var zeit = new Date(data.zeit);
 		$('#content').append(
 			$('<li></li>').append(

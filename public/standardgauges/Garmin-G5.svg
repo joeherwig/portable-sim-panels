@@ -238,7 +238,7 @@
           for(let attr = 0; attr &lt; Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
-            console.log(key.replace)
+            //console.log(key.replace)
 
             switch (key.replace(/_/gi,' ')) {
 
@@ -340,7 +340,7 @@
 
               case 'AUTOPILOT HEADING LOCK':
                 aphdglock = value;
-                if (value && aphdglockdir && apmaster) {
+                if (value &amp;&amp; aphdglockdir &amp;&amp; apmaster) {
                   d3.select('#ap-selected-hdg-bug').style('display','block');
                   d3.select('#ap-hdg-active-sign').style('display','block');
                   d3.select('#hdg-lock-indicator').style('display','block');
@@ -356,7 +356,6 @@
                 break;
 
               case 'NAV 1 CDI':
-                console.log(value)
                 d3.select('#cdi').attr('transform', 'translate('+value+', 0)');
                 break;
 
@@ -371,7 +370,6 @@
                 break;
 
               case 'test':
-                console.log(value.x + ' ---')
                 let x = value.x;
                 let y = value.y;
                 Update({

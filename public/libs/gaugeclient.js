@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let jsonstring = '{}';
 	socket.on('simPanel', function (data) {
 		Update(data);
-		console.log(data);
+		//console.log(data);
 	});
 
 	// Nachricht senden

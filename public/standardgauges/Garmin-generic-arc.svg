@@ -39,9 +39,8 @@
     <script
        xlink:href="../libs/jquery.min.js"
        id="script13" />
-    <script
-       type="text/javascript"
-       id="businesslogic"><![CDATA[
+       <script
+          type="text/javascript" id="businesslogic"><![CDATA[
 
 //----------------
 Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
@@ -99,7 +98,6 @@ return true;
         path = path.join("/") + "/";
         $.getJSON(path+"/config.json", function(json){
           config = json[window.frameElement.id];
-          alert(config);
           init();
         });
 
