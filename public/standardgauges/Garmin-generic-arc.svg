@@ -99,6 +99,7 @@ return true;
         path = path.join("/") + "/";
         $.getJSON(path+"/config.json", function(json){
           config = json[window.frameElement.id];
+          alert(config);
           init();
         });
 

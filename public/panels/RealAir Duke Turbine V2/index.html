@@ -1,33 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Duke Turbine V2</title>
-    <link rel="stylesheet" type="text/css" href="./panel.css">
-    <script type="text/javascript">
-      let config = {}
-      let path = window.parent.location.pathname//.split('/');
-      //path.pop();
-      //configFile = path+"/config.json"
-      $.getJSON(configFile, function(json){
-        config = json;
-      });
-      window.parent.addEventListener("update", eventHandler, true);
-      function eventHandler(update) {
-        json = update.detail;
-        console.log(json["NAV 1 CDI"]+' | '+json["NAV 1 GSI"])
-      }
-      /*
-        var event = new CustomEvent("update",{"detail": {"AIRSPEED_INDICATED":"79.67","PLANE_PITCH_DEGREES":"351.57","INDICATED_ALTITUDE":"2312","PLANE_HEADING_DEGREES_MAGNETIC":"310.89","PLANE_BANK_DEGREES":"-347.89"}});
-        document.dispatchEvent(event);
-      */
-    </script>
-  </head>
-  <body>
-    <div id="GarminG3X">
-      <div class="dme"><object id="DME" data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml"></object></div>
-      <div class="mfd"><object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object></div>
-      <div class="engine"><object id="ENG TORQUE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="ENG TORQUE:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TURB ENG ITT:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TURB ENG ITT:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="ENG N1 RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="ENG N1 RPM:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="GENERAL ENG OIL PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="GENERAL ENG OIL TEMPERATURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div>
-      <div class="gearTrim"><object id="Gear-indicator" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml"></object><object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div>
-    </div>
-  </body>
-</html>
+<!DOCTYPE html><html><head><title>Lancair Legacy V2</title><link rel="stylesheet" href="panel.css"><script src="../../libs/socket.io.js"></script><script src="../../libs/jquery.min.js"></script><script src="../../libs/d3.3.min.js"></script><script src="../../libs/portable-sim-panels.js"></script><script type="text/javascript">let config = {}
+let path = window.parent.location.pathname.split('/');
+path.pop();
+path = path.join('/') + '/';
+$.getJSON(path+'config.json', function(json){
+config = json;
+});
+let json;
+window.parent.addEventListener("update", eventHandler, true);
+function eventHandler(update) {
+json = update.detail;
+}</script></head><body><div id="GarminG3X"><div class="dme">
+<object id="DME" data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml"></object></div><div class="mfd">
+<object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object></div><div class="engine">
+<object id="ENG_1_TORQUE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="ENG_2_TORQUE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="TURB_ENG_1_ITT" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="TURB_ENG_2_ITT" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="ENG_1_N1_RPM" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="ENG_2_N1_RPM" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="GENERAL_ENG_1_OIL_PRESSURE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="GENERAL_ENG_2_OIL_PRESSURE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="GENERAL_ENG_1_OIL_TEMPERATURE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="GENERAL_ENG_2_OIL_TEMPERATURE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div><div class="gearTrim">
+<object id="Gear-indicator" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml"></object>
+<object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
+<object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div></div></body></html>

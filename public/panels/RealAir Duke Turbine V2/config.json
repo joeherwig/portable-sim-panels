@@ -21,11 +21,11 @@
   "INDICATED ALTITUDE": {
     "lean-hint": 4000
   },
-  "ENG TORQUE:1": {
-    "label": "TRQ LB/ft",
+  "ENG_1_TORQUE": {
+    "label": "TRQ LB/ft_x",
     "rangemin": 0,
     "rangemax": 2000,
-    "calculatedValue": "x * 0.85",
+    "calculatedValue": "x /14 * 12",
     "ranges": [
       {
         "color": "green",
@@ -44,11 +44,11 @@
       }
     ]
   },
-  "ENG TORQUE:2": {
-    "label": "TRQ LB/ft",
+  "ENG_2_TORQUE": {
+    "label": "TRQ LB/feet",
     "rangemin": 0,
     "rangemax": 2000,
-    "calculatedValue": "x * 0.85",
+    "calculatedValue": "x /14 * 12",
     "ranges": [
       {
         "color": "green",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "TURB ENG ITT:1": {
+  "TURB_ENG_1_ITT": {
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
@@ -96,7 +96,7 @@
       }
     ]
   },
-  "TURB ENG ITT:2": {
+  "TURB_ENG_2_ITT": {
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
@@ -125,14 +125,14 @@
       }
     ]
   },
-  "ENG N1 RPM:1": {
+  "ENG_1_N1_RPM": {
     "rangemin": 0,
     "rangemax": 110,
     "label": "N1 % RPM",
     "calculatedValue": "x * 1.1",
     "ranges": []
   },
-  "ENG N1 RPM:2": {
+  "ENG_2_N1_RPM": {
     "rangemin": 0,
     "rangemax": 110,
     "label": "N1 % RPM",
