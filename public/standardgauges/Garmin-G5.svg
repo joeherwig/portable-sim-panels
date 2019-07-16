@@ -329,8 +329,8 @@
               case 'AUTOPILOT HEADING LOCK DIR':
                 if (value !== aphdglockdir) {
                   clearTimeout(closeHdgLockDirBox);
-                  aphdglockdir = value;
-                  d3.select('#ap-hdg-selected-value').text(value + '°');
+                  aphdglockdir = Math.floor(value);
+                  d3.select('#ap-hdg-selected-value').text(aphdglockdir + '°');
                   d3.select('#ap-hdg-selected-box').style('display', 'block');
                   closeHdgLockDirBox = setTimeout(function(){
                     d3.select('#ap-hdg-selected-box').style('display','none');
