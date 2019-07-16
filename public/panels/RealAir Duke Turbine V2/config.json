@@ -22,7 +22,7 @@
     "lean-hint": 4000
   },
   "ENG_1_TORQUE": {
-    "label": "TRQ LB/ft_x",
+    "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 2000,
     "calculatedValue": "x /14 * 12",
@@ -169,7 +169,7 @@
       }
     ]
   },
-  "FLAPS HANDLE PERCENT": {
+  "FLAPS_HANDLE_PERCENT": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps handle %",
@@ -179,7 +179,7 @@
     },
     "ranges": []
   },
-  "TRAILING EDGE FLAPS LEFT ANGLE": {
+  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps L °",
@@ -189,7 +189,7 @@
     },
     "ranges": []
   },
-  "TRAILING EDGE FLAPS RIGHT ANGLE": {
+  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
     "rangemin": 0,
     "rangemax": 100,
     "label": "Flaps R °",
@@ -199,7 +199,7 @@
     },
     "ranges": []
   },
-  "VERTICAL SPEED": {
+  "VERTICAL_SPEED": {
     "rangemin": -4000,
     "rangemax": 4000,
     "label": "VSI",
@@ -291,10 +291,10 @@
       }
     ]
   },
-  "GEAR CENTER POSITION": {},
-  "GEAR LEFT POSITION": {},
-  "GEAR RIGHT POSITION": {},
-  "GEAR TOTAL PCT EXTENDED": {
+  "GEAR_CENTER_POSITION": {},
+  "GEAR_LEFT_POSITION": {},
+  "GEAR_RIGHT_POSITION": {},
+  "GEAR_TOTAL_PCT_EXTENDED": {
     "rangemin": 0,
     "rangemax": 1,
     "label": "Gear %",
@@ -323,7 +323,7 @@
       }
     ]
   },
-  "ENG FUEL FLOW GPH:1": {
+  "ENG_FUEL_FLOW_GPH:1": {
     "rangemin": 0,
     "rangemax": 30,
     "label": "Gallons / h",
@@ -350,7 +350,7 @@
       }
     ]
   },
-  "GENERAL ENG OIL PRESSURE:1": {
+  "GENERAL_ENG_1_OIL_PRESSURE:1": {
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
@@ -385,7 +385,7 @@
       }
     ]
   },
-  "GENERAL ENG OIL TEMPERATURE:1": {
+  "GENERAL_ENG_1_OIL_TEMPERATURE": {
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
@@ -430,7 +430,7 @@
       }
     ]
   },
-  "GENERAL ENG OIL PRESSURE:2": {
+  "GENERAL_ENG_2_OIL_PRESSURE": {
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
@@ -465,7 +465,7 @@
       }
     ]
   },
-  "GENERAL ENG OIL TEMPERATURE:2": {
+  "GENERAL_ENG_2_OIL_TEMPERATURE": {
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
@@ -510,8 +510,8 @@
       }
     ]
   },
-  "PLANE HEADING DEGREES MAGNETIC": {},
-  "PLANE PITCH DEGREES": {},
+  "PLANE_HEADING_DEGREES_MAGNETIC": {},
+  "PLANE_PITCH_DEGREES": {},
   "PLANE BANK DEGREES": {},
   "GPS GROUND SPEED": {},
   "KOHLSMAN SETTING HG": {},
