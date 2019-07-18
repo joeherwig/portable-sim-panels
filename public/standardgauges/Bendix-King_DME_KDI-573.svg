@@ -37,7 +37,7 @@
         id="script13" />
      <script
         id="script4532"
-        type="text/javascript">
+        type="text/javascript"><![CDATA[
          let selectedDme = 0;
 
          window.parent.addEventListener("update", eventHandler, true);
@@ -58,17 +58,17 @@
          }, 100);
 
          function init(){
-            selectedDme =
+            selectedDme = 2
          }
 
         function Update(inputObject){
-          for(let attr = 0; attr &lt; Object.keys(inputObject).length; attr++){
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
           let key = Object.keys(inputObject)[attr];
           let value = Object.values(inputObject)[attr];
           switch (key) {
 
             case 'DME_Switch':
-              selectedDme = value * 1
+              selectedDme = value * 1 + 1
                console.log(selectedDme)
               switch(selectedDme) {
                 case 1:
@@ -126,7 +126,7 @@
             }
           }
         }
-
+]]>
          </script>
     <linearGradient
        inkscape:collect="always"

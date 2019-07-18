@@ -42,7 +42,6 @@
        <script
           type="text/javascript" id="businesslogic"><![CDATA[
 
-          //----------------
           Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
           var obj = this;
           var needles = needle.split( "." );
@@ -77,7 +76,6 @@
           }
           return true;
           }});
-          //----------------
 
         window.parent.addEventListener("update", eventHandler, true);
 
@@ -106,7 +104,6 @@
         }, 500);
 
         function init(){
-          console.log(config)
           minAngle = (config._has("baseStyle.arcMinAngle")) ? config.baseStyle.arcMinAngle : -140
           maxAngle = (config._has("baseStyle.arcMaxAngle")) ? config.baseStyle.arcMaxAngle : 110
           pointerwidth = (config._has("baseStyle.pointerwidth")) ? config.baseStyle.pointerwidth : 2
