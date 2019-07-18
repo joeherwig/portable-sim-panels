@@ -69,7 +69,6 @@
 
             case 'DME_Switch':
               selectedDme = value * 1 + 1
-               console.log(selectedDme)
               switch(selectedDme) {
                 case 1:
                   d3.select('#posOff').transition().duration(250).style('fill','#656b71')
@@ -108,7 +107,8 @@
               if (selectedDme === 1) d3.select('#speed').text((value*1).toFixed(0))
               break
             case 'NAV_1_DME_TIMETO':
-              //if (selectedDme === 1) d3.select('#speed').text((value*1).toFixed(0))
+              //if (selectedDme === 1) d3.select('#timeTo').text((value*1).toFixed(0))
+              if (selectedDme === 1) d3.select('#timeTo').text((value/60).toFixed(0))
               break
 
             case 'NAV_2_DME_DISTANCE':
@@ -118,7 +118,8 @@
               if (selectedDme === 2) d3.select('#speed').text((value*1).toFixed(0))
               break
             case 'NAV_2_DME_TIMETO':
-              //if (selectedDme === 2) d3.select('#speed').text((value*1).toFixed(0))
+              //if (selectedDme === 2) d3.select('#timeTo').text((value*1).toFixed(0))
+              if (selectedDme === 2) d3.select('#timeTo').text((value/60).toFixed(0))
               break
 
             default:
@@ -1273,11 +1274,11 @@
          x="-207.06212"
          style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fe8705;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'DSEG14 Classic';-inkscape-font-specification:'DSEG14 Classic';letter-spacing:-0.5291667px;fill:#fe8705;fill-opacity:0;stroke-width:0.26458332"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'DSEG14 Classic';-inkscape-font-specification:'DSEG14 Classic';fill:#fe8705;fill-opacity:1;stroke-width:0.26458332"
            y="61.092461"
            x="-207.06212"
            id="tspan4542-4-7-5"
-           sodipodi:role="line">min</tspan></text>
+           sodipodi:role="line">mn</tspan></text>
     </g>
     <g
        id="g4801"

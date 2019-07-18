@@ -237,13 +237,32 @@
         function Update(inputObject){
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
-            let value = Object.values(inputObject)[attr];
+            let value = Object.values(inputObject)[attr] * 1;
             //console.log(key.replace)
 
             switch (key) {
 
               case 'AUTOPILOT_MASTER':
                 apmaster = value;
+                console.log(aphdglock + ' ' + apaltlock)
+                if (aphdglock && apmaster) {
+                  d3.select('#ap-selected-hdg-bug').style('display','block');
+                  d3.select('#ap-hdg-active-sign').style('display','block');
+                  d3.select('#hdg-lock-indicator').style('display','block');
+                } else {
+                  d3.select('#ap-selected-hdg-bug').style('display','none');
+                  d3.select('#ap-hdg-active-sign').style('display','none');
+                  d3.select('#hdg-lock-indicator').style('display','none');
+                }
+               if (apaltlock && apmaster) {
+                  d3.select('#ap-selected-alt').style("display","block");
+                  d3.select('#ap-alt-active-sign').style("display","block");
+                } else {
+                  d3.select('#ap-selected-alt').style("display","none");
+                  d3.select('#ap-alt-active-sign').style("display","none");
+                }
+
+
                 break;
 
               case 'PLANE_BANK_DEGREES':

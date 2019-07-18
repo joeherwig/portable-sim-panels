@@ -15,8 +15,8 @@ body {
   width: auto;
   height: auto;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(20, 5vw);
     grid-auto-flow: row;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
