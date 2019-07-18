@@ -58,6 +58,7 @@
          }, 100);
 
          function init(){
+            selectedDme =
          }
 
         function Update(inputObject){
@@ -66,8 +67,9 @@
           let value = Object.values(inputObject)[attr];
           switch (key) {
 
-            case 'SELECTED DME':
-              selectedDme = value
+            case 'DME_Switch':
+              selectedDme = value * 1
+               console.log(selectedDme)
               switch(selectedDme) {
                 case 1:
                   d3.select('#posOff').transition().duration(250).style('fill','#656b71')
@@ -99,20 +101,24 @@
               }
               break
 
-            case 'NAV DME:1':
-              if (selectedDme === 1) d3.select('#distance').text(value.toFixed(1))
+            case 'NAV_1_DME_DISTANCE':
+              if (selectedDme === 1) d3.select('#distance').text((value*1).toFixed(1))
+              break
+            case 'NAV_1_DME_SPEED':
+              if (selectedDme === 1) d3.select('#speed').text((value*1).toFixed(0))
+              break
+            case 'NAV_1_DME_TIMETO':
+              //if (selectedDme === 1) d3.select('#speed').text((value*1).toFixed(0))
               break
 
-            case 'NAV DME:2':
-              if (selectedDme === 2) d3.select('#distance').text(value.toFixed(1))
+            case 'NAV_2_DME_DISTANCE':
+              if (selectedDme === 2) d3.select('#distance').text((value*1).toFixed(1))
               break
-
-            case 'NAV DMESPEED:1':
-              if (selectedDme === 1) d3.select('#speed').text(value.toFixed(0))
+            case 'NAV_2_DME_SPEED':
+              if (selectedDme === 2) d3.select('#speed').text((value*1).toFixed(0))
               break
-
-            case 'NAV DMESPEED:2':
-              if (selectedDme === 2) d3.select('#speed').text(value.toFixed(0))
+            case 'NAV_2_DME_TIMETO':
+              //if (selectedDme === 2) d3.select('#speed').text((value*1).toFixed(0))
               break
 
             default:

@@ -42,42 +42,42 @@
        <script
           type="text/javascript" id="businesslogic"><![CDATA[
 
-//----------------
-Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
-var obj = this;
-var needles = needle.split( "." );
-var needles_full=[];
-var needles_square;
-for( var i = 0; i<needles.length; i++ ) {
-    needles_square = needles[i].split( "[" );
-    if(needles_square.length>1){
-        for( var j = 0; j<needles_square.length; j++ ) {
-            if(needles_square[j].length){
-                needles_full.push(needles_square[j]);
-            }
-        }
-    }else{
-        needles_full.push(needles[i]);
-    }
-}
-for( var i = 0; i<needles_full.length; i++ ) {
-    var res = needles_full[i].match(/^((\d+)|"(.+)"|'(.+)')\]$/);
-    if (res != null) {
-        for (var j = 0; j < res.length; j++) {
-            if (res[j] != undefined) {
-                needles_full[i] = res[j];
-            }
-        }
-    }
+          //----------------
+          Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
+          var obj = this;
+          var needles = needle.split( "." );
+          var needles_full=[];
+          var needles_square;
+          for( var i = 0; i<needles.length; i++ ) {
+              needles_square = needles[i].split( "[" );
+              if(needles_square.length>1){
+                  for( var j = 0; j<needles_square.length; j++ ) {
+                      if(needles_square[j].length){
+                          needles_full.push(needles_square[j]);
+                      }
+                  }
+              }else{
+                  needles_full.push(needles[i]);
+              }
+          }
+          for( var i = 0; i<needles_full.length; i++ ) {
+              var res = needles_full[i].match(/^((\d+)|"(.+)"|'(.+)')\]$/);
+              if (res != null) {
+                  for (var j = 0; j < res.length; j++) {
+                      if (res[j] != undefined) {
+                          needles_full[i] = res[j];
+                      }
+                  }
+              }
 
-    if( typeof obj[needles_full[i]]=='undefined') {
-        return false;
-    }
-    obj = obj[needles_full[i]];
-}
-return true;
-}});
-//----------------
+              if( typeof obj[needles_full[i]]=='undefined') {
+                  return false;
+              }
+              obj = obj[needles_full[i]];
+          }
+          return true;
+          }});
+          //----------------
 
         window.parent.addEventListener("update", eventHandler, true);
 
@@ -106,6 +106,7 @@ return true;
         }, 500);
 
         function init(){
+          console.log(config)
           minAngle = (config._has("baseStyle.arcMinAngle")) ? config.baseStyle.arcMinAngle : -140
           maxAngle = (config._has("baseStyle.arcMaxAngle")) ? config.baseStyle.arcMaxAngle : 110
           pointerwidth = (config._has("baseStyle.pointerwidth")) ? config.baseStyle.pointerwidth : 2
@@ -176,7 +177,7 @@ return true;
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
                 if (config.rangemax-config.rangemin <= 99) {
-                  d3.select('#value').text(value.toFixed(1));
+                  d3.select('#value').text((value*1).toFixed(1));
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }

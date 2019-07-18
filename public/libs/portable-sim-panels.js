@@ -69,6 +69,9 @@ window.onload = setTimeout(function(){
 
   function onClose(evt) {
     console.log("DISCONNECTED from Simconnect");
+    setTimeout(function () {
+      connectToSimconnectServer();
+    }, 1000);
   }
 
   function onMessage(evt) {
