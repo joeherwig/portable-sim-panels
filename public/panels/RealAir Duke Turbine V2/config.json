@@ -71,7 +71,7 @@
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
-    "calculatedValue": "x * 1.2",
+    "calculatedValue": "(x * 1.2) - 10",
     "ranges": [
       {
         "color": "green",
@@ -100,7 +100,7 @@
     "rangemin": 0,
     "rangemax": 1100,
     "label": "ITT °C",
-    "calculatedValue": "x * 1.2",
+    "calculatedValue": "(x * 1.2) - 10",
     "ranges": [
       {
         "color": "green",
@@ -427,44 +427,25 @@
   },
   "GENERAL_ENG_1_OIL_TEMPERATURE": {
     "rangemin": 0,
-    "rangemax": 130,
+    "rangemax": 140,
     "label": "Oil Temp °C",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
     "calculatedValueFahrenheit": "x - 459,67",
     "baseStyle": {
       "rulerwidth": 2
     },
     "ranges": [
       {
-        "color": "orange",
-        "alerttype": "warning",
-        "alerttext": "low",
-        "minValue": 37,
-        "maxValue": 75,
-        "width": 1,
-        "activewidth": 15
-      },
-      {
         "color": "green",
-        "minValue": 76,
-        "maxValue": 93,
+        "minValue": 0,
+        "maxValue": 100,
         "width": 1
-      },
-      {
-        "color": "orange",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 94,
-        "maxValue": 114,
-        "width": 1,
-        "activewidth": 15
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 115,
-        "maxValue": 130,
+        "minValue": 100,
+        "maxValue": 140,
         "width": 1,
         "activewidth": 15
       }
@@ -507,44 +488,25 @@
   },
   "GENERAL_ENG_2_OIL_TEMPERATURE": {
     "rangemin": 0,
-    "rangemax": 130,
+    "rangemax": 140,
     "label": "Oil Temp °C",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
     "calculatedValueFahrenheit": "x - 459,67",
     "baseStyle": {
       "rulerwidth": 2
     },
     "ranges": [
       {
-        "color": "orange",
-        "alerttype": "warning",
-        "alerttext": "low",
-        "minValue": 37,
-        "maxValue": 75,
-        "width": 1,
-        "activewidth": 15
-      },
-      {
         "color": "green",
-        "minValue": 76,
-        "maxValue": 93,
+        "minValue": 0,
+        "maxValue": 100,
         "width": 1
-      },
-      {
-        "color": "orange",
-        "alerttype": "warning",
-        "alerttext": "high",
-        "minValue": 94,
-        "maxValue": 114,
-        "width": 1,
-        "activewidth": 15
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 115,
-        "maxValue": 130,
+        "minValue": 100,
+        "maxValue": 140,
         "width": 1,
         "activewidth": 15
       }
