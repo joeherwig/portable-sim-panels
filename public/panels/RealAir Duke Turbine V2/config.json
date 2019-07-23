@@ -139,11 +139,11 @@
     "calculatedValue": "x * 1.1",
     "ranges": []
   },
-  "ELEVATOR TRIM POSITION": {
-    "rangemin": -15,
-    "rangemax": 15,
-    "label": "Elev Trim",
-    "calculatedValue-": "x * 0.93",
+  "ELEVATOR_TRIM_POSITION": {
+    "rangemin": -30,
+    "rangemax": 30,
+    "calculatedValue": "x * 0.3",
+    "label": "Elev Trim",                          
     "baseStyle": {
       "arcMinAngle": 60,
       "arcMaxAngle": 120
@@ -179,25 +179,65 @@
     },
     "ranges": []
   },
-  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+  "TRAILING_EDGE_FLAPS_LEFT_PERCENT": {
     "rangemin": 0,
-    "rangemax": 100,
+    "rangemax": 30,
+    "calculatedValue": "x * 0.3",
     "label": "Flaps L °",
     "baseStyle": {
       "arcMinAngle": 90,
       "arcMaxAngle": 135
     },
-    "ranges": []
+    "ranges": [
+      {
+        "color": "yellow",
+        "alerttype": "caution",
+        "alerttext": "out",
+        "minValue": 5,
+        "maxValue": 17,
+        "width": 0,
+        "activewidth": 5
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "full",
+        "minValue": 17,
+        "maxValue": 30,
+        "width": 0,
+        "activewidth": 5
+      }
+    ]
   },
-  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+  "TRAILING_EDGE_FLAPS_RIGHT_PERCENT": {
     "rangemin": 0,
-    "rangemax": 100,
+    "rangemax": 30,
+    "calculatedValue": "x * 0.3",
     "label": "Flaps R °",
     "baseStyle": {
       "arcMinAngle": 90,
       "arcMaxAngle": 135
     },
-    "ranges": []
+    "ranges": [
+      {
+        "color": "yellow",
+        "alerttype": "caution",
+        "alerttext": "out",
+        "minValue": 5,
+        "maxValue": 17,
+        "width": 0,
+        "activewidth": 5
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "full",
+        "minValue": 17,
+        "maxValue": 30,
+        "width": 0,
+        "activewidth": 5
+      }
+    ]
   },
   "VERTICAL_SPEED": {
     "rangemin": -4000,
@@ -352,9 +392,9 @@
   },
   "GENERAL_ENG_1_OIL_PRESSURE": {
     "rangemin": 0,
-    "rangemax": 120,
+    "rangemax": 200,
     "label": "Oil psi",
-    "calculatedValue": "x /144",
+    "calculatedValue": "x / 297.1904761904762",
     "baseStyle": {
       "rulerwidth": 2
     },
@@ -363,23 +403,23 @@
         "color": "orange",
         "alerttype": "warning",
         "alerttext": "low",
-        "minValue": 0,
-        "maxValue": 9,
+        "minValue": 60,
+        "maxValue": 100,
         "width": 1,
         "activewidth": 15
       },
       {
         "color": "green",
-        "minValue": 30,
-        "maxValue": 60,
+        "minValue": 100,
+        "maxValue": 135,
         "width": 1
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 101,
-        "maxValue": 120,
+        "minValue": 136,
+        "maxValue": 200,
         "width": 1,
         "activewidth": 15
       }
@@ -432,9 +472,9 @@
   },
   "GENERAL_ENG_2_OIL_PRESSURE": {
     "rangemin": 0,
-    "rangemax": 120,
+    "rangemax": 200,
     "label": "Oil psi",
-    "calculatedValue": "x /144",
+    "calculatedValue": "x / 297.1904761904762",
     "baseStyle": {
       "rulerwidth": 2
     },
@@ -443,23 +483,23 @@
         "color": "orange",
         "alerttype": "warning",
         "alerttext": "low",
-        "minValue": 0,
-        "maxValue": 9,
+        "minValue": 60,
+        "maxValue": 100,
         "width": 1,
         "activewidth": 15
       },
       {
         "color": "green",
-        "minValue": 30,
-        "maxValue": 60,
+        "minValue": 100,
+        "maxValue": 135,
         "width": 1
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 101,
-        "maxValue": 120,
+        "minValue": 136,
+        "maxValue": 200,
         "width": 1,
         "activewidth": 15
       }
