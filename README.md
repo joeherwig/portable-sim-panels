@@ -3,23 +3,13 @@
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via web-socket connections.
 It's biggest advantage is, that the UI can be run on any device which is capable to display modern web pages. So you can use your rasperry pi, Panel-PC, Smartphone, old linux computer within your home cockpit as well. :-)
 
-It Works with 32 Bit and 64 Bit simconnect and though with FSX and all Prepar3D versions including <img src="http://joachim.herwigs.info/img/P3Dv4-tag.png" height="24px">
+In the meanwhile i stripped the Backend and the UI into two seperate Projects.
+this one is only the web UI stuff (webgauges and some minor stuff) and the FSUIPC-Connection server with Webserver which can host the files from this repo as well:
 
+# [portable-sim-panels-fsuipc-server](https://gitlab.com/joeherwig/portable-sim-panels-fsuipc-server)
+checkout this additional repo regarding the connection to your simulator as well. It doesn't come with any Gauges, but offers a simple way to connect using FSUIPC and to subscribe to a websocket channel where the FSUIPC values are published.
 
-## Build
-### Requirements
-* Node.js (32-bit version for compiling and running Simconnect32 bit or 64-bit version for running Prepar3d V4 Simconnec64)
-* WebSimConnect (WebSimData) by Marcin Lizer
-
-### Config
-Underneath the `public/panels/` folder there are several panels available for your needs.
-See also the installation/config instructions from WebSimConnect / WebSimData
-The portable-sim-panels tool is supplied with the configured variables you defined within your simulators gauge-Folder assigned to the aircraft of your desire.
-If you didn't define a vehicle specific panel, it tries to load a suitable fallback-panel eg. for "single engine piston" or "multi engine turbine" etc.
-See the WebSimData_1EP.ini underneath public/panels/1EP for an example how to configure, which variables are fetched. This file needs to be placed in your `"$Env:Programfiles\Lockheed Martin\Prepar3D v4\gauges\WebSimData\"` - folder and needs to be referenced from your vehicles panel.cfg as documented in Marcins Documentation.
-
-### Use
-Start your Simulator and you will reach the example panel at [http://localhost:8080/panels/1EP/](http://localhost:8080/panels/1EP/)
+If you want to check out this gauges with your sim, just [download the zip](https://github.com/joeherwig/portable-sim-panels/archive/master.zip), extract it into the Folder `C:\webGauges` and get the corresponding [portable-sim-panels-fsuipc-server](https://gitlab.com/joeherwig/portable-sim-panels-fsuipc-server). Execute the Server and follow the steps described there.
 
 <img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck/images/JOE-Simtech-Logo.svg" width="100px">
 
