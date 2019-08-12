@@ -2,10 +2,18 @@
 <html>
   <head>
     <title>Lancair Legacy V2</title>
-    <link rel="stylesheet" href="panel.css">
-    <script src="../../libs/socket.io.js"></script>
-    <script src="../../libs/jquery.min.js"></script>
-    <script src="../../libs/portable-sim-panels.js"></script>
+    <script src="../libs/socket.io.js"></script>
+    <script src="../libs/portable-sim-panels.js"></script>
+    <script src="../libs/findSuitablePanel.js"></script>
+    <style>
+      body {
+        background: #111;
+        color: #fff;
+      }
+      a {
+        color: lightblue;
+      }
+    </style>
     <script type="text/javascript">
       let json;
       window.parent.addEventListener("update", eventHandler, true);
@@ -15,13 +23,22 @@
       }
     </script>
   </head>
-  <body>
-	<img src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=http://pm-win10-001:82/&choe=UTF-8"/>
-    <ul><li>
-      <a href="panels\RealAir Duke Turbine V2/">RealAir Duke Turbine V2</a>
-    </li>
-    <li>
-      <a href="panels\RealAir Lancair Legacy V2/">RealAir Lancair Legacy V2</a>
-    </li></ul>
+  <body id="body">
+    <img
+      src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=http://pm-win10-001:82/&choe=UTF-8"
+    />
+    <ul>
+      <li>
+        <a href="panels\RealAir Duke Turbine V2/">RealAir Duke Turbine V2</a>
+      </li>
+      <li>
+        <a href="panels\RealAir Lancair Legacy V2/"
+          >RealAir Lancair Legacy V2</a
+        >
+      </li>
+    </ul>
+    <div id="selectedPanel" onload="console.log('asdf')">
+      ?
+    </div>
   </body>
 </html>
