@@ -36,28 +36,31 @@ function sortByLikelyHoodDescending(a, b) {
 }
 
 urlParams = new URLSearchParams(window.location.search);
-sortedList = [];
 panels = [
   "Alabeo Cessna 172 RG",
   "RealAir Duke Turbine V2",
   "RealAir Lancair Legacy V2",
-  "FSLabs Airbus A320 CFM - Thomas Cook D-AJOE",
-  "FSLabs Airbus A320 CFM - Vuelling N1234",
   "FSLabs Airbus A320 IAE",
   "Airbus A320"
 ];
-if (urlParams.has("panel")) {
+
+function loadPanel(vehicle){
+  sortedList = [];
   panels.forEach(item => {
     sortedList.push({
       panel: item,
-      likelihood: fuzzball.ratio(urlParams.get("panel"), item)
+      likelihood: fuzzball.ratio(vehicle, item)
     });
   });
-  if (urlParams.has("go")) {
+  if (urlParams.has("debug")) {
+    console.log(sortedList.sort(sortByLikelyHoodDescending));
+    console.log('Loading Panel: \n    ' + sortedList.sort(sortByLikelyHoodDescending)[0].panel + '\nfor \n     '+vehicle+'\nbut only if you add remove the \'?debug\' parameter from the url!');
+  } else {
     location.href =
       "/panels/" + sortedList.sort(sortByLikelyHoodDescending)[0].panel + "/";
-  } else {
-    console.log(sortedList.sort(sortByLikelyHoodDescending));
-    console.log(sortedList.sort(sortByLikelyHoodDescending)[0].panel);
   }
+}
+
+if (urlParams.has("panel")) {
+  
 }
