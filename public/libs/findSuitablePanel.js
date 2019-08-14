@@ -35,29 +35,34 @@ function sortByLikelyHoodDescending(a, b) {
   return comparison * -1;
 }
 
-urlParams = new URLSearchParams(window.location.search);
+
 sortedList = [];
-panels = [
-  "Alabeo Cessna 172 RG",
-  "RealAir Duke Turbine V2",
-  "RealAir Lancair Legacy V2",
-  "FSLabs Airbus A320 CFM - Thomas Cook D-AJOE",
-  "FSLabs Airbus A320 CFM - Vuelling N1234",
-  "FSLabs Airbus A320 IAE",
-  "Airbus A320"
-];
-if (urlParams.has("panel")) {
-  panels.forEach(item => {
-    sortedList.push({
-      panel: item,
-      likelihood: fuzzball.ratio(urlParams.get("panel"), item)
-    });
-  });
-  if (urlParams.has("go")) {
-    location.href =
-      "/panels/" + sortedList.sort(sortByLikelyHoodDescending)[0].panel + "/";
-  } else {
-    console.log(sortedList.sort(sortByLikelyHoodDescending));
-    console.log(sortedList.sort(sortByLikelyHoodDescending)[0].panel);
+panels = [];
+
+var requestPanelList = new XMLHttpRequest();
+requestPanelList.open("GET","/panels/panels.json",true);
+requestPanelList.onreadystatechange = function() {
+  if( this.readyState == 4) {
+    if( this.status == 200) {
+      panels = JSON.parse(this.responseText)
+    }
+    else alert("HTTP error "+this.status+" "+this.statusText);
   }
 }
+requestPanelList.send();
+
+window.parent.addEventListener("update", eventHandler, true);
+
+function eventHandler(update) {
+  panel = update.detail.TITLE
+  if (panel){
+    panels.forEach(item => {
+      sortedList.push({
+        panel: item,
+        likelihood: fuzzball.ratio(panel, item)
+      });
+    });
+    location.href = "/panels/" + sortedList.sort(sortByLikelyHoodDescending)[0].panel + "/";
+  }
+}
+

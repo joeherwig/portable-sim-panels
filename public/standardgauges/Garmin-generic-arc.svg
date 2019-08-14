@@ -166,7 +166,7 @@
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr] ;
-            value = (calculatedValue ? eval(calculatedValue.replace("x",value)) : value);
+            value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value);
 
             switch (key) {
 
