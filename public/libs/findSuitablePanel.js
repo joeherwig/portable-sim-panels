@@ -35,7 +35,6 @@ function sortByLikelyHoodDescending(a, b) {
   return comparison * -1;
 }
 
-
 sortedList = [];
 panels = [];
 

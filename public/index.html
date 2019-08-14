@@ -21,6 +21,10 @@
       function eventHandler(update) {
         json = update.detail;
         vars = update;
+        if (update.detail.TITLE){
+          loadPanel(update.detail.TITLE)
+          console.log(' --------- ' + update.detail.TITLE)
+        }
       }
       */
       setTimeout(() => { 
