@@ -15,18 +15,15 @@
       }
     </style>
     <script type="text/javascript">
-      /*
-      let json;
+      
+      var json,
+        fullJson = {};
       window.parent.addEventListener("update", eventHandler, true);
+
       function eventHandler(update) {
         json = update.detail;
-        vars = update;
-        if (update.detail.TITLE){
-          loadPanel(update.detail.TITLE)
-          console.log(' --------- ' + update.detail.TITLE)
-        }
       }
-      */
+      
       setTimeout(() => { 
         panels.forEach(item => {
           if (item !== '..' && item !== '../') {

@@ -23,6 +23,11 @@
     }, {}, [1])(1)
 });
 
+
+  var sortedList = [],
+  panels = [];
+
+
 function sortByLikelyHoodDescending(a, b) {
   const likelihoodA = a.likelihood;
   const likelihoodB = b.likelihood;
@@ -34,9 +39,6 @@ function sortByLikelyHoodDescending(a, b) {
   }
   return comparison * -1;
 }
-
-sortedList = [];
-panels = [];
 
 var requestPanelList = new XMLHttpRequest();
 requestPanelList.open("GET","/panels/panels.json",true);
@@ -54,6 +56,12 @@ window.parent.addEventListener("update", eventHandler, true);
 
 function eventHandler(update) {
   panel = update.detail.TITLE
+  fullJson = localStorage.getItem('fullJson') ? localStorage.getItem('fullJson') : localStorage.setItem('fullJson', '{}');
+  fullJson = { ...fullJson, ...update.detail };
+
+  localStorage.setItem('fullJson', JSON.stringify(fullJson));
+  console.log(localStorage.getItem('fullJson'))
+
   if (panel){
     panels.forEach(item => {
       sortedList.push({
