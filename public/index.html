@@ -47,7 +47,10 @@
       onload="document.getElementById('qrcode').src = 'https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl='+location.href+'/&choe=UTF-8';"
     />
     <p>The following panel folders are currently configured:</p>
-    <ul id="panelList"></ul>
+    <ul>
+      <li>/panels</li>
+      <ul id="panelList"></ul>
+    </ul>
     <p>If your simulator is connected and the plane changes, we're trying to figure out, which panel suits best.<br/>Due to this mechanism you don't need one panel per livery, but one per Aircraft should be enough.</p>
   </body>
 </html>

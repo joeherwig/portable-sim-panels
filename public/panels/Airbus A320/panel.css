@@ -1,0 +1,26 @@
+html {
+  background: #000; }
+
+#GarminG3X {
+  position: relative; }
+
+.leftbar {
+  position: relative;
+  left: 0px;
+  bottom: 0px; }
+  .leftbar * {
+    margin: 15px;
+    max-width: 150px; }
+
+.mfd {
+  position: relative;
+  left: 10%;
+  bottom: 0px;
+  height: 100%;
+  width: 45%; }
+
+.auxpages {
+  display: none; }
+
+#Garmin-G5 {
+  width: 100%; }
