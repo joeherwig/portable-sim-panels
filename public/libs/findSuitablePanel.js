@@ -56,11 +56,10 @@ window.parent.addEventListener("update", eventHandler, true);
 
 function eventHandler(update) {
   panel = update.detail.TITLE
-  fullJson = localStorage.getItem('fullJson') ? localStorage.getItem('fullJson') : localStorage.setItem('fullJson', '{}');
+  fullJson = localStorage.getItem('fullJson') ? JSON.parse(localStorage.getItem('fullJson')) : localStorage.setItem('fullJson', '{}');
   fullJson = { ...fullJson, ...update.detail };
-
+  
   localStorage.setItem('fullJson', JSON.stringify(fullJson));
-  console.log(localStorage.getItem('fullJson'))
 
   if (panel){
     panels.forEach(item => {
@@ -73,3 +72,13 @@ function eventHandler(update) {
   }
 }
 
+function init () {
+  stripedJson = JSON.parse(localStorage.getItem('fullJson'))
+  delete stripedJson.TITLE
+  var event = new CustomEvent("update", { "detail": stripedJson });
+  document.dispatchEvent(event);
+}
+
+window.onload = setTimeout(function(){
+  init();
+}, 2000);

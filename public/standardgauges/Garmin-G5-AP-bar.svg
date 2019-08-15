@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="Garmin-G5-AP-bar.svg"
+   viewBox="0 0 1034.483 54.428696"
+   max-height="100%"
+   max-width="100%"
+   inkscape:version="0.92.1 r15371"
+   version="1.1"
+   width="1034.483"
+   height="54.428696">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview14"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.89358608"
+     inkscape:cx="417.58361"
+     inkscape:cy="-80.007773"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9">
+    <script
+       xlink:href="../../libs/d3.3.min.js"
+       id="script3" />
+           <script
+       xlink:href="../../libs/jquery.min.js"
+       id="script13" />
+    <script
+       type="text/javascript"
+       id="script5"><![CDATA[
+        let apmaster = 0,
+          ap = 0,
+          alt = 0,
+          hdg = 0,
+          nav = 0,
+          calculatedValue;
+
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
+
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        $.getJSON(path+"/config.json", function(json){
+          config = json;
+        });
+
+        function setValue (id, state) {
+          let fillColor = (state * 1 ? '#00ff00' : '#777777')
+          d3.select('#'+id+'').style('fill', fillColor)
+          if (id === 'ap' && !ap) {
+            setValue('alt', 0)
+            setValue('hdg', 0)
+            hdg = alt = nav = 0
+          }
+        }
+
+        function Update(inputObject){
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
+            let key = Object.keys(inputObject)[attr]
+            let value = Object.values(inputObject)[attr]
+            value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value)
+
+            switch (key) {
+
+              case 'AUTOPILOT_MASTER':
+                ap = value*1;
+                setValue('ap', ap);
+                break;
+
+              case 'AUTOPILOT_HEADING_LOCK':
+                hdg = value && ap ? value*1 : 0
+                ap && hdg ? setValue('hdg', hdg) : setValue('hdg', 0) ;
+                break;
+
+              case 'AUTOPILOT_NAV_LOCK':
+                nav = value && ap ? value*1 : 0
+                ap && nav ? setValue('nav', nav) : setValue('nav', 0) ;
+                break;
+
+              case 'AUTOPILOT_FD_LOCK':
+                fd = value && ap ? value*1 : 0
+                ap && fd ? setValue('fd', fd) : setValue('fd', 0) ;
+                break;
+
+              case 'AUTOPILOT_ALTITUDE_LOCK':
+                alt = value && ap ? value*1: 0
+                ap && alt ? setValue('alt', alt) : setValue('alt', 0);
+                break;
+
+              default:
+                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+            };
+          }
+        }
+
+        ]]></script>
+    <style
+       id="style7" />
+  </defs>
+  <rect
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.68307114;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="ap_block"
+     width="1034.483"
+     height="54.428696"
+     x="0"
+     y="0" />
+  <g
+     id="g4722"
+     transform="translate(-4.9088745,-0.35627491)">
+    <text
+       id="apFD"
+       y="44.394035"
+       x="25.062378"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="25.062378"
+         id="fd"
+         sodipodi:role="line">FD</tspan></text>
+    <text
+       id="apHDG"
+       y="44.394035"
+       x="119.92035"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         id="hdg"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="119.92035"
+         sodipodi:role="line">HDG</tspan></text>
+    <text
+       id="apAPR"
+       y="44.394035"
+       x="260.9502"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         id="apr"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="260.9502"
+         sodipodi:role="line">APR</tspan></text>
+    <text
+       id="apNAV"
+       y="44.394035"
+       x="392.72223"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="392.72223"
+         id="nav"
+         sodipodi:role="line">NAV</tspan></text>
+    <text
+       id="apMaster"
+       y="44.394035"
+       x="524.86926"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="524.86926"
+         id="ap"
+         sodipodi:role="line">AP</tspan></text>
+    <text
+       id="apYD"
+       y="44.394035"
+       x="623.96936"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="623.96936"
+         id="yd"
+         sodipodi:role="line">YD</tspan></text>
+    <text
+       id="apIAS"
+       y="44.394035"
+       x="720.91321"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="720.91321"
+         id="ias"
+         sodipodi:role="line">IAS</tspan></text>
+    <text
+       id="apVS"
+       y="44.394035"
+       x="832.83362"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="832.83362"
+         id="VS"
+         sodipodi:role="line">VS</tspan></text>
+    <text
+       id="apALT"
+       y="44.394035"
+       x="931.72278"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#777777;fill-opacity:1"
+         y="44.394035"
+         x="931.72278"
+         id="alt"
+         sodipodi:role="line">ALT</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643"
+       d="M 105.1398,6.205157 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-5"
+       d="M 242.25558,6.205157 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-6"
+       d="M 377.75418,6.2051565 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-4"
+       d="M 506.17465,6.205157 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-41"
+       d="M 605.48572,6.2051568 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-2"
+       d="M 706.7655,6.2051574 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-0"
+       d="M 814.42029,6.2051569 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4643-3"
+       d="M 913.0282,6.2051572 V 48.936089"
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

@@ -56,7 +56,6 @@
         }, 300);
 
         function init(){
-           console.log(window.parent.fullJson)
         }
 
         function eventHandler(update) {
@@ -70,7 +69,7 @@
             let value = Object.values(inputObject)[attr];
 
             switch (key) {
-              case 'ACT_IDENTIFYER':
+              case 'ATC_IDENTIFYER':
                 d3.select("#registration").text(value);
                 break;
             };
