@@ -85,6 +85,7 @@
                   d3.select('#posN2').transition().duration(250).style('fill','#eeff00')
                   d3.select('#g4513-5').transition().duration(250).style('opacity','1')
                   d3.select('#g4513').transition().duration(250).style('opacity','1')
+                  d3.select('#gMinutes').transition().duration(250).style('opacity','1')
                   d3.select('#posHld').transition().duration(250).style('fill','#656b71')
                   d3.select('#knob').attr('transform', 'rotate(-95,-135.76351,148.50663)');
                   break
@@ -95,6 +96,7 @@
                   d3.select('#posHld').transition().duration(250).style('fill','#656b71')
                   d3.select('#g4513-5').transition().duration(250).style('opacity','0')
                   d3.select('#g4513').transition().duration(250).style('opacity','0')
+                  d3.select('#gMinutes').transition().duration(250).style('opacity','0')
                   d3.select('#knob').attr('transform', 'rotate(-65,-135.76351,148.50663)');
                   break
               }
@@ -1256,7 +1258,7 @@
     </g>
     <g
        transform="translate(162.20478,-2.645829)"
-       id="g4513-5-4">
+       id="gMinutes">
       <text
          id="text6657"
          y="54.472836"
@@ -1277,7 +1279,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'DSEG14 Classic';-inkscape-font-specification:'DSEG14 Classic';fill:#fe8705;fill-opacity:1;stroke-width:0.26458332"
            y="61.092461"
            x="-207.06212"
-           id="tspan4542-4-7-5"
+           id="minutes"
            sodipodi:role="line">mn</tspan></text>
     </g>
     <g
