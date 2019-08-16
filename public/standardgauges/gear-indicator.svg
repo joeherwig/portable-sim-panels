@@ -71,7 +71,7 @@
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr];
 
-            switch (key) {
+            switch (key.toUpperCase()) {
 
               case 'GEAR_CENTER_POSITION':
                 if (gearCenterPosition !== value) {

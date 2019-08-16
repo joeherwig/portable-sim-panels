@@ -199,39 +199,39 @@
         }, 100);
 
         function init(){
-          if (config['AIRSPEED INDICATED']){
+          if (config['AIRSPEED_INDICATED']){
             d3.select('#ias-ruler-red_vne-bar')
               .attr('height',1 *12.364)
-              .attr('y',373.5-3*1.2364-(config['AIRSPEED INDICATED'].marker.vne)*12.364)
-            if (config['AIRSPEED INDICATED'].marker.vne) {
-              d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED INDICATED'].marker.vne)*-12.364+')')
+              .attr('y',373.5-3*1.2364-(config['AIRSPEED_INDICATED'].marker.vne)*12.364)
+            if (config['AIRSPEED_INDICATED'].marker.vne) {
+              d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED_INDICATED'].marker.vne)*-12.364+')')
               d3.select('#ias-marker-vne').attr('style','display:block;')
             }
-            d3.select('#ias-marker-x').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.x)*-12.364+')')
-            if (config['AIRSPEED INDICATED'].marker.x) {
+            d3.select('#ias-marker-x').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.x)*-12.364+')')
+            if (config['AIRSPEED_INDICATED'].marker.x) {
               d3.select('#ias-marker-x').attr('style','display:block;')
             }
-            if (config['AIRSPEED INDICATED'].marker.y) {
-              d3.select('#ias-marker-y').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.y)*-12.364+')')
+            if (config['AIRSPEED_INDICATED'].marker.y) {
+              d3.select('#ias-marker-y').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.y)*-12.364+')')
               d3.select('#ias-marker-y').attr('style','display:block;')
             }
-            if (config['AIRSPEED INDICATED'].marker.ge) {
-              d3.select('#ias-marker-ge').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.ge)*-12.364+')')
+            if (config['AIRSPEED_INDICATED'].marker.ge) {
+              d3.select('#ias-marker-ge').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.ge)*-12.364+')')
               d3.select('#ias-marker-ge').attr('style','display:block;')
             }
-            if (config['AIRSPEED INDICATED'].marker.fe) {
-              d3.select('#ias-marker-fe').attr('transform','translate(5,'+(config['AIRSPEED INDICATED'].marker.fe)*-12.364+')')
+            if (config['AIRSPEED_INDICATED'].marker.fe) {
+              d3.select('#ias-marker-fe').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.fe)*-12.364+')')
               d3.select('#ias-marker-fe').attr('style','display:block;')
             }
             d3.select('#ias-ruler-yellow-bar')
-              .attr('height',(config['AIRSPEED INDICATED'].yellowbarend - config['AIRSPEED INDICATED'].yellowbarstart) * 12.364)
-              .attr('y',(373.74-(config['AIRSPEED INDICATED'].yellowbarend)*12.364))
+              .attr('height',(config['AIRSPEED_INDICATED'].yellowbarend - config['AIRSPEED_INDICATED'].yellowbarstart) * 12.364)
+              .attr('y',(373.74-(config['AIRSPEED_INDICATED'].yellowbarend)*12.364))
             d3.select('#ias-ruler-green-bar')
-              .attr('height',(config['AIRSPEED INDICATED'].greenbarend - config['AIRSPEED INDICATED'].greenbarstart) *12.364)
-              .attr('y',373.5-(config['AIRSPEED INDICATED'].greenbarend)*12.364)
+              .attr('height',(config['AIRSPEED_INDICATED'].greenbarend - config['AIRSPEED_INDICATED'].greenbarstart) *12.364)
+              .attr('y',373.5-(config['AIRSPEED_INDICATED'].greenbarend)*12.364)
             d3.select('#ias-ruler-flaps-full-bar')
-              .attr('height',(config['AIRSPEED INDICATED'].whitebarend - config['AIRSPEED INDICATED'].whitebarstart) *12.364)
-              .attr('y',-373.5-(config['AIRSPEED INDICATED'].whitebarend - config['AIRSPEED INDICATED'].whitebarstart-config['AIRSPEED INDICATED'].whitebarend)*12.364)
+              .attr('height',(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart) *12.364)
+              .attr('y',-373.5-(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart-config['AIRSPEED_INDICATED'].whitebarend)*12.364)
           }
           calculatedValue = config.calculatedValue ? config.calculatedValue : 0;
         }
@@ -239,16 +239,13 @@
         function Update(inputObject){
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
-            //let value = Object.values(inputObject)[attr] * 1;
-            
             let value = Object.values(inputObject)[attr] ;
             value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value);
 
-            switch (key) {
+            switch (key.toUpperCase()) {
 
               case 'AUTOPILOT_MASTER':
                 apmaster = value;
-                console.log(aphdglock + ' ' + apaltlock)
                 if (aphdglock && apmaster) {
                   d3.select('#ap-selected-hdg-bug').style('display','block');
                   d3.select('#ap-hdg-active-sign').style('display','block');

@@ -1,18 +1,20 @@
 doctype html
-html
+html(onload="document.body.requestFullscreen();")
   head
-    title Duke Turbine V2
-    link(rel='stylesheet', href='panel.css')
-    script(src='../../libs/socket.io.js')
-    script(src='../../libs/jquery.min.js')
-    script(src='../../libs/d3.3.min.js')
-    script(src='../../libs/portable-sim-panels.js')
-    script(type='text/javascript').
-      let config = {}
-      let path = window.parent.location.pathname.split('/');
+    title B60T panel
+    meta(name="mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, user-scalable=yes")
+    link(rel="stylesheet" href="panel.css")
+    script(src="../../libs/jquery.min.js")
+    script(src="../../libs/d3.3.min.js")
+    script(src="../../libs/portable-sim-panels.js")
+    script(src="../../libs/findSuitablePanel.js")
+    script(type="text/javascript").
+      let config = {};
+      let path = window.parent.location.pathname.split("/");
       path.pop();
-      path = path.join('/') + '/';
-      $.getJSON(path+'config.json', function(json){
+      path = path.join("/") + "/";
+      $.getJSON(path + "config.json", function(json) {
       config = json;
       });
       let json;
@@ -22,23 +24,27 @@ html
       }
   body
     #GarminG3X
+      object.atcBadge(data="B60T-ATC-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;")
       .dme
-        object#DME(data='../../standardgauges/Bendix-King_DME_KDI-573.svg', type='image/svg+xml')
+        object#DME(data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml")
+      div &nbsp;
+      div &nbsp;
       .mfd
-        object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg', type='image/svg+xml')
+        object#Garmin-G5(data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml")
+        object#Garmin-G5(data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml")
       .engine
-        object(id='ENG_1_TORQUE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='ENG_2_TORQUE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='TURB_ENG_1_ITT', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='TURB_ENG_2_ITT', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='ENG_1_N1_RPM', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='ENG_2_N1_RPM', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='GENERAL_ENG_1_OIL_PRESSURE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='GENERAL_ENG_2_OIL_PRESSURE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='GENERAL_ENG_1_OIL_TEMPERATURE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='GENERAL_ENG_2_OIL_TEMPERATURE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        object#ENG_1_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#ENG_2_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TURB_ENG_1_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TURB_ENG_2_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#ENG_1_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#ENG_2_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#GENERAL_ENG_1_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#GENERAL_ENG_2_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#GENERAL_ENG_1_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#GENERAL_ENG_2_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
       .gearTrim
-        object#Gear-indicator(data='../../standardgauges/gear-indicator.svg', type='image/svg+xml')
-        object(id='ELEVATOR TRIM POSITION', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='TRAILING EDGE FLAPS LEFT ANGLE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
-        object(id='TRAILING EDGE FLAPS RIGHT ANGLE', data='../../standardgauges/Garmin-generic-arc.svg', type='image/svg+xml')
+        object#GEAR_INDICATOR(data="../../standardgauges/gear-indicator.svg" type="image/svg+xml")
+        object#ELEVATOR_TRIM_POSITION(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TRAILING_EDGE_FLAPS_LEFT_ANGLE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TRAILING_EDGE_FLAPS_RIGHT_ANGLE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")

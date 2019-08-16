@@ -42,40 +42,16 @@
        <script
           type="text/javascript" id="businesslogic"><![CDATA[
 
-          Object.defineProperty( Object.prototype, "_has", { value: function( needle ) {
-          var obj = this;
-          var needles = needle.split( "." );
-          var needles_full=[];
-          var needles_square;
-          for( var i = 0; i<needles.length; i++ ) {
-              needles_square = needles[i].split( "[" );
-              if(needles_square.length>1){
-                  for( var j = 0; j<needles_square.length; j++ ) {
-                      if(needles_square[j].length){
-                          needles_full.push(needles_square[j]);
-                      }
-                  }
-              }else{
-                  needles_full.push(needles[i]);
-              }
-          }
-          for( var i = 0; i<needles_full.length; i++ ) {
-              var res = needles_full[i].match(/^((\d+)|"(.+)"|'(.+)')\]$/);
-              if (res != null) {
-                  for (var j = 0; j < res.length; j++) {
-                      if (res[j] != undefined) {
-                          needles_full[i] = res[j];
-                      }
-                  }
-              }
-
-              if( typeof obj[needles_full[i]]=='undefined') {
-                  return false;
-              }
-              obj = obj[needles_full[i]];
-          }
-          return true;
-          }});
+        function isset (fn) {
+            var value;
+            try {
+                value = fn();
+            } catch (e) {
+                value = undefined;
+            } finally {
+                return value !== undefined;
+            }
+        };
 
         window.parent.addEventListener("update", eventHandler, true);
 
@@ -99,22 +75,21 @@
           init();
         });
 
-        window.onload = setTimeout(function(){
-          //init();
-        }, 500);
-
         function init(){
-          minAngle = (config._has("baseStyle.arcMinAngle")) ? config.baseStyle.arcMinAngle : -140
-          maxAngle = (config._has("baseStyle.arcMaxAngle")) ? config.baseStyle.arcMaxAngle : 110
-          pointerwidth = (config._has("baseStyle.pointerwidth")) ? config.baseStyle.pointerwidth : 2
-          innerRadius = (config._has("baseStyle.innerRadius")) ? config.baseStyle.innerRadius : 68
-          outerRadius = (config._has("baseStyle.outerRadius")) ? config.baseStyle.outerRadius : 70
-          baseColor = (config._has("baseStyle.baseColor")) ? config.baseStyle.baseColor : "grey"
-          normalColor = (config._has("baseStyle.normalColor")) ? config.baseStyle.normalColor : "white"
-          calculatedValue = (config._has("calculatedValue")) ? config.calculatedValue : 0
+          label = isset(() => config.label) ? config.label : ''
+          rangeMin = isset(() => config.rangemin) ? config.rangemin : 0
+          rangeMax = isset(() => config.rangemax) ? config.rangemax : 100
+          minAngle = isset(() => config.baseStyle.arcMinAngle) ? config.baseStyle.arcMinAngle : -140
+          maxAngle = isset(() => config.baseStyle.arcMaxAngle) ? config.baseStyle.arcMaxAngle : 110
+          pointerwidth = isset(() => config.baseStyle.pointerwidth) ? config.baseStyle.pointerwidth : 2
+          innerRadius = isset(() => config.baseStyle.innerRadius) ? config.baseStyle.innerRadius : 68
+          outerRadius = isset(() => config.baseStyle.outerRadius) ? config.baseStyle.outerRadius : 70
+          baseColor = isset(() => config.baseStyle.baseColor) ? config.baseStyle.baseColor : "grey"
+          normalColor = isset(() => config.baseStyle.normalColor) ? config.baseStyle.normalColor : "white"
+          calculatedValue = isset(() => config.calculatedValue) ? config.calculatedValue : 0
           fullrange =  maxAngle - minAngle
-          stepangle = fullrange / (config.rangemax-config.rangemin);
-          zeroangle = config.rangemin * stepangle * -1 + minAngle;
+          stepangle = fullrange / (rangeMax - rangeMin);
+          zeroangle = rangeMin * stepangle * -1 + minAngle;
 
           let svg = d3.select("svg")
               .append("svg")
@@ -134,21 +109,22 @@
               .attr("class", "arc")
               .attr("fill", baseColor)
               .attr("d", arc);
-
-          config.ranges.forEach(function(range, i) {
-            let rangemin = zeroangle + range.minValue * stepangle;
-            let rangemax =  zeroangle + range.maxValue * stepangle;
-            let arc2 = d3.svg.arc()
-              .innerRadius(innerRadius - range.width)
-              .outerRadius(innerRadius)
-              .startAngle(rangemin * (pi/180))
-              .endAngle(rangemax * (pi/180));
-            svg.append("path")
-              .attr("class", "arc-"+i)
-              .attr("fill",range.color)
-              .attr("d", arc2);
-          })
-          d3.select('#label').text(config.label);
+          if (isset(() => config.ranges)) {
+            config.ranges.forEach(function(range, i) {
+              let rangemin = zeroangle + range.minValue * stepangle;
+              let rangemax =  zeroangle + range.maxValue * stepangle;
+              let arc2 = d3.svg.arc()
+                .innerRadius(innerRadius - range.width)
+                .outerRadius(innerRadius)
+                .startAngle(rangemin * (pi/180))
+                .endAngle(rangemax * (pi/180));
+              svg.append("path")
+                .attr("class", "arc-"+i)
+                .attr("fill",range.color)
+                .attr("d", arc2);
+            })
+          }
+          d3.select('#label').text(label);
 
           svg.append("path")
             .style("stroke-width", 1)
@@ -158,7 +134,6 @@
             .attr("id","needle")
             .attr('x', -75).attr('y', -75);
 
-            // console.log('\n');
         }
 
         function Update(inputObject){
@@ -168,18 +143,18 @@
             let value = Object.values(inputObject)[attr] ;
             value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value);
 
-            switch (key) {
+            switch (key.toUpperCase()) {
 
               case id:
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
-                if (config.rangemax-config.rangemin <= 99) {
+                if (rangeMax-rangeMin <= 99) {
                   d3.select('#value').text((value*1).toFixed(1));
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }
 
-                if (config.ranges) {
+                if (isset(() => config.ranges)) {
                   let arccolor = baseColor
                   config.ranges.forEach(function(range, i) {
                     let rangemin = zeroangle + range.minValue * stepangle;
@@ -203,29 +178,6 @@
                   d3.select(".arc").attr("fill", arccolor)
                   })
                 }
-                break;
-
-              case 'test':
-                let x = value.x;
-                let y = value.y;
-                Update({
-                  "ELEVATOR_TRIM_POSITION":(x/3),
-                  "ELEVATOR_TRIM_POSITION2":(x/3),
-                  "Plane_Bank_Degrees":(x/3),
-                  "Plane_Pitch_Degrees":(y/10),
-                  "Autopilot_Altitude_Lock_Var":Math.abs(y*x*2),
-                  "Plane_Heading_Degrees_True":x,
-                  "Airspeed_Indicated": y*-1,
-                  "Plane_Altitude":x*y*-1,
-                  "GPS_GROUND_SPEED":y*-1.04/1.94384,
-                  "INCIDENCE_BETA":y/1.5,
-                  "GENERAL_ENG_RPM_1": x,
-                  "ENG_MANIFOLD_PRESSURE_1": x/2.2,
-                  "ENG_MANIFOLD_PRESSURE_2": x/2,
-                  "GEAR_CENTER_POSITION": y/4,
-                  "FLAPS_HANDLE_PERCENT": x/4,
-                  "Vertical_Speed": x*6
-                });
                 break;
 
               default:

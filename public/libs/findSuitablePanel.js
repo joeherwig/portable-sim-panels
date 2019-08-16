@@ -73,7 +73,7 @@ function eventHandler(update) {
 }
 
 function init () {
-  stripedJson = JSON.parse(localStorage.getItem('fullJson'))
+  stripedJson = JSON.parse(localStorage.getItem('fullJson')) ? JSON.parse(localStorage.getItem('fullJson')) : {}
   delete stripedJson.TITLE
   var event = new CustomEvent("update", { "detail": stripedJson });
   document.dispatchEvent(event);

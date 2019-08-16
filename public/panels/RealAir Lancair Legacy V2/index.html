@@ -1,50 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Lancair Legacy V2</title>
-    <link rel="stylesheet" href="panel.css">
-    <script src="../../libs/socket.io.js"></script>
-    <script src="../../libs/jquery.min.js"></script>
-    <script src="../../libs/d3.3.min.js"></script>
-    <script src="../../libs/portable-sim-panels.js"></script>
-    <script src="../../libs/findSuitablePanel.js"></script>
-    <script type="text/javascript">
-      let config = {}
-      let path = window.parent.location.pathname.split('/');
-      path.pop();
-      path = path.join('/') + '/';
-      $.getJSON(path+'config.json', function(json){
-        config = json;
-      });
-      let json;
-      window.parent.addEventListener("update", eventHandler, true);
-      function eventHandler(update) {
-        json = update.detail;
-      }
-    </script>
-  </head>
-  <body>
-    <div id="GarminG3X">
-      <div class="dme">
-        <object id="DME" data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml"></object>
-      </div>
-      <div class="mfd">
-        <object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object>
-      </div>
-      <div class="engine">
-        <span style='color:white'>Lancair Legacy</span>
-        <object id="GENERAL ENG RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-        <object id="ENG MANIFOLD PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-        <object id="GENERAL ENG OIL PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-        <object id="GENERAL ENG OIL TEMPERATURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-      </div>
-      <div class="gearTrim">
-        <object id="Gear-indicator" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml"></object>
-        <!--object(id='GEAR TOTAL PCT EXTENDED' data='../../standardgauges/Garmin-generic-arc.svg' type='image/svg+xml')-->
-        <object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-        <object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-        <object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-      </div>
-    </div>
-  </body>
-</html>
+<!DOCTYPE html><html onload="document.body.requestFullscreen();"><head><title>B60T panel</title><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, user-scalable=yes"><link rel="stylesheet" href="panel.css"><script src="../../libs/jquery.min.js"></script><script src="../../libs/d3.3.min.js"></script><script src="../../libs/portable-sim-panels.js"></script><script src="../../libs/findSuitablePanel.js"></script><script type="text/javascript">let config = {};
+let path = window.parent.location.pathname.split("/");
+path.pop();
+path = path.join("/") + "/";
+$.getJSON(path + "config.json", function(json) {
+config = json;
+});
+let json;
+window.parent.addEventListener("update", eventHandler, true);
+function eventHandler(update) {
+json = update.detail;
+}</script></head><body><div id="GarminG3X"><object class="atcBadge" data="Lancair-Legacy-ATC-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;"></object><div class="dme"><object id="DME" data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml"></object></div><div class="mfd"><object id="Garmin-G5" data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml"></object><object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object></div><div class="engine"><object id="GENERAL ENG RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="ENG MANIFOLD PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="GENERAL ENG OIL PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="GENERAL ENG OIL TEMPERATURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div><div class="gearTrim"><object id="GEAR_INDICATOR" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml"></object><object id="ELEVATOR_TRIM_POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TRAILING_EDGE_FLAPS_LEFT_ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object><object id="TRAILING_EDGE_FLAPS_RIGHT_ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object></div></div></body></html>

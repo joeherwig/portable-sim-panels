@@ -1,523 +1,539 @@
 {
-    "AIRSPEED INDICATED": {
-        "greenbarend": 230,
-        "greenbarstart": 58,
-        "marker": {
-            "fe": 122,
-            "ge": 132,
-            "vne": 276,
-            "x": 100,
-            "y": 135
-        },
-        "vne": 276,
-        "whitebarend": 122,
-        "whitebarstart": 56,
-        "yellowbarend": 276,
-        "yellowbarstart": 230
-    },
-    "AUTOPILOT ALTITUDE LOCK": {},
-    "AUTOPILOT ALTITUDE LOCK VAR": {},
-    "AUTOPILOT APPROACH HOLD": {},
-    "AUTOPILOT ATTITUDE HOLD": {},
-    "AUTOPILOT AVAILABLE": {},
-    "AUTOPILOT FLIGHT DIRECTOR ACTIVE": {},
-    "AUTOPILOT GLIDESLOPE HOLD": {},
-    "AUTOPILOT HEADING LOCK": {},
-    "AUTOPILOT HEADING LOCK DIR": {},
-    "AUTOPILOT MASTER": {},
-    "AUTOPILOT NAV SELECTED": {},
-    "AUTOPILOT NAV1 LOCK": {},
-    "AUTOPILOT PITCH HOLD REF": {},
-    "ELEVATOR TRIM POSITION": {
-        "baseStyle": {
-            "arcMaxAngle": 120,
-            "arcMinAngle": 60,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "Elev Trim",
-        "rangemax": 16,
-        "rangemin": -16,
-        "ranges": []
-    },
-    "ENG FUEL FLOW GPH:1": {
-        "baseStyle": {
-            "baseColor": "#333333",
-            "normalColor": "white",
-            "rulerwidth": 2
-        },
-        "label": "Gal / h",
-        "rangemax": 30,
-        "rangemin": 3,
-        "ranges": [
-            {
-                "color": "green",
-                "maxValue": 80,
-                "minValue": 20,
-                "width": 1
-            },
-            {
-                "activewidth": 4,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "orange",
-                "maxValue": 95,
-                "minValue": 80,
-                "width": 1
-            },
-            {
-                "activewidth": 15,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 200,
-                "minValue": 95,
-                "width": 1
-            }
-        ]
-    },
-    "ENG FUEL FLOW GPH:2": {
-        "baseStyle": {
-            "baseColor": "#333333",
-            "normalColor": "white",
-            "rulerwidth": 2
-        },
-        "label": "Gal / h",
-        "rangemax": 30,
-        "rangemin": 3,
-        "ranges": [
-            {
-                "color": "silver",
-                "maxValue": 10,
-                "minValue": 6,
-                "width": 1
-            },
-            {
-                "activewidth": 4,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "orange",
-                "maxValue": 13,
-                "minValue": 10,
-                "width": 1
-            },
-            {
-                "activewidth": 15,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 15,
-                "minValue": 13,
-                "width": 1
-            }
-        ]
-    },
-    "ENG FUEL FLOW PPH:1": {
-        "baseStyle": {
-            "baseColor": "#333333",
-            "normalColor": "white",
-            "rulerwidth": 2
-        },
-        "label": "Pounds / h",
-        "rangemax": 70,
-        "rangemin": 0,
-        "ranges": [
-            {
-                "color": "green",
-                "maxValue": 80,
-                "minValue": 20,
-                "width": 1
-            },
-            {
-                "activewidth": 4,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "orange",
-                "maxValue": 95,
-                "minValue": 80,
-                "width": 1
-            },
-            {
-                "activewidth": 15,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 200,
-                "minValue": 95,
-                "width": 1
-            }
-        ]
-    },
-    "ENG FUEL FLOW PPH:2": {
-        "baseStyle": {
-            "baseColor": "#333333",
-            "normalColor": "white",
-            "rulerwidth": 2
-        },
-        "label": "Pounds / h",
-        "rangemax": 70,
-        "rangemin": 0,
-        "ranges": [
-            {
-                "color": "silver",
-                "maxValue": 10,
-                "minValue": 6,
-                "width": 1
-            },
-            {
-                "activewidth": 4,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "orange",
-                "maxValue": 13,
-                "minValue": 10,
-                "width": 1
-            },
-            {
-                "activewidth": 15,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 15,
-                "minValue": 13,
-                "width": 1
-            }
-        ]
-    },
-    "ENG MANIFOLD PRESSURE:1": {
-        "baseStyle": {
-            "arcMaxAngle": 90,
-            "arcMinAngle": -140,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "MAP 1",
-        "rangemax": 35,
-        "rangemin": 0,
-        "ranges": [
-            {
-                "activewidth": 20,
-                "color": "green",
-                "maxValue": 29,
-                "minValue": 20,
-                "width": 2
-            },
-            {
-                "activewidth": 60,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 31,
-                "minValue": 29,
-                "width": 2
-            }
-        ]
-    },
-    "ENG MANIFOLD PRESSURE:2": {
-        "baseStyle": {
-            "arcMaxAngle": 110,
-            "arcMinAngle": -140,
-            "baseColor": "#333333",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "MAP 2",
-        "rangemax": 35,
-        "rangemin": 0,
-        "ranges": [
-            {
-                "color": "green",
-                "maxValue": 29,
-                "minValue": 20,
-                "width": 2
-            },
-            {
-                "activewidth": 60,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 31,
-                "minValue": 29,
-                "width": 2
-            }
-        ]
-    },
-    "GEAR CENTER POSITION":{},
-    "GEAR LEFT POSITION":{},
-    "GEAR RIGHT POSITION":{},
-    "GEAR TOTAL PCT EXTENDED": {
-        "baseStyle": {
-            "arcMaxAngle": 180,
-            "arcMinAngle": 90,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "Gear %",
-        "rangemax": 1,
-        "rangemin": 0,
-        "ranges": [
-            {
-                "activewidth": 60,
-                "alerttext": "down",
-                "alerttype": "info",
-                "color": "green",
-                "maxValue": 1,
-                "minValue": 0.99,
-                "width": 0
-            },
-            {
-                "activewidth": 5,
-                "alerttext": "moving",
-                "alerttype": "warning",
-                "color": "orange",
-                "maxValue": 98,
-                "minValue": 2,
-                "width": 0
-            }
-        ]
-    },
-    "GENERAL ENG RPM:1": {
-        "baseStyle": {
-            "arcMaxAngle": 110,
-            "arcMinAngle": -140,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "RPM",
-        "rangemax": 3000,
-        "rangemin": -100,
-        "ranges": [
-            {
-                "color": "green",
-                "maxValue": 2700,
-                "minValue": 2000,
-                "width": 2
-            },
-            {
-                "activewidth": 60,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 3000,
-                "minValue": 2700,
-                "width": 8
-            }
-        ]
-    },
-    "GENERAL ENG RPM:2": {
-        "baseStyle": {
-            "arcMaxAngle": 110,
-            "arcMinAngle": -140,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "RPM",
-        "rangemax": 2900,
-        "rangemin": -100,
-        "ranges": [
-            {
-                "color": "green",
-                "maxValue": 2700,
-                "minValue": 2000,
-                "width": 2
-            },
-            {
-                "activewidth": 60,
-                "alerttext": "high",
-                "alerttype": "warning",
-                "color": "red",
-                "maxValue": 3000,
-                "minValue": 2700,
-                "width": 2
-            }
-        ]
-    },
-    "GPS GROUND SPEED": {},
-    "INDICATED ALTITUDE": {
-        "lean-hint": 4000
-    },
-    "KOHLSMAN SETTING HG": {},
-    "KOHLSMAN SETTING MB": {},
-    "NAV CDI:1": {},
-    "NAV CDI:2": {},
-    "NAV GSI:1": {},
-    "NAV GSI:2": {},
-    "PLANE BANK DEGREES": {},
-    "PLANE HEADING DEGREES MAGNETIC": {},
-    "PLANE PITCH DEGREES": {},
-    "RECIP MIXTURE RATIO:1": {
-        "baseStyle": {
-            "arcMaxAngle": 110,
-            "arcMinAngle": -140,
-            "baseColor": "#333333",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "MIX 1",
-        "rangemax": 12,
-        "rangemin": 0,
-        "ranges": []
-    },
-    "RECIP MIXTURE RATIO:2": {
-        "baseStyle": {
-            "arcMaxAngle": 110,
-            "arcMinAngle": -140,
-            "baseColor": "#333333",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "MIX 2",
-        "rangemax": 12,
-        "rangemin": 0,
-        "ranges": []
-    },
-    "SIM ON GROUND": {},
-    "TRAILING EDGE FLAPS LEFT ANGLE": {
-        "baseStyle": {
-            "arcMaxAngle": 135,
-            "arcMinAngle": 90,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "Flaps L °",
-        "rangemax": 100,
-        "rangemin": 0,
-        "ranges": []
-    },
-    "TRAILING EDGE FLAPS RIGHT ANGLE": {
-        "baseStyle": {
-            "arcMaxAngle": 135,
-            "arcMinAngle": 90,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "Flaps R °",
-        "rangemax": 100,
-        "rangemin": 0,
-        "ranges": []
-    },
-    "VERTICAL SPEED": {
-        "baseStyle": {
-            "arcMaxAngle": 60,
-            "arcMinAngle": -240,
-            "baseColor": "grey",
-            "innerRadius": 68,
-            "normalColor": "white",
-            "outerRadius": 70,
-            "pointerwidth": 2
-        },
-        "label": "VSI",
-        "rangemax": 4000,
-        "rangemin": -4000,
-        "ranges": [
-            {
-                "activewidth": 40,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": 15,
-                "minValue": -15,
-                "width": 30
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": -990,
-                "minValue": -1010,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": -1990,
-                "minValue": -2010,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": -2990,
-                "minValue": -3010,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": -3990,
-                "minValue": -4010,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": 1010,
-                "minValue": 990,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": 2010,
-                "minValue": 1990,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": 3010,
-                "minValue": 2990,
-                "width": 10
-            },
-            {
-                "activewidth": 30,
-                "alerttext": "low",
-                "alerttype": "info",
-                "color": "grey",
-                "maxValue": 4010,
-                "minValue": 3990,
-                "width": 10
-            }
-        ]
+  "AIRSPEED_INDICATED": {
+    "whitebarstart": 56,
+    "whitebarend": 122,
+    "greenbarstart": 58,
+    "greenbarend": 230,
+    "yellowbarstart": 230,
+    "yellowbarend": 290,
+    "marker": {
+      "fe": 120,
+      "ge": 140,
+      "vne": 290,
+      "r": 290,
+      "x": 100,
+      "y": 135,
+      "cc": 145,
+      "aprf": 95,
+      "aprc": 105
     }
+  },
+  "INDICATED_ALTITUDE": {
+    "lean-hint": 4000
+  },
+  "ENG_1_TORQUE": {
+    "label": "TRQ LB/ft",
+    "rangemin": 0,
+    "rangemax": 2000,
+    "calculatedValue": "x /14 * 12",
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 0,
+        "maxValue": 1400,
+        "width": 2
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 1450,
+        "maxValue": 2000,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "ENG_2_TORQUE": {
+    "label": "TRQ LB/feet",
+    "rangemin": 0,
+    "rangemax": 2000,
+    "calculatedValue": "x /14 * 12",
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 0,
+        "maxValue": 1400,
+        "width": 2
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 1450,
+        "maxValue": 2000,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "TURB_ENG_1_ITT": {
+    "rangemin": 0,
+    "rangemax": 1100,
+    "label": "ITT °C",
+    "calculatedValue": "x * 1.2",
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 400,
+        "maxValue": 770,
+        "width": 2
+      },
+      {
+        "color": "yellow",
+        "minValue": 770,
+        "maxValue": 810,
+        "width": 2
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 810,
+        "maxValue": 1050,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "TURB_ENG_2_ITT": {
+    "rangemin": 0,
+    "rangemax": 1100,
+    "label": "ITT °C",
+    "calculatedValue": "x * 1.2",
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 400,
+        "maxValue": 770,
+        "width": 2
+      },
+      {
+        "color": "yellow",
+        "minValue": 770,
+        "maxValue": 810,
+        "width": 2
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 810,
+        "maxValue": 1050,
+        "width": 2,
+        "activewidth": 60
+      }
+    ]
+  },
+  "ENG_1_N1_RPM": {
+    "rangemin": 0,
+    "rangemax": 110,
+    "label": "N1 % RPM",
+    "calculatedValue": "x * 1.1",
+    "ranges": []
+  },
+  "ENG_2_N1_RPM": {
+    "rangemin": 0,
+    "rangemax": 110,
+    "label": "N1 % RPM",
+    "calculatedValue": "x * 1.1",
+    "ranges": []
+  },
+  "ELEVATOR_TRIM_POSITION": {
+    "rangemin": -15,
+    "rangemax": 15,
+    "label": "Elev Trim",
+    "calculatedValue-": "x * 0.93",
+    "baseStyle": {
+      "arcMinAngle": 60,
+      "arcMaxAngle": 120
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "low",
+        "minValue": -16,
+        "maxValue": -3,
+        "width": 0,
+        "activewidth": 30
+      },
+      {
+        "color": "orange",
+        "alerttype": "caution",
+        "alerttext": "high",
+        "minValue": 3,
+        "maxValue": 16,
+        "width": 0,
+        "activewidth": 30
+      }
+    ]
+  },
+  "FLAPS_HANDLE_PERCENT": {
+    "rangemin": 0,
+    "rangemax": 100,
+    "label": "Flaps handle %",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 135
+    },
+    "ranges": []
+  },
+  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+    "rangemin": 0,
+    "rangemax": 30,
+    "label": "Flaps L °",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 135
+    },
+    "ranges": []
+  },
+  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+    "rangemin": 0,
+    "rangemax": 30,
+    "label": "Flaps R °",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 135
+    },
+    "ranges": []
+  },
+  "VERTICAL_SPEED": {
+    "rangemin": -4000,
+    "rangemax": 4000,
+    "label": "VSI",
+    "baseStyle": {
+      "arcMinAngle": -240,
+      "arcMaxAngle": 60
+    },
+    "ranges": [
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": -15,
+        "maxValue": 15,
+        "width": 30,
+        "activewidth": 40
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": -1010,
+        "maxValue": -990,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": -2010,
+        "maxValue": -1990,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": -3010,
+        "maxValue": -2990,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": -4010,
+        "maxValue": -3990,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 990,
+        "maxValue": 1010,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 1990,
+        "maxValue": 2010,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 2990,
+        "maxValue": 3010,
+        "width": 10,
+        "activewidth": 30
+      },
+      {
+        "color": "grey",
+        "alerttype": "info",
+        "alerttext": "low",
+        "minValue": 3990,
+        "maxValue": 4010,
+        "width": 10,
+        "activewidth": 30
+      }
+    ]
+  },
+  "GEAR_CENTER_POSITION": {},
+  "GEAR_LEFT_POSITION": {},
+  "GEAR_RIGHT_POSITION": {},
+  "GEAR_TOTAL_PCT_EXTENDED": {
+    "rangemin": 0,
+    "rangemax": 1,
+    "label": "Gear %",
+    "baseStyle": {
+      "arcMinAngle": 90,
+      "arcMaxAngle": 180
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "alerttype": "info",
+        "alerttext": "down",
+        "minValue": 0.99,
+        "maxValue": 1,
+        "width": 0,
+        "activewidth": 60
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "moving",
+        "minValue": 2,
+        "maxValue": 98,
+        "width": 0,
+        "activewidth": 5
+      }
+    ]
+  },
+  "ENG_FUEL_FLOW_GPH:1": {
+    "rangemin": 0,
+    "rangemax": 30,
+    "label": "Gallons / h",
+    "baseStyle": {
+      "rulerwidth": 2,
+      "baseColor": "#333333",
+      "normalColor": "white"
+    },
+    "ranges": [
+      {
+        "color": "green",
+        "minValue": 16,
+        "maxValue": 20,
+        "width": 1
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 26.7,
+        "maxValue": 30,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL_ENG_1_OIL_PRESSURE:1": {
+    "rangemin": 0,
+    "rangemax": 120,
+    "label": "Oil psi",
+    "calculatedValue": "x /144",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 0,
+        "maxValue": 9,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 30,
+        "maxValue": 60,
+        "width": 1
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 101,
+        "maxValue": 120,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL_ENG_1_OIL_TEMPERATURE": {
+    "rangemin": 0,
+    "rangemax": 130,
+    "label": "Oil Temp °C",
+    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "calculatedValueFahrenheit": "x - 459,67",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 37,
+        "maxValue": 75,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 76,
+        "maxValue": 93,
+        "width": 1
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 94,
+        "maxValue": 114,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 115,
+        "maxValue": 130,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL_ENG_2_OIL_PRESSURE": {
+    "rangemin": 0,
+    "rangemax": 120,
+    "label": "Oil psi",
+    "calculatedValue": "x /144",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 0,
+        "maxValue": 9,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 30,
+        "maxValue": 60,
+        "width": 1
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 101,
+        "maxValue": 120,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "GENERAL_ENG_2_OIL_TEMPERATURE": {
+    "rangemin": 0,
+    "rangemax": 130,
+    "label": "Oil Temp °C",
+    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "calculatedValueFahrenheit": "x - 459,67",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 37,
+        "maxValue": 75,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 76,
+        "maxValue": 93,
+        "width": 1
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 94,
+        "maxValue": 114,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 115,
+        "maxValue": 130,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "PLANE_HEADING_DEGREES_MAGNETIC": {},
+  "PLANE_PITCH_DEGREES": {},
+  "PLANE BANK DEGREES": {},
+  "GPS_GROUND_SPEED": {},
+  "KOHLSMAN_SETTING_HG": {},
+  "KOHLSMAN_SETTING_MB": {},
+  "SIM_ON_GROUND": {},
+  "GENERAL_ENG_THROTTLE_LEVER_POSITION:1": {},
+  "AUTOPILOT_AVAILABLE": {},
+  "AUTOPILOT_MASTER": {},
+  "AUTOPILOT_NAV_SELECTED": {},
+  "AUTOPILOT_NAV1_LOCK": {},
+  "AUTOPILOT_HEADING_LOCK": {},
+  "AUTOPILOT_HEADING_LOCK_DIR": {},
+  "AUTOPILOT_ALTITUDE_LOCK": {},
+  "AUTOPILOT_ALTITUDE_LOCK_VAR": {},
+  "AUTOPILOT_ATTITUDE_HOLD": {},
+  "AUTOPILOT_GLIDESLOPE_HOLD": {},
+  "AUTOPILOT_PITCH_HOLD_REF": {},
+  "AUTOPILOT_APPROACH_HOLD": {},
+  "AUTOPILOT_FLIGHT_DIRECTOR_ACTIVE": {},
+  "TURN_COORDINATOR_BALL": {},
+  "NAV_CDI:1": {},
+  "NAV_GSI:1": {},
+  "NAV_CDI:2": {},
+  "NAV_GSI:2": {}
 }

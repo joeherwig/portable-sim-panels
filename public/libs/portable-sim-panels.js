@@ -1,4 +1,5 @@
 window.onload = setTimeout(function(){
+
   const SimconnectPort = 8080
   let = jsonData = {}
   function connectToSimconnectServer() {

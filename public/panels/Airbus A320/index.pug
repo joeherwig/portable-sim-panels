@@ -23,6 +23,15 @@ html(onload="document.body.requestFullscreen();")
       function eventHandler(update) {
       json = update.detail;
       }
+
+      var path = location.pathname.split('/');
+      path.pop();
+      path = path.join("/") + "/";
+      $.getJSON(path+"/config.json", function(json){
+        config = json[window.frameElement.id];
+        console.log(config)
+        init();
+      });
   body
     #GarminG3X
       object.atcBadge(data="A320-ATC-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;")
