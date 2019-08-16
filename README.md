@@ -38,7 +38,7 @@ var event = new CustomEvent("update", { "detail": {
 }});
 document.dispatchEvent(event);
 ```
-
 <img src="https://joeherwig.github.io/EDST-Flightsim-Scenery_Hahnweide-Kirchheim-unter-Teck/images/JOE-Simtech-Logo.svg" width="100px">
 
+This Application is available as FOSS (Free and open source Software) under The the following license:
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
