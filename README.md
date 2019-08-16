@@ -1,4 +1,6 @@
 <img src="https://i.makeagif.com/media/11-01-2017/j8000c.gif" alt="alt text" width="75%">
+<img src="https://joachim.herwigs.info/img/animated.gif" alt="alt text" width="640px">
+
 
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via web-socket connections.
 It's biggest advantage is, that the UI can be run on any device which is capable to display modern web pages. So you can use your rasperry pi, Panel-PC, Smartphone, old linux computer within your home cockpit as well. :-)
