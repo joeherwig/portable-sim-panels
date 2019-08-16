@@ -3,6 +3,10 @@
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via web-socket connections.
 It's biggest advantage is, that the UI can be run on any device which is capable to display modern web pages. So you can use your rasperry pi, Panel-PC, Smartphone, old linux computer within your home cockpit as well. :-)
 
+Depending on your specific panel CSS it might look for instance on your iPad like this:
+
+<img src="https://joachim.herwigs.info/img/iPad_example_Duke.png" alt="portable-sim-panels on iPad" width="100%">
+
 In the meanwhile i stripped the Backend and the UI into two seperate Projects.
 this one is only the web UI stuff (webgauges and some minor stuff) and the FSUIPC-Connection server with Webserver which can host the files from this repo as well:
 
