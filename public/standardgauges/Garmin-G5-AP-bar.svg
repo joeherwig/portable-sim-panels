@@ -6,41 +6,13 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="Garmin-G5-AP-bar.svg"
-   viewBox="0 0 1034.483 54.428696"
-   max-height="100%"
-   max-width="100%"
-   inkscape:version="0.92.1 r15371"
-   version="1.1"
-   width="1034.483"
+   id="svg37"
    height="54.428696"
-   id="svg37">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     id="namedview14"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.89358608"
-     inkscape:cx="466.26387"
-     inkscape:cy="3.9237045"
-     inkscape:window-x="-8"
-     inkscape:window-y="-6"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g4722" />
+   width="1034.483"
+   version="1.1"
+   max-width="100%"
+   max-height="100%"
+   viewBox="0 0 1034.483 54.428696">
   <metadata
      id="metadata8">
     <rdf:RDF>
@@ -62,8 +34,8 @@
        xlink:href="../../libs/jquery.min.js"
        id="script13" />
     <script
-       type="text/javascript"
-       id="script5"><![CDATA[
+       id="script5"
+       type="text/javascript"><![CDATA[
         let apmaster = 0,
           ap = 0,
           alt = 0,
@@ -90,6 +62,12 @@
           if (id === 'ap' && !ap) {
             setValue('alt', 0)
             setValue('hdg', 0)
+            setValue('vs', 0)
+            setValue('fd', 0)
+            setValue('nav', 0)
+            setValue('yd', 0)
+            setValue('apr', 0)
+            setValue('bc', 0)
             hdg = alt = nav = 0
           }
         }
@@ -118,7 +96,7 @@
                 break;
 
 
-              case 'AUTOPILOT_NAV_LOCK':
+              case 'AUTOPILOT_NAV1_LOCK':
                 nav = value && ap ? value*1 : 0
                 ap && nav ? setValue('nav', nav) : setValue('nav', 0) ;
                 break;
@@ -133,7 +111,12 @@
                 ap && alt ? setValue('alt', alt) : setValue('alt', 0);
                 break;
 
-              case 'AUTOPILOT_VS_LOCK':
+              case 'AUTOPILOT_BACKCOURSE_LOCK':
+                bc = value && ap ? value*1: 0
+                ap && bc ? setValue('bc', bc) : setValue('bc', 0);
+                break;
+
+              case 'AUTOPILOT_VERTICALSPEED_LOCK':
                 vs = value && ap ? value*1: 0
                 ap && vs ? setValue('vs', vs) : setValue('vs', 0);
                 break;
@@ -159,144 +142,136 @@
        id="style7" />
   </defs>
   <rect
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.68307114;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="ap_block"
-     width="1034.483"
-     height="54.428696"
+     y="0"
      x="0"
-     y="0" />
+     height="54.428696"
+     width="1034.483"
+     id="ap_block"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.68307114;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <g
-     id="g4722"
-     transform="translate(-4.9088745,-0.35627491)">
+     transform="translate(-4.9088745,-0.35627491)"
+     id="g4722">
     <text
-       id="apFD"
-       y="44.394035"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        x="25.062378"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
-         y="44.394035"
-         x="25.062378"
+       y="44.394035"
+       id="apFD"><tspan
          id="fd"
-         sodipodi:role="line">FD</tspan></text>
-    <text
-       id="apHDG"
-       y="44.394035"
-       x="135.29956"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         id="hdg"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         x="25.062378"
          y="44.394035"
-         x="135.29956"
-         sodipodi:role="line">HDG</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">FD</tspan></text>
     <text
-       id="apAPR"
-       y="44.394035"
-       x="435.5083"
+       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         id="apr"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+       x="121.05701"
+       y="44.394035"
+       id="apHDG"><tspan
+         x="121.05701"
          y="44.394035"
-         x="435.5083"
-         sodipodi:role="line">APR</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         id="hdg">HDG</tspan></text>
     <text
-       id="apNAV"
-       y="44.394035"
-       x="287.98206"
+       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+       x="493.22839"
+       y="44.394035"
+       id="apAPR"><tspan
+         x="493.22839"
          y="44.394035"
-         x="287.98206"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         id="apr">APR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="259.49695"
+       y="44.394035"
+       id="apNAV"><tspan
          id="nav"
-         sodipodi:role="line">NAV</tspan></text>
-    <text
-       id="apMaster"
-       y="44.394035"
-       x="586.38611"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         x="259.49695"
          y="44.394035"
-         x="586.38611"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">NAV</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="392.78064"
+       y="44.394035"
+       id="apMaster"><tspan
          id="ap"
-         sodipodi:role="line">AP</tspan></text>
-    <text
-       id="apYD"
-       y="44.394035"
-       x="700.86548"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         x="392.78064"
          y="44.394035"
-         x="700.86548"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">AP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="729.35046"
+       y="44.394035"
+       id="apYD"><tspan
          id="yd"
-         sodipodi:role="line">YD</tspan></text>
-    <text
-       id="apVS"
-       y="44.394035"
-       x="817.45422"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         x="729.35046"
          y="44.394035"
-         x="817.45422"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">YD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="831.69666"
+       y="44.394035"
+       id="apVS"><tspan
          id="vs"
-         sodipodi:role="line">VS</tspan></text>
-    <text
-       id="apALT"
-       y="44.394035"
-       x="931.72266"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1"
+         x="831.69666"
          y="44.394035"
-         x="931.72266"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">VS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="931.72253"
+       y="44.394035"
+       id="apALT"><tspan
          id="alt"
-         sodipodi:role="line">ALT</tspan></text>
+         x="931.72253"
+         y="44.394035"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">ALT</tspan></text>
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643"
-       d="M 112.82941,6.205157 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 105.70813,5.8488817 V 48.579814"
+       id="path4643" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-5"
-       d="M 265.3244,6.205157 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 243.96058,5.8488817 V 48.579814"
+       id="path4643-5" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-6"
-       d="M 409.12408,6.2051565 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 373.5177,5.8488816 V 48.579814"
+       id="path4643-6" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-4"
-       d="M 560.00189,6.205157 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 473.96546,5.8488817 V 48.579814"
+       id="path4643-4" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-41"
-       d="M 674.6922,6.2051568 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 610.60071,5.8488817 V 48.579814"
+       id="path4643-41" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-2"
-       d="M 791.35126,6.2051574 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 812.71497,5.8488818 V 48.579814"
+       id="path4643-2" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4643-3"
-       d="M 905.33844,6.2051572 V 48.936089"
-       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 912.4596,5.8488818 V 48.579814"
+       id="path4643-3" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="626.27771"
+       y="44.394035"
+       id="apBC"><tspan
+         id="bc"
+         x="626.27771"
+         y="44.394035"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">BC</tspan></text>
+    <path
+       style="fill:none;stroke:#797979;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 710.29847,5.8488819 V 48.579814"
+       id="path4643-41-7" />
   </g>
 </svg>
