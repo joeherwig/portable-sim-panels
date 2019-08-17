@@ -7,10 +7,8 @@ html {
 #GarminG3X {
   display: flex;
   flex-flow: row wrap;
-  }
-
+}
 #GarminG3X > * {
-  //flex: 1 1 auto;
   max-width: 360px;
   width: 100%;
   overflow: auto;
@@ -20,8 +18,8 @@ html {
   border: 3px solid grey;
   border-radius: 2em;
   display: grid;
-  grid-column:8/10;
-  grid-row:2/2;
+  grid-column: 8/10;
+  grid-row: 2/2;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: repeat(2, auto);
   grid-auto-flow: row;
@@ -29,21 +27,35 @@ html {
 }
 
 .mfd {
-  grid-column:3/6;
-  grid-row:2/4;
+  grid-column: 3/6;
+  grid-row: 2/4;
 }
 
 .engine, .gearTrim {
   display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    border: 0.1em solid #444444;
-    border-radius: 0.5rem;
-    background: black;
-    width: 120px !important;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border: 0.1em solid #444444;
+  border-radius: 0.5rem;
+  background: black;
+  width: 120px !important;
 }
 
-object{
+object {
   display: block;
   width: 100%;
 }
+
+.lights {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 360px;
+}
+
+.lights > * {
+  max-height: 100px;
+  flex: 1 1 auto;
+  width: 70px;
+}
+
+/*# sourceMappingURL=panel.css.map */

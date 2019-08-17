@@ -179,20 +179,22 @@
     },
     "ranges": []
   },
-  "TRAILING_EDGE_FLAPS_LEFT_ANGLE": {
+  "TRAILING_EDGE_FLAPS_LEFT_PERCENT": {
     "rangemin": 0,
     "rangemax": 30,
     "label": "Flaps L °",
+    "calculatedValue": "x / 10 * 3",
     "baseStyle": {
       "arcMinAngle": 90,
       "arcMaxAngle": 135
     },
     "ranges": []
   },
-  "TRAILING_EDGE_FLAPS_RIGHT_ANGLE": {
+  "TRAILING_EDGE_FLAPS_RIGHT_PERCENT": {
     "rangemin": 0,
     "rangemax": 30,
     "label": "Flaps R °",
+    "calculatedValue": "x / 10 * 3",
     "baseStyle": {
       "arcMinAngle": 90,
       "arcMaxAngle": 135
@@ -519,7 +521,9 @@
   "SIM_ON_GROUND": {},
   "GENERAL_ENG_THROTTLE_LEVER_POSITION:1": {},
   "AUTOPILOT_AVAILABLE": {},
-  "AUTOPILOT_MASTER": {},
+  "AUTOPILOT_MASTER": {
+    "label":"AP"
+  },
   "AUTOPILOT_NAV_SELECTED": {},
   "AUTOPILOT_NAV1_LOCK": {},
   "AUTOPILOT_HEADING_LOCK": {},

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg37"
+   height="243.03757"
+   width="120.54952"
+   version="1.1"
+   max-width="100%"
+   max-height="100%"
+   viewBox="0 0 120.54952 243.03757"
+   sodipodi:docname="Toggle-switch.svg"
+   inkscape:version="0.92.1 r15371"
+   onload="init();">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     id="namedview4789"
+     showgrid="false"
+     inkscape:zoom="0.71339982"
+     inkscape:cx="235.19184"
+     inkscape:cy="245.08183"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg37"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9">
+    <linearGradient
+       id="linearGradient4733"
+       inkscape:collect="always">
+      <stop
+         id="stop4727"
+         offset="0"
+         style="stop-color:#a0a0a0;stop-opacity:1" />
+      <stop
+         style="stop-color:#515151;stop-opacity:1"
+         offset="0.24409832"
+         id="stop4729" />
+      <stop
+         id="stop4731"
+         offset="1"
+         style="stop-color:#282828;stop-opacity:1" />
+    </linearGradient>
+    <script
+       xlink:href="../../libs/d3.3.min.js"
+       id="script3" />
+    <script
+       xlink:href="../../libs/jquery.min.js"
+       id="script13" />
+    <script
+       id="script5"
+       type="text/javascript"><![CDATA[
+        let config = {},
+          id = window.frameElement.id
+
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function isset (fn) {
+            var value;
+            try {
+                value = fn();
+            } catch (e) {
+                value = undefined;
+            } finally {
+                return value !== undefined;
+            }
+        };
+        
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        $.getJSON(path+"/config.json", function(json){
+          config = json[window.frameElement.id];
+          init();
+        });
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
+
+        function init () {
+          label = isset(() => config.label) ? config.label : id
+          label = window.frameElement.id.toUpperCase() === 'LIGHTS' ? window.frameElement.name : id
+           d3.select('#text').text(label);
+        }
+        
+        function setValue (state) {
+          let fillColor = (state * 1 ? '#00ff00' : '#333333')
+          d3.select('#text').style('fill', fillColor)
+          yoffset = state ? (249.61766 - 207.32515) * -2 : 0
+          rotation = state ? 180 : 0
+          d3.select('#switchPeddal').attr('transform', 'rotate('+rotation+', 94.777534, 207.32515 )');
+          d3.select('#switchPeddalCap').attr('transform', 'translate(0, '+yoffset+')');
+        }
+
+        function Update(inputObject){
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
+            let key = Object.keys(inputObject)[attr]
+            let value = Object.values(inputObject)[attr]
+
+            switch (key.toUpperCase()) {
+               case id: 
+                  value = value*1;
+                  if (id === 'LIGHTS') {
+                     exactLight = window.frameElement.name
+                     lights = {
+                        "navigation": 1,
+                        "beacon": 2,
+                        "landing":4,
+                        "taxi":8,
+                        "strobe":16,
+                        "instruments":32,
+                        "recognition":64,
+                        "wing":128,
+                        "logo":256,
+                        "cabin":512
+                     }
+                     setValue(lights[exactLight] & value);
+                  } else {
+                     setValue(value);
+                  }
+                break;
+
+              default:
+                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+            };
+          }
+        }
+
+        ]]></script>
+    <style
+       id="style7" />
+    <linearGradient
+       id="linearGradient4712"
+       inkscape:collect="always">
+      <stop
+         id="stop4706"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         style="stop-color:#6d6d6d;stop-opacity:1"
+         offset="0.42231965"
+         id="stop4708" />
+      <stop
+         id="stop4710"
+         offset="1"
+         style="stop-color:#d5d5d5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4598"
+       inkscape:collect="always">
+      <stop
+         id="stop4592"
+         offset="0"
+         style="stop-color:#ececec;stop-opacity:1" />
+      <stop
+         style="stop-color:#cbcbcb;stop-opacity:1;"
+         offset="0.32931772"
+         id="stop4594" />
+      <stop
+         id="stop4596"
+         offset="1"
+         style="stop-color:#4d4d4d;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4712"
+       id="radialGradient4704-2-7"
+       cx="94.777534"
+       cy="207.32515"
+       fx="94.777534"
+       fy="207.32515"
+       r="36.382828"
+       gradientTransform="matrix(1,0,0,0.99069179,0,1.9298274)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4733"
+       id="radialGradient4590-0-0"
+       cx="161.01935"
+       cy="228.53799"
+       fx="161.01935"
+       fy="228.53799"
+       r="17.802792"
+       gradientTransform="matrix(3.1467301,0.03100619,-0.23192807,23.537701,-356.92702,-5154.0622)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4598"
+       id="radialGradient4565-6-4"
+       cx="163.36549"
+       cy="250.94017"
+       fx="163.36549"
+       fy="250.94017"
+       r="17.670387"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-1.4970003,0.16122106,-0.17462742,-1.6214834,384.52337,624.89645)" />
+  </defs>
+  <g
+     transform="translate(-0.84318054,-0.35627491)"
+     id="g4722">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="105.08669"
+       y="44.750309"
+       id="apFD"><tspan
+         id="text"
+         x="59.500755"
+         y="44.750309"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;fill:#333333;fill-opacity:1">NAV</tspan></text>
+  </g>
+  <g
+     transform="matrix(1.544934,0,0,1.544934,-86.150274,-169.90483)"
+     id="g4723-2-2">
+    <path
+       inkscape:transform-center-y="5.9757398e-006"
+       inkscape:transform-center-x="-2.6306082e-006"
+       d="m 112.96895,238.8336 -36.382831,0 -18.191412,-31.50845 18.191415,-31.50845 36.382828,0 18.19141,31.50845 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.5707963"
+       sodipodi:arg1="1.0471976"
+       sodipodi:r2="31.508453"
+       sodipodi:r1="36.382828"
+       sodipodi:cy="207.32515"
+       sodipodi:cx="94.777534"
+       sodipodi:sides="6"
+       id="path4614-9-3"
+       style="opacity:1;fill:url(#radialGradient4704-2-7);fill-opacity:1;stroke:none;stroke-width:0.14596318;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="star" />
+    <circle
+       r="13.831199"
+       cy="207.32515"
+       cx="94.777534"
+       id="path4714-3-4"
+       style="opacity:1;fill:#3d3d3d;fill-opacity:1;stroke:none;stroke-width:0.13068181;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       r="20.646572"
+       cy="207.32515"
+       cx="94.777534"
+       id="circle5196"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#3d3d3d;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:connector-curvature="0"
+       d="m 77.003649,249.6178 5.39317,-42.61843 v 0 c -2.4e-4,-6.79501 5.48257,-12.0185 12.27758,-12.01855 6.795021,5e-5 12.303371,5.50864 12.303131,12.30365 v 0 l 5.36712,42.33333 c 0,0 -0.11791,-1.16022 0,0 -9e-5,9.75898 -7.91128,17.67017 -17.670251,17.67025 -9.75917,2e-4 -17.67068,-7.91107 -17.67075,-17.67025"
+       style="fill:url(#radialGradient4590-0-0);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="switchPeddal" />
+    <circle
+       r="17.670387"
+       cy="249.61766"
+       cx="94.674149"
+       id="switchPeddalCap"
+       style="opacity:1;fill:url(#radialGradient4565-6-4);fill-opacity:1;stroke:none;stroke-width:0.12499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

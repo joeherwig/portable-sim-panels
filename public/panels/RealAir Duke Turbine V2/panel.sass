@@ -1,42 +1,51 @@
 html
-  background: #111111
-
-body
-  width: 100vw
-  height: 100vw
-  overflow: hidden
+  background-image: url(https://silviahartmann.com/background-tile/images/wood-walnut-background-tile.jpg)
+  background-color: #00000099
+  background-blend-mode: overlay
 
 #GarminG3X
-  position: relative
-  width: calc(80vh / 0.625)
-  height: 80vh
-  max-width: 100vw
-  max-height: 100vh
-  background: #000
-  overflow: hidden
-  border: 4px solid grey
-  border-radius: 12px
+  display: flex
+  flex-flow: row wrap
+  > *
+    //flex: 1 1 auto;
+    max-width: 360px
+    width: 100%
+    overflow: auto
 
-.leftbar
-  position: absolute
-  left: 0px
-  bottom: 0px
-  height: 100%
-  width: 10%
-  object
-    margin-right: 10%
-    margin-left: 10%
-    width: 80%
+.gearTrim
+  border: 3px solid grey
+  border-radius: 2em
+  display: grid
+  grid-column: 8/10
+  grid-row: 2/2
+  grid-template-rows: 1fr 1fr
+  grid-template-columns: repeat(2, auto)
+  grid-auto-flow: row
+  padding: 10px
 
-.mfd, .auxpages
-  position: absolute
-  left: 10%
-  bottom: 0px
-  height: 100%
-  width: 45%
-  //border: 1px dashed green
-.auxpages
-  left: 55%
+.mfd
+  grid-column: 3/6
+  grid-row: 2/4
 
-#Garmin-G5
+.engine, .gearTrim
+  display: grid
+  grid-template-rows: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr
+  border: 0.1em solid #444444
+  border-radius: 0.5rem
+  background: black
+  width: 120px !important
+
+object
+  display: block
   width: 100%
+
+.lights 
+  display: flex
+  flex-flow: row wrap
+  max-width: 360px
+.lights > *
+  max-height: 100px
+  flex: 1 1 auto
+  width: 70px
+  

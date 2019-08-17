@@ -86,7 +86,7 @@
           outerRadius = isset(() => config.baseStyle.outerRadius) ? config.baseStyle.outerRadius : 70
           baseColor = isset(() => config.baseStyle.baseColor) ? config.baseStyle.baseColor : "grey"
           normalColor = isset(() => config.baseStyle.normalColor) ? config.baseStyle.normalColor : "white"
-          calculatedValue = isset(() => config.calculatedValue) ? config.calculatedValue : 0
+          calculatedValue = isset(() => config.calculatedValue) ? config.calculatedValue : false
           fullrange =  maxAngle - minAngle
           stepangle = fullrange / (rangeMax - rangeMin);
           zeroangle = rangeMin * stepangle * -1 + minAngle;
@@ -141,11 +141,11 @@
           for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
             let key = Object.keys(inputObject)[attr];
             let value = Object.values(inputObject)[attr] ;
-            value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value);
 
             switch (key.toUpperCase()) {
 
               case id:
+                value = (/^\d.*\.*\d$/.test(value) && calculatedValue) ? eval(calculatedValue.replace("x",value)) : value;
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
                 if (rangeMax-rangeMin <= 99) {

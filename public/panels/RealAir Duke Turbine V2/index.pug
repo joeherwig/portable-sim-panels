@@ -33,6 +33,7 @@ html(onload="document.body.requestFullscreen();")
       .mfd
         object#Garmin-G5(data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml")
         object#Garmin-G5(data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml")
+        object#Lights(data="../../standardgauges/Lights.svg" type="image/svg+xml")
       .engine
         object#ENG_1_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
         object#ENG_2_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
@@ -47,5 +48,17 @@ html(onload="document.body.requestFullscreen();")
       .gearTrim
         object#GEAR_INDICATOR(data="../../standardgauges/gear-indicator.svg" type="image/svg+xml")
         object#ELEVATOR_TRIM_POSITION(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TRAILING_EDGE_FLAPS_LEFT_ANGLE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TRAILING_EDGE_FLAPS_RIGHT_ANGLE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TRAILING_EDGE_FLAPS_LEFT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#TRAILING_EDGE_FLAPS_RIGHT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+    .lights
+      object#LIGHTS(name="beacon" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="strobe" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="navigation" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="landing" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="taxi" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="recognition" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="cabin" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="instruments" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#LIGHTS(name="wings" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+      object#AUTOPILOT_MASTER(data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
+
