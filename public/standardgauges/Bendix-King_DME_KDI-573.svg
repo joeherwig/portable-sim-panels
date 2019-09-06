@@ -67,7 +67,7 @@
           let value = Object.values(inputObject)[attr];
           switch (key) {
 
-            case 'DME_Switch':
+            case 'DME_SWITCH':
               selectedDme = value * 1 + 1
               switch(selectedDme) {
                 case 1:
