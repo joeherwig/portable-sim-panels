@@ -352,7 +352,7 @@
       }
     ]
   },
-  "GENERAL_ENG_1_OIL_PRESSURE:1": {
+  "GENERAL_ENG_1_OIL_PRESSURE": {
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
@@ -391,7 +391,7 @@
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "calculatedValue": "x * 140 / 16384 / 60 * 79 ",
     "calculatedValueFahrenheit": "x - 459,67",
     "baseStyle": {
       "rulerwidth": 2
@@ -436,7 +436,7 @@
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
-    "calculatedValue": "x /144",
+    "calculatedValue": "x / 144",
     "baseStyle": {
       "rulerwidth": 2
     },
@@ -471,7 +471,7 @@
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
+    "calculatedValue": "x * 140 / 16384 / 60 * 79 ",
     "calculatedValueFahrenheit": "x - 459,67",
     "baseStyle": {
       "rulerwidth": 2
@@ -539,5 +539,93 @@
   "NAV_CDI:1": {},
   "NAV_GSI:1": {},
   "NAV_CDI:2": {},
-  "NAV_GSI:2": {}
+  "NAV_GSI:2": {},
+  "PROP_1_RPM": {
+    "rangemin": 0,
+    "rangemax": 3000,
+    "label": "Prop RPM",
+    "calculatedValue": "x / 15.78",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 37,
+        "maxValue": 75,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 76,
+        "maxValue": 93,
+        "width": 1
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 94,
+        "maxValue": 114,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 115,
+        "maxValue": 130,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  },
+  "PROP_2_RPM": {
+    "rangemin": 0,
+    "rangemax": 3000,
+    "label": "Prop RPM",
+    "calculatedValue": "x / 15.78",
+    "baseStyle": {
+      "rulerwidth": 2
+    },
+    "ranges": [
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "low",
+        "minValue": 37,
+        "maxValue": 75,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "green",
+        "minValue": 76,
+        "maxValue": 93,
+        "width": 1
+      },
+      {
+        "color": "orange",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 94,
+        "maxValue": 114,
+        "width": 1,
+        "activewidth": 15
+      },
+      {
+        "color": "red",
+        "alerttype": "warning",
+        "alerttext": "high",
+        "minValue": 115,
+        "maxValue": 130,
+        "width": 1,
+        "activewidth": 15
+      }
+    ]
+  }
 }

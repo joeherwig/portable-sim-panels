@@ -15,7 +15,7 @@ html(onload="document.body.requestFullscreen();")
       path.pop();
       path = path.join("/") + "/";
       $.getJSON(path + "config.json", function(json) {
-      config = json;
+        config = json;
       });
       let json;
       window.parent.addEventListener("update", eventHandler, true);
@@ -61,4 +61,3 @@ html(onload="document.body.requestFullscreen();")
       object#LIGHTS(name="instruments" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
       object#LIGHTS(name="wings" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
       object#AUTOPILOT_MASTER(data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
-

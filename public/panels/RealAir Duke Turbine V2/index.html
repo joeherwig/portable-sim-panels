@@ -3,7 +3,7 @@ let path = window.parent.location.pathname.split("/");
 path.pop();
 path = path.join("/") + "/";
 $.getJSON(path + "config.json", function(json) {
-config = json;
+  config = json;
 });
 let json;
 window.parent.addEventListener("update", eventHandler, true);

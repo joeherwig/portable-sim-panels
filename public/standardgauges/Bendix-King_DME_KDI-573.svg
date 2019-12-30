@@ -30,11 +30,9 @@
          }
      </style>
      <script
-        xlink:href="../../libs/d3.3.min.js"
-        id="script9" />
+        xlink:href="../libs/d3.3.min.js"/>
      <script
-        xlink:href="../../libs/jquery.min.js"
-        id="script13" />
+        xlink:href="../libs/jquery.min.js"/>
      <script
         id="script4532"
         type="text/javascript"><![CDATA[
