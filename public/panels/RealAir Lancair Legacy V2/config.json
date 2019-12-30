@@ -140,10 +140,10 @@
     "ranges": []
   },
   "ELEVATOR_TRIM_POSITION": {
-    "rangemin": -15,
-    "rangemax": 15,
+    "rangemin": -40,
+    "rangemax": 40,
     "label": "Elev Trim",
-    "calculatedValue": "x * 0.93",
+    "calculatedValue": "x / 163.83",
     "baseStyle": {
       "arcMinAngle": 60,
       "arcMaxAngle": 120
