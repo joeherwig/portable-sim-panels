@@ -66,7 +66,8 @@
           switch (key) {
 
             case 'DME_SWITCH':
-              selectedDme = value * 1 + 1
+               console.log(value)
+              selectedDme = value * 1 
               switch(selectedDme) {
                 case 1:
                   d3.select('#posOff').transition().duration(250).style('fill','#656b71')
@@ -75,9 +76,10 @@
                   d3.select('#g4513-5').transition().duration(250).style('opacity','1')
                   d3.select('#g4513').transition().duration(250).style('opacity','1')
                   d3.select('#posHld').transition().duration(250).style('fill','#656b71')
+                  d3.select('#gMinutes').transition().duration(250).style('opacity','1')
                   d3.select('#knob').attr('transform', 'rotate(-31,-135.76351,148.50663)');
                   break
-                case 2:
+                case 3:
                   d3.select('#posOff').transition().duration(250).style('fill','#656b71')
                   d3.select('#posN1').transition().duration(250).style('fill','#656b71')
                   d3.select('#posN2').transition().duration(250).style('fill','#eeff00')
