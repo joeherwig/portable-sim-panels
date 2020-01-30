@@ -76,6 +76,7 @@
         });
 
         function init(){
+          console.log(config)
           label = isset(() => config.label) ? config.label : ''
           rangeMin = isset(() => config.rangemin) ? config.rangemin : 0
           rangeMax = isset(() => config.rangemax) ? config.rangemax : 100
@@ -145,10 +146,11 @@
             switch (key.toUpperCase()) {
 
               case id:
+              console.log(rangeMax)
                 value = (/^\d.*\.*\d$/.test(value) && calculatedValue) ? eval(calculatedValue.replace("x",value)) : value;
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
-                if (rangeMax-rangeMin <= 99) {
+                if (rangeMax - rangeMin <= 99) {
                   d3.select('#value').text((value*1).toFixed(1));
                 } else {
                   d3.select('#value').text(Math.round(value));
