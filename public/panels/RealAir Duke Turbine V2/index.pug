@@ -15,7 +15,7 @@ html(onload="document.body.requestFullscreen();")
       path.pop();
       path = path.join("/") + "/";
       $.getJSON(path + "config.json", function(json) {
-      config = json;
+        config = json;
       });
       let json;
       window.parent.addEventListener("update", eventHandler, true);
@@ -31,8 +31,9 @@ html(onload="document.body.requestFullscreen();")
       div &nbsp;
       div &nbsp;
       .mfd
-        object#Garmin-G5(data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml")
-        object#Garmin-G5(data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml")
+        object#Garmin-G5-AP-bar(data='../../standardgauges/Garmin-G5-AP-bar.svg' type='image/svg+xml')
+        object#Garmin-G5(data='../../standardgauges/Garmin-G5.svg' type='image/svg+xml')
+        object#Garmin-G5-HSI(data="../../standardgauges/Garmin-G5-HSI.svg" type="image/svg+xml")
         object#Lights(data="../../standardgauges/Lights.svg" type="image/svg+xml")
       .engine
         object#ENG_1_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
@@ -61,4 +62,3 @@ html(onload="document.body.requestFullscreen();")
       object#LIGHTS(name="instruments" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
       object#LIGHTS(name="wings" data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
       object#AUTOPILOT_MASTER(data="../../standardgauges/Toggle-switch.svg" type="image/svg+xml")
-

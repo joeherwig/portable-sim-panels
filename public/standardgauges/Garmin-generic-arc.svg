@@ -147,12 +147,7 @@
             switch (key.toUpperCase()) {
 
               case id:
-<<<<<<< HEAD
-              console.log(rangeMax)
-                value = (/^\d.*\.*\d$/.test(value) && calculatedValue) ? eval(calculatedValue.replace("x",value)) : value;
-=======
                 value = (/^\-?\d.*\.*\d$/.test(value) && calculatedValue) ? eval(calculatedValue.replace("x",value)) : value;
->>>>>>> 492f32d267682af976c31be6e9488bc97437790f
                 degrees = zeroangle + value *stepangle;
                 d3.select('#needle').attr('transform', 'rotate(' + degrees + ', 0, 0)');
                 if (rangeMax - rangeMin <= 99) {

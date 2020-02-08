@@ -24,28 +24,28 @@
   "ENG_1_TORQUE": {
     "label": "TRQ LB/ft",
     "rangemin": 0,
-    "rangemax": 2000,
-    "calculatedValue": "x /14 * 12",
+    "rangemax": 550,
+    "calculatedValue": "x",
     "ranges": [
       {
         "color": "green",
         "minValue": 0,
-        "maxValue": 1400,
+        "maxValue": 450,
         "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1450,
-        "maxValue": 2000,
+        "minValue": 451,
+        "maxValue": 550,
         "width": 2,
         "activewidth": 60
       }
     ]
   },
-  "ENG_2_TORQUE": {
-    "label": "TRQ LB/feet",
+  "ENG_1_MANIFOLD_PRESSURE": {
+    "label": "MAN in/hg",
     "rangemin": 0,
     "rangemax": 2000,
     "calculatedValue": "x /14 * 12",
@@ -140,10 +140,10 @@
     "ranges": []
   },
   "ELEVATOR_TRIM_POSITION": {
-    "rangemin": -15,
-    "rangemax": 15,
+    "rangemin": -40,
+    "rangemax": 40,
     "label": "Elev Trim",
-    "calculatedValue": "x * 0.93",
+    "calculatedValue": "x / 163.83",
     "baseStyle": {
       "arcMinAngle": 60,
       "arcMaxAngle": 120
@@ -391,8 +391,6 @@
     "rangemin": 0,
     "rangemax": 130,
     "label": "Oil Temp °C",
-    "calculatedValue": "(x * 5/9 * 1.086) - 273.15",
-    "calculatedValueFahrenheit": "x - 459,67",
     "baseStyle": {
       "rulerwidth": 2
     },
