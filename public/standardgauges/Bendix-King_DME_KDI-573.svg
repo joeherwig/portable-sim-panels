@@ -30,11 +30,9 @@
          }
      </style>
      <script
-        xlink:href="../../libs/d3.3.min.js"
-        id="script9" />
+        xlink:href="../libs/d3.3.min.js"/>
      <script
-        xlink:href="../../libs/jquery.min.js"
-        id="script13" />
+        xlink:href="../libs/jquery.min.js"/>
      <script
         id="script4532"
         type="text/javascript"><![CDATA[
@@ -77,6 +75,7 @@
                   d3.select('#g4513-5').transition().duration(250).style('opacity','1')
                   d3.select('#g4513').transition().duration(250).style('opacity','1')
                   d3.select('#posHld').transition().duration(250).style('fill','#656b71')
+                  d3.select('#gMinutes').transition().duration(250).style('opacity','1')
                   d3.select('#knob').attr('transform', 'rotate(-31,-135.76351,148.50663)');
                   break
                 case 3:

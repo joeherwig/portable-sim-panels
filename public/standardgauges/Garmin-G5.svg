@@ -290,8 +290,8 @@
                     d3.select('#alt-value-thousands').text('');
                     d3.select('#alt-value-hundreds').text((Math.floor(value)%1000));
                 }
-                d3.select('#alt-ruler-complete').attr('transform','translate(0,'+value*1.8545+')')
-                d3.select('#ap-selected-alt').attr('transform','translate(0,'+(currentalt+apaltlock)*1.8545+')')
+                d3.select('#alt-ruler-complete').attr('transform','translate(0,' + value * 1.8545 + ')')
+                d3.select('#ap-selected-alt').attr('transform','translate(0,' + (currentalt*1 + apaltlock*1) * 1.8545 + ')')
 
                 if (Math.abs(value + apaltlock) <= 30) {
                   d3.select('#ap-alt-value').style('fill','#0bbbbb')
@@ -350,7 +350,7 @@
                 if (value !== aphdglockdir) {
                   clearTimeout(closeHdgLockDirBox);
                   aphdglockdir = Math.floor(value);
-                  d3.select('#ap-hdg-selected-value').text(aphdglockdir + '�');
+                  d3.select('#ap-hdg-selected-value').text(aphdglockdir + '°');
                   d3.select('#ap-hdg-selected-box').style('display', 'block');
                   closeHdgLockDirBox = setTimeout(function(){
                     d3.select('#ap-hdg-selected-box').style('display','none');
