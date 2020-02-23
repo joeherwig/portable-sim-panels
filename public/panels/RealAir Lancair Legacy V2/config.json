@@ -325,7 +325,7 @@
       }
     ]
   },
-  "ENG_FUEL_FLOW_GPH:1": {
+  "ENG_FUEL_FLOW_GPH": {
     "rangemin": 0,
     "rangemax": 30,
     "label": "Gallons / h",
@@ -352,11 +352,11 @@
       }
     ]
   },
-  "GENERAL_ENG_1_OIL_PRESSURE:1": {
+  "GENERAL_ENG_1_OIL_PRESSURE": {
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
-    "calculatedValue": "x /144",
+    "calculatedValue": "x",
     "baseStyle": {
       "rulerwidth": 2
     },
@@ -389,7 +389,8 @@
   },
   "GENERAL_ENG_1_OIL_TEMPERATURE": {
     "rangemin": 0,
-    "rangemax": 130,
+    "rangemax": 140,
+    "calculatedValue":"x / 16384 * 140",
     "label": "Oil Temp °C",
     "baseStyle": {
       "rulerwidth": 2
