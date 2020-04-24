@@ -69,6 +69,7 @@
           fullrange,
           zeroposition,
           calculatedValue,
+          baseColor,
           id = window.frameElement.id;
 
         var path = window.parent.location.pathname + 'config.json';

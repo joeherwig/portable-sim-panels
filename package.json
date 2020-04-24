@@ -3,7 +3,7 @@
   "description": "Socket-updated browser-based svg panels.",
   "author": "joeherwig",
   "license": "UNLICENSED",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",

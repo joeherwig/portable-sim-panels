@@ -5,3 +5,5 @@ npm-debug.log
 build/Release/obj/node-simconnect/node-simconnect.tlog
 SimConnect/inc/SimConnect.h
 SimConnect/lib/SimConnect.lib
+analyze.bat
+.scannerwork
