@@ -25,7 +25,6 @@
     "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 550,
-    "calculatedValue": "x",
     "ranges": [
       {
         "color": "green",
@@ -48,7 +47,7 @@
     "label": "MAP in/hg",
     "rangemin": 0,
     "rangemax": 40,
-    "calculatedValue": "x * 1,038147138964578"
+    "calculatedValue": "x * 1,038147138964578",
     "ranges": [
       {
         "color": "green",
@@ -518,7 +517,7 @@
   "KOHLSMAN_SETTING_HG": {},
   "KOHLSMAN_SETTING_MB": {},
   "SIM_ON_GROUND": {},
-  "GENERAL_ENG_THROTTLE_LEVER_POSITION:1": {},
+  "GENERAL_ENG_1_THROTTLE_LEVER_POSITION": {},
   "AUTOPILOT_AVAILABLE": {},
   "AUTOPILOT_MASTER": {},
   "AUTOPILOT_NAV_SELECTED": {},
@@ -533,8 +532,8 @@
   "AUTOPILOT_APPROACH_HOLD": {},
   "AUTOPILOT_FLIGHT_DIRECTOR_ACTIVE": {},
   "TURN_COORDINATOR_BALL": {},
-  "NAV_CDI:1": {},
-  "NAV_GSI:1": {},
-  "NAV_CDI:2": {},
-  "NAV_GSI:2": {}
+  "NAV1_CDI": {},
+  "NAV1_GSI": {},
+  "NAV1_CDI": {},
+  "NAV1_GSI": {}
 }
