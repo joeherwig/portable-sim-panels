@@ -30,9 +30,8 @@
          }
      </style>
      <script
-        xlink:href="../libs/d3.3.min.js"/>
-     <script
-        xlink:href="../libs/jquery.min.js"/>
+        xlink:href="../libs/d3.3.min.js"/><script xlink:href="../libs/findSuitablePanel.js"/>
+
      <script
         id="script4532"
         type="text/javascript"><![CDATA[
@@ -47,13 +46,12 @@
          var path = window.parent.location.pathname.split('/');
          path.pop();
          path = path.join("/") + "/";
-         $.getJSON(path+"/config.json", function(json){
-           config = json;
-         });
-
-         window.onload = setTimeout(function(){
-           init();
-         }, 100);
+         fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
 
          function init(){
             selectedDme = 2

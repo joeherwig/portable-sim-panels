@@ -65,7 +65,10 @@
           zeroangle,
           rangeMax,
           rangeMin,
+          baseColor,
           calculatedValue,
+          innerRadius,
+          outerRadius,
           id = window.frameElement.id;
 
         var path = window.parent.location.pathname.split('/');
