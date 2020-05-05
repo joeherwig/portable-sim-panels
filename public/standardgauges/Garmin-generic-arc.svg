@@ -34,10 +34,10 @@
   <defs
      id="defs17121">
 
-     <script
+    <script
         xlink:href="../libs/d3.3.min.js"/>
-     <script
-        xlink:href="../libs/jquery.min.js"/>
+    <script xlink:href="../libs/findSuitablePanel.js"/>
+
        <script
           type="text/javascript" id="businesslogic"><![CDATA[
 
@@ -71,13 +71,15 @@
         var path = window.parent.location.pathname.split('/');
         path.pop();
         path = path.join("/") + "/";
-        $.getJSON(path + "config.json", function(json){
-          config = json[window.frameElement.id];
-          init();
-        });
+        fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
+
 
         function init(){
-          console.log(config)
           label = isset(() => config.label) ? config.label : ''
           rangeMin = isset(() => config.rangemin) ? config.rangemin : 0
           rangeMax = isset(() => config.rangemax) ? config.rangemax : 100
@@ -181,9 +183,6 @@
                   })
                 }
                 break;
-
-              default:
-                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
             };
           }
         }

@@ -534,6 +534,6 @@
   "TURN_COORDINATOR_BALL": {},
   "NAV1_CDI": {},
   "NAV1_GSI": {},
-  "NAV1_CDI": {},
-  "NAV1_GSI": {}
+  "NAV2_CDI": {},
+  "NAV2_GSI": {}
 }
