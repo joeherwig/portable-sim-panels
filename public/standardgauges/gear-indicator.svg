@@ -41,9 +41,6 @@
        xlink:href="../libs/d3.3.min.js"
        id="script9" />
     <script
-       xlink:href="../libs/jquery.min.js"
-       id="script13" />
-    <script
        type="text/javascript"
        id="businesslogic"><![CDATA[
 
@@ -57,13 +54,6 @@
           Update(update.detail);
         }
 
-        window.onload = setTimeout(function(){
-          init();
-        }, 300);
-
-        function init(){
-
-        }
 
         function Update(inputObject){
           obj = inputObject;

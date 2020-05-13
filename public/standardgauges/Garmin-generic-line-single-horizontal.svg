@@ -40,9 +40,8 @@
     <script
        xlink:href="../libs/d3.3.min.js"
        id="script9" />
-    <script
-       xlink:href="../libs/jquery.min.js"
-       id="script13" />
+    <script xlink:href="../libs/findSuitablePanel.js"/>
+
     <script
        id="businesslogic"
        type="text/javascript"><![CDATA[
@@ -71,12 +70,15 @@
           calculatedValue,
           baseColor,
           id = window.frameElement.id;
-
-        var path = window.parent.location.pathname + 'config.json';
-        $.getJSON(path, function(json){
-          config = json[window.frameElement.id];
-          init();
-        });
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
 
         function init(){
           label = isset(() => config.label) ? config.label : ''

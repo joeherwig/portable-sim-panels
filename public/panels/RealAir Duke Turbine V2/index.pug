@@ -5,18 +5,20 @@ html(onload="document.body.requestFullscreen();" lang="en" xml:lang="en" xmlns="
     meta(name="mobile-web-app-capable" content="yes")
     meta(name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, user-scalable=yes")
     link(rel="stylesheet" href="panel.css")
-    script(src="../../libs/jquery.min.js")
-    script(src="../../libs/d3.3.min.js")
-    script(src="../../libs/portable-sim-panels.js")
-    script(src="../../libs/findSuitablePanel.js")
-    script(type="text/javascript").
+    script(src='../../libs/d3.3.min.js')
+    script(src='../../libs/portable-sim-panels.js')
+    script(src='../../libs/findSuitablePanel.js')
+    script(type='text/javascript').
       let config = {};
       let path = window.parent.location.pathname.split("/");
       path.pop();
       path = path.join("/") + "/";
-      $.getJSON(path + "config.json", function(json) {
-        config = json;
-      });
+      fetchAsync('config.json')
+      .then(config => config)
+      .catch(reason => {
+        alert("Error in " + window.location + "config.json\n\n" + reason)
+        console.log("Error in config.json:\n" + reason)
+      })
       let json = {};
       window.parent.addEventListener("update", eventHandler, true);
       function eventHandler(update) {

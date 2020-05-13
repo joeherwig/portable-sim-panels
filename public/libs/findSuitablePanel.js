@@ -82,3 +82,9 @@ function init () {
 window.onload = setTimeout(function(){
   init();
 }, 2000);
+
+async function fetchAsync(url) {
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
+}

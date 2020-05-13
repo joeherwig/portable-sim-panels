@@ -25,7 +25,6 @@
     "label": "TRQ LB/ft",
     "rangemin": 0,
     "rangemax": 550,
-    "calculatedValue": "x",
     "ranges": [
       {
         "color": "green",
@@ -533,8 +532,8 @@
   "AUTOPILOT_APPROACH_HOLD": {},
   "AUTOPILOT_FLIGHT_DIRECTOR_ACTIVE": {},
   "TURN_COORDINATOR_BALL": {},
-  "NAV_CDI:1": {},
-  "NAV_GSI:1": {},
-  "NAV_CDI:2": {},
-  "NAV_GSI:2": {}
+  "NAV1_CDI": {},
+  "NAV1_GSI": {},
+  "NAV2_CDI": {},
+  "NAV2_GSI": {}
 }

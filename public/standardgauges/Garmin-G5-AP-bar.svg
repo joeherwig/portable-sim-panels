@@ -29,10 +29,8 @@
      id="defs9">
     <script
        xlink:href="../../libs/d3.3.min.js"
-       id="script3" />
-    <script
-       xlink:href="../../libs/jquery.min.js"
-       id="script13" />
+       id="script3" /><script xlink:href="../libs/findSuitablePanel.js"/>
+
     <script
        id="script5"
        type="text/javascript"><![CDATA[
@@ -52,9 +50,12 @@
         var path = window.parent.location.pathname.split('/');
         path.pop();
         path = path.join("/") + "/";
-        $.getJSON(path+"/config.json", function(json){
-          config = json;
-        });
+        fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
 
         function setValue (id, state) {
           let fillColor = (state * 1 ? '#00ff00' : '#333333')

@@ -115,10 +115,8 @@
        effect="ruler" />
     <script
        xlink:href="../../libs/d3.3.min.js"
-       id="script9" />
-    <script
-       xlink:href="../../libs/jquery.min.js"
-       id="script13" />
+       id="script9" /><script xlink:href="../libs/findSuitablePanel.js"/>
+
     <script
        id="script4532"
        type="text/javascript"><![CDATA[
@@ -152,50 +150,15 @@
         var path = window.parent.location.pathname.split('/');
         path.pop();
         path = path.join("/") + "/";
-        $.getJSON(path+"/config.json", function(json){
-          config = json;
-        });
-
-        window.onload = setTimeout(function(){
-          init();
-        }, 100);
+        fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
 
         function init(){
-          if (config['AIRSPEED_INDICATED']){
-            d3.select('#ias-ruler-red_vne-bar')
-              .attr('height',1 *12.364)
-              .attr('y',373.5-3*1.2364-(config['AIRSPEED_INDICATED'].marker.vne)*12.364)
-            if (config['AIRSPEED_INDICATED'].marker.vne) {
-              d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED_INDICATED'].marker.vne)*-12.364+')')
-              d3.select('#ias-marker-vne').attr('style','display:block;')
-            }
-            d3.select('#ias-marker-x').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.x)*-12.364+')')
-            if (config['AIRSPEED_INDICATED'].marker.x) {
-              d3.select('#ias-marker-x').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.y) {
-              d3.select('#ias-marker-y').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.y)*-12.364+')')
-              d3.select('#ias-marker-y').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.ge) {
-              d3.select('#ias-marker-ge').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.ge)*-12.364+')')
-              d3.select('#ias-marker-ge').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.fe) {
-              d3.select('#ias-marker-fe').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.fe)*-12.364+')')
-              d3.select('#ias-marker-fe').attr('style','display:block;')
-            }
-            d3.select('#ias-ruler-yellow-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].yellowbarend - config['AIRSPEED_INDICATED'].yellowbarstart) * 12.364)
-              .attr('y',(373.74-(config['AIRSPEED_INDICATED'].yellowbarend)*12.364))
-            d3.select('#ias-ruler-green-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].greenbarend - config['AIRSPEED_INDICATED'].greenbarstart) *12.364)
-              .attr('y',373.5-(config['AIRSPEED_INDICATED'].greenbarend)*12.364)
-            d3.select('#ias-ruler-flaps-full-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart) *12.364)
-              .attr('y',-373.5-(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart-config['AIRSPEED_INDICATED'].whitebarend)*12.364)
-          }
-          calculatedValue = config.calculatedValue ? config.calculatedValue : 0;
+          //calculatedValue = config.calculatedValue ? config.calculatedValue : 0;
         }
 
         function Update(inputObject){
