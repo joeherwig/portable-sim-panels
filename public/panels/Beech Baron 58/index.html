@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Beech Baron 58</title>
-    <link rel="stylesheet" href="panel.css">
-    <script src="../../libs/socket.io.js"></script>
-    <script src="../../libs/portable-sim-panels.js"></script>    
-    <script src="../../libs/findSuitablePanel.js"></script>
-
-    <script type="text/javascript">
-      let json;
-        window.parent.addEventListener("update", eventHandler, true);
-        function eventHandler(update) {
-        json = update.detail;
-      }
-    </script>
-  </head>
-<body><p>2 Engine Piston</p><div id="GarminG3X">
-  <div class="leftbar">
-    <object id="GENERAL ENG RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="GENERAL ENG RPM:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="ENG MANIFOLD PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="ENG MANIFOLD PRESSURE:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="ENG FUEL FLOW PPH:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
-    <object id="ENG FUEL FLOW PPH:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
-    <object id="ENG FUEL FLOW GPH:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
-    <object id="ENG FUEL FLOW GPH:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml"></object>
-    <object id="RECIP MIXTURE RATIO:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="RECIP MIXTURE RATIO:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="GEAR TOTAL PCT EXTENDED" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml"></object>
-    <object data="../../standardgauges/gear-indicator.svg" type="image/svg+xml"></object></div>
-    -->
-    <div class="mfd"><object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml"></object></div>
-    <div class="auxpages"></div></div></body></html>
+<!DOCTYPE html><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><title>Beech Baron 58</title><link rel="stylesheet" href="panel.css"><script src="../../libs/socket.io.js"></script><script src="../../libs/jquery.min.js"></script><script src="../../libs/portable-sim-panels.js"></script><script type="text/javascript">let config = {};
+let path = window.parent.location.pathname.split("/");
+path.pop();
+path = path.join("/") + "/";
+$.getJSON(path + "config.json", function(json) {
+config = json;
+});
+let json = {};
+window.parent.addEventListener("update", eventHandler, true);
+function eventHandler(update) {
+    json = Object.assign(json, update.detail);
+}</script></head><body><p>2 Engine Piston</p><div id="GarminG3X"><div class="leftbar"><object id="GENERAL ENG RPM:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'GENERAL ENG RPM:1' gauge</object><object id="GENERAL ENG RPM:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'GENERAL ENG RPM:2' gauge</object><object id="ENG MANIFOLD PRESSURE:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'ENG MANIFOLD PRESSURE:1' gauge</object><object id="ENG MANIFOLD PRESSURE:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'ENG MANIFOLD PRESSURE:2' gauge</object><object id="ENG FUEL FLOW PPH:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'ENG FUEL FLOW PPH:1' gauge</object><object id="ENG FUEL FLOW PPH:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'ENG FUEL FLOW PPH:2' gauge</object><object id="ENG FUEL FLOW GPH:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'ENG FUEL FLOW GPH:1' gauge</object><object id="ENG FUEL FLOW GPH:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'ENG FUEL FLOW GPH:2' gauge</object><object id="RECIP MIXTURE RATIO:1" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'RECIP MIXTURE RATIO:1' gauge</object><object id="RECIP MIXTURE RATIO:2" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'RECIP MIXTURE RATIO:2' gauge</object><object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'ELEVATOR TRIM POSITION' gauge</object><object id="GEAR TOTAL PCT EXTENDED" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'GEAR TOTAL PCT EXTENDED' gauge</object><object id="ELEVATOR TRIM POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'ELEVATOR TRIM POSITION' gauge</object><object id="TRAILING EDGE FLAPS LEFT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'TRAILING EDGE FLAPS LEFT ANGLE' gauge</object><object id="TRAILING EDGE FLAPS RIGHT ANGLE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">'TRAILING EDGE FLAPS RIGHT ANGLE' gauge</object><object id="RECIP ENG CYLINDER HEAD TEMPERATURE:1" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'RECIP ENG CYLINDER HEAD TEMPERATURE:1' gauge</object><object id="RECIP ENG CYLINDER HEAD TEMPERATURE:2" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">'RECIP ENG CYLINDER HEAD TEMPERATURE:2' gauge</object><object id="Gear-indicator" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml">Gear-indicator</object></div><div class="mfd"><object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml">Garmin-G5</object></div><div class="auxpages"></div></div></body></html>

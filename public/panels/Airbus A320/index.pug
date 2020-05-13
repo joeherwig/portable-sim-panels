@@ -1,7 +1,8 @@
 doctype html
-html(onload="document.body.requestFullscreen();")
+html(onload="document.body.requestFullscreen();"  lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml")
   head
     title Airbus A320 panel
+    link(rel="import" href="../../libs/headerScripts.html")
     meta(name="mobile-web-app-capable" content="yes")
     meta(name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, user-scalable=yes")
     link(rel="stylesheet" href="panel.css")
@@ -10,7 +11,7 @@ html(onload="document.body.requestFullscreen();")
     script(src="../../libs/d3.3.min.js")
     script(src="../../libs/portable-sim-panels.js")
     script(src="../../libs/findSuitablePanel.js")
-    script(type="text/javascript").
+    script(type='text/javascript').
       let config = {};
       let path = window.parent.location.pathname.split("/");
       path.pop();
@@ -18,45 +19,36 @@ html(onload="document.body.requestFullscreen();")
       $.getJSON(path + "config.json", function(json) {
       config = json;
       });
-      let json;
+      let json = {};
       window.parent.addEventListener("update", eventHandler, true);
       function eventHandler(update) {
-      json = update.detail;
+          json = Object.assign(json, update.detail);
       }
-
-      var path = location.pathname.split('/');
-      path.pop();
-      path = path.join("/") + "/";
-      $.getJSON(path+"/config.json", function(json){
-        config = json[window.frameElement.id];
-        console.log(config)
-        init();
-      });
   body
     #GarminG3X
-      object.atcBadge(data="A320-ATC-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;")
+      object#atcBadge(data="A320-ATC-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;") atcBadge
       .dme
-        object#DME(data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml")
+        object#DME(data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml") DME
       div &nbsp;
       div &nbsp;
       .mfd
-        object#Garmin-G5(data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml")
-        object#Garmin-G5(data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml")
-        object#Lights(data="../../standardgauges/Lights.svg" type="image/svg+xml")
+        object#Garmin-G5-AP-bar(data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml") Garmin-G5-AP-bar
+        object#Garmin-G5(data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml") Garmin-G5
+        object#Lights(data="../../standardgauges/Lights.svg" type="image/svg+xml") Lights
 
       .engine
-        object#ENG_1_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#ENG_2_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TURB_ENG_1_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TURB_ENG_2_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#ENG_1_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#ENG_2_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#GENERAL_ENG_1_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#GENERAL_ENG_2_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#GENERAL_ENG_1_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#GENERAL_ENG_2_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#ENG_1_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") ENG_1_TORQUE
+        object#ENG_2_TORQUE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") ENG_2_TORQUE
+        object#TURB_ENG_1_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") TURB_ENG_1_ITT
+        object#TURB_ENG_2_ITT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") TURB_ENG_2_ITT
+        object#ENG_1_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") ENG_1_N1_RPM
+        object#ENG_2_N1_RPM(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") ENG_2_N1_RPM
+        object#GENERAL_ENG_1_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") GENERAL_ENG_1_OIL_PRESSURE
+        object#GENERAL_ENG_2_OIL_PRESSURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") GENERAL_ENG_2_OIL_PRESSURE
+        object#GENERAL_ENG_1_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") GENERAL_ENG_1_OIL_TEMPERATURE
+        object#GENERAL_ENG_2_OIL_TEMPERATURE(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") GENERAL_ENG_2_OIL_TEMPERATURE
       .gearTrim
-        object#Gear-indicator(data="../../standardgauges/gear-indicator.svg" type="image/svg+xml")
-        object#ELEVATOR_TRIM_POSITION(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TRAILING_EDGE_FLAPS_LEFT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
-        object#TRAILING_EDGE_FLAPS_RIGHT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml")
+        object#Gear-indicator(data="../../standardgauges/gear-indicator.svg" type="image/svg+xml") Gear
+        object#ELEVATOR_TRIM_POSITION(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") ELEVATOR_TRIM_POSITION
+        object#TRAILING_EDGE_FLAPS_LEFT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") TRAILING_EDGE_FLAPS_LEFT_PERCENT
+        object#TRAILING_EDGE_FLAPS_RIGHT_PERCENT(data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml") TRAILING_EDGE_FLAPS_RIGHT_PERCENT

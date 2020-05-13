@@ -45,23 +45,23 @@
     ]
   },
   "ENG_1_MANIFOLD_PRESSURE": {
-    "label": "MAN in/hg",
+    "label": "MAP in/hg",
     "rangemin": 0,
-    "rangemax": 2000,
-    "calculatedValue": "x /14 * 12",
+    "rangemax": 40,
+    "calculatedValue": "x * 1,038147138964578",
     "ranges": [
       {
         "color": "green",
-        "minValue": 0,
-        "maxValue": 1400,
+        "minValue": 5,
+        "maxValue": 38.4,
         "width": 2
       },
       {
         "color": "red",
         "alerttype": "warning",
         "alerttext": "high",
-        "minValue": 1450,
-        "maxValue": 2000,
+        "minValue": 38.5,
+        "maxValue": 40,
         "width": 2,
         "activewidth": 60
       }
@@ -325,7 +325,7 @@
       }
     ]
   },
-  "ENG_FUEL_FLOW_GPH:1": {
+  "ENG_FUEL_FLOW_GPH": {
     "rangemin": 0,
     "rangemax": 30,
     "label": "Gallons / h",
@@ -352,11 +352,11 @@
       }
     ]
   },
-  "GENERAL_ENG_1_OIL_PRESSURE:1": {
+  "GENERAL_ENG_1_OIL_PRESSURE": {
     "rangemin": 0,
     "rangemax": 120,
     "label": "Oil psi",
-    "calculatedValue": "x /144",
+    "calculatedValue": "x",
     "baseStyle": {
       "rulerwidth": 2
     },
@@ -389,7 +389,8 @@
   },
   "GENERAL_ENG_1_OIL_TEMPERATURE": {
     "rangemin": 0,
-    "rangemax": 130,
+    "rangemax": 140,
+    "calculatedValue":"x / 16384 * 140",
     "label": "Oil Temp °C",
     "baseStyle": {
       "rulerwidth": 2
@@ -517,7 +518,7 @@
   "KOHLSMAN_SETTING_HG": {},
   "KOHLSMAN_SETTING_MB": {},
   "SIM_ON_GROUND": {},
-  "GENERAL_ENG_THROTTLE_LEVER_POSITION:1": {},
+  "GENERAL_ENG_1_THROTTLE_LEVER_POSITION": {},
   "AUTOPILOT_AVAILABLE": {},
   "AUTOPILOT_MASTER": {},
   "AUTOPILOT_NAV_SELECTED": {},

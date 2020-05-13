@@ -136,6 +136,15 @@
           aphdglock = 0
       window.parent.addEventListener("update", eventHandler, true);
 
+      function setSelectedValueBoxContent(label, value){
+         d3.select('#selected-value-box').text(label);
+         d3.select('#ap-hdg-selected-value').text(value);
+         d3.select('#ap-hdg-selected-box').style('display', 'block');
+         closeHdgLockDirBox = setTimeout(function(){
+            d3.select('#ap-hdg-selected-box').style('display','none');
+         }, 3000);
+      }
+
       function eventHandler(update) {
          Update(update.detail);
       }
@@ -212,17 +221,14 @@
                   d3.select('#hdg-value').text(hdgtext);
                   break;
 
-              case 'AUTOPILOT_HEADING_LOCK_DIR':
-               if (value !== aphdglockdir) {
-                  //clearTimeout(closeHdgLockDirBox);
-                  aphdglockdir = Math.floor(value);
-                  d3.select('#ap-hdg-selected-value').text(aphdglockdir + '°');
-                  d3.select('#ap-hdg-selected-box').style('display', 'block');
-                  closeHdgLockDirBox = setTimeout(function(){
-                     d3.select('#ap-hdg-selected-box').style('display','none');
-                  }, 3000);
-               }
-               break;
+               case 'AUTOPILOT_HEADING_LOCK_DIR':
+                  if (value !== aphdglockdir) {
+                     //clearTimeout(closeHdgLockDirBox);
+                     aphdglockdir = Math.floor(value);
+                     setSelectedValueBoxContent('Selected Heading',aphdglockdir + '°');
+
+                  }
+                  break;
 
               case 'AUTOPILOT_HEADING_LOCK':
                 aphdglock = value;
@@ -238,8 +244,13 @@
                 break;
 
               case 'NAV_1_OBS':
-               obsValue = value
-                d3.select('#cdi-set').attr('transform', 'rotate(' + ( hdg * 1 - obsValue * 1  ) *-1 +', 516.98242, 422)');
+                  if (value !== obsValue) {
+                     obsValue = Math.floor(value);
+                     clearTimeout(closeHdgLockDirBox);
+                     d3.select('#cdi-set').attr('transform', 'rotate(' + ( hdg * 1 - obsValue * 1  ) *-1 +', 516.98242, 422)');
+                     setSelectedValueBoxContent('Selected CRS',obsValue + '°');
+                  }
+                  break;
                 break;
 
               case 'NAV_1_CDI':
@@ -2017,7 +2028,7 @@
        y="591.27863"
        id="hdg-value-8"
        inkscape:label="hdg-value"><tspan
-         id="tspan5729"
+         id="selected-value-box"
          style="font-size:32.8125px;fill:#c1c0c8;fill-opacity:1;stroke:none;stroke-opacity:1">Select Heading</tspan></text>
     <text
        inkscape:label="hdg-value"

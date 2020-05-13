@@ -1,18 +1,24 @@
-window.onload = setTimeout(function(){
-
+window.onload = setTimeout(function() {
   const SimconnectPort = 8080
-  let = jsonData = {}
+  let Simconnect;
   function connectToSimconnectServer() {
-    //Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/onUpdate');
-    Simconnect = new WebSocket('ws://'+window.location.hostname+':'+SimconnectPort+'/fsuipc');
-    Simconnect.onopen = function(evt) { onOpen(evt) };
-    Simconnect.onclose = function(evt) { onClose(evt) };
-    Simconnect.onmessage = function(evt) { onMessage(evt) };
-    Simconnect.onerror = function(evt) { onError(evt) };
+    Simconnect = new WebSocket('ws://' + window.location.hostname + ':' + SimconnectPort + '/fsuipc');
+    Simconnect.onopen = function(evt) {
+      onOpen(evt) ;
+    };
+    Simconnect.onclose = function(evt) {
+      onClose(evt);
+    };
+    Simconnect.onmessage = function(evt) {
+      onMessage(evt);
+    };
+    Simconnect.onerror = function(evt) {
+      onError(evt);
+    };
   }
 
   function onOpen(evt) {
-    console.log('CONNECTED to Simconnect @ :'+SimconnectPort);
+    console.log('CONNECTED to Simconnect @ : ' + SimconnectPort);
     Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
   }
 
@@ -24,10 +30,7 @@ window.onload = setTimeout(function(){
   }
 
   function onMessage(evt) {
-    if (evt.data.substring(0, 18) == 'ExecuteJavaScript:') {
-        jsonData = evt.data.substring(evt.data.indexOf('(')+1,evt.data.indexOf(')'))
-    }
-    let update = new CustomEvent(
+    const update = new CustomEvent(
       "update",
       {
         detail: JSON.parse(evt.data),

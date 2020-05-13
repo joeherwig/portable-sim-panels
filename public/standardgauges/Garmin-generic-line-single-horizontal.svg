@@ -48,17 +48,30 @@
        type="text/javascript"><![CDATA[
 
         window.parent.addEventListener("update", eventHandler, true);
+        function isset (fn) {
+            var value;
+            try {
+                value = fn();
+            } catch (e) {
+                value = undefined;
+            } finally {
+                return value !== undefined;
+            }
+        };
 
         function eventHandler(update) {
           Update(update.detail);
         }
 
-        let config = {};
-        let pi = Math.PI;
-        let stepwidth;
-        let fullrange;
-        let zeroposition;
-        let id = window.frameElement.id;
+        let config = {},
+          pi = Math.PI,
+          stepwidth,
+          fullrange,
+          zeroposition,
+          calculatedValue,
+          baseColor,
+          id = window.frameElement.id;
+
         var path = window.parent.location.pathname + 'config.json';
         $.getJSON(path, function(json){
           config = json[window.frameElement.id];
@@ -66,24 +79,34 @@
         });
 
         function init(){
-          fullrange = config.rangemax - config.rangemin;
-          stepwidth = 150 / (config.rangemax-config.rangemin);
-          zeroposition = config.rangemin * stepwidth * -1;
+          label = isset(() => config.label) ? config.label : ''
+          rangeMin = isset(() => config.rangemin) ? config.rangemin : 0
+          rangeMax = isset(() => config.rangemax) ? config.rangemax : 100
+          fullrange = rangeMax - rangeMin;
+          stepwidth = 150 / fullrange;
+          zeroposition = rangeMin * stepwidth * -1;
+          calculatedValue = isset(() => config.calculatedValue) ? config.calculatedValue : false
+          baseColor = isset(() => config.baseStyle.baseColor) ? config.baseStyle.baseColor : "#333333"
+          normalColor = isset(() => config.baseStyle.normalColor) ? config.baseStyle.normalColor : "white"
+          rulercolor = baseColor;
+
 
           let svg = d3.select("svg")
-          d3.select('#label').text(config.label);
+          d3.select('#label').text(label);
 
-          config.ranges.forEach(function(range, i) {
-            let rangemin = (range.minValue * stepwidth) + zeroposition;
-            let rangemax =  (range.maxValue * stepwidth) + zeroposition;
-            svg.append("rect")
-              .attr("class", 'range-' + i)
-              .attr("fill", range.color)
-              .attr("x", rangemin)
-              .attr("y", 48 - range.width)
-              .attr("width", rangemax - rangemin)
-              .attr("height", range.width);
-          })
+          if (isset(() => config.ranges)) {
+            config.ranges.forEach(function(range, i) {
+              let rangemin = (range.minValue * stepwidth) + zeroposition;
+              let rangemax =  (range.maxValue * stepwidth) + zeroposition;
+              svg.append("rect")
+                .attr("class", 'range-' + i)
+                .attr("fill", range.color)
+                .attr("x", rangemin)
+                .attr("y", 48 - range.width)
+                .attr("width", rangemax - rangemin)
+                .attr("height", range.width);
+            })
+          }
           svg.append("rect")
               .attr("class", "ruler")
               .attr("fill", config.baseStyle.baseColor)
@@ -113,6 +136,9 @@
               .attr("stroke-width", "2px")
               .attr("d", "M -10,30 0,45 10,30 Z")
               .attr("inkscape:connector-curvature", 33);
+          d3.select(".ruler").attr("fill",rulercolor);
+          d3.select(".rulerBarStart").attr("fill",rulercolor);
+          d3.select(".rulerBarEnd").attr("fill",rulercolor);
         }
 
         function Update(inputObject){
@@ -122,8 +148,8 @@
             let value = Object.values(inputObject)[attr];
 
             switch (key) {
-
               case id:
+                value = (/^\-?\d.*\.*\d$/.test(value) && calculatedValue) ? eval(calculatedValue.replace("x",value)) : value;
                 position = (value * stepwidth) + zeroposition;
                 d3.select('#needle').attr('transform', 'translate(' + position + ', 0)');
 
@@ -132,9 +158,9 @@
                 } else {
                   d3.select('#value').text(Math.round(value));
                 }
+                rulercolor = baseColor;
 
                 if (config.ranges) {
-                  let rulercolor = config.baseStyle.baseColor;
                   config.ranges.forEach(function(range, i) {
                     let rangemin = zeroposition + range.minValue * stepwidth;
                     let rangemax =  zeroposition + range.maxValue * stepwidth;
