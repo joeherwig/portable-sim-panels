@@ -1,0 +1,83 @@
+html
+  background: #222222
+
+body
+  width: 100vw
+  height: 100vw
+  overflow: hidden
+
+.atcBadge
+  grid-column: 1/2
+  grid-row: 1/2
+
+#GarminG3X
+  display: flex
+  flex-flow: row wrap
+
+  > *
+    max-width: 360px
+    width: 100%
+    overflow: auto
+
+.gearTrim
+  border: 3px solid grey
+  border-radius: 2em
+  display: grid
+  grid-column: 8/10
+  grid-row: 2/2
+  grid-template-rows: 1fr 1fr
+  grid-template-columns: repeat(2, auto)
+  grid-auto-flow: row
+  padding: 10px
+
+.mfd
+  grid-column: 3/6
+  grid-row: 2/4
+
+.engine, .gearTrim
+  display: grid
+  grid-template-rows: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr
+  border: 0.1em solid #444444
+  border-radius: 0.5rem
+  background: black
+  width: 120px !important
+
+object
+  display: block
+  width: 90%
+
+.lights
+  display: flex
+  flex-flow: row wrap
+  max-width: 360px
+
+  > *
+    max-height: 100px
+    flex: 1 1 auto
+    width: 70px
+
+.dme
+  grid-column: 3/6
+  grid-row: 1/2
+
+.engine
+  display: grid
+  grid-template-rows: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr
+  grid-auto-flow: row
+  border: 3px solid silver
+  border-radius: 2rem
+  grid-column: 6/8
+  grid-row: 2/3
+  padding: 20px
+  background: black
+
+  > *
+    min-height: 100px
+    padding: 5px
+
+#Garmin-G5
+  width: 100%
+
+/*# sourceMappingURL=panel.css.map
