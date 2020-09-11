@@ -196,31 +196,17 @@
           })
           .catch(reason => console.log("Error in config.json:\n" + reason))
 
+        function addMarker(item, index) {
+            marker = d3.select('#ias-ruler').append("svg:g").attr("transform","translate(5," + item.value * -12.364 + ")").attr("id","iasMarker-" + item.type)
+            marker.append("svg:path").attr("d","m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z")
+            marker.append("svg:text").attr("x","235").attr("y","382").text(item.type)
+        }
+
         function init(){
-          if (config['AIRSPEED_INDICATED']){
-            d3.select('#ias-ruler-red_vne-bar')
-              .attr('height',1 *12.364)
-              .attr('y',373.5-3*1.2364-(config['AIRSPEED_INDICATED'].marker.vne)*12.364)
-            if (config['AIRSPEED_INDICATED'].marker.vne) {
-              d3.select('#ias-marker-vne').attr('transform','translate(0,'+(config['AIRSPEED_INDICATED'].marker.vne)*-12.364+')')
-              d3.select('#ias-marker-vne').attr('style','display:block;')
-            }
-            d3.select('#ias-marker-x').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.x)*-12.364+')')
-            if (config['AIRSPEED_INDICATED'].marker.x) {
-              d3.select('#ias-marker-x').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.y) {
-              d3.select('#ias-marker-y').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.y)*-12.364+')')
-              d3.select('#ias-marker-y').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.ge) {
-              d3.select('#ias-marker-ge').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.ge)*-12.364+')')
-              d3.select('#ias-marker-ge').attr('style','display:block;')
-            }
-            if (config['AIRSPEED_INDICATED'].marker.fe) {
-              d3.select('#ias-marker-fe').attr('transform','translate(5,'+(config['AIRSPEED_INDICATED'].marker.fe)*-12.364+')')
-              d3.select('#ias-marker-fe').attr('style','display:block;')
-            }
+
+          if (config.AIRSPEED_INDICATED?.markers?.length > 0 ) {
+            config.AIRSPEED_INDICATED.markers.forEach(addMarker)
+            
             d3.select('#ias-ruler-yellow-bar')
               .attr('height',(config['AIRSPEED_INDICATED'].yellowbarend - config['AIRSPEED_INDICATED'].yellowbarstart) * 12.364)
               .attr('y',(373.74-(config['AIRSPEED_INDICATED'].yellowbarend)*12.364))
@@ -231,6 +217,7 @@
               .attr('height',(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart) *12.364)
               .attr('y',-373.5-(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart-config['AIRSPEED_INDICATED'].whitebarend)*12.364)
           }
+          
           calculatedValue = config.calculatedValue ? config.calculatedValue : 0;
         }
 
@@ -407,8 +394,11 @@
         stroke: #c6c6c8;
         stroke-width: 1px;
       }
-      #ias-ruler text {
-        font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.73437881px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#c3c5c3;fill-opacity:1;stroke:#c6c6c8;stroke-width:1.68916011px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1
+      #ias-ruler g text {
+        font-size:20pt;font-family:'DejaVu Sans';text-align:start;text-anchor:middle;fill:#c3c5c3;fill-opacity:1;stroke:#c6c6c8;font-family: monospace;      
+      }
+      #ias-ruler g path {
+        fill: black;      
       }
       #alt-ruler-complete text{
         font-weight:bold;

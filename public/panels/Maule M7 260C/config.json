@@ -20,22 +20,29 @@
     "greenbarend": 117,
     "yellowbarstart": 118,
     "yellowbarend": 144,
+    "marker": {
+      "fe": 120,
+      "ge": 140,
+      "vne": 145,
+      "r": 290,
+      "x": 100,
+      "y": 85,
+      "cc": 145,
+      "aprf": 95,
+      "aprc": 105
+    },
     "markers": [
       {
-        "type": "fe",
-        "value": 70.387
-      },
-      {
         "type": "vne",
-        "value": 145
+        "value": 175
       },
       {
-        "type": "x",
-        "value": 51.2695
+        "type": "fe",
+        "value": 54
       },
       {
-        "type": "y",
-        "value": 41
+        "type": "Y",
+        "value": 90
       }
     ]
   },
