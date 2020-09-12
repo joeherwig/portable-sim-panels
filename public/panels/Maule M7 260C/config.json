@@ -1,25 +1,31 @@
 {
   "AIRSPEED_INDICATED": {
-    "ranges": [
-      {
-        "color": "white",
-        "min": 40,
-        "max": 70,
-        "width": "3"
-      },
+    "speedBands": [
       {
         "color": "green",
         "min": 41,
         "max": 117,
-        "width": "3"
+        "width": 5
+      },
+      {
+        "color": "white",
+        "min": 40,
+        "max": 70,
+        "width": 1.5
+      },
+      {
+        "color": "yellow",
+        "min": 117,
+        "max": 144,
+        "width": 5
+      },
+      {
+        "color": "red",
+        "min": 175,
+        "max": 175.5,
+        "width": 20
       }
     ],
-    "whitebarstart": 40,
-    "whitebarend": 70,
-    "greenbarstart": 41,
-    "greenbarend": 117,
-    "yellowbarstart": 118,
-    "yellowbarend": 144,
     "markers": [
       {
         "type": "vne",

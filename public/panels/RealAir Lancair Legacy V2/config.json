@@ -6,17 +6,40 @@
     "greenbarend": 230,
     "yellowbarstart": 230,
     "yellowbarend": 290,
-    "marker": {
-      "fe": 120,
-      "ge": 140,
-      "vne": 290,
-      "r": 290,
-      "x": 100,
-      "y": 135,
-      "cc": 145,
-      "aprf": 95,
-      "aprc": 105
-    }
+    "markers": [
+      {
+        "type": "vne",
+        "value": 290
+      },
+      {
+        "type": "fe",
+        "value": 120
+      },
+      {
+        "type": "GE",
+        "value": 140
+      },
+      {
+        "type": "Y",
+        "value": 135
+      },
+      {
+        "type": "X",
+        "value": 100
+      },
+      {
+        "type": "CC",
+        "value": 145
+      },
+      {
+        "type": "aprf",
+        "value": 95
+      },
+      {
+        "type": "aprc",
+        "value": 105
+      }
+    ]
   },
   "INDICATED_ALTITUDE": {
     "lean-hint": 4000

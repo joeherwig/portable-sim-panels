@@ -1,22 +1,61 @@
 {
   "AIRSPEED_INDICATED": {
-    "whitebarstart": 56,
-    "whitebarend": 122,
-    "greenbarstart": 58,
-    "greenbarend": 230,
-    "yellowbarstart": 230,
-    "yellowbarend": 290,
-    "marker": {
-      "fe": 120,
-      "ge": 140,
-      "vne": 290,
-      "r": 290,
-      "x": 100,
-      "y": 135,
-      "cc": 145,
-      "aprf": 95,
-      "aprc": 105
-    }
+    "speedBands": [
+      {
+        "color": "green",
+        "min": 58,
+        "max": 230,
+        "width": 5
+      },
+      {
+        "color": "white",
+        "min": 56,
+        "max": 122,
+        "width": 1.5
+      },
+      {
+        "color": "yellow",
+        "min": 230,
+        "max": 290,
+        "width": 5
+      },
+      {
+        "color": "red",
+        "min": 290,
+        "max": 290.5,
+        "width": 20
+      }
+    ],
+    "markers": [
+      {
+        "type": "vne",
+        "value": 290
+      },
+      {
+        "type": "fe",
+        "value": 120
+      },
+      {
+        "type": "ge",
+        "value": 140
+      },
+      {
+        "type": "X",
+        "value": 100
+      },
+      {
+        "type": "Y",
+        "value": 135
+      },
+      {
+        "type": "aprf",
+        "value": 95
+      },
+      {
+        "type": "aprc",
+        "value": 105
+      }
+    ]
   },
   "INDICATED_ALTITUDE": {
     "lean-hint": 4000

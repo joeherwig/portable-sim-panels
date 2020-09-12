@@ -196,28 +196,35 @@
           })
           .catch(reason => console.log("Error in config.json:\n" + reason))
 
-        function addMarker(item, index) {
-            marker = d3.select('#ias-ruler').append("svg:g").attr("transform","translate(5," + item.value * -12.364 + ")").attr("id","iasMarker-" + item.type)
-            marker.append("svg:path").attr("d","m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z")
+         function addSpeedband(item, index) {
+            d3.select('#ias-ruler')
+               .append("svg:rect")
+               .attr("id","ias-speedband-" + item.color)
+               .attr('height',(item.max - item.min) * 12.364)
+               .attr("width", item.width * 4)
+               .attr('style','fill: ' + item.color)
+               .attr('x',(205))
+               .attr('y',(373.74-(item.max)*12.364))
+         }
+
+         function addMarker(item, index) {
+            marker = d3.select('#ias-ruler')
+               .append("svg:g").attr("transform","translate(5," + item.value * -12.364 + ")")
+               .attr("id","iasMarker-" + item.type)
+            marker
+               .append("svg:path")
+               .attr("d","m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z")
             marker.append("svg:text").attr("x","235").attr("y","382").text(item.type)
-        }
+         }
 
-        function init(){
+      function init(){
+         if (config.AIRSPEED_INDICATED?.speedBands?.length > 0 ) {
+            config.AIRSPEED_INDICATED.speedBands.forEach(addSpeedband)
+         }
 
-          if (config.AIRSPEED_INDICATED?.markers?.length > 0 ) {
+         if (config.AIRSPEED_INDICATED?.markers?.length > 0 ) {
             config.AIRSPEED_INDICATED.markers.forEach(addMarker)
-            
-            d3.select('#ias-ruler-yellow-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].yellowbarend - config['AIRSPEED_INDICATED'].yellowbarstart) * 12.364)
-              .attr('y',(373.74-(config['AIRSPEED_INDICATED'].yellowbarend)*12.364))
-            d3.select('#ias-ruler-green-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].greenbarend - config['AIRSPEED_INDICATED'].greenbarstart) *12.364)
-              .attr('y',373.5-(config['AIRSPEED_INDICATED'].greenbarend)*12.364)
-            d3.select('#ias-ruler-flaps-full-bar')
-              .attr('height',(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart) *12.364)
-              .attr('y',-373.5-(config['AIRSPEED_INDICATED'].whitebarend - config['AIRSPEED_INDICATED'].whitebarstart-config['AIRSPEED_INDICATED'].whitebarend)*12.364)
-          }
-          
+         }
           calculatedValue = config.calculatedValue ? config.calculatedValue : 0;
         }
 
@@ -6047,20 +6054,6 @@
        x="45.316811"
        y="-1090.6841"
        id="hdg-ruler-text-7-5-9">120</text>
-    <rect
-       style="fill:#129711;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.81250024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ias-ruler-green-bar"
-       width="21.492872"
-       height="1990.604"
-       x="183.50713"
-       y="-2470.2463" />
-    <rect
-       style="fill:#fffe00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.81250024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ias-ruler-yellow-bar"
-       width="21.492872"
-       height="741.84003"
-       x="183.50713"
-       y="-3212.0864" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c1c0c8;stroke-width:4.68750048;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 205,-13041.181 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.819 h -28 m 28,61.82 h -20.125 m 20.125,61.821 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.8202 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 H 184.875 M 205,-986.28082 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 H 184.875 M 205,-244.4408 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 H 184.875 M 205,2.8392 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 h -20.125 m 20.125,61.82 h -28 m 28,61.82 H 184.875 M 205,2432.7555 h -28"
@@ -6627,21 +6620,6 @@
        x="45.316811"
        y="-11851.995"
        id="hdg-ruler-text-7-5-9-1-7-8-8-4-0-6-0-5">990</text>
-    <rect
-       style="fill:#ff001a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.81250024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ias-ruler-red_vne-bar"
-       width="50"
-       height="10"
-       x="155"
-       y="-3215.8364" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.81250024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ias-ruler-flaps-full-bar"
-       width="8.8043089"
-       height="927.29999"
-       x="196.19569"
-       y="331.27444"
-       transform="scale(1,-1)" />
     <g
        style="display:none"
        id="ias-marker-fe">
