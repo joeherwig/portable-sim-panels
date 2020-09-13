@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/joeherwig/portable-sim-panels/otal.svg)]()
+
 <img src="https://i.makeagif.com/media/11-01-2017/j8000c.gif" alt="animated gif of simulator side by side with portable-sim-panels" width="640px">
 
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via web-socket connections.
