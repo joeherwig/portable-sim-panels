@@ -90,6 +90,7 @@
           calculatedValue = isset(() => config.calculatedValue) ? config.calculatedValue : false
           baseColor = isset(() => config.baseStyle.baseColor) ? config.baseStyle.baseColor : "#333333"
           normalColor = isset(() => config.baseStyle.normalColor) ? config.baseStyle.normalColor : "white"
+          rulerwidth = isset(() => config.baseStyle.rulerwidth) ? config.baseStyle.rulerwidth : "3px"
           rulercolor = baseColor;
 
 
@@ -111,24 +112,24 @@
           }
           svg.append("rect")
               .attr("class", "ruler")
-              .attr("fill", config.baseStyle.baseColor)
+              .attr("fill", baseColor)
               .attr("x", 0)
               .attr("y", 48)
               .attr("width", 150)
-              .attr("height", config.baseStyle.rulerwidth);
+              .attr("height", rulerwidth);
           svg.append("rect")
               .attr("class", "rulerBarStart")
-              .attr("fill", config.baseStyle.baseColor)
+              .attr("fill", baseColor)
               .attr("x", 0)
               .attr("y", 33)
-              .attr("width", config.baseStyle.rulerwidth)
+              .attr("width", rulerwidth)
               .attr("height", 15);
           svg.append("rect")
               .attr("class", "rulerBarEnd")
-              .attr("fill", config.baseStyle.baseColor)
-              .attr("x", 150 - config.baseStyle.rulerwidth)
+              .attr("fill", baseColor)
+              .attr("x", 150 - rulerwidth)
               .attr("y", 33)
-              .attr("width", config.baseStyle.rulerwidth)
+              .attr("width", rulerwidth)
               .attr("height", 15);
           svg.append("path")
               .attr("class", "needle")

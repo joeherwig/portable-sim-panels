@@ -3,61 +3,41 @@
     "speedBands": [
       {
         "color": "green",
-        "min": 58,
-        "max": 230,
+        "min": 41,
+        "max": 117,
         "width": 5
       },
       {
         "color": "white",
-        "min": 56,
-        "max": 122,
+        "min": 40,
+        "max": 70,
         "width": 1.5
       },
       {
         "color": "yellow",
-        "min": 230,
-        "max": 290,
+        "min": 117,
+        "max": 144,
         "width": 5
       },
       {
         "color": "red",
-        "min": 290,
-        "max": 290.5,
+        "min": 175,
+        "max": 175.5,
         "width": 20
       }
     ],
     "markers": [
       {
         "type": "vne",
-        "value": 290
+        "value": 175
       },
       {
         "type": "fe",
-        "value": 120
-      },
-      {
-        "type": "GE",
-        "value": 140
+        "value": 54
       },
       {
         "type": "Y",
-        "value": 135
-      },
-      {
-        "type": "X",
-        "value": 100
-      },
-      {
-        "type": "CC",
-        "value": 145
-      },
-      {
-        "type": "aprf",
-        "value": 95
-      },
-      {
-        "type": "aprc",
-        "value": 105
+        "value": 90
       }
     ]
   },

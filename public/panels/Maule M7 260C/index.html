@@ -1,0 +1,15 @@
+<!DOCTYPE html><html onload="document.body.requestFullscreen();" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><title>Maule M7 260C panel</title><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, user-scalable=yes"><link rel="stylesheet" href="panel.css"><script src="../../libs/d3.3.min.js"></script><script src="../../libs/portable-sim-panels.js"></script><script src="../../libs/findSuitablePanel.js"></script><script type="text/javascript">let config = {};
+let path = window.parent.location.pathname.split("/");
+path.pop();
+path = path.join("/") + "/";
+fetchAsync('config.json')
+.then(config => config)
+.catch(reason => {
+  alert("Error in " + window.location + "config.json\n\n" + reason)
+  console.log("Error in config.json:\n" + reason)
+})
+let json = {};
+window.parent.addEventListener("update", eventHandler, true);
+function eventHandler(update) {
+    json = Object.assign(json, update.detail);
+}</script></head><div id="GarminG3X"><object id="atcBadge" data="Maule-M7-260C-badge.svg" type="image/svg+xml" style="margin:5px;max-width:150px;">atcBadge</object><div class="dme"><object id="DME" data="../../standardgauges/Bendix-King_DME_KDI-573.svg" type="image/svg+xml">DME</object></div><div class="mfd"><object id="Garmin-G5-AP-bar" data="../../standardgauges/Garmin-G5-AP-bar.svg" type="image/svg+xml">Garmin-G5-AP-bar</object><object id="Garmin-G5" data="../../standardgauges/Garmin-G5.svg" type="image/svg+xml">Garmin-G5</object><object id="Garmin-G5-HSI" data="../../standardgauges/Garmin-G5-HSI.svg" type="image/svg+xml">Garmin-G5-HSI</object></div><div class="engine"><object id="ENG_1_TORQUE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">ENG_1_TORQUE</object><object id="ENG_1_MANIFOLD_PRESSURE" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">ENG_1_MANIFOLD_PRESSURE</object><object id="GENERAL_ENG_1_OIL_PRESSURE" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">GENERAL_ENG_1_OIL_PRESSURE</object><object id="GENERAL_ENG_1_OIL_TEMPERATURE" data="../../standardgauges/Garmin-generic-line-single-horizontal.svg" type="image/svg+xml">GENERAL_ENG_1_OIL_TEMPERATURE</object><object id="GEAR_INDICATOR" data="../../standardgauges/gear-indicator.svg" type="image/svg+xml">GEAR_INDICATOR</object><object id="ELEVATOR_TRIM_POSITION" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">ELEVATOR_TRIM_POSITION</object><object id="TRAILING_EDGE_FLAPS_LEFT_PERCENT" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">TRAILING_EDGE_FLAPS_LEFT_PERCENT</object><object id="TRAILING_EDGE_FLAPS_RIGHT_PERCENT" data="../../standardgauges/Garmin-generic-arc.svg" type="image/svg+xml">TRAILING_EDGE_FLAPS_RIGHT_PERCENT</object><div class="empty"></div><div class="empty"></div></div></div></html>

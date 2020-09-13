@@ -1,19 +1,33 @@
 {
-  "AIRSPEED INDICATED": {
+  "AIRSPEED_INDICATED": {
     "whitebarstart": 56,
     "whitebarend": 122,
     "greenbarstart": 58,
     "greenbarend": 230,
     "yellowbarstart": 230,
     "yellowbarend": 276,
-    "vne": 276,
-    "marker": {
-      "fe": 122,
-      "ge": 132,
-      "vne": 276,
-      "x": 100,
-      "y": 135
-    }
+    "markers": [
+      {
+        "type": "vne",
+        "value": 276
+      },
+      {
+        "type": "fe",
+        "value": 122
+      },
+      {
+        "type": "GE",
+        "value": 132
+      },
+      {
+        "type": "Y",
+        "value": 135
+      },
+      {
+        "type": "X",
+        "value": 100
+      }
+    ]
   },
   "PLANE ALTITUDE": {
     "lean-hint": 4000

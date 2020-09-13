@@ -1,22 +1,43 @@
 {
   "AIRSPEED_INDICATED": {
-    "whitebarstart": 56,
-    "whitebarend": 122,
-    "greenbarstart": 58,
-    "greenbarend": 230,
-    "yellowbarstart": 230,
-    "yellowbarend": 290,
-    "marker": {
-      "fe": 120,
-      "ge": 140,
-      "vne": 290,
-      "r": 290,
-      "x": 100,
-      "y": 135,
-      "cc": 145,
-      "aprf": 95,
-      "aprc": 105
-    }
+    "speedBands": [
+      {
+        "color": "green",
+        "min": 80,
+        "max": 200,
+        "width": 5
+      },
+      {
+        "color": "white",
+        "min": 70,
+        "max": 134,
+        "width": 1.5
+      },
+      {
+        "color": "red",
+        "min": 200,
+        "max": 200.5,
+        "width": 20
+      }
+    ],
+    "markers": [
+      {
+        "type": "vne",
+        "value": 200
+      },
+      {
+        "type": "ge",
+        "value": 135
+      },
+      {
+        "type": "X",
+        "value": 96
+      },
+      {
+        "type": "Y",
+        "value": 120
+      }
+    ]
   },
   "INDICATED_ALTITUDE": {
     "lean-hint": 4000
