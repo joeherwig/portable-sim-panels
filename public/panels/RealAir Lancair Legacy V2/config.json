@@ -1,11 +1,31 @@
 {
   "AIRSPEED_INDICATED": {
-    "whitebarstart": 56,
-    "whitebarend": 122,
-    "greenbarstart": 58,
-    "greenbarend": 230,
-    "yellowbarstart": 230,
-    "yellowbarend": 290,
+    "speedBands": [
+      {
+        "color": "green",
+        "min": 58,
+        "max": 230,
+        "width": 5
+      },
+      {
+        "color": "white",
+        "min": 56,
+        "max": 122,
+        "width": 1.5
+      },
+      {
+        "color": "yellow",
+        "min": 230,
+        "max": 290,
+        "width": 5
+      },
+      {
+        "color": "red",
+        "min": 290,
+        "max": 290.5,
+        "width": 20
+      }
+    ],
     "markers": [
       {
         "type": "vne",
