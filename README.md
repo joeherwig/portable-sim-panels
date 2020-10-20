@@ -3,7 +3,7 @@
 This is just a simple web client based on svg gauges for (flight) simulations etc. wich are updated via web-socket connections.
 It's biggest advantage is, that the UI can be run on any device which is capable to display modern web pages. So you can use your rasperry pi, Panel-PC, Smartphone, old linux computer within your home cockpit as well. :-)
 
-Btw: We're also <img src="https://joesimtech.com/wp-content/uploads/2020/04/P3D_v5_Badge.svg" width="120"> V5 compatible!
+Btw: We're also FS2020 / MSFS and <img src="https://joesimtech.com/wp-content/uploads/2020/04/P3D_v5_Badge.svg" width="120"> V5 compatible!
 
 Depending on your specific panel CSS it might look for instance on your iPad like this:
 
