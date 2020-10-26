@@ -29,13 +29,17 @@
       setTimeout(() => { 
         panels.forEach(item => {
           if (item !== '..' && item !== '../') {
-            let node = document.createElement("LI");
-            let textnode = document.createTextNode('/'+item+'/');
-            node.appendChild(textnode);    
+            let node = document.createElement("li");
+            let path = document.createElement("a");
+            let href = document.createAttribute("href");
+            path.href = "/panels/" + item + "/"
+            let textnode = document.createTextNode(''+item+'');
+            node.appendChild(path);    
+            path.appendChild(textnode);    
             document.getElementById('panelList').appendChild(node)
           }
         });  
-      }, 50);
+      }, 200);
       
 
     </script>
@@ -47,7 +51,7 @@
     />
     <p>The following panel folders are currently configured:</p>
     <ul>
-      <li>/panels</li>
+      <li>/panels/</li>
       <ul id="panelList"></ul>
     </ul>
     <p>If your simulator is connected and the plane changes, we're trying to figure out, which panel suits best.<br/>Due to this mechanism you don't need one panel per livery, but one per Aircraft should be enough.</p>
