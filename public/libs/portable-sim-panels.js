@@ -1,5 +1,5 @@
 window.onload = setTimeout(function() {
-  const SimconnectPort = 8080
+  const SimconnectPort = location.port;
   let Simconnect;
   function connectToSimconnectServer() {
     Simconnect = new WebSocket('ws://' + window.location.hostname + ':' + SimconnectPort + '/fsuipc');
