@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg37"
+   height="54.428696"
+   width="1034.483"
+   version="1.1"
+   max-width="100%"
+   max-height="100%"
+   viewBox="0 0 1034.483 54.428696"
+   sodipodi:docname="showValue_template.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3360"
+     inkscape:window-height="1975"
+     id="namedview38"
+     showgrid="false"
+     inkscape:zoom="0.67376649"
+     inkscape:cx="175.13486"
+     inkscape:cy="27.214348"
+     inkscape:window-x="-13"
+     inkscape:window-y="1023"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg37" />
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9">
+    <script
+       xlink:href="../../libs/d3.3.min.js"
+       id="script3" />
+    <script
+       xlink:href="../libs/findSuitablePanel.js"
+       id="script4" />
+    <script
+       id="script5"
+       type="text/javascript"><![CDATA[
+        let myValue
+          calculatedValue;
+
+        window.parent.addEventListener("update", eventHandler, true);
+
+        function eventHandler(update) {
+          Update(update.detail);
+        }
+
+        var path = window.parent.location.pathname.split('/');
+        path.pop();
+        path = path.join("/") + "/";
+        fetchAsync(window.parent.location.pathname + '/config.json')
+          .then(data => {
+            config = data[window.frameElement.id];
+            return true;
+          })
+          .catch(reason => console.log("Error in config.json:\n" + reason))
+
+        function setValue (id, state) {
+          let fillColor = (state * 1 ? '#00ff00' : '#333333')
+          d3.select('#'+id+'').style('fill', fillColor)
+          if (id === 'ap' && !ap) {
+            setValue('alt', 0)
+            setValue('hdg', 0)
+            setValue('vs', 0)
+            setValue('fd', 0)
+            setValue('nav', 0)
+            setValue('yd', 0)
+            setValue('apr', 0)
+            setValue('bc', 0)
+            hdg = alt = nav = 0
+          }
+        }
+
+        function Update(inputObject){
+          for(let attr = 0; attr < Object.keys(inputObject).length; attr++){
+            let key = Object.keys(inputObject)[attr]
+            let value = Object.values(inputObject)[attr]
+            value = (/^\d.*\.*\d$/.test(calculatedValue) ? eval(calculatedValue.replace("x",value)) : value)
+
+            switch (key.toUpperCase()) {
+
+              case 'AUTOPILOT_MASTER':
+                ap = value*1;
+                setValue('ap', ap);
+                break;
+
+              case 'AUTOPILOT_HEADING_LOCK':
+                hdg = value && ap ? value*1 : 0
+                ap && hdg ? setValue('hdg', hdg) : setValue('hdg', 0) ;
+                break;
+
+              case 'AUTOPILOT_ALTITUDE_LOCK':
+                alt = value && ap ? value*1: 0
+                ap && alt ? setValue('alt', alt) : setValue('alt', 0);
+                break;
+
+
+              case 'AUTOPILOT_NAV1_LOCK':
+                nav = value && ap ? value*1 : 0
+                ap && nav ? setValue('nav', nav) : setValue('nav', 0) ;
+                break;
+
+              case 'AUTOPILOT_FD_LOCK':
+                fd = value && ap ? value*1 : 0
+                ap && fd ? setValue('fd', fd) : setValue('fd', 0) ;
+                break;
+
+              case 'AUTOPILOT_ALTITUDE_LOCK':
+                alt = value && ap ? value*1: 0
+                ap && alt ? setValue('alt', alt) : setValue('alt', 0);
+                break;
+
+              case 'AUTOPILOT_BACKCOURSE_LOCK':
+                bc = value && ap ? value*1: 0
+                ap && bc ? setValue('bc', bc) : setValue('bc', 0);
+                break;
+
+              case 'AUTOPILOT_VERTICALSPEED_LOCK':
+                vs = value && ap ? value*1: 0
+                ap && vs ? setValue('vs', vs) : setValue('vs', 0);
+                break;
+
+              case 'AUTOPILOT_YAW_DAMPER':
+                yd = value && ap ? value*1: 0
+                ap && yd ? setValue('yd', yd) : setValue('yd', 0);
+                break;
+
+              case 'AUTOPILOT_APR_LOCK':
+                apr = value && ap ? value*1: 0
+                ap && apr ? setValue('apr', apr) : setValue('apr', 0);
+                break;
+
+              default:
+                //console.log('       :-(    Attribute '+key+' not relevant for this element... Ignoring');
+            };
+          }
+        }
+
+        ]]></script>
+    <style
+       id="style7" />
+  </defs>
+  <rect
+     y="0"
+     x="0"
+     height="54.428696"
+     width="105.37775"
+     id="ap_block"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.85633755;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <g
+     transform="translate(-4.9088745,-0.35627491)"
+     id="g4722">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Opel Sans';-inkscape-font-specification:'Opel Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="25.062378"
+       y="44.394035"
+       id="apFD"><tspan
+         id="fd"
+         x="25.062378"
+         y="44.394035"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:arial;-inkscape-font-specification:arial;fill:#333333;fill-opacity:1">FD</tspan></text>
+  </g>
+</svg>
