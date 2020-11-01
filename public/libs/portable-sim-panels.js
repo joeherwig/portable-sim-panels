@@ -19,7 +19,7 @@ window.onload = setTimeout(function() {
 
   function onOpen(evt) {
     console.log('CONNECTED to Websocket @ : ' + SimconnectPort);
-    Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
+    //Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
   }
 
   function onClose(evt) {

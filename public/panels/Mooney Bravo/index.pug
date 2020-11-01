@@ -5,6 +5,8 @@ html(lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml")
     link(rel='stylesheet', href='panel.css')
     script(src='../../libs/socket.io.js')
     script(src='../../libs/portable-sim-panels.js')
+    script(src="../../libs/NoSleep.min.js")
+    script(src='../../libs/wakeLock.js')
     script(type='text/javascript').
       let json;
       window.parent.addEventListener("update", eventHandler, true);
