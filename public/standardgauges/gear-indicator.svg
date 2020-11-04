@@ -14,7 +14,8 @@
    width="160"
    id="svg2"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="gear-indicator.svg">
+   sodipodi:docname="gear-indicator.svg"
+   onclick='top.setFsuipcValue({ "GEAR_HANDLE_POSITION": gearLeftPosition * 1 ? 0 : 1 });'>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -102,26 +103,6 @@
                     }
                     break;
 
-              case 'test':
-                let x = value.x;
-                let y = value.y;
-                Update({
-                  "ELEVATOR_TRIM_POSITION":(x/3),
-                  "ELEVATOR_TRIM_POSITION2":(x/3),
-                  "Plane_Bank_Degrees":(x/3),
-                  "Plane_Pitch_Degrees":(y/10),
-                  "Autopilot_Altitude_Lock_Var":Math.abs(y*x*2),
-                  "Plane_Heading_Degrees_True":x,
-                  "Airspeed_Indicated": y*-1,
-                  "Plane_Altitude":x*y*-1,
-                  "GPS_GROUND_SPEED":y*-1.04/1.94384,
-                  "INCIDENCE_BETA":y/1.5,
-                  "GENERAL_ENG_RPM_1": x,
-                  "ENG_MANIFOLD_PRESSURE_1": x/2.2,
-                  "ENG_MANIFOLD_PRESSURE_2": x/2,
-                  "Gear_Position": y/4,
-                  "FLAPS_HANDLE_PERCENT": x/4
-                });
                 break;
 
               default:

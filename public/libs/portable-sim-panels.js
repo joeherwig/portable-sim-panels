@@ -46,3 +46,8 @@ window.onload = setTimeout(function() {
 
   connectToWebsocketServer();
 }, 10);
+
+function setFsuipcValue(messageJson) {
+  message = typeof messageJson == "object" ? JSON.stringify(messageJson) : message;
+  Websocket.send(message);
+}
