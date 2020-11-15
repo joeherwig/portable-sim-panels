@@ -1,6 +1,8 @@
+
+let Simconnect;
+
 window.onload = setTimeout(function() {
   const SimconnectPort = location.port;
-  let Simconnect;
   function connectToSimconnectServer() {
     Simconnect = new WebSocket('ws://' + window.location.hostname + ':' + SimconnectPort + '/fsuipc');
     Simconnect.onopen = function(evt) {
@@ -19,7 +21,7 @@ window.onload = setTimeout(function() {
 
   function onOpen(evt) {
     console.log('CONNECTED to Websocket @ : ' + SimconnectPort);
-    Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
+    //Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
   }
 
   function onClose(evt) {
@@ -40,7 +42,14 @@ window.onload = setTimeout(function() {
     );
     window.dispatchEvent(update);
   }
+
+
   function onError(evt){}
 
   connectToSimconnectServer();
 }, 10);
+
+
+function SetFsuipc(key, value) {
+  Simconnect.send("{\""+key+"\":\""+value+"\"}");
+}

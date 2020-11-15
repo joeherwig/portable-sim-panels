@@ -120,18 +120,16 @@
     <script
        id="script4532"
        type="text/javascript"><![CDATA[
-
         let apmaster = 0,
-          bank = 0,
           calculatedValue,
           hdgtext = 0,
           config = {},
-          currentalt = 0,
-          ap = 0,
           hdg = 0,
-          obsValue = 0;
           aphdglockdir = 0,
-          aphdglock = 0
+          aphdglock = 0,
+          obsValue = 0,
+          closeHdgLockDirBox;
+
       window.parent.addEventListener("update", eventHandler, true);
 
       function setSelectedValueBoxContent(label, value){
