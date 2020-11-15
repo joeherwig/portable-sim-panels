@@ -197,9 +197,9 @@
           .catch(reason => console.log("Error in config.json:\n" + reason))
 
          function addSpeedband(item, index) {
-            d3.select('#ias-ruler')
+            d3.select('#cas-ruler')
                .append("svg:rect")
-               .attr("id","ias-speedband-" + item.color)
+               .attr("id","cas-speedband-" + item.color)
                .attr('height',(item.max - item.min) * 12.364)
                .attr("width", item.width * 4)
                .attr('style','fill: ' + item.color)
@@ -208,9 +208,9 @@
          }
 
          function addMarker(item, index) {
-            marker = d3.select('#ias-ruler')
+            marker = d3.select('#cas-ruler')
                .append("svg:g").attr("transform","translate(5," + item.value * -12.364 + ")")
-               .attr("id","iasMarker-" + item.type)
+               .attr("id","casMarker-" + item.type)
             marker
                .append("svg:path")
                .attr("d","m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z")
@@ -318,8 +318,8 @@
                 break;
 
               case 'AIRSPEED_INDICATED':
-                d3.select('#ias-value tspan').text(Math.round(value));
-                d3.select('#ias-ruler').attr('transform','translate(0,'+value*12.364+')')
+                d3.select('#cas-value tspan').text(Math.round(value));
+                d3.select('#cas-ruler').attr('transform','translate(0,'+value*12.364+')')
                 break;
 
               case 'KOHLSMAN_SETTING_MB':
@@ -401,10 +401,10 @@
         stroke: #c6c6c8;
         stroke-width: 1px;
       }
-      #ias-ruler g text {
+      #cas-ruler g text {
         font-size:20pt;font-family:'DejaVu Sans';text-align:start;text-anchor:middle;fill:#c3c5c3;fill-opacity:1;stroke:#c6c6c8;font-family: monospace;      
       }
-      #ias-ruler g path {
+      #cas-ruler g path {
         fill: black;      
       }
       #alt-ruler-complete text{
@@ -6048,7 +6048,7 @@
          style="font-size:58.59375381px">000</tspan></text>
   </g>
   <g
-     id="ias-ruler">
+     id="cas-ruler">
     <text
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.73437881px;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#c3c5c3;fill-opacity:1;stroke:#c6c6c8;stroke-width:1.68916011px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="45.316811"
@@ -6622,7 +6622,7 @@
        id="hdg-ruler-text-7-5-9-1-7-8-8-4-0-6-0-5">990</text>
     <g
        style="display:none"
-       id="ias-marker-fe">
+       id="cas-marker-fe">
       <path
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 218.6751,358.6818 h 37.3004 v 29.8004 H 218.6751 L 204.9779,373.582 Z"
@@ -6643,7 +6643,7 @@
     </g>
     <g
        style="display:none"
-       id="ias-marker-ge">
+       id="cas-marker-ge">
       <path
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z"
@@ -6664,7 +6664,7 @@
     </g>
     <g
        style="display:none"
-       id="ias-marker-x">
+       id="cas-marker-x">
       <path
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 218.6751,358.68181 h 37.3004 v 29.80042 h -37.3004 l -13.6972,-14.90021 z"
@@ -6685,7 +6685,7 @@
     </g>
     <g
        style="display:none"
-       id="ias-marker-y">
+       id="cas-marker-y">
       <path
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z"
@@ -6706,7 +6706,7 @@
     </g>
     <g
        style="display:none"
-       id="ias-marker-vne">
+       id="cas-marker-vne">
       <path
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 218.6751,358.68181 h 37.3004 v 29.8004 h -37.3004 l -13.6972,-14.9002 z"
@@ -6727,7 +6727,7 @@
     </g>
   </g>
   <g
-     id="ias-value-box"
+     id="cas-value-box"
      transform="translate(1996.4725,27.212195)">
     <path
        sodipodi:nodetypes="cccccccccccc"
@@ -6737,7 +6737,7 @@
        style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#646665;stroke-width:2.81250024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <text
-     id="ias-value"
+     id="cas-value"
      y="395.69479"
      x="146.25079"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#bdbdbd;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

@@ -1,54 +1,74 @@
 {
-  "AIRSPEED_CALIBRATED": {
-    "speedBands": [
-      {
-        "color": "green",
-        "min": 80,
-        "max": 230,
-        "width": 5
-      },
-      {
-        "color": "white",
-        "min": 65,
-        "max": 122,
-        "width": 1.5
-      },
-      {
-        "color": "yellow",
-        "min": 230,
-        "max": 290,
-        "width": 5
-      },
-      {
-        "color": "red",
-        "min": 266,
-        "max": 500,
-        "width": 10
-      }
-    ],
-    "markers": [
-      {
-        "type": "ne",
-        "value": 271
-      },
-      {
-        "type": "A",
-        "value": 160
-      },
-      {
-        "type": "LE",
-        "value": 180
-      },
-      {
-        "type": "LO",
-        "value": 151
-      },
-      {
-        "type": "apr",
-        "value": 120
-      }
-    ]
-  },
+"AIRSPEED_INDICATED": {
+  "speedBands": [
+    {
+      "color": "green",
+      "min": 80,
+      "max": 230,
+      "width": 5
+    },
+    {
+      "color": "white",
+      "min": 65,
+      "max": 122,
+      "width": 1.5
+    },
+    {
+      "color": "yellow",
+      "min": 230,
+      "max": 266,
+      "width": 5
+    },
+    {
+      "color": "red",
+      "min": 266,
+      "max": 500,
+      "width": 20
+    }
+  ],
+  "markers": [
+    {
+      "type": "MO",
+      "value": 266
+    },
+    {
+      "type": "apr",
+      "value": 85
+    },
+    {
+      "type": "R",
+      "value": 90
+    },
+    {
+      "type": "Go",
+      "value": 150
+    },
+    {
+      "type": "X",
+      "value": 100
+    },
+    {
+      "type": "Y",
+      "value": 124
+    },
+    {
+      "type": "gld",
+      "value": 120
+    },
+    {
+      "type": "Ge",
+      "value": 178
+    },
+    {
+      "type": "aprf",
+      "value": 95
+    },
+    {
+      "type": "aprc",
+      "value": 105
+    }
+  ]
+},
   "INDICATED_ALTITUDE": {
     "lean-hint": 4000
   },

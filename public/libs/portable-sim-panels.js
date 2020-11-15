@@ -1,33 +1,33 @@
 
-let Simconnect;
-
+let Websocket;
 window.onload = setTimeout(function() {
-  const SimconnectPort = location.port;
-  function connectToSimconnectServer() {
-    Simconnect = new WebSocket('ws://' + window.location.hostname + ':' + SimconnectPort + '/fsuipc');
-    Simconnect.onopen = function(evt) {
+  const WebsocketPort = location.port;
+ 
+  function connectToWebsocketServer() {
+    Websocket = new WebSocket('ws://' + window.location.hostname + ':' + WebsocketPort + '/fsuipc');
+    Websocket.onopen = function(evt) {
       onOpen(evt) ;
     };
-    Simconnect.onclose = function(evt) {
+    Websocket.onclose = function(evt) {
       onClose(evt);
     };
-    Simconnect.onmessage = function(evt) {
+    Websocket.onmessage = function(evt) {
       onMessage(evt);
     };
-    Simconnect.onerror = function(evt) {
+    Websocket.onerror = function(evt) {
       onError(evt);
     };
   }
 
   function onOpen(evt) {
-    console.log('CONNECTED to Websocket @ : ' + SimconnectPort);
-    //Simconnect.send("WebSimXMLCode:(>K:SOUND_TOGGLE)");
+    console.log('CONNECTED to Websocket @ : ' + WebsocketPort);
+    Websocket.send("{\"myMessage\":\"Sending to server\"}");
   }
 
   function onClose(evt) {
     console.log("DISCONNECTED from Websocket");
     setTimeout(function () {
-      connectToSimconnectServer();
+      connectToWebsocketServer();
     }, 1000);
   }
 
@@ -46,10 +46,10 @@ window.onload = setTimeout(function() {
 
   function onError(evt){}
 
-  connectToSimconnectServer();
+  connectToWebsocketServer();
 }, 10);
 
-
-function SetFsuipc(key, value) {
-  Simconnect.send("{\""+key+"\":\""+value+"\"}");
+function setFsuipcValue(messageJson) {
+  message = typeof messageJson == "object" ? JSON.stringify(messageJson) : message;
+  Websocket.send(message);
 }

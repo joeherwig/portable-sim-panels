@@ -1,19 +1,53 @@
 {
-    "AIRSPEED INDICATED": {
-        "greenbarend": 230,
-        "greenbarstart": 58,
-        "marker": {
-            "fe": 122,
-            "ge": 132,
-            "vne": 276,
-            "x": 100,
-            "y": 135
-        },
-        "vne": 276,
-        "whitebarend": 122,
-        "whitebarstart": 56,
-        "yellowbarend": 276,
-        "yellowbarstart": 230
+    "AIRSPEED_CALIBRATED": {
+        "speedBands": [
+            {
+                "color": "green",
+                "min": 80,
+                "max": 230,
+                "width": 5
+            },
+            {
+                "color": "white",
+                "min": 65,
+                "max": 122,
+                "width": 1.5
+            },
+            {
+                "color": "yellow",
+                "min": 230,
+                "max": 290,
+                "width": 5
+            },
+            {
+                "color": "red",
+                "min": 266,
+                "max": 500,
+                "width": 10
+            }
+        ],
+        "markers": [
+            {
+                "type": "ne",
+                "value": 271
+            },
+            {
+                "type": "A",
+                "value": 160
+            },
+            {
+                "type": "LE",
+                "value": 180
+            },
+            {
+                "type": "LO",
+                "value": 151
+            },
+            {
+                "type": "apr",
+                "value": 120
+            }
+        ]
     },
     "AUTOPILOT ALTITUDE LOCK": {},
     "AUTOPILOT ALTITUDE LOCK VAR": {},
